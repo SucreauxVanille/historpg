@@ -11,6 +11,44 @@ const ctx = canvas.getContext("2d");
 canvas.width = TILE_SIZE * MAP_SIZE;
 canvas.height = TILE_SIZE * MAP_SIZE;
 
+// 主人公
+const heroImages = {
+    down: [],
+    up: [],
+    left: [],
+    right: []
+};
+heroImages.down[0] = new Image();
+heroImages.down[0].src =
+    "images/characters/hero_front1.png";
+
+heroImages.down[1] = new Image();
+heroImages.down[1].src =
+    "images/characters/hero_front2.png";
+
+heroImages.up[0] = new Image();
+heroImages.up[0].src =
+    "images/characters/hero_back1.png";
+
+heroImages.up[1] = new Image();
+heroImages.up[1].src =
+    "images/characters/hero_back2.png";
+
+heroImages.left[0] = new Image();
+heroImages.left[0].src =
+    "images/characters/hero_left1.png";
+
+heroImages.left[1] = new Image();
+heroImages.left[1].src =
+    "images/characters/hero_left2.png";
+
+heroImages.right[0] = new Image();
+heroImages.right[0].src =
+    "images/characters/hero_right1.png";
+
+heroImages.right[1] = new Image();
+heroImages.right[1].src =
+    "images/characters/hero_right2.png";
 // =====================
 //   マップ
 //   0 = 床
@@ -38,7 +76,10 @@ const map = [
 const player = {
     x: 5,
     y: 5,
-    direction: "down"
+    direction: "down",
+
+    frame: 0,
+    moving: false
 };
 
 // =====================
@@ -67,13 +108,6 @@ function drawMap(){
                 TILE_SIZE
             );
 
-            ctx.strokeStyle = "#000";
-            ctx.strokeRect(
-                x * TILE_SIZE,
-                y * TILE_SIZE,
-                TILE_SIZE,
-                TILE_SIZE
-            );
         }
     }
 }
@@ -85,36 +119,16 @@ function drawPlayer(){
 
     ctx.fillStyle = "blue";
 
-    ctx.fillRect(
-        px + 4,
-        py + 4,
-        TILE_SIZE - 8,
-        TILE_SIZE - 8
-    );
+const image =
+    heroImages[player.direction][player.frame];
 
-// 向き表示
-    ctx.fillStyle = "white";
-
-    let arrow = "▼";
-
-    if(player.direction === "up"){
-        arrow = "▲";
-    }
-
-    if(player.direction === "left"){
-        arrow = "◀";
-    }
-
-    if(player.direction === "right"){
-        arrow = "▶";
-    }
-
-    ctx.font = "16px sans-serif";
-    ctx.fillText(
-        arrow,
-        px + 8,
-        py + 20
-    );
+ctx.drawImage(
+    image,
+    px,
+    py,
+    TILE_SIZE,
+    TILE_SIZE
+);
 }
 
 function render(){
@@ -149,6 +163,10 @@ if(
 
     player.x = nextX;
     player.y = nextY;
+ 
+// 歩行アニメ切り替え
+player.frame =
+    player.frame === 0 ? 1 : 0;
 
     render();
 }
