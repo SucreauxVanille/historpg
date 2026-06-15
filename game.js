@@ -254,7 +254,7 @@ document.addEventListener("keyup", (e)=>{
 
 const upBtn = document.getElementById("upBtn");
 
-upBtn.addEventListener("touchstart", ()=>{
+upBtn.addEventListener("click", ()=>{
 
     if(!pressedKeys.up){
         movePlayer(0,-1,"up");
@@ -269,7 +269,7 @@ upBtn.addEventListener("touchend", ()=>{
 
 const downBtn = document.getElementById("downBtn");
 
-downBtn.addEventListener("touchstart", ()=>{
+downBtn.addEventListener("click", ()=>{
 
     if(!pressedKeys.down){
         movePlayer(0,1,"down");
@@ -284,7 +284,7 @@ downBtn.addEventListener("touchend", ()=>{
 
 const leftBtn = document.getElementById("leftBtn");
 
-leftBtn.addEventListener("touchstart", ()=>{
+leftBtn.addEventListener("click", ()=>{
 
     if(!pressedKeys.left){
         movePlayer(-1,0,"left");
@@ -299,7 +299,7 @@ leftBtn.addEventListener("touchend", ()=>{
 
 const rightBtn = document.getElementById("rightBtn");
 
-rightBtn.addEventListener("touchstart", ()=>{
+rightBtn.addEventListener("click", ()=>{
 
     if(!pressedKeys.right){
         movePlayer(1,0,"right");
