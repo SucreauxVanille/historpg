@@ -1,7 +1,13 @@
-const images = {
+const assets = {
 
-    mirror: "images/objects/mirror.png",
+    mirror: {
+        image: "images/objects/mirror.png",
+        animated: false
+    },
 
-    bed: "images/objects/bed.png",
+    bed: {
+        image: "images/objects/bed.png",
+        animated: false
+    },
 
-};
+}
