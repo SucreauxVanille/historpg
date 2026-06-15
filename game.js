@@ -272,7 +272,7 @@ const downBtn = document.getElementById("downBtn");
 downBtn.addEventListener("touchstart", ()=>{
 
     if(!pressedKeys.down){
-        movePlayer(0,+1,"down");
+        movePlayer(0,1,"down");
     }
 
     pressedKeys.down = true;
@@ -302,7 +302,7 @@ const rightBtn = document.getElementById("rightBtn");
 rightBtn.addEventListener("touchstart", ()=>{
 
     if(!pressedKeys.right){
-        movePlayer(+1,0,"right");
+        movePlayer(1,0,"right");
     }
 
     pressedKeys.right = true;
