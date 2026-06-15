@@ -252,66 +252,69 @@ document.addEventListener("keyup", (e)=>{
 
 });
 
-const upBtn = document.getElementById("upBtn");
+//ボタン
+function pressDirection(direction){
 
-upBtn.addEventListener("click", ()=>{
+    if(!pressedKeys[direction]){
 
-    if(!pressedKeys.up){
-        movePlayer(0,-1,"up");
+        switch(direction){
+
+            case "up":
+                movePlayer(0,-1,"up");
+                break;
+
+            case "down":
+                movePlayer(0,1,"down");
+                break;
+
+            case "left":
+                movePlayer(-1,0,"left");
+                break;
+
+            case "right":
+                movePlayer(1,0,"right");
+                break;
+        }
     }
 
-    pressedKeys.up = true;
+    pressedKeys[direction] = true;
+}
+
+function releaseDirection(direction){
+    pressedKeys[direction] = false;
+}
+
+const buttons = [
+    ["upBtn","up"],
+    ["downBtn","down"],
+    ["leftBtn","left"],
+    ["rightBtn","right"]
+];
+buttons.forEach(([id, direction])=>{
+
+    const btn = document.getElementById(id);
+
+    btn.addEventListener("pointerdown", ()=>{
+
+        pressDirection(direction);
+
+    });
+
+    btn.addEventListener("pointerup", ()=>{
+
+        releaseDirection(direction);
+
+    });
+
+    btn.addEventListener("pointerleave", ()=>{
+
+        releaseDirection(direction);
+
+    });
+
 });
 
-upBtn.addEventListener("touchend", ()=>{
-    pressedKeys.up = false;
-});
-
-const downBtn = document.getElementById("downBtn");
-
-downBtn.addEventListener("click", ()=>{
-
-    if(!pressedKeys.down){
-        movePlayer(0,1,"down");
-    }
-
-    pressedKeys.down = true;
-});
-
-downBtn.addEventListener("touchend", ()=>{
-    pressedKeys.down = false;
-});
-
-const leftBtn = document.getElementById("leftBtn");
-
-leftBtn.addEventListener("click", ()=>{
-
-    if(!pressedKeys.left){
-        movePlayer(-1,0,"left");
-    }
-
-    pressedKeys.left = true;
-});
-
-leftBtn.addEventListener("touchend", ()=>{
-    pressedKeys.left = false;
-});
-
-const rightBtn = document.getElementById("rightBtn");
-
-rightBtn.addEventListener("click", ()=>{
-
-    if(!pressedKeys.right){
-        movePlayer(1,0,"right");
-    }
-
-    pressedKeys.right = true;
-});
-
-rightBtn.addEventListener("touchend", ()=>{
-    pressedKeys.right = false;
-});
-
+//インターバル
 setInterval(()=>{
 
     if(pressedKeys.up){
