@@ -54,14 +54,33 @@ canvas{
     margin:3px;
 }
 
-#controls button{
+#dpad button{
     width:70px;
     height:50px;
     font-size:20px;
-    cursor:pointer;
+
+    background:#ddd;
+    border:2px solid #888;
+    border-radius:8px;
 }
 
-#actionButtons{
-    display:flex;
-    gap:10px;
+#actionButtons button{
+    width:120px;
+    height:60px;
+
+    font-size:24px;
+    font-weight:bold;
+
+    border:none;
+    border-radius:12px;
+
+    color:white;
+}
+
+#searchBtn{
+    background:#3a9c5a;
+}
+
+#menuBtn{
+    background:#3b6ed8;
 }
