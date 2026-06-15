@@ -11,6 +11,13 @@ const ctx = canvas.getContext("2d");
 canvas.width = TILE_SIZE * MAP_SIZE;
 canvas.height = TILE_SIZE * MAP_SIZE;
 
+const pressedKeys = {
+    up: false,
+    down: false,
+    left: false,
+    right: false
+};
+
 // 主人公
 const heroImages = {
     down: [],
@@ -184,43 +191,146 @@ document.addEventListener("keydown", (e)=>{
     switch(e.key){
 
         case "ArrowUp":
-            movePlayer(0,-1,"up");
+            pressedKeys.up = true;
             break;
 
         case "ArrowDown":
-            movePlayer(0,1,"down");
+            pressedKeys.down = true;
             break;
 
         case "ArrowLeft":
-            movePlayer(-1,0,"left");
+            pressedKeys.left = true;
             break;
 
         case "ArrowRight":
-            movePlayer(1,0,"right");
+            pressedKeys.right = true;
             break;
     }
 
 });
-document.getElementById("upBtn")
-.addEventListener("click", ()=>{
-    movePlayer(0,-1,"up");
+
+document.addEventListener("keyup", (e)=>{
+
+    switch(e.key){
+
+case "ArrowUp":
+
+    if(!pressedKeys.up){
+        movePlayer(0,-1,"up");
+    }
+
+    pressedKeys.up = true;
+    break;
+
+case "ArrowDown":
+
+    if(!pressedKeys.down){
+        movePlayer(0,+1,"down");
+    }
+
+    pressedKeys.down = true;
+    break;
+
+case "ArrowLeft":
+
+    if(!pressedKeys.left){
+        movePlayer(-1,0,"left");
+    }
+
+    pressedKeys.left = true;
+    break;
+
+case "ArrowRight":
+
+    if(!pressedKeys.right){
+        movePlayer(+1,0,"right");
+    }
+
+    pressedKeys.right = true;
+    break;
+    }
+
 });
 
-document.getElementById("downBtn")
-.addEventListener("click", ()=>{
-    movePlayer(0,1,"down");
+const upBtn = document.getElementById("upBtn");
+
+upBtn.addEventListener("touchstart", ()=>{
+
+    if(!pressedKeys.up){
+        movePlayer(0,-1,"up");
+    }
+
+    pressedKeys.up = true;
 });
 
-document.getElementById("leftBtn")
-.addEventListener("click", ()=>{
-    movePlayer(-1,0,"left");
+upBtn.addEventListener("touchend", ()=>{
+    pressedKeys.up = false;
 });
 
-document.getElementById("rightBtn")
-.addEventListener("click", ()=>{
-    movePlayer(1,0,"right");
+const downBtn = document.getElementById("downBtn");
+
+downBtn.addEventListener("touchstart", ()=>{
+
+    if(!pressedKeys.down){
+        movePlayer(0,+1,"down");
+    }
+
+    pressedKeys.down = true;
 });
 
+downBtn.addEventListener("touchend", ()=>{
+    pressedKeys.down = false;
+});
+
+const leftBtn = document.getElementById("leftBtn");
+
+leftBtn.addEventListener("touchstart", ()=>{
+
+    if(!pressedKeys.left){
+        movePlayer(-1,0,"left");
+    }
+
+    pressedKeys.left = true;
+});
+
+leftBtn.addEventListener("touchend", ()=>{
+    pressedKeys.left = false;
+});
+
+const rightBtn = document.getElementById("rightBtn");
+
+rightBtn.addEventListener("touchstart", ()=>{
+
+    if(!pressedKeys.right){
+        movePlayer(+1,0,"right");
+    }
+
+    pressedKeys.right = true;
+});
+
+rightBtn.addEventListener("touchend", ()=>{
+    pressedKeys.right = false;
+});
+
+setInterval(()=>{
+
+    if(pressedKeys.up){
+        movePlayer(0,-1,"up");
+    }
+
+    else if(pressedKeys.down){
+        movePlayer(0,1,"down");
+    }
+
+    else if(pressedKeys.left){
+        movePlayer(-1,0,"left");
+    }
+
+    else if(pressedKeys.right){
+        movePlayer(1,0,"right");
+    }
+
+}, 150);
 // =====================
 //   タイトル
 // =====================
