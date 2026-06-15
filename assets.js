@@ -4,6 +4,4 @@ const images = {
 
     bed: "images/objects/bed.png",
 
-    himiko: "images/characters/himiko_front1.png"
-
 };
