@@ -191,18 +191,38 @@ document.addEventListener("keydown", (e)=>{
     switch(e.key){
 
         case "ArrowUp":
+
+            if(!pressedKeys.up){
+                movePlayer(0,-1,"up");
+            }
+
             pressedKeys.up = true;
             break;
 
         case "ArrowDown":
+
+            if(!pressedKeys.down){
+                movePlayer(0,1,"down");
+            }
+
             pressedKeys.down = true;
             break;
 
         case "ArrowLeft":
+
+            if(!pressedKeys.left){
+                movePlayer(-1,0,"left");
+            }
+
             pressedKeys.left = true;
             break;
 
         case "ArrowRight":
+
+            if(!pressedKeys.right){
+                movePlayer(1,0,"right");
+            }
+
             pressedKeys.right = true;
             break;
     }
@@ -213,41 +233,21 @@ document.addEventListener("keyup", (e)=>{
 
     switch(e.key){
 
-case "ArrowUp":
+        case "ArrowUp":
+            pressedKeys.up = false;
+            break;
 
-    if(!pressedKeys.up){
-        movePlayer(0,-1,"up");
-    }
+        case "ArrowDown":
+            pressedKeys.down = false;
+            break;
 
-    pressedKeys.up = true;
-    break;
+        case "ArrowLeft":
+            pressedKeys.left = false;
+            break;
 
-case "ArrowDown":
-
-    if(!pressedKeys.down){
-        movePlayer(0,+1,"down");
-    }
-
-    pressedKeys.down = true;
-    break;
-
-case "ArrowLeft":
-
-    if(!pressedKeys.left){
-        movePlayer(-1,0,"left");
-    }
-
-    pressedKeys.left = true;
-    break;
-
-case "ArrowRight":
-
-    if(!pressedKeys.right){
-        movePlayer(+1,0,"right");
-    }
-
-    pressedKeys.right = true;
-    break;
+        case "ArrowRight":
+            pressedKeys.right = false;
+            break;
     }
 
 });
