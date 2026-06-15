@@ -151,9 +151,9 @@ function movePlayer(dx, dy, direction){
     // マップ外防止
 if(
     nextX < 0 ||
-    nextX >= map[0].length ||
+    nextX >= currentMap[0].length ||
     nextY < 0 ||
-    nextY >= map.length
+    nextY >= currentMap.length
     ){
         render();
         return;
