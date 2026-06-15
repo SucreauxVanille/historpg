@@ -160,7 +160,7 @@ if(
     }
 
     // 壁判定
-    if(map[nextY][nextX] === 1){
+    if(currentMap.tiles[nextY][nextX] === 1){
         render();
         return;
     }
