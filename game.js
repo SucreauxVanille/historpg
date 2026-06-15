@@ -151,14 +151,13 @@ function movePlayer(dx, dy, direction){
     // マップ外防止
 if(
     nextX < 0 ||
-    nextX >= currentMap[0].length ||
+    nextX >= currentMap.tiles[0].length ||
     nextY < 0 ||
-    nextY >= currentMap.length
-    ){
-        render();
-        return;
-    }
-
+    nextY >= currentMap.tiles.length
+){
+    render();
+    return;
+}
     // 壁判定
     if(currentMap.tiles[nextY][nextX] === 1){
         render();
