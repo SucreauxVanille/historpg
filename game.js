@@ -78,7 +78,6 @@ const player = {
     y: 5,
     direction: "down",
 
-    frame: 0,
     moving: false
 };
 
@@ -120,7 +119,7 @@ function drawPlayer(){
     ctx.fillStyle = "blue";
 
 const image =
-    heroImages[player.direction][player.frame];
+    heroImages[player.direction][animationFrame];
 
 ctx.drawImage(
     image,
@@ -135,6 +134,18 @@ function render(){
     drawMap();
     drawPlayer();
 }
+
+//アニメーション
+let animationFrame = 0;
+
+setInterval(() => {
+
+    animationFrame =
+        animationFrame === 0 ? 1 : 0;
+
+    render();
+
+}, 500);
 
 //移動
 function movePlayer(dx, dy, direction){
@@ -164,10 +175,6 @@ if(
     player.x = nextX;
     player.y = nextY;
  
-// 歩行アニメ切り替え
-player.frame =
-    player.frame === 0 ? 1 : 0;
-
     render();
 }
 
