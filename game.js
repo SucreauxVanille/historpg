@@ -11,11 +11,11 @@ const ctx = canvas.getContext("2d");
 canvas.width = TILE_SIZE * MAP_SIZE;
 canvas.height = TILE_SIZE * MAP_SIZE;
 
-/* =====================
-   マップ
-   0 = 床
-   1 = 壁
-===================== */
+// =====================
+//   マップ
+//   0 = 床
+//   1 = 壁
+// =====================
 
 const map = [
  [1,1,1,1,1,1,1,1,1,1,1],
@@ -196,9 +196,9 @@ document.getElementById("rightBtn")
     movePlayer(1,0,"right");
 });
 
-/* =====================
-   タイトル
-===================== */
+// =====================
+//   タイトル
+// =====================
 
 document
 .getElementById("startBtn")
