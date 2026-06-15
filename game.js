@@ -31,9 +31,9 @@ const map = [
  [1,1,1,1,1,0,1,1,1,1,1]
 ];
 
-/* =====================
-   主人公
-===================== */
+// =====================
+//   主人公
+// =====================
 
 const player = {
     x: 5,
@@ -41,9 +41,9 @@ const player = {
     direction: "down"
 };
 
-/* =====================
-   描画
-===================== */
+// =====================
+//   描画
+// =====================
 
 function drawMap(){
 
@@ -131,11 +131,11 @@ function movePlayer(dx, dy, direction){
     const nextY = player.y + dy;
 
     // マップ外防止
-    if(
-        nextX < 0 ||
-        nextX >= MAP_SIZE ||
-        nextY < 0 ||
-        nextY >= MAP_SIZE
+if(
+    nextX < 0 ||
+    nextX >= map[0].length ||
+    nextY < 0 ||
+    nextY >= map.length
     ){
         render();
         return;
