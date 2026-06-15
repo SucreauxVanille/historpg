@@ -1,6 +1,6 @@
-/* =====================
-   基本設定
-===================== */
+// =====================
+//   基本設定
+// =====================
 
 const TILE_SIZE = 32;
 const MAP_SIZE = 11;
@@ -92,7 +92,7 @@ function drawPlayer(){
         TILE_SIZE - 8
     );
 
-    /* 向き表示 */
+// 向き表示
     ctx.fillStyle = "white";
 
     let arrow = "▼";
@@ -121,6 +121,80 @@ function render(){
     drawMap();
     drawPlayer();
 }
+
+//移動
+function movePlayer(dx, dy, direction){
+
+    player.direction = direction;
+
+    const nextX = player.x + dx;
+    const nextY = player.y + dy;
+
+    // マップ外防止
+    if(
+        nextX < 0 ||
+        nextX >= MAP_SIZE ||
+        nextY < 0 ||
+        nextY >= MAP_SIZE
+    ){
+        render();
+        return;
+    }
+
+    // 壁判定
+    if(map[nextY][nextX] === 1){
+        render();
+        return;
+    }
+
+    player.x = nextX;
+    player.y = nextY;
+
+    render();
+}
+
+//キー操作
+document.addEventListener("keydown", (e)=>{
+
+    switch(e.key){
+
+        case "ArrowUp":
+            movePlayer(0,-1,"up");
+            break;
+
+        case "ArrowDown":
+            movePlayer(0,1,"down");
+            break;
+
+        case "ArrowLeft":
+            movePlayer(-1,0,"left");
+            break;
+
+        case "ArrowRight":
+            movePlayer(1,0,"right");
+            break;
+    }
+
+});
+document.getElementById("upBtn")
+.addEventListener("click", ()=>{
+    movePlayer(0,-1,"up");
+});
+
+document.getElementById("downBtn")
+.addEventListener("click", ()=>{
+    movePlayer(0,1,"down");
+});
+
+document.getElementById("leftBtn")
+.addEventListener("click", ()=>{
+    movePlayer(-1,0,"left");
+});
+
+document.getElementById("rightBtn")
+.addEventListener("click", ()=>{
+    movePlayer(1,0,"right");
+});
 
 /* =====================
    タイトル
