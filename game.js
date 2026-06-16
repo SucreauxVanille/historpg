@@ -74,6 +74,7 @@ for(const key in assets){
 
 let currentMap = maps.himikoHouse;
 let isMessageOpen = false;
+let canAdvanceMessage = false;
 
 // =====================
 //   主人公
@@ -175,17 +176,63 @@ function render(){
 
 }
 //メッセージウインドウ
+let messages = [];
+let messageIndex = 0;
 function showMessage(text){
 
-    document.getElementById("messageText").textContent = text;
+    messageText.textContent = text;
 
-    document.getElementById("messageBox").style.display = "block";
+    messageBox.style.display = "block";
+
+    isMessageOpen = true;
+    canAdvanceMessage = false;
+
+    setTimeout(()=>{
+        canAdvanceMessage = true;
+    }, 1000);
+
 }
+function startMessage(messageArray){
 
+    messages = messageArray;
+    messageIndex = 0;
+
+    showMessage(messages[0]);
+
+}
 function hideMessage(){
 
     document.getElementById("messageBox").style.display = "none";
+
+    isMessageOpen = false;
 }
+function nextMessage(){
+
+    messageIndex++;
+
+    if(messageIndex >= messages.length){
+
+        hideMessage();
+        return;
+    }
+
+    showMessage(messages[messageIndex]);
+
+}
+messageBox.addEventListener("pointerdown", ()=>{
+
+    if(!isMessageOpen){
+        return;
+    }
+
+    if(!canAdvanceMessage){
+        return;
+    }
+
+    nextMessage();
+
+});
+
 //アニメーション
 let animationFrame = 0;
 
