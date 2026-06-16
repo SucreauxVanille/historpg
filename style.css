@@ -37,8 +37,8 @@ canvas{
 #messageBox{
     display:none;
 
-    position:relative;
-    min-height:180px;
+    position:absolute;
+    height:140px;
 
     inset:0;
 
