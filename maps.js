@@ -19,14 +19,14 @@ const maps = {
         objects: [
             {
                 id: "mirror",
-                x: 3,
+                x: 4,
                 y: 2,
                 active: true
             },
             {
                 id: "bed",
-                x: 5,
-                y: 8,
+                x: 9,
+                y: 4,
                 active: true
             }
         ]
