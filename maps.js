@@ -22,12 +22,14 @@ const maps = {
                 x: 4,
                 y: 2,
                 active: true
+                solid: true
             },
             {
                 id: "bed",
                 x: 9,
                 y: 4,
                 active: true
+                solid: true
             }
         ]
 
