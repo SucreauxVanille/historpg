@@ -17,6 +17,18 @@ const maps = {
         ],
 
         objects: [
+                {
+        id: "himiko",
+        x: 8,
+        y: 4,
+
+        direction: "down",
+
+        active: true,
+        solid: true,
+
+        event: "prologue_himiko"
+    },
             {
                 id: "mirror",
                 x: 4,
