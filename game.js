@@ -186,6 +186,23 @@ setInterval(() => {
 
 }, 500);
 
+//衝突ブロック
+function isObjectBlocked(x,y){
+
+    if(!currentMap.objects){
+        return false;
+    }
+
+    return currentMap.objects.some(obj=>
+
+        obj.active &&
+        obj.solid &&
+        obj.x === x &&
+        obj.y === y
+
+    );
+}
+
 //移動
 function movePlayer(dx, dy, direction){
 
@@ -209,7 +226,10 @@ if(
         render();
         return;
     }
-
+if(isObjectBlocked(nextX,nextY)){
+    render();
+    return;
+}
     player.x = nextX;
     player.y = nextY;
  
