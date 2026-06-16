@@ -301,7 +301,7 @@ function searchObject(){
         return;
     }
 
-    showMessage(obj.id);
+const eventData = events[obj.event];
 
 }
 //衝突ブロック
