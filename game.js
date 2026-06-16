@@ -157,28 +157,21 @@ function drawObjects(){
 
     currentMap.objects.forEach(obj=>{
 
-        if(!obj.active){
-            return;
-        }
+        if(!obj.active) return;
 
         const asset = assets[obj.id];
 
-        if(!asset){
-            return;
-        }
-//テスト
-console.log(obj);
-console.log(loadedAssets[obj.id]); 
-        // NPCなど
+        if(!asset) return;
+
         if(asset.animated){
 
             const frame =
                 Math.floor(animationFrame / 30) % 2;
 
             const img =
-                loadedAssets[
-                    asset[obj.direction][frame]
-                ];
+                loadedAssets[obj.id]
+                    [obj.direction]
+                    [frame];
 
             ctx.drawImage(
                 img,
@@ -188,13 +181,10 @@ console.log(loadedAssets[obj.id]);
                 TILE_SIZE
             );
 
-        }
-
-        // 銅鏡や寝床など
-        else{
+        }else{
 
             const img =
-                loadedAssets[asset.image];
+                loadedAssets[obj.id];
 
             ctx.drawImage(
                 img,
@@ -209,7 +199,6 @@ console.log(loadedAssets[obj.id]);
     });
 
 }
-
 function drawPlayer(){
 
     const px = player.x * TILE_SIZE;
