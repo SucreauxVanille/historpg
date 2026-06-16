@@ -22,14 +22,16 @@ const maps = {
                 x: 4,
                 y: 2,
                 active: true,
-                solid: true
+                solid: true,
+                event: "prologue_mirror"
             },
             {
                 id: "bed",
                 x: 9,
                 y: 4,
                 active: true,
-                solid: true
+                solid: true,
+                event: "prologue_bed"
             }
         ]
 
