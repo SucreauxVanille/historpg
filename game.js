@@ -56,6 +56,18 @@ heroImages.right[0].src =
 heroImages.right[1] = new Image();
 heroImages.right[1].src =
     "images/characters/hero_right2.png";
+
+//アセット
+const loadedAssets = {};
+for(const key in assets){
+
+    const img = new Image();
+
+    img.src = assets[key].image;
+
+    loadedAssets[key] = img;
+}
+
 // =====================
 //   マップ
 // =====================
@@ -104,6 +116,37 @@ function drawMap(){
     }
 }
 
+//オブジェクト
+function drawObjects(){
+
+    if(!currentMap.objects){
+        return;
+    }
+
+    currentMap.objects.forEach(obj=>{
+
+        if(!obj.active){
+            return;
+        }
+
+        const img = loadedAssets[obj.id];
+
+        if(!img){
+            return;
+        }
+
+        ctx.drawImage(
+            img,
+            obj.x * TILE_SIZE,
+            obj.y * TILE_SIZE,
+            TILE_SIZE,
+            TILE_SIZE
+        );
+
+    });
+
+}
+
 function drawPlayer(){
 
     const px = player.x * TILE_SIZE;
@@ -124,8 +167,11 @@ ctx.drawImage(
 }
 
 function render(){
+
     drawMap();
+    drawObjects();
     drawPlayer();
+
 }
 
 //アニメーション
