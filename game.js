@@ -80,7 +80,7 @@ let currentMap = maps.himikoHouse;
 
 const player = {
     x: 9,
-    y: 5,
+    y: 4,
     direction: "down",
 
     moving: false
