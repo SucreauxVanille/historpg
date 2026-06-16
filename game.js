@@ -121,29 +121,54 @@ function drawMap(){
 //オブジェクト
 function drawObjects(){
 
-    if(!currentMap.objects){
-        return;
-    }
-
     currentMap.objects.forEach(obj=>{
 
         if(!obj.active){
             return;
         }
 
-        const img = loadedAssets[obj.id];
+        const asset = assets[obj.id];
 
-        if(!img){
+        if(!asset){
             return;
         }
 
-        ctx.drawImage(
-            img,
-            obj.x * TILE_SIZE,
-            obj.y * TILE_SIZE,
-            TILE_SIZE,
-            TILE_SIZE
-        );
+        // NPCなど
+        if(asset.animated){
+
+            const frame =
+                Math.floor(animationFrame / 30) % 2;
+
+            const img =
+                loadedImages[
+                    asset[obj.direction][frame]
+                ];
+
+            ctx.drawImage(
+                img,
+                obj.x * TILE_SIZE,
+                obj.y * TILE_SIZE,
+                TILE_SIZE,
+                TILE_SIZE
+            );
+
+        }
+
+        // 銅鏡や寝床など
+        else{
+
+            const img =
+                loadedImages[asset.image];
+
+            ctx.drawImage(
+                img,
+                obj.x * TILE_SIZE,
+                obj.y * TILE_SIZE,
+                TILE_SIZE,
+                TILE_SIZE
+            );
+
+        }
 
     });
 
