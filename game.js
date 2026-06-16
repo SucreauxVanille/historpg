@@ -59,13 +59,47 @@ heroImages.right[1].src =
 
 //アセット
 const loadedAssets = {};
+
 for(const key in assets){
 
-    const img = new Image();
+    const asset = assets[key];
 
-    img.src = assets[key].image;
+    if(asset.animated){
 
-    loadedAssets[key] = img;
+        loadedAssets[key] = {
+
+            down: [],
+            up: [],
+            left: [],
+            right: []
+        };
+
+        ["down","up","left","right"].forEach(direction=>{
+
+            asset[direction].forEach((path,index)=>{
+
+                const img = new Image();
+
+                img.src = path;
+
+                loadedAssets[key][direction][index] = img;
+
+            });
+
+        });
+
+    }
+
+    else{
+
+        const img = new Image();
+
+        img.src = asset.image;
+
+        loadedAssets[key] = img;
+
+    }
+
 }
 
 // =====================
