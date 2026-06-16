@@ -225,7 +225,38 @@ function getFrontTile(){
 
     return {x, y};
 }
+//オブジェクト取得
+function getObjectAt(x, y){
 
+    return currentMap.objects.find(obj=>
+
+        obj.active &&
+        obj.x === x &&
+        obj.y === y
+
+    );
+
+}
+document.getElementById("searchBtn")
+.addEventListener("click", searchObject);
+
+function searchObject(){
+
+    const frontTile = getFrontTile();
+
+    const obj = getObjectAt(
+        frontTile.x,
+        frontTile.y
+    );
+
+    if(!obj){
+        showMessage("なにもない。");
+        return;
+    }
+
+    showMessage(obj.id);
+
+}
 //衝突ブロック
 function isObjectBlocked(x,y){
 
