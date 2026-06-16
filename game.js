@@ -186,6 +186,34 @@ setInterval(() => {
 
 }, 500);
 
+//正面タイル取得
+function getFrontTile(){
+
+    let x = player.x;
+    let y = player.y;
+
+    switch(player.direction){
+
+        case "up":
+            y--;
+            break;
+
+        case "down":
+            y++;
+            break;
+
+        case "left":
+            x--;
+            break;
+
+        case "right":
+            x++;
+            break;
+    }
+
+    return {x, y};
+}
+
 //衝突ブロック
 function isObjectBlocked(x,y){
 
