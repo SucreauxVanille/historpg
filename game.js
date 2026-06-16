@@ -73,6 +73,7 @@ for(const key in assets){
 // =====================
 
 let currentMap = maps.himikoHouse;
+let isMessageOpen = false;
 
 // =====================
 //   主人公
@@ -173,7 +174,18 @@ function render(){
     drawPlayer();
 
 }
+//メッセージウインドウ
+function showMessage(text){
 
+    document.getElementById("messageText").textContent = text;
+
+    document.getElementById("messageBox").style.display = "block";
+}
+
+function hideMessage(){
+
+    document.getElementById("messageBox").style.display = "none";
+}
 //アニメーション
 let animationFrame = 0;
 
