@@ -166,7 +166,9 @@ function drawObjects(){
         if(!asset){
             return;
         }
-
+//テスト
+console.log(obj);
+console.log(loadedAssets[obj.id]); 
         // NPCなど
         if(asset.animated){
 
