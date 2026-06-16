@@ -174,7 +174,7 @@ function drawObjects(){
                 Math.floor(animationFrame / 30) % 2;
 
             const img =
-                loadedImages[
+                loadedAssets[
                     asset[obj.direction][frame]
                 ];
 
@@ -192,7 +192,7 @@ function drawObjects(){
         else{
 
             const img =
-                loadedImages[asset.image];
+                loadedAssets[asset.image];
 
             ctx.drawImage(
                 img,
