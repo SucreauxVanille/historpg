@@ -302,7 +302,7 @@ function searchObject(){
     }
 
 const eventData = events[obj.event];
-
+startMessage(eventData);
 }
 //衝突ブロック
 function isObjectBlocked(x,y){
