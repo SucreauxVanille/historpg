@@ -315,6 +315,27 @@ function getObjectAt(x, y){
 }
 document.getElementById("searchBtn")
 .addEventListener("click", searchObject);
+function moveObject(id, dx, dy){
+
+    const obj = getObjectById(id);
+
+    if(!obj){
+        return;
+    }
+
+    obj.x += dx;
+    obj.y += dy;
+
+    render();
+
+}
+function getObjectById(id){
+
+    return currentMap.objects.find(
+        obj => obj.id === id
+    );
+
+}
 
 //イベント起動
 function runEvent(eventId){
