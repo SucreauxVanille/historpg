@@ -71,7 +71,7 @@ tileEvents: [
                 y: 2,
                 active: true,
                 solid: true,
-                event: "prologue_mirror"
+                event: "mirror"
             },
             {
                 id: "bed",
