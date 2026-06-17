@@ -28,16 +28,20 @@ function houseExitEvent(){
 
 function mirrorEvent(){
 
-    if(!hasFlag("iyoAppeared")){
+    if(hasFlag("iyoAppeared")){
 
-        setFlag("iyoAppeared");
-
-        startMessage(events.mirrorFirst);
+        startMessage(
+            events.mirrorAfter
+        );
 
         return;
 
     }
 
-    startMessage(events.mirrorAfter);
+    setFlag("iyoAppeared");
+
+    startMessage(
+        events.mirrorIntro
+    );
 
 }
