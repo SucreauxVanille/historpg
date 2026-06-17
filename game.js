@@ -18,44 +18,6 @@ const pressedKeys = {
     right: false
 };
 
-// 主人公
-const heroImages = {
-    down: [],
-    up: [],
-    left: [],
-    right: []
-};
-heroImages.down[0] = new Image();
-heroImages.down[0].src =
-    "images/characters/hero_front1.png";
-
-heroImages.down[1] = new Image();
-heroImages.down[1].src =
-    "images/characters/hero_front2.png";
-
-heroImages.up[0] = new Image();
-heroImages.up[0].src =
-    "images/characters/hero_back1.png";
-
-heroImages.up[1] = new Image();
-heroImages.up[1].src =
-    "images/characters/hero_back2.png";
-
-heroImages.left[0] = new Image();
-heroImages.left[0].src =
-    "images/characters/hero_left1.png";
-
-heroImages.left[1] = new Image();
-heroImages.left[1].src =
-    "images/characters/hero_left2.png";
-
-heroImages.right[0] = new Image();
-heroImages.right[0].src =
-    "images/characters/hero_right1.png";
-
-heroImages.right[1] = new Image();
-heroImages.right[1].src =
-    "images/characters/hero_right2.png";
 
 //アセット
 const loadedAssets = {};
@@ -207,7 +169,9 @@ function drawPlayer(){
     ctx.fillStyle = "blue";
 
 const image =
-    heroImages[player.direction][animationFrame];
+    loadedAssets.hero
+        [player.direction]
+        [animationFrame];
 
 ctx.drawImage(
     image,
