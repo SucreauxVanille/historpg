@@ -15,7 +15,13 @@ const maps = {
             [1,1,0,0,0,0,0,0,0,1,1],
             [1,1,1,1,1,0,1,1,1,1,1]
         ],
-
+tileEvents: [
+    {
+        x: 5,
+        y: 10,
+        event: "houseExit"
+    }
+]
         objects: [
                 {
         id: "himiko",
