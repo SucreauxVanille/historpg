@@ -81,8 +81,8 @@ let canAdvanceMessage = false;
 // =====================
 
 const player = {
-    x: 7,
-    y: 4,
+    x: 8,
+    y: 5,
     direction: "down",
 
     moving: false
