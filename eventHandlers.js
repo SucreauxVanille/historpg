@@ -1,13 +1,9 @@
 function setFlag(flagName){
-
     gameState.flags[flagName] = true;
-
 }
 
 function hasFlag(flagName){
-
     return gameState.flags[flagName] === true;
-
 }
 
 
@@ -17,13 +13,9 @@ const eventHandlers = {
 };
 
 function houseExitEvent(){
-
     showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」");
-
     player.y--;
-
     render();
-
 }
 
 function mirrorEvent(){
@@ -38,8 +30,11 @@ function mirrorEvent(){
         events.mirrorIntro,
         () => {
 
-            spawnObject("iyo");
-
+        spawnObject("iyo");
+        setTimeout(()=>{
+        moveObject("iyo", 0, -1);
+        }, 500);
+            
         }
     );
 }
