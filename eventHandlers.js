@@ -29,19 +29,17 @@ function houseExitEvent(){
 function mirrorEvent(){
 
     if(hasFlag("iyoAppeared")){
-
-        startMessage(
-            events.mirrorAfter
-        );
-
         return;
-
     }
 
     setFlag("iyoAppeared");
 
     startMessage(
-        events.mirrorIntro
-    );
+        events.mirrorIntro,
+        () => {
 
+            spawnObject("iyo");
+
+        }
+    );
 }
