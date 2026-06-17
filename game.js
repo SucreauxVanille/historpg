@@ -388,6 +388,21 @@ function isObjectBlocked(x,y){
     );
 }
 
+//スポーン
+function spawnObject(id){
+
+    const obj =
+        currentMap.objects.find(
+            o => o.id === id
+        );
+
+    if(obj){
+
+        obj.active = true;
+
+    }
+
+}
 //移動
 function movePlayer(dx, dy, direction){
 
