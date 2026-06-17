@@ -267,6 +267,22 @@ messageBox.addEventListener("pointerdown", ()=>{
 
 });
 
+//地雷式イベント
+function getTileEvent(x, y){
+
+    if(!currentMap.tileEvents){
+        return null;
+    }
+
+    return currentMap.tileEvents.find(event=>
+
+        event.x === x &&
+        event.y === y
+
+    );
+
+}
+
 //アニメーション
 let animationFrame = 0;
 
@@ -413,6 +429,15 @@ if(isObjectBlocked(nextX,nextY)){
     player.y = nextY;
  
     render();
+    
+    const tileEvent =
+    getTileEvent(player.x, player.y);
+
+if(tileEvent){
+
+    runEvent(tileEvent.event);
+
+}
 }
 
 
