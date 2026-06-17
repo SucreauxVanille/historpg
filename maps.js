@@ -35,7 +35,17 @@ tileEvents: [
 
         event: "prologue_himiko"
     },
-                            {
+            
+    {
+    id:"iyo",
+    x:5,
+    y:10,
+    active:false,
+    solid: true,
+    direction:"up"
+    },
+            
+         {
         id: "brother",
         x: 4,
         y: 9,
