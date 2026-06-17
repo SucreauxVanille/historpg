@@ -16,6 +16,15 @@ const eventHandlers = {
 
 };
 
+function houseExitEvent(){
+
+    showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」");
+
+    player.y--;
+
+    render();
+
+}
 function mirrorEvent(){
 
     if(!hasFlag("iyoAppeared")){
