@@ -327,13 +327,28 @@ document.getElementById("searchBtn")
 //イベント起動
 function runEvent(eventId){
 
-    const eventData = events[eventId];
+    const handler =
+        eventHandlers[eventId];
+
+    if(handler){
+
+        handler();
+        return;
+
+    }
+
+    const eventData =
+        events[eventId];
 
     if(eventData){
+
         startMessage(eventData);
+
     }
 
 }
+
+//オブジェクト検出
 function searchObject(){
 
     const frontTile = getFrontTile();
