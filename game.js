@@ -588,4 +588,5 @@ document
     document.getElementById("gameScreen").style.display = "block";
 
     render();
+    startMessage(events.prologueStart);
 });
