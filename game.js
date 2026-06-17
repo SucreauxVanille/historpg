@@ -81,7 +81,7 @@ let canAdvanceMessage = false;
 // =====================
 
 const player = {
-    x: 9,
+    x: 7,
     y: 4,
     direction: "down",
 
@@ -96,8 +96,9 @@ function drawMap(){
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    for(let y=0;y<MAP_SIZE;y++){
-        for(let x=0;x<MAP_SIZE;x++){
+    for(let y=0;y<currentMap.tiles.length;y++){
+
+        for(let x=0;x<currentMap.tiles[y].length;x++){
 
             const tile = currentMap.tiles[y][x];
 
@@ -117,7 +118,6 @@ function drawMap(){
         }
     }
 }
-
 //オブジェクト描画
 function drawObjects(){
 
