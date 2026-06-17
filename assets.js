@@ -1,5 +1,30 @@
 const assets = {
+    
+hero: {
 
+    animated: true,
+
+    down: [
+        "images/characters/hero_front1.png",
+        "images/characters/hero_front2.png"
+    ],
+
+    up: [
+        "images/characters/hero_back1.png",
+        "images/characters/hero_back2.png"
+    ],
+
+    left: [
+        "images/characters/hero_left1.png",
+        "images/characters/hero_left2.png"
+    ],
+
+    right: [
+        "images/characters/hero_right1.png",
+        "images/characters/hero_right2.png"
+    ]
+
+},
     mirror: {
         image: "images/objects/mirror.png",
         animated: false
