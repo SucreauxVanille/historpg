@@ -18,6 +18,16 @@ const eventHandlers = {
 
 function mirrorEvent(){
 
-    startMessage(events.mirror);
+    if(!hasFlag("iyoAppeared")){
+
+        setFlag("iyoAppeared");
+
+        startMessage(events.mirrorFirst);
+
+        return;
+
+    }
+
+    startMessage(events.mirrorAfter);
 
 }
