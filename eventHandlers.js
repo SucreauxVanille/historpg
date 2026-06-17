@@ -31,9 +31,15 @@ function mirrorEvent(){
         () => {
 
         spawnObject("iyo");
-        setTimeout(()=>{
+for(let i = 1; i <= 7; i++){
+
+    setTimeout(()=>{
+
         moveObject("iyo", 0, -1);
-        }, 500);
+
+    }, i * 300);
+
+}
             
         }
     );
