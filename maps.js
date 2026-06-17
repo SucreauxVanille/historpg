@@ -22,7 +22,7 @@ const maps = {
         x: 8,
         y: 4,
 
-        direction: "down",
+        direction: "right",
 
         active: true,
         solid: true,
