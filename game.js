@@ -314,25 +314,20 @@ function getFrontTile(){
         case "left":
             x--;
             break;
-
         case "right":
             x++;
             break;
     }
-
     return {x, y};
 }
 //オブジェクト取得
 function getObjectAt(x, y){
-
     return currentMap.objects.find(obj=>
 
         obj.active &&
         obj.x === x &&
         obj.y === y
-
     );
-
 }
 document.getElementById("searchBtn")
 .addEventListener("click", searchObject);
@@ -344,21 +339,16 @@ function runEvent(eventId){
         eventHandlers[eventId];
 
     if(handler){
-
         handler();
         return;
-
     }
 
     const eventData =
         events[eventId];
 
     if(eventData){
-
         startMessage(eventData);
-
     }
-
 }
 
 //オブジェクト検出
@@ -428,16 +418,13 @@ if(isObjectBlocked(nextX,nextY)){
     player.x = nextX;
     player.y = nextY;
  
-    render();
-    
     const tileEvent =
     getTileEvent(player.x, player.y);
 
 if(tileEvent){
-
     runEvent(tileEvent.event);
-
 }
+       render();
 }
 
 
