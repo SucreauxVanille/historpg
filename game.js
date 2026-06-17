@@ -130,14 +130,11 @@ function drawObjects(){
         if(!asset) return;
 
         if(asset.animated){
-
-            const frame =
-                Math.floor(animationFrame / 30) % 2;
-
-            const img =
-                loadedAssets[obj.id]
-                    [obj.direction]
-                    [frame];
+    
+        const img =
+            loadedAssets[obj.id]
+            [obj.direction]
+            [animationFrame];
 
             ctx.drawImage(
                 img,
