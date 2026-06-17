@@ -78,13 +78,13 @@ hero: {
         ],
 
         left: [
-            "images/characters/iyo_front1.png",
-            "images/characters/iyo_front2.png"
+            "images/characters/iyo_left1.png",
+            "images/characters/iyo_left2.png"
         ],
 
         right: [
-            "images/characters/iyo_front1.png",
-            "images/characters/iyo_front2.png"
+            "images/characters/iyo_right1.png",
+            "images/characters/iyo_right2.png"
         ]
 
     },
