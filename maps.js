@@ -21,7 +21,7 @@ tileEvents: [
         y: 10,
         event: "houseExit"
     }
-]
+],
         objects: [
                 {
         id: "himiko",
