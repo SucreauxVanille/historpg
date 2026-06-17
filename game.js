@@ -259,7 +259,7 @@ function showMessage(text){
 
     setTimeout(()=>{
         canAdvanceMessage = true;
-    }, 1000);
+    }, 500);
 
 }
 function startMessage(messageArray){
