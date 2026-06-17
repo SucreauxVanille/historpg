@@ -424,7 +424,9 @@ if(isObjectBlocked(nextX,nextY)){
 
 //キー操作
 document.addEventListener("keydown", (e)=>{
-
+if(isMessageOpen){
+    return;
+}
     switch(e.key){
 
         case "ArrowUp":
@@ -491,7 +493,9 @@ document.addEventListener("keyup", (e)=>{
 
 //ボタン
 function pressDirection(direction){
-
+if(isMessageOpen){
+    return;
+}
     if(!pressedKeys[direction]){
 
         switch(direction){
