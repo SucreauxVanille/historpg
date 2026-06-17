@@ -326,7 +326,7 @@ function searchObject(){
     );
 
     if(!obj){
-        showMessage("なにもない。");
+        showMessage("特に何もないようだ。");
         return;
     }
     facePlayer(obj);
