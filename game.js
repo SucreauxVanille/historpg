@@ -17,12 +17,7 @@ const pressedKeys = {
     left: false,
     right: false
 };
-const oppositeDirection = {
-    up: "down",
-    down: "up",
-    left: "right",
-    right: "left"
-};
+
 // 主人公
 const heroImages = {
     down: [],
