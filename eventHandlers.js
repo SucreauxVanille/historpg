@@ -12,10 +12,10 @@ function hasFlag(flagName){
 
 
 const eventHandlers = {
-
-    houseExit: houseExitEvent
-
+    houseExit: houseExitEvent,
+    mirror: mirrorEvent
 };
+
 function houseExitEvent(){
 
     showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」");
@@ -26,11 +26,6 @@ function houseExitEvent(){
 
 }
 
-const eventHandlers = {
-
-    mirror: mirrorEvent
-
-};
 function mirrorEvent(){
 
     if(!hasFlag("iyoAppeared")){
