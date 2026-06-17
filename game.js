@@ -17,7 +17,11 @@ const pressedKeys = {
     left: false,
     right: false
 };
+const gameState = {
 
+    flags: {}
+
+};
 
 //アセット
 const loadedAssets = {};
@@ -161,6 +165,8 @@ function drawObjects(){
     });
 
 }
+
+// 主人公
 function drawPlayer(){
 
     const px = player.x * TILE_SIZE;
@@ -204,6 +210,8 @@ function render(){
     drawPlayer();
 
 }
+
+
 //メッセージウインドウ
 let messages = [];
 let messageIndex = 0;
@@ -316,6 +324,16 @@ function getObjectAt(x, y){
 document.getElementById("searchBtn")
 .addEventListener("click", searchObject);
 
+//イベント起動
+function runEvent(eventId){
+
+    const eventData = events[eventId];
+
+    if(eventData){
+        startMessage(eventData);
+    }
+
+}
 function searchObject(){
 
     const frontTile = getFrontTile();
@@ -332,8 +350,7 @@ function searchObject(){
     facePlayer(obj);
     render();
 
-const eventData = events[obj.event];
-startMessage(eventData);
+runEvent(obj.event);
 }
 
 //衝突ブロック
