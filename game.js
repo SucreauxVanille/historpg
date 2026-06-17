@@ -336,7 +336,19 @@ function getObjectById(id){
     );
 
 }
+function setObjectDirection(id, direction){
 
+    const obj = getObjectById(id);
+
+    if(!obj){
+        return;
+    }
+
+    obj.direction = direction;
+
+    render();
+
+}
 //イベント起動
 function runEvent(eventId){
 
