@@ -152,7 +152,7 @@ function drawMap(){
     }
 }
 
-//オブジェクト
+//オブジェクト描画
 function drawObjects(){
 
     currentMap.objects.forEach(obj=>{
@@ -365,10 +365,13 @@ function searchObject(){
         showMessage("なにもない。");
         return;
     }
+    facePlayer(obj);
+    render();
 
 const eventData = events[obj.event];
 startMessage(eventData);
 }
+
 //衝突ブロック
 function isObjectBlocked(x,y){
 
