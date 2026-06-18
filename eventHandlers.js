@@ -37,18 +37,23 @@ function mirrorEvent(){
         setObjectDirection("himiko", "down");
         }, 600);    
 for(let i = 1; i <= 7; i++){
-
     setTimeout(()=>{
         moveObject("iyo", 0, -1);
     }, i * 200);
-
-}
+    }
 setTimeout(()=>{
     setObjectDirection("iyo", "down");
     }, 1600);   
         setTimeout(()=>{
         setObjectDirection("himiko", "left");
         }, 1800);    
-        }
-    );
+        });
+        setTimeout(()=>{
+        setObjectDirection("brother", "up");
+        }, 1800);    
+        });
+startMessage(events.iyoArrival1, ()=>{
+
+    setObjectDirection("iyo", "left");
+    });
 }
