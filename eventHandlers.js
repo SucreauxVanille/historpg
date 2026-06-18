@@ -25,13 +25,12 @@ function mirrorEvent(){
     }
 
     setFlag("iyoAppeared");
-
-    startMessage(
-        events.mirrorIntro,
-        () => {
         setTimeout(()=>{
         setObjectDirection("himiko", "up");
         }, 300);    
+    startMessage(
+        events.mirrorIntro,
+        () => {
             
         spawnObject("iyo");
         setTimeout(()=>{
