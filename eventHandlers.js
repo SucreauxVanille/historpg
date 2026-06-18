@@ -67,7 +67,7 @@ function startIyoArrival(){
                 events.iyoArrival2,
                 () => {
                     setObjectDirection("himiko", "up");
-                    moveObject("himiko", 0, -1);
+                    //moveObject("himiko", 0, -1);
 
                     startMessage(
                         events.iyoArrival3
