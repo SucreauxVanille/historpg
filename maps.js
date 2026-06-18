@@ -79,7 +79,7 @@ tileEvents: [
                 y: 5,
                 active: true,
                 solid: true,
-                event: "prologue_bed"
+                event: "bed"
             }
         ]
 
