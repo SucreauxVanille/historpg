@@ -68,7 +68,7 @@ let currentMap = maps.himikoHouse;
 // =====================
 //   描画
 // =====================
-
+// マップ
 function drawMap(){
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -79,11 +79,9 @@ function drawMap(){
 
             const tile = currentMap.tiles[y][x];
 
-            if(tile === 1){
-                ctx.fillStyle = "#666";
-            }else{
-                ctx.fillStyle = "#c9a063";
-            }
+const tileData = tileIds[tile];
+
+ctx.fillStyle = tileData.color;
 
             ctx.fillRect(
                 x * TILE_SIZE,
