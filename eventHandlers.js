@@ -43,13 +43,13 @@ for(let i = 1; i <= 7; i++){
     }
 setTimeout(()=>{
     setObjectDirection("iyo", "down");
-    }, 1600);   
+    }, 2000);   
         setTimeout(()=>{
         setObjectDirection("himiko", "left");
-        }, 1600);    
+        }, 2000);    
         setTimeout(()=>{
         setObjectDirection("brother", "up");
-        }, 1600); 
+        }, 2000); 
     startIyoArrival();
  });            
 
@@ -66,7 +66,8 @@ function startIyoArrival(){
                     setObjectDirection("himiko", "up");
                     startMessage(
                         events.iyoArrival3
-                    );}
+                    );
+                    moveObject("himiko", 0, -1);}
             );}
     );
 }
