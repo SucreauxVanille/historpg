@@ -47,11 +47,10 @@ setTimeout(()=>{
         setTimeout(()=>{
         setObjectDirection("himiko", "left");
         }, 1600);    
-        });
         setTimeout(()=>{
         setObjectDirection("brother", "up");
         }, 1600);    
-        });
+ });            
 startMessage(events.iyoArrival1, ()=>{
 
     setObjectDirection("iyo", "left");
