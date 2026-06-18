@@ -475,6 +475,6 @@ document
     document.getElementById("titleScreen").style.display = "none";
     document.getElementById("gameScreen").style.display = "block";
 
-    render();
-    startMessage(events.prologueStart);
+render();
+startOpening();
 });
