@@ -55,7 +55,7 @@ tileEvents: [
         active: true,
         solid: true,
 
-        event: "prologue_brother"
+        event: "brother"
     },
              {
                 id: "stamp",
