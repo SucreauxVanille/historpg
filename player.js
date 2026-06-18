@@ -54,7 +54,13 @@ if(
     return;
 }
     // 壁判定
-    if(currentMap.tiles[nextY][nextX] === 1){
+const tile =
+    currentMap.tiles[nextY][nextX];
+
+if(!tileIds[tile].passable){
+    render();
+    return;
+}{
         render();
         return;
     }
