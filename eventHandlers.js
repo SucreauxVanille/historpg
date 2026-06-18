@@ -101,6 +101,7 @@ function startIyoArrival(){
         () => {
 
             setObjectDirection("iyo", "left");
+            setObjectDirection("himiko", "up");
     startMessage(
         events.iyoArrival2,
         startProphecy
@@ -113,7 +114,6 @@ function startProphecy(){
     flashScreen();
 
     setTimeout(()=>{
-
         setObjectDirection("himiko", "up");
 
 for(let i = 1; i <= 2; i++){
@@ -121,8 +121,11 @@ for(let i = 1; i <= 2; i++){
         moveObject("himiko", 0, -1);
     }, i * 200);
 }
-        setObjectDirection("himiko", "left");
-        setObjectDirection("iyo", "right");
+    setTimeout(()=>{
+    setObjectDirection("iyo", "right");
+    setObjectDirection("himiko", "left");
+}, 2 * 200 + 100);
+        
         startMessage(
             events.iyoArrival3
         );
