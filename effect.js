@@ -17,6 +17,9 @@ function fadeIn(){
 
 function flashScreen(){
 
+    screenEffect.style.transition =
+        "opacity 0.15s";
+
     screenEffect.style.backgroundColor =
         "white";
 
@@ -32,6 +35,9 @@ function flashScreen(){
 
         screenEffect.style.backgroundColor =
             "black";
+
+        screenEffect.style.transition =
+            "opacity 1s";
 
     },300);
 
