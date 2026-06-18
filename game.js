@@ -328,45 +328,6 @@ function spawnObject(id){
     }
 
 }
-//移動
-function movePlayer(dx, dy, direction){
-
-    player.direction = direction;
-
-    const nextX = player.x + dx;
-    const nextY = player.y + dy;
-
-    // マップ外防止
-if(
-    nextX < 0 ||
-    nextX >= currentMap.tiles[0].length ||
-    nextY < 0 ||
-    nextY >= currentMap.tiles.length
-){
-    render();
-    return;
-}
-    // 壁判定
-    if(currentMap.tiles[nextY][nextX] === 1){
-        render();
-        return;
-    }
-if(isObjectBlocked(nextX,nextY)){
-    render();
-    return;
-}
-    player.x = nextX;
-    player.y = nextY;
- 
-    const tileEvent =
-    getTileEvent(player.x, player.y);
-
-if(tileEvent){
-    runEvent(tileEvent.event);
-}
-       render();
-}
-
 
 
 // =====================
