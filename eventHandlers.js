@@ -27,7 +27,7 @@ function mirrorEvent(){
     setFlag("iyoAppeared");
         setTimeout(()=>{
         setObjectDirection("himiko", "up");
-        }, 300);    
+        }, 100);    
     startMessage(
         events.mirrorIntro,
         () => {
@@ -35,7 +35,7 @@ function mirrorEvent(){
         spawnObject("iyo");
         setTimeout(()=>{
         setObjectDirection("himiko", "down");
-        }, 600);    
+        }, 200);    
 for(let i = 1; i <= 7; i++){
     setTimeout(()=>{
         moveObject("iyo", 0, -1);
@@ -46,11 +46,11 @@ setTimeout(()=>{
     }, 1600);   
         setTimeout(()=>{
         setObjectDirection("himiko", "left");
-        }, 1800);    
+        }, 1600);    
         });
         setTimeout(()=>{
         setObjectDirection("brother", "up");
-        }, 1800);    
+        }, 1600);    
         });
 startMessage(events.iyoArrival1, ()=>{
 
