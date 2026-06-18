@@ -58,7 +58,9 @@ messageBox.addEventListener("pointerdown", ()=>{
 
 });
 function showChoice(choices){
-
+document.getElementById(
+    "messageBox"
+).style.display = "block";
     const container =
         document.getElementById(
             "choiceContainer"
@@ -74,18 +76,20 @@ function showChoice(choices){
         button.textContent = choice.text;
         button.className = "choiceButton";
 
-        button.addEventListener(
-            "click",
-            () => {
+button.addEventListener(
+    "click",
+    () => {
 
-                container.innerHTML = "";
+        container.innerHTML = "";
 
-                if(choice.action){
-                    choice.action();
-                }
+        hideMessage();
 
-            }
-        );
+        if(choice.action){
+            choice.action();
+        }
+
+    }
+);
 
         container.appendChild(button);
 
