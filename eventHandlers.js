@@ -110,12 +110,22 @@ function startIyoArrival(){
 }
 function startProphecy(){
 
-    setObjectDirection("himiko", "up");
+    flashScreen();
 
-    moveObject("himiko", 0, -1);
+    setTimeout(()=>{
 
-    startMessage(
-        events.iyoArrival3
-    );
+        setObjectDirection("himiko", "up");
+
+for(let i = 1; i <= 3; i++){
+    setTimeout(()=>{
+        moveObject("himiko", 0, -1);
+    }, i * 200);
+}
+        setObjectDirection("himiko", "left");
+        startMessage(
+            events.iyoArrival3
+        );
+
+    },300);
 
 }
