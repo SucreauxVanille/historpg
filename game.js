@@ -227,14 +227,19 @@ function hideMessage(){
 }
 function nextMessage(){
     messageIndex++;
-    if(messageIndex >= messages.length){
-        hideMessage();
-        if(messageFinishedCallback){
-            messageFinishedCallback();
-            messageFinishedCallback = null;
-        }
-        return;
+if(messageIndex >= messages.length){
+
+    hideMessage();
+
+    console.log("callback =", messageFinishedCallback);
+
+    if(messageFinishedCallback){
+        messageFinishedCallback();
+        messageFinishedCallback = null;
     }
+
+    return;
+}
     showMessage(messages[messageIndex]);
 }
 messageBox.addEventListener("pointerdown", ()=>{
