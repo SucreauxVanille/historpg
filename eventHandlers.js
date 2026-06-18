@@ -48,7 +48,7 @@ setTimeout(()=>{
     setObjectDirection("iyo", "down");
     }, 1600);   
         setTimeout(()=>{
-        setObjectDirection("himiko", "down");
+        setObjectDirection("himiko", "left");
         }, 1800);    
         }
     );
