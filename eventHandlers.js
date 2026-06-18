@@ -11,7 +11,8 @@ const eventHandlers = {
     startOpening: startOpening,
     houseExit: houseExitEvent,
     bed: bedEvent,
-    mirror: mirrorEvent
+    mirror: mirrorEvent,
+    brother: brotherEvent
 };
 
 //起きるのじゃ
@@ -37,6 +38,27 @@ function houseExitEvent(){
     render();
 }
 
+function brotherEvent(){
+
+    startMessage(
+        events.prologue_brother,
+        () => {
+
+            showChoice([
+                {
+                    text:"はい",
+                    action: brotherAnswer
+                },
+                {
+                    text:"いいえ",
+                    action: brotherAnswer
+                }
+            ]);
+
+        }
+    );
+
+}
 function bedEvent(){
 
     startMessage(
