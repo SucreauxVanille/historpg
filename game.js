@@ -211,31 +211,7 @@ setInterval(() => {
 
 }, 500);
 
-//正面タイル取得
-function getFrontTile(){
 
-    let x = player.x;
-    let y = player.y;
-
-    switch(player.direction){
-
-        case "up":
-            y--;
-            break;
-
-        case "down":
-            y++;
-            break;
-
-        case "left":
-            x--;
-            break;
-        case "right":
-            x++;
-            break;
-    }
-    return {x, y};
-}
 //オブジェクト取得
 function getObjectAt(x, y){
     return currentMap.objects.find(obj=>
