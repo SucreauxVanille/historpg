@@ -29,26 +29,25 @@ function mirrorEvent(){
     startMessage(
         events.mirrorIntro,
         () => {
-setTimeout(()=>{
-
-    setObjectDirection("himiko", "down");
+        setTimeout(()=>{
+        setObjectDirection("himiko", "up");
+}, 100);    
+            
+        spawnObject("iyo");
+        setTimeout(()=>{
+        setObjectDirection("himiko", "down");
 
 }, 100);    
-        spawnObject("iyo");
 for(let i = 1; i <= 7; i++){
 
     setTimeout(()=>{
-
         moveObject("iyo", 0, -1);
-
     }, i * 200);
 
 }
 setTimeout(()=>{
-
     setObjectDirection("iyo", "down");
-
-}, 100);            
+}, 1500);            
         }
     );
 }
