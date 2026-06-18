@@ -62,7 +62,7 @@ function brotherEvent(){
 function brotherAnswer(){
 
     startMessage([
-        "男「そうか……そうだよな……」"
+        "男「そうかそうか、そうだよな…」"
     ]);
 
 }
