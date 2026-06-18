@@ -57,3 +57,15 @@ messageBox.addEventListener("pointerdown", ()=>{
     nextMessage();
 
 });
+showChoice(
+    [
+        {
+            text:"はい",
+            action: callback
+        },
+        {
+            text:"いいえ",
+            action: callback
+        }
+    ]
+);
