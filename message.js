@@ -57,15 +57,38 @@ messageBox.addEventListener("pointerdown", ()=>{
     nextMessage();
 
 });
-showChoice(
-    [
-        {
-            text:"はい",
-            action: callback
-        },
-        {
-            text:"いいえ",
-            action: callback
-        }
-    ]
-);
+function showChoice(choices){
+
+    const container =
+        document.getElementById(
+            "choiceContainer"
+        );
+
+    container.innerHTML = "";
+
+    choices.forEach(choice=>{
+
+        const button =
+            document.createElement("button");
+
+        button.textContent = choice.text;
+        button.className = "choiceButton";
+
+        button.addEventListener(
+            "click",
+            () => {
+
+                container.innerHTML = "";
+
+                if(choice.action){
+                    choice.action();
+                }
+
+            }
+        );
+
+        container.appendChild(button);
+
+    });
+
+}
