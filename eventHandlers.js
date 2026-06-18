@@ -42,8 +42,8 @@ for(let i = 1; i <= 7; i++){
     }, i * 200);
     }
 setTimeout(()=>{
-    setObjectDirection("iyo", "down");
-    }, 2000);   
+    setObjectDirection("iyo", "up");
+    }, 1500);   
         setTimeout(()=>{
         setObjectDirection("himiko", "left");
         }, 2000);    
