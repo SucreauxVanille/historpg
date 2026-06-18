@@ -54,19 +54,26 @@ setTimeout(()=>{
  });            
 }
 function startIyoArrival(){
+
     setObjectDirection("iyo", "down");
+
     startMessage(
         events.iyoArrival1,
         () => {
+
             setObjectDirection("iyo", "left");
+
             startMessage(
                 events.iyoArrival2,
                 () => {
                     setObjectDirection("himiko", "up");
+                    moveObject("himiko", 0, -1);
+
                     startMessage(
                         events.iyoArrival3
                     );
-                    moveObject("himiko", 0, -1);}
-            );}
+                }
+            );
+        }
     );
 }
