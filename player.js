@@ -60,10 +60,7 @@ const tile =
 if(!tileIds[tile].passable){
     render();
     return;
-}{
-        render();
-        return;
-    }
+}
 if(isObjectBlocked(nextX,nextY)){
     render();
     return;
