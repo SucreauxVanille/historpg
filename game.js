@@ -63,8 +63,7 @@ for(const key in assets){
 // =====================
 
 let currentMap = maps.himikoHouse;
-let isMessageOpen = false;
-let canAdvanceMessage = false;
+
 
 // =====================
 //   主人公
