@@ -31,13 +31,12 @@ function mirrorEvent(){
         () => {
         setTimeout(()=>{
         setObjectDirection("himiko", "up");
-}, 100);    
+        }, 300);    
             
         spawnObject("iyo");
         setTimeout(()=>{
         setObjectDirection("himiko", "down");
-
-}, 100);    
+        }, 600);    
 for(let i = 1; i <= 7; i++){
 
     setTimeout(()=>{
@@ -47,7 +46,10 @@ for(let i = 1; i <= 7; i++){
 }
 setTimeout(()=>{
     setObjectDirection("iyo", "down");
-}, 1500);            
+    }, 1600);   
+        setTimeout(()=>{
+        setObjectDirection("himiko", "down");
+        }, 1800);    
         }
     );
 }
