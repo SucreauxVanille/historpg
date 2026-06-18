@@ -8,11 +8,29 @@ function hasFlag(flagName){
 
 
 const eventHandlers = {
+    startOpening: startOpening,
     houseExit: houseExitEvent,
     bed: bedEvent,
     mirror: mirrorEvent
 };
 
+//起きるのじゃ
+function startOpening(){
+    fadeOut();
+
+    startMessage(
+        events.wakeUp,
+        () => {
+
+            fadeIn();
+
+            startMessage(
+                events.prologueStart
+            );
+
+        }
+    );
+}
 function houseExitEvent(){
     showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」");
     player.y--;
