@@ -9,6 +9,7 @@ function hasFlag(flagName){
 
 const eventHandlers = {
     houseExit: houseExitEvent,
+    bed: bedEvent,
     mirror: mirrorEvent
 };
 
@@ -18,6 +19,26 @@ function houseExitEvent(){
     render();
 }
 
+function bedEvent(){
+
+    startMessage(
+        events.prologue_bed,
+        () => {
+
+            fadeOut();
+
+            setTimeout(()=>{
+
+                fadeIn();
+
+            },1500);
+
+        }
+    );
+
+}
+
+//銅鏡
 function mirrorEvent(){
 
     if(hasFlag("iyoAppeared")){
