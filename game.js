@@ -230,14 +230,12 @@ function nextMessage(){
 if(messageIndex >= messages.length){
 
     hideMessage();
+const callback = messageFinishedCallback;
+messageFinishedCallback = null;
 
-    console.log("callback =", messageFinishedCallback);
-
-    if(messageFinishedCallback){
-        messageFinishedCallback();
-        messageFinishedCallback = null;
-    }
-
+if(callback){
+    callback();
+}
     return;
 }
     showMessage(messages[messageIndex]);
