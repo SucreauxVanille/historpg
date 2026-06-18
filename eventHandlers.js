@@ -13,7 +13,6 @@ const eventHandlers = {
     bed: bedEvent,
     mirror: mirrorEvent,
     brother: brotherEvent
-    brotherAnswer: brotherAnswer
 };
 
 //起きるのじゃ
