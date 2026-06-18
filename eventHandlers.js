@@ -49,10 +49,24 @@ setTimeout(()=>{
         }, 1600);    
         setTimeout(()=>{
         setObjectDirection("brother", "up");
-        }, 1600);    
+        }, 1600); 
+    startIyoArrival();
  });            
-startMessage(events.iyoArrival1, ()=>{
 
-    setObjectDirection("iyo", "left");
-    });
+}
+function startIyoArrival(){
+    setObjectDirection("iyo", "down");
+    startMessage(
+        events.iyoArrival1,
+        () => {
+            setObjectDirection("iyo", "left");
+            startMessage(
+                events.iyoArrival2,
+                () => {
+                    setObjectDirection("himiko", "up");
+                    startMessage(
+                        events.iyoArrival3
+                    );}
+            );}
+    );
 }
