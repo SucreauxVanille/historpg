@@ -66,18 +66,6 @@ let currentMap = maps.himikoHouse;
 
 
 // =====================
-//   主人公
-// =====================
-
-const player = {
-    x: 8,
-    y: 5,
-    direction: "down",
-
-    moving: false
-};
-
-// =====================
 //   描画
 // =====================
 
