@@ -40,19 +40,18 @@ for(let i = 1; i <= 7; i++){
     setTimeout(()=>{
         moveObject("iyo", 0, -1);
     }, i * 200);
-    }
-setTimeout(()=>{
-    setObjectDirection("iyo", "up");
-    }, 1500);   
-        setTimeout(()=>{
-        setObjectDirection("himiko", "left");
-        }, 2000);    
-        setTimeout(()=>{
-        setObjectDirection("brother", "up");
-        }, 2000); 
-    startIyoArrival();
- });            
+}
 
+setTimeout(()=>{
+
+    setObjectDirection("iyo", "down");
+        setObjectDirection("himiko", "left");
+        setObjectDirection("brother", "up");
+    startIyoArrival();
+
+}, 7 * 200 + 100);
+
+ });            
 }
 function startIyoArrival(){
     setObjectDirection("iyo", "down");
