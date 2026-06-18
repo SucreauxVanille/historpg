@@ -1,4 +1,5 @@
-
+let isMessageOpen = false;
+let canAdvanceMessage = false;
 //メッセージウインドウ
 let messages = [];
 let messageIndex = 0;
