@@ -13,6 +13,7 @@ const eventHandlers = {
     bed: bedEvent,
     mirror: mirrorEvent,
     brother: brotherEvent
+    brotherAnswer: brotherAnswer
 };
 
 //起きるのじゃ
@@ -57,6 +58,13 @@ function brotherEvent(){
 
         }
     );
+
+}
+function brotherAnswer(){
+
+    startMessage([
+        "男「そうか……そうだよな……」"
+    ]);
 
 }
 function bedEvent(){
