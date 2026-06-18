@@ -62,18 +62,21 @@ function startIyoArrival(){
         () => {
 
             setObjectDirection("iyo", "left");
-
-            startMessage(
-                events.iyoArrival2,
-                () => {
-                    setObjectDirection("himiko", "up");
-                    //moveObject("himiko", 0, -1);
-
-                    startMessage(
-                        events.iyoArrival3
-                    );
-                }
-            );
+    startMessage(
+        events.iyoArrival2,
+        startProphecy
+    );
         }
     );
+}
+function startProphecy(){
+
+    setObjectDirection("himiko", "up");
+
+    moveObject("himiko", 0, -1);
+
+    startMessage(
+        events.iyoArrival3
+    );
+
 }
