@@ -116,12 +116,13 @@ function startProphecy(){
 
         setObjectDirection("himiko", "up");
 
-for(let i = 1; i <= 3; i++){
+for(let i = 1; i <= 2; i++){
     setTimeout(()=>{
         moveObject("himiko", 0, -1);
     }, i * 200);
 }
         setObjectDirection("himiko", "left");
+        setObjectDirection("iyo", "right");
         startMessage(
             events.iyoArrival3
         );
