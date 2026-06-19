@@ -35,3 +35,9 @@ function endBattle(){
         .style.display = "flex";
 
 }
+document
+.getElementById("battleTestBtn")
+.addEventListener(
+    "click",
+    endBattle
+);
