@@ -86,14 +86,19 @@ if(tileEvent){
 }
 
 //ステータス計算
-function getLevel(exp){
+function getLevel(){
+
+    const exp = playerStatus.exp;
+
     if(exp < 1000){
-        return Math.floor(exp / 100);
-    }else if(exp < 2500){
-        return 10 + Math.floor((exp - 1000) / 150);
-    }else{
-        return 20 + Math.floor((exp - 2500) / 200);
+        return 1 + Math.floor(exp / 100);
     }
+
+    if(exp < 2500){
+        return 11 + Math.floor((exp - 1000) / 150);
+    }
+
+    return 21 + Math.floor((exp - 2500) / 200);
 }
 
 function getMaxHP(){
