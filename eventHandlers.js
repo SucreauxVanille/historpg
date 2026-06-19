@@ -13,8 +13,8 @@ const eventHandlers = {
     bed: bedEvent,
     mirror: mirrorEvent,
     brother: brotherEvent,
-    returnMirror,
-    nojiriTutorial,
-    naumannBoss
+    returnMirror: returnMirrorEvent,
+    nojiriTutorial: nojiriTutorialEvent,
+    naumannBoss: naumannBossEvent
 };
 
