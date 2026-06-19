@@ -188,8 +188,10 @@ function mirrorWarpMenu(){
 }
 function goToNojiri(){
 
-    showMessage(
-        "（まだ未実装）"
+    changeMap(
+        maps.nojiriLake,
+        1,
+        10
     );
 
 }
