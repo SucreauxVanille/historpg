@@ -1,5 +1,7 @@
 function returnMirrorEvent(){
-
+    showMessage(
+        "壱与「邪馬台国にお戻ししますね！」"
+    );
     changeMap(
         maps.himikoHouse,
         5,
