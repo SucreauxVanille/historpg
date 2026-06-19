@@ -16,7 +16,12 @@ function hideBattleScreen(){
 }
 function startBattle(enemyId){
 
-    document.getElementById("battleScreen")
+    const enemy = enemies[enemyId];
+
+    console.log(enemy.name);
+
+    document
+        .getElementById("battleScreen")
         .style.display = "block";
 
     document.getElementById("controls")
