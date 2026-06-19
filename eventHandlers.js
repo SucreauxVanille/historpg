@@ -163,9 +163,20 @@ for(let i = 1; i <= 2; i++){
 }, 2 * 200 + 100);
         
         startMessage(
-            events.iyoArrival3
+            events.iyoArrival3,
+            heroReveal
         );
 
     },300);
 
+}
+function heroReveal(){
+    setTimeout(()=>{
+    setObjectDirection("iyo", "left");
+
+    startMessage(
+        events.iyoArrival4
+    );
+        }
+    300);
 }
