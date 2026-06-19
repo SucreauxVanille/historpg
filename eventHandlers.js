@@ -96,6 +96,8 @@ function bedEvent(){
 function mirrorEvent(){
 
     if(hasFlag("iyoAppeared")){
+
+        mirrorWarpMenu();
         return;
     }
 
