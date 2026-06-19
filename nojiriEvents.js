@@ -9,10 +9,19 @@ function returnMirrorEvent(){
     );
 
 }
-function nojiriTutorialEvent(){
+function nojiriTutorial(){
 
-    showMessage(
-        "卑弥呼「ここが野尻湖じゃ」"
+    startMessage(
+        [
+            "卑弥呼「む！？気をつけよ！」",
+            "卑弥呼「狂暴化した獣のようじゃ！」",
+            "卑弥呼「やむを得ぬ！戦うぞ！」"
+        ],
+        () => {
+
+            startBattle("boar");
+
+        }
     );
 
 }
