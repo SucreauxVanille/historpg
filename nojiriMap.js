@@ -42,6 +42,15 @@ maps.nojiriLake = {
             active: true,
             solid: true,
             event: "naumannBoss"
+        },
+        // 黒曜石
+        {
+            id: "obsidian",
+            x: 0,
+            y: 0,
+            active: true,
+            solid: true,
+            event: "obsidian"
         }
 
     ],
