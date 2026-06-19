@@ -9,7 +9,7 @@ function returnMirrorEvent(){
     );
 
 }
-function nojiriTutorial(){
+function nojiriTutorialEvent(){
 
     startMessage(
         [
