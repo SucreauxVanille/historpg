@@ -12,7 +12,7 @@ const eventHandlers = {
     houseExit: houseExitEvent,
     bed: bedEvent,
     mirror: mirrorEvent,
-    brother: brotherEvent
+    brother: brotherEvent,
     returnMirror,
     nojiriTutorial,
     naumannBoss
