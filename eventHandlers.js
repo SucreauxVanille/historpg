@@ -177,7 +177,7 @@ function heroReveal(){
     startMessage(
         events.iyoArrival4
     );
-        }
+        },
     300);
 }
 function mirrorWarpMenu(){
