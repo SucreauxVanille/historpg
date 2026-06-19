@@ -13,6 +13,9 @@ const eventHandlers = {
     bed: bedEvent,
     mirror: mirrorEvent,
     brother: brotherEvent
+    returnMirror,
+    nojiriTutorial,
+    naumannBoss
 };
 
 //起きるのじゃ
