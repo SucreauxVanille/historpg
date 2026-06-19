@@ -38,6 +38,10 @@ hero: {
         image: "images/objects/stamp.png",
         animated: false
     },
+    gate: {
+        image: "images/objects/gate.png",
+        animated: false
+    },
     himiko: {
 
         animated: true,
