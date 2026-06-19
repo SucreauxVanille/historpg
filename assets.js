@@ -38,7 +38,7 @@ hero: {
         image: "images/objects/stamp.png",
         animated: false
     },
-    gate: {
+    mirrorReturn: {
         image: "images/objects/gate.png",
         animated: false
     },
