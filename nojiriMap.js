@@ -21,7 +21,7 @@ nojiriLake: {
         // 帰還用銅鏡
         {
             id: "mirrorReturn",
-            x: 1,
+            x: 0,
             y: 10,
             active: true,
             solid: true,
