@@ -1,6 +1,4 @@
-
-
-    himikoHouse: {
+maps.himikoHouse = {
 
         tiles: [
             [1,1,1,1,1,1,1,1,1,1,1],
