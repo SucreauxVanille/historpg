@@ -1,3 +1,5 @@
+let isMenuOpen = false;
+
 function openMenu(html){
 
     const menuBox =
@@ -5,7 +7,7 @@ function openMenu(html){
 
     const menuContent =
         document.getElementById("menuContent");
-
+    isMenuOpen = true;
     menuContent.innerHTML = html;
 
     menuBox.style.display = "block";
@@ -17,7 +19,7 @@ function closeMenu(){
     document.getElementById(
         "menuBox"
     ).style.display = "none";
-
+    isMenuOpen = false;
 }
 
 //メニューリスト
