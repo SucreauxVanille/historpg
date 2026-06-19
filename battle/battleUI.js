@@ -1,3 +1,4 @@
+console.log("battleUI loaded");
 function showBattleScreen(){
 
     document
