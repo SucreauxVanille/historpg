@@ -50,4 +50,4 @@ maps.nojiriLake = {
 
     ]
 
-},
+}
