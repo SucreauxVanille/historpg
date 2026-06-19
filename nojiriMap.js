@@ -1,4 +1,4 @@
-nojiriLake: {
+maps.nojiriLake =  {
 
     tiles: [
 
