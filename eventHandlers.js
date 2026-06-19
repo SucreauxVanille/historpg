@@ -184,8 +184,29 @@ function heroReveal(){
 }
 function mirrorWarpMenu(){
 
+    startMessage(
+        ["野尻湖へ移動しますか？"],
+        () => {
+
+            showChoice([
+                {
+                    text:"はい",
+                    action: goToNojiri
+                },
+                {
+                    text:"いいえ",
+                    action: hideMessage
+                }
+            ]);
+
+        }
+    );
+
+}
+function goToNojiri(){
+
     showMessage(
-        "野尻湖へ移動しますか？"
+        "（まだ未実装）"
     );
 
 }
