@@ -109,6 +109,35 @@ canvas{
     width:140px;
 }
 
+#menuBox{
+    display:none;
+
+    position:absolute;
+
+    top:20px;
+    right:20px;
+
+    width:220px;
+
+    background:black;
+    border:3px solid white;
+
+    color:white;
+
+    padding:12px;
+
+    box-sizing:border-box;
+
+    z-index:300;
+}
+
+.menuItem{
+
+    padding:8px 0;
+
+    cursor:pointer;
+
+}
 #gameScreen{
     position:relative;
 }
