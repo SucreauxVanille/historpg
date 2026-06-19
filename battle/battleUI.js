@@ -1,4 +1,3 @@
-console.log("battleUI loaded");
 function showBattleScreen(){
 
     document
@@ -14,21 +13,19 @@ function hideBattleScreen(){
         .style.display = "none";
 
 }
+let currentEnemy = null;
+
 function startBattle(enemyId){
 
-    const enemy = enemies[enemyId];
+    currentEnemy = {
+        ...enemies[enemyId]
+    };
 
-    console.log(enemy.name);
+    document.getElementById(
+        "enemyName"
+    ).textContent = currentEnemy.name;
 
-    document
-        .getElementById("battleScreen")
-        .style.display = "block";
-
-    document.getElementById("controls")
-        .style.display = "none";
-
-    document.getElementById("messageBox")
-        .style.display = "none";
+    showBattleScreen();
 
 }
 function endBattle(){
