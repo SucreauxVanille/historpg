@@ -326,7 +326,17 @@ function spawnObject(id){
     }
 
 }
+//ワープ
+function changeMap(mapName, startX, startY){
 
+    currentMap = mapName;
+
+    player.x = startX;
+    player.y = startY;
+
+    render();
+
+}
 
 // =====================
 //   タイトル
