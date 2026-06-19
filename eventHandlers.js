@@ -180,3 +180,10 @@ function heroReveal(){
         }
     300);
 }
+function mirrorWarpMenu(){
+
+    showMessage(
+        "野尻湖へ移動しますか？"
+    );
+
+}
