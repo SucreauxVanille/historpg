@@ -221,6 +221,10 @@ function getObjectAt(x, y){
 }
 document.getElementById("searchBtn")
 .addEventListener("click", searchObject);
+document.getElementById("menuBtn")
+.addEventListener("click", showMainMenu);
+
+//オブジェクト移動
 function moveObject(id, dx, dy){
 
     const obj = getObjectById(id);
