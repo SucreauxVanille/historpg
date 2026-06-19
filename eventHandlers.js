@@ -39,7 +39,14 @@ function houseExitEvent(){
 }
 
 function brotherEvent(){
+    if(hasFlag("iyoAppeared")){
 
+        startMessage(
+            events.prologue_brother_after
+        );
+
+        return;
+    }
     startMessage(
         events.prologue_brother,
         () => {
