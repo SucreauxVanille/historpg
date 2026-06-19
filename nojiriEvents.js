@@ -1,7 +1,9 @@
 function returnMirrorEvent(){
 
-    showMessage(
-        "卑弥呼ハウスへ戻る機能は未実装です。"
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
     );
 
 }
