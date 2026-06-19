@@ -77,6 +77,12 @@ if(tileEvent){
     runEvent(tileEvent.event);
 }
        render();
+        if(isMessageOpen){
+        return;
+        }
+        if(isMenuOpen){
+        return;
+        }
 }
 
 //ステータス計算
