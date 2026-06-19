@@ -6,10 +6,12 @@ const player = {
     x: 8,
     y: 5,
     direction: "down",
-
-    moving: false
+    moving: false,
 };
-
+const playerStatus = {
+       name: "ゆうしゃ",
+       exp: 0
+};
 //正面タイル取得
 function getFrontTile(){
 
@@ -77,4 +79,45 @@ if(tileEvent){
        render();
 }
 
+//ステータス計算
+function getLevel(exp){
+    if(exp < 1000){
+        return Math.floor(exp / 100);
+    }else if(exp < 2500){
+        return 10 + Math.floor((exp - 1000) / 150);
+    }else{
+        return 20 + Math.floor((exp - 2500) / 200);
+    }
+}
 
+function getMaxHP(){
+    const lv = getLevel();
+    return Math.floor(20 + lv * 1.5);
+}
+
+function getMaxMP(){
+    const lv = getLevel();
+    return Math.floor(1 + lv);
+}
+
+function getATK(){
+    const lv = getLevel();
+    return Math.floor(10 + lv * 1.2);
+}
+
+function getDEF(){
+    const lv = getLevel();
+    return Math.floor(5 + lv * 0.5);
+}
+
+//ステータス取得
+function getStatus(){
+    return {
+        name: playerStatus.name,
+        level: getLevel(),
+        hp: getMaxHP(),
+        mp: getMaxMP(),
+        atk: getATK(),
+        def: getDEF()
+    };
+}
