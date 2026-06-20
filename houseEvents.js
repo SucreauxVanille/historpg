@@ -56,6 +56,11 @@ function brotherAnswer(){
     startMessage(["男「そうかそうか、そうだよな…」", endEvent]);
 
 }
+function stampEvent(){
+
+    startMessage(events.prologue_bed, endEvent);
+
+}
 function bedEvent(){
 
     startMessage(
