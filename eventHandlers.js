@@ -12,6 +12,7 @@ const eventHandlers = {
     houseExit: houseExitEvent,
     himiko: prologueHimiko,
     bed: bedEvent,
+    stamp: stampEvent,
     mirror: mirrorEvent,
     iyo: iyoEvent,
     brother: brotherEvent,
