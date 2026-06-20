@@ -18,7 +18,7 @@ function nojiriTutorialEvent(){
         () => {
 
             startBattle("boar");
-            endEvent
+            endEvent();
         }
     );
 
