@@ -90,9 +90,40 @@ for(const key in tileTypes){
     }
 }
 // =====================
-//   マップ
+//   マップとカメラ
 // =====================
+const camera = {
+    x: 0,
+    y: 0
+};
 
+function updateCamera(){
+
+    camera.x =
+        player.x - Math.floor(MAP_SIZE / 2);
+
+    camera.y =
+        player.y - Math.floor(MAP_SIZE / 2);
+
+    const maxX =
+        currentMap.tiles[0].length - MAP_SIZE;
+
+    const maxY =
+        currentMap.tiles.length - MAP_SIZE;
+
+    camera.x =
+        Math.max(
+            0,
+            Math.min(camera.x,maxX)
+        );
+
+    camera.y =
+        Math.max(
+            0,
+            Math.min(camera.y,maxY)
+        );
+
+}
 let currentMap = maps.himikoHouse;
 
 
@@ -114,21 +145,21 @@ const tileData = tileIds[tile];
 
 if(tileData.image){
 
-    ctx.drawImage(
-        tileImages[tileData.id],
-        x * TILE_SIZE,
-        y * TILE_SIZE,
-        TILE_SIZE,
-        TILE_SIZE
-    );
+ctx.drawImage(
+    tileImages[tileData.id],
+    (x - camera.x) * TILE_SIZE,
+    (y - camera.y) * TILE_SIZE,
+    TILE_SIZE,
+    TILE_SIZE
+);
 
 }else{
 
     ctx.fillStyle = tileData.color;
 
     ctx.fillRect(
-        x * TILE_SIZE,
-        y * TILE_SIZE,
+    (x - camera.x) * TILE_SIZE,
+    (y - camera.y) * TILE_SIZE,
         TILE_SIZE,
         TILE_SIZE
     );
@@ -158,8 +189,8 @@ function drawObjects(){
 
             ctx.drawImage(
                 img,
-                obj.x * TILE_SIZE,
-                obj.y * TILE_SIZE,
+                (obj.x - camera.x) * TILE_SIZE,
+                (obj.y - camera.y) * TILE_SIZE,
                 TILE_SIZE,
                 TILE_SIZE
             );
@@ -184,8 +215,13 @@ function drawObjects(){
 // 主人公
 function drawPlayer(){
 
-    const px = player.x * TILE_SIZE;
-    const py = player.y * TILE_SIZE;
+const px =
+    (player.x - camera.x)
+    * TILE_SIZE;
+
+const py =
+    (player.y - camera.y)
+    * TILE_SIZE;
 
     ctx.fillStyle = "blue";
 
@@ -220,9 +256,12 @@ function facePlayer(obj){
 }
 function render(){
 
+    updateCamera();
+
     drawMap();
     drawObjects();
     drawPlayer();
+
 }
 
 
