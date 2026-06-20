@@ -1,7 +1,7 @@
 function canControl(){
     return (
         gameState.mode === "field" &&
-        !gameState.lockInput&&
+        !gameState.lockInput &&
         !gameState.eventLock 
     );
 }
