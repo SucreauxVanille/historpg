@@ -17,3 +17,13 @@
     z-index:500;
 
 }
+#enemyArea{
+    text-align:center;
+}
+
+#enemyImage{
+    width:64px;
+    height:64px;
+
+    image-rendering: pixelated;
+}
