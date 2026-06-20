@@ -52,10 +52,11 @@
 }
 #battleLog{
 
-    height:80px;
-
+    height:140px;
+    position:absolute;
+    left:0;
+    bottom:0;
     margin:10px;
-
     padding:8px;
 
     background:black;
