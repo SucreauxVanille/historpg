@@ -36,6 +36,8 @@ function startBattle(enemyId){
         currentEnemy.name +
         " が あらわれた！"
     );
+    updateBattleStatus();
+
     showBattleScreen();
 
 }
@@ -48,6 +50,35 @@ function endBattle(){
         .style.display = "flex";
 
 }
+
+//ステータス
+function updateBattleStatus(){
+
+    const hero =
+        getStatus();
+
+    document.getElementById(
+        "battleStatus"
+    ).innerHTML =
+
+        "ゆうしゃ Lv" +
+        hero.lv +
+        "<br>" +
+
+        "体力 " +
+        hero.hp +
+        "/" +
+        hero.hp +
+        "<br>" +
+
+        "気力 " +
+        hero.mp +
+        "/" +
+        hero.mp;
+
+}
+
+//攻撃
 function attackEnemy(){
 
     currentEnemy.hp -= 10;
