@@ -386,15 +386,22 @@ function spawnObject(id){
 //ワープ
 function changeMap(mapName, startX, startY){
 
-    currentMap = mapName;
+    fadeOut();
 
-    player.x = startX;
-    player.y = startY;
+    setTimeout(() => {
 
-    render();
+        currentMap = mapName;
+
+        player.x = startX;
+        player.y = startY;
+
+        render();
+
+        fadeIn();
+
+    }, 500);
 
 }
-
 // =====================
 //   タイトル
 // =====================
