@@ -77,13 +77,23 @@ function startBattle(enemyId, onFinish = null){
         currentEnemy.name + " が あらわれた！"
     );
 
+fadeOut();
+document.getElementById("controls")
+    .style.display = "none";
+setTimeout(() => {
+
     showBattleScreen();
+
+    fadeIn();
+
+}, 500);
 
     // 次の操作を待つ
     setBattlePhase("intro");
 
 }
 function endBattle(){
+
     if(battleFinishedCallback){
 
         const callback =
@@ -93,11 +103,19 @@ function endBattle(){
 
         callback();
     }
-    document.getElementById("battleScreen")
-        .style.display = "none";
 
-    document.getElementById("controls")
-        .style.display = "flex";
+    fadeOut();
+
+    setTimeout(() => {
+
+        hideBattleScreen();
+
+        document.getElementById("controls")
+            .style.display = "flex";
+
+        fadeIn();
+
+    }, 500);
 
 }
 
