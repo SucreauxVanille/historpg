@@ -1,6 +1,10 @@
 //フェイズ管理
 let battlePhase = "none";
 
+//プレイヤー＆敵状態
+let battleState = "player"; // player / enemy
+let currentEnemy = null;
+
 function setBattlePhase(phase){
     battlePhase = phase;
 }
@@ -35,7 +39,15 @@ function hideBattleScreen(){
         .style.display = "none";
 
 }
-let currentEnemy = null;
+
+//コマンド管理
+function setCommandVisible(flag){
+
+    document.getElementById("battleCommand")
+        .style.display = flag ? "flex" : "none";
+
+}
+
 function setBattleLog(text){
 
     document.getElementById(
@@ -108,6 +120,12 @@ function updateBattleStatus(){
 //攻撃
 function attackEnemy(){
 
+    if(battleState !== "player") return;
+
+    battleState = "enemy";
+
+    setCommandVisible(false);
+
     currentEnemy.hp -= 10;
 
     setBattleLog(
@@ -118,18 +136,44 @@ function attackEnemy(){
 
     if(currentEnemy.hp <= 0){
 
-        startMessage(
-            [
-                currentEnemy.name +
-                "をたおした！"
-            ],
-            endBattle
-        );
+        setTimeout(() => {
 
+            startMessage(
+                [
+                    currentEnemy.name + "をたおした！"
+                ],
+                endBattle
+            );
+
+        }, 500);
+
+        return;
     }
 
+    // 敵ターンへ
+    setTimeout(enemyTurn, 600);
 }
+function enemyTurn(){
 
+    setBattleLog(
+        currentEnemy.name + " のこうげき！"
+    );
+
+    setTimeout(() => {
+
+        setBattleLog(
+            "ゆうしゃはダメージをうけた！"
+        );
+
+        setTimeout(() => {
+
+            battleState = "player";
+            setCommandVisible(true);
+
+        }, 600);
+
+    }, 600);
+}
 //コマンド出現
 function showBattleCommand(){
 
