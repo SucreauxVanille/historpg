@@ -20,8 +20,7 @@ function houseExitEvent(){
 }
 
 function prologueHimiko(){
-        startMessage(events.prologue_himiko);
-        endEvent();
+        startMessage(events.prologue_himiko, endEvent);
 }
 
 function brotherEvent(){
