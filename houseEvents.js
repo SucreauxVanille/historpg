@@ -56,7 +56,7 @@ function brotherEvent(){
 }
 function brotherAnswer(){
 
-    startMessage(["男「そうかそうか、そうだよな…」", endEvent]);
+    startMessage(["男「そうかそうか、そうだよな…」"], endEvent);
 
 }
 function stampEvent(){
@@ -209,6 +209,6 @@ function cancelWarp(){
 }
 function iyoEvent(){
 
-    startMessage(["壱与「冒険が長引いたら、私が記録しますね」", endEvent]);
+    startMessage(["壱与「冒険が長引いたら、私が記録しますね」"], endEvent);
 
 }
