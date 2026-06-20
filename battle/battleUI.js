@@ -83,7 +83,7 @@ function attackEnemy(){
     currentEnemy.hp -= 10;
 
     setBattleLog(
-        "ゆうしゃのこうげき！\n" +
+        "ゆうしゃの攻撃！\n" +
         currentEnemy.name +
         " に 10 のダメージ！"
     );
