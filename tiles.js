@@ -14,6 +14,7 @@ const tileTypes = {
     },
 
     rock: {
+        id: "rock",
         image: "images/tiles/rock.png",
         passable: false
     },
