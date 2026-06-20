@@ -55,8 +55,11 @@ function setBattleLog(text){
     ).textContent = text;
 
 }
-function startBattle(enemyId){
 
+//バトル開始
+let battleFinishedCallback = null;
+function startBattle(enemyId, onFinish = null){
+    battleFinishedCallback = onFinish;
     currentEnemy = {
         ...enemies[enemyId]
     };
@@ -76,12 +79,20 @@ function startBattle(enemyId){
 
     showBattleScreen();
 
-    // ここが重要：次の操作を待つ
+    // 次の操作を待つ
     setBattlePhase("intro");
 
 }
 function endBattle(){
+    if(battleFinishedCallback){
 
+        const callback =
+            battleFinishedCallback;
+
+        battleFinishedCallback = null;
+
+        callback();
+    }
     document.getElementById("battleScreen")
         .style.display = "none";
 
