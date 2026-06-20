@@ -9,6 +9,7 @@ const player = {
     moving: false,
 };
 const playerStatus = {
+       id: "hero",
        name: "ゆうしゃ",
        exp: 0
 };
