@@ -1,15 +1,16 @@
-let isMessageOpen = false;
 let canAdvanceMessage = false;
 //メッセージウインドウ
 let messages = [];
 let messageIndex = 0;
 let messageFinishedCallback = null;
+
 function showMessage(text){
 
     messageText.textContent = text;
     messageBox.style.display = "block";
 
-    isMessageOpen = true;
+    gameState.mode = "message";
+
     canAdvanceMessage = false;
 
     setTimeout(()=>{
@@ -18,6 +19,8 @@ function showMessage(text){
 }
 
 function startMessage(messageArray, onFinish = null){
+
+    gameState.mode = "message";
     messages = messageArray;
     messageIndex = 0;
 
@@ -26,9 +29,11 @@ function startMessage(messageArray, onFinish = null){
 }
 
 function hideMessage(){
+
     document.getElementById("messageBox").style.display = "none";
-    isMessageOpen = false;
+    gameState.mode = "field";
 }
+
 function nextMessage(){
     messageIndex++;
 if(messageIndex >= messages.length){
@@ -46,9 +51,9 @@ if(callback){
 }
 messageBox.addEventListener("pointerdown", ()=>{
 
-    if(!isMessageOpen){
-        return;
-    }
+if(gameState.mode !== "message"){
+    return;
+}
 
     if(!canAdvanceMessage){
         return;
@@ -82,6 +87,7 @@ button.addEventListener(
 
         container.innerHTML = "";
 
+        gameState.mode = "field";
         hideMessage();
 
         if(choice.action){
