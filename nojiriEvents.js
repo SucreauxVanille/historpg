@@ -4,10 +4,9 @@ function returnMirrorEvent(){
     );
     changeMap(
         maps.himikoHouse,
-        5,
-        5
+        5,5
     );
-
+    endEvent();
 }
 function nojiriTutorialEvent(){
 
