@@ -181,16 +181,22 @@ function mirrorWarpMenu(){
 
 }
 function goToNojiri(){
-
+    setTimeout(()=>{
     changeMap(
         maps.nojiriLake,
         1,
         10
-    );
+    );    },
+    300);
 showMessage("壱与「邪馬台国に戻るときは、青いうずまきに触れてください」");
 endEvent();
 }
 function cancelWarp(){
     hideMessage();
     endEvent();
+}
+function iyoEvent(){
+
+    startMessage(["壱与「冒険が長引いたら、私が記録しますね」", endEvent]);
+
 }
