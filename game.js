@@ -17,13 +17,12 @@ const pressedKeys = {
     left: false,
     right: false
 };
-const gameState = {
-    mode: "title", 
-    // title / field / message / menu / battle
-
+const gameState = { 
+    mode: "field",
     lockInput: false,
-    eventLock: false, 
-    subState: null,
+
+    eventLock: false,
+    eventChain: false,
 
     flags: {}
 };
@@ -286,16 +285,16 @@ document.getElementById("menuBtn")
 //イベント起動
 function runEvent(eventId){
 
-    const handler =
-        eventHandlers[eventId];
+    gameState.eventLock = true;
+
+    const handler = eventHandlers[eventId];
 
     if(handler){
         handler();
         return;
     }
 
-    const eventData =
-        events[eventId];
+    const eventData = events[eventId];
 
     if(eventData){
         startMessage(eventData);
