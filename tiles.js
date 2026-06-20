@@ -14,7 +14,7 @@ const tileTypes = {
     },
 
     rock: {
-        color: "#666666",
+        image: "images/tiles/rock.png",
         passable: false
     },
 
