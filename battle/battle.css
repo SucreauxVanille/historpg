@@ -1,11 +1,8 @@
 #battleScreen{
-
     display:none;
-
     flex-direction:column;
 
     position:absolute;
-
     top:0;
     left:0;
 
@@ -13,23 +10,28 @@
     height:100%;
 
     background:black;
-
     color:white;
 
     z-index:300;
-
 }
 #battleStatus{
+
     height:100px;
+
+    border:3px solid white;
+
+    box-sizing:border-box;
+
+    padding:10px;
 }
 #enemyArea{
+
     flex:1;
+
     display:flex;
-    flex-direction:column;
+
     justify-content:center;
     align-items:center;
-
-    height:200px;
 }
 
 #enemyImage{
@@ -40,10 +42,16 @@
 }
 #enemyName{
 
-    text-align:center;
+    height:40px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
 
     font-size:20px;
 
+    border-top:3px solid white;
 }
 #battleCommand{
 
@@ -52,34 +60,30 @@
 }
 #battleLog{
 
-    position:absolute;
-    left:0;
-    bottom:0;
+    height:120px;
 
-    height:140px;
-    width:100%;
-
-    background:black;
-    border:3px solid white;
+    border-top:3px solid white;
 
     box-sizing:border-box;
+
     padding:12px;
 
-    color:white;
+    overflow-y:auto;
 
-    white-space: pre-line;
-    z-index:900;
+    white-space:pre-line;
 }
 #battleCommand{
+
+    height:80px;
 
     display:flex;
 
     justify-content:center;
+    align-items:center;
 
     gap:10px;
 
-    padding:10px;
-    z-index:1000;
+    border-top:3px solid white;
 }
 .battleButton{
 
@@ -93,5 +97,4 @@
     padding:8px 16px;
 
     cursor:pointer;
-
 }
