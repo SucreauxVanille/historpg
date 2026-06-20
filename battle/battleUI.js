@@ -1,3 +1,26 @@
+//フェイズ管理
+let battlePhase = "none";
+
+function setBattlePhase(phase){
+    battlePhase = phase;
+}
+document.getElementById("battleLog").addEventListener(
+    "click",
+    function(){
+
+        if(battlePhase === "intro"){
+
+            document.getElementById("battleCommand")
+                .style.display = "flex";
+
+            setBattleLog("");
+
+            setBattlePhase("command");
+
+        }
+
+    }
+);
 function showBattleScreen(){
 
     document
@@ -25,19 +48,24 @@ function startBattle(enemyId){
     currentEnemy = {
         ...enemies[enemyId]
     };
-    document.getElementById(
-        "enemyImage"
-    ).src = currentEnemy.image;
-    document.getElementById(
-        "enemyName"
-    ).textContent = currentEnemy.name;
-    setBattleLog(
-        currentEnemy.name +
-        " が あらわれた！"
-    );
+
+    document.getElementById("enemyImage").src = currentEnemy.image;
+    document.getElementById("enemyName").textContent = currentEnemy.name;
+
     updateBattleStatus();
 
+    // コマンドは最初隠す
+    document.getElementById("battleCommand").style.display = "none";
+
+    // 出現ログだけ出す
+    setBattleLog(
+        currentEnemy.name + " が あらわれた！"
+    );
+
     showBattleScreen();
+
+    // ここが重要：次の操作を待つ
+    setBattlePhase("intro");
 
 }
 function endBattle(){
@@ -101,9 +129,12 @@ function attackEnemy(){
     }
 
 }
-document
-.getElementById("attackBtn")
-.addEventListener(
-    "click",
-    attackEnemy
-);
+
+//コマンド出現
+function showBattleCommand(){
+
+    document.getElementById(
+        "battleCommand"
+    ).style.display = "flex";
+
+}
