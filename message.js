@@ -29,8 +29,7 @@ function startMessage(messageArray, onFinish = null){
 }
 
 function hideMessage(){
-
-    document.getElementById("messageBox").style.display = "none";
+    messageBox.style.display = "none";
     gameState.mode = "field";
 }
 
