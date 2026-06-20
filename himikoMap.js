@@ -37,7 +37,7 @@ tileEvents: [
         active: true,
         solid: true,
 
-        event: "prologueHimiko"
+        event: "himiko"
     },
             
     {
@@ -68,7 +68,7 @@ tileEvents: [
                 y: 2,
                 active: true,
                 solid: true,
-                event: "prologue_stamp"
+                event: "stamp"
             },
             {
                 id: "mirror",
