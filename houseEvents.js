@@ -8,15 +8,13 @@ function startOpening(){
 
             fadeIn();
 
-            startMessage(
-                events.prologueStart
-            );
+            startMessage(events.prologueStart, endEvent);
 
         }
     );
 }
 function houseExitEvent(){
-    showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」");
+    showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」", endEvent);
     player.y--;
     render();
 }
@@ -51,9 +49,7 @@ function brotherEvent(){
 }
 function brotherAnswer(){
 
-    startMessage([
-        "男「そうかそうか、そうだよな…」"
-    ]);
+    startMessage(["男「そうかそうか、そうだよな…」", endEvent]);
 
 }
 function bedEvent(){
@@ -67,7 +63,7 @@ function bedEvent(){
             setTimeout(()=>{
 
                 fadeIn();
-
+                endEvent();
             },1500);
 
         }
@@ -159,9 +155,7 @@ function heroReveal(){
     setTimeout(()=>{
     setObjectDirection("iyo", "left");
 
-    startMessage(
-        events.iyoArrival4
-    );
+    startMessage(events.iyoArrival4, endEvent);
         },
     300);
 }
@@ -178,7 +172,7 @@ function mirrorWarpMenu(){
                 },
                 {
                     text:"いいえ",
-                    action: hideMessage
+                    action: cancelWarp
                 }
             ]);
 
@@ -194,4 +188,9 @@ function goToNojiri(){
         10
     );
 showMessage("壱与「邪馬台国に戻るときは、青いうずまきに触れてください」");
+endEvent();
+}
+function cancelWarp(){
+    hideMessage();
+    endEvent();
 }
