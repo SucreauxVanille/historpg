@@ -196,8 +196,8 @@ function goToNojiri(){
     setTimeout(()=>{
     changeMap(
         maps.nojiriLake,
-        1,
-        10
+        2,
+        20
     );    },
     1000);
 showMessage("壱与「邪馬台国に戻るときは、青いうずまきに触れてください」");
