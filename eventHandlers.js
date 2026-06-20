@@ -10,6 +10,7 @@ function hasFlag(flagName){
 const eventHandlers = {
     startOpening: startOpening,
     houseExit: houseExitEvent,
+    himiko: prologue_himiko,
     bed: bedEvent,
     mirror: mirrorEvent,
     iyo: iyoEvent,
