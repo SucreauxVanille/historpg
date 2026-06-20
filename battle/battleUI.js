@@ -20,7 +20,9 @@ function startBattle(enemyId){
     currentEnemy = {
         ...enemies[enemyId]
     };
-
+    document.getElementById(
+        "enemyImage"
+    ).src = currentEnemy.image;
     document.getElementById(
         "enemyName"
     ).textContent = currentEnemy.name;
