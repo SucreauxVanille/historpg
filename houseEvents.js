@@ -19,6 +19,11 @@ function houseExitEvent(){
     render();
 }
 
+function himikoEvent(){
+        startMessage(events.prologue_himiko);
+        endEvent();
+}
+
 function brotherEvent(){
     if(hasFlag("iyoAppeared")){
 
