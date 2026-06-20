@@ -14,7 +14,13 @@ function hideBattleScreen(){
 
 }
 let currentEnemy = null;
+function setBattleLog(text){
 
+    document.getElementById(
+        "battleLog"
+    ).textContent = text;
+
+}
 function startBattle(enemyId){
 
     currentEnemy = {
@@ -26,7 +32,10 @@ function startBattle(enemyId){
     document.getElementById(
         "enemyName"
     ).textContent = currentEnemy.name;
-
+    setBattleLog(
+        currentEnemy.name +
+        " が あらわれた！"
+    );
     showBattleScreen();
 
 }
@@ -42,6 +51,12 @@ function endBattle(){
 function attackEnemy(){
 
     currentEnemy.hp -= 10;
+
+    setBattleLog(
+        "ゆうしゃのこうげき！\n" +
+        currentEnemy.name +
+        " に 10 のダメージ！"
+    );
 
     if(currentEnemy.hp <= 0){
 
