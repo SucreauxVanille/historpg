@@ -30,6 +30,18 @@ const gameState = {
 let renderEnabled = true;
 let animationEnabled = true;
 
+//状態管理
+function setGameMode(mode){
+    gameState.mode = mode;
+}
+function lockInput(){
+    gameState.lockInput = true;
+}
+
+function unlockInput(){
+    gameState.lockInput = false;
+}
+
 //アセット
 const loadedAssets = {};
 
