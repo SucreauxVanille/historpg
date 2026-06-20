@@ -61,7 +61,7 @@ function updateBattleStatus(){
     ).innerHTML =
 
         "ゆうしゃ： Lv" +
-        hero.lv +
+        status.level +
         "<br>" +
 
         "体力： " +
