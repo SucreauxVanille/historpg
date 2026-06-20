@@ -27,3 +27,19 @@
 
     image-rendering: pixelated;
 }
+#battleLog{
+
+    height:80px;
+
+    margin:10px;
+
+    padding:8px;
+
+    background:black;
+    border:2px solid white;
+
+    color:white;
+
+    box-sizing:border-box;
+
+}
