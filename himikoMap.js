@@ -37,7 +37,7 @@ tileEvents: [
         active: true,
         solid: true,
 
-        event: "prologue_himiko"
+        event: "prologueHimiko"
     },
             
     {
