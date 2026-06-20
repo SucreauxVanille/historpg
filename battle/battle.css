@@ -1,7 +1,6 @@
 #battleScreen{
 
-    display:flex;
-    flex-direction:column;
+    display:none;
 
     position:absolute;
 
