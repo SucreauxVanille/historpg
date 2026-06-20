@@ -22,7 +22,7 @@ const gameState = {
     // title / field / message / menu / battle
 
     lockInput: false,
-
+    eventLock: false, 
     subState: null,
 
     flags: {}
