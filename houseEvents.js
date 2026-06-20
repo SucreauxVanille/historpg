@@ -14,7 +14,10 @@ function startOpening(){
     );
 }
 function houseExitEvent(){
-    showMessage("卑弥呼「外は危険じゃ！出てはならぬ！」", endEvent);
+    startMessage(
+    ["卑弥呼「外は危険じゃ！出てはならぬ！」"],
+    endEvent
+);
     player.y--;
     render();
 }
