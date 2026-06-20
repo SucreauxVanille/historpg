@@ -18,10 +18,17 @@ const pressedKeys = {
     right: false
 };
 const gameState = {
+    mode: "title", 
+    // title / field / message / menu / battle
+
+    lockInput: false,
+
+    subState: null,
 
     flags: {}
-
 };
+let renderEnabled = true;
+let animationEnabled = true;
 
 //アセット
 const loadedAssets = {};
@@ -202,13 +209,12 @@ let animationFrame = 0;
 
 setInterval(() => {
 
-    animationFrame =
-        animationFrame === 0 ? 1 : 0;
+    if(!animationEnabled) return;
 
+    animationFrame = animationFrame === 0 ? 1 : 0;
     render();
 
 }, 500);
-
 
 //オブジェクト取得
 function getObjectAt(x, y){
