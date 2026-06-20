@@ -1,3 +1,10 @@
+function canControl(){
+    return (
+        gameState.mode === "field" &&
+        !gameState.lockInput
+    );
+}
+
 function attemptMove(direction){
 
     switch(direction){
@@ -22,7 +29,8 @@ function attemptMove(direction){
 }
 //キー操作
 document.addEventListener("keydown", (e)=>{
-if(isMessageOpen){
+
+if(!canControl()){
     return;
 }
     switch(e.key){
@@ -91,7 +99,8 @@ document.addEventListener("keyup", (e)=>{
 
 //ボタン
 function pressDirection(direction){
-if(isMessageOpen){
+
+if(!canControl()){
     return;
 }
     if(!pressedKeys[direction]){
@@ -155,6 +164,10 @@ buttons.forEach(([id, direction])=>{
 
 //インターバル
 setInterval(()=>{
+
+if(!canControl()){
+    return;
+}
 
     if(pressedKeys.up){
         movePlayer(0,-1,"up");
