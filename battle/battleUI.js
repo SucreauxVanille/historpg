@@ -60,17 +60,17 @@ function updateBattleStatus(){
         "battleStatus"
     ).innerHTML =
 
-        "ゆうしゃ Lv" +
+        "ゆうしゃ： Lv" +
         hero.lv +
         "<br>" +
 
-        "体力 " +
+        "体力： " +
         hero.hp +
         "/" +
         hero.hp +
         "<br>" +
 
-        "気力 " +
+        "気力： " +
         hero.mp +
         "/" +
         hero.mp;
