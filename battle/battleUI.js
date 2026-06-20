@@ -37,9 +37,26 @@ function endBattle(){
         .style.display = "flex";
 
 }
+function attackEnemy(){
+
+    currentEnemy.hp -= 10;
+
+    if(currentEnemy.hp <= 0){
+
+        startMessage(
+            [
+                currentEnemy.name +
+                "をたおした！"
+            ],
+            endBattle
+        );
+
+    }
+
+}
 document
-.getElementById("battleTestBtn")
+.getElementById("attackBtn")
 .addEventListener(
     "click",
-    endBattle
+    attackEnemy
 );
