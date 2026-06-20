@@ -28,5 +28,5 @@ function naumannBossEvent(){
     showMessage(
         "巨大なナウマンゾウが立ちはだかっている。"
     );
-
+    endEvent();
 }
