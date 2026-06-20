@@ -75,7 +75,20 @@ for(const key in assets){
 
     }
 }
+const tileImages = {};
 
+for(const key in tileTypes){
+
+    const tile = tileTypes[key];
+
+    if(tile.image){
+
+        const img = new Image();
+        img.src = tile.image;
+
+        tileImages[key] = img;
+    }
+}
 // =====================
 //   マップ
 // =====================
@@ -99,14 +112,28 @@ function drawMap(){
 
 const tileData = tileIds[tile];
 
-ctx.fillStyle = tileData.color;
+if(tileData.image){
 
-            ctx.fillRect(
-                x * TILE_SIZE,
-                y * TILE_SIZE,
-                TILE_SIZE,
-                TILE_SIZE
-            );
+    ctx.drawImage(
+        tileImages[tileData.id],
+        x * TILE_SIZE,
+        y * TILE_SIZE,
+        TILE_SIZE,
+        TILE_SIZE
+    );
+
+}else{
+
+    ctx.fillStyle = tileData.color;
+
+    ctx.fillRect(
+        x * TILE_SIZE,
+        y * TILE_SIZE,
+        TILE_SIZE,
+        TILE_SIZE
+    );
+
+}
         }
     }
 }
