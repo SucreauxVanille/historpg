@@ -19,7 +19,7 @@ function houseExitEvent(){
     render();
 }
 
-function himikoEvent(){
+function prologueHimiko(){
         startMessage(events.prologue_himiko);
         endEvent();
 }
