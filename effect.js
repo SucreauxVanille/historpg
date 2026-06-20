@@ -42,3 +42,28 @@ function flashScreen(){
     },300);
 
 }
+
+//敵キャラ点滅
+function flashElement(element){
+
+    let count = 0;
+
+    const interval = setInterval(()=>{
+
+        element.style.visibility =
+            element.style.visibility === "hidden"
+            ? "visible"
+            : "hidden";
+
+        count++;
+
+        if(count >= 6){
+
+            clearInterval(interval);
+
+            element.style.visibility = "visible";
+        }
+
+    },100);
+
+}
