@@ -19,6 +19,13 @@
 }
 #enemyArea{
     text-align:center;
+    
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    height:200px;
 }
 
 #enemyImage{
@@ -41,5 +48,5 @@
     color:white;
 
     box-sizing:border-box;
-
+    white-space: pre-line;
 }
