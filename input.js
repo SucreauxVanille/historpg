@@ -1,8 +1,18 @@
 function canControl(){
+
+    console.log(
+        "mode:",
+        gameState.mode,
+        "lockInput:",
+        gameState.lockInput,
+        "eventLock:",
+        gameState.eventLock
+    );
+
     return (
         gameState.mode === "field" &&
         !gameState.lockInput &&
-        !gameState.eventLock 
+        !gameState.eventLock
     );
 }
 
