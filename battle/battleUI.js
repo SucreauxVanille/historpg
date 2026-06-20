@@ -156,7 +156,9 @@ function attackEnemy(){
     setCommandVisible(false);
 
     currentEnemy.hp -= 10;
-
+    flashElement(
+    document.getElementById("enemyImage")
+    );
     setBattleLog(
         "ゆうしゃの攻撃！\n" +
         currentEnemy.name +
