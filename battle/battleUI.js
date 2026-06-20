@@ -2,8 +2,7 @@ function showBattleScreen(){
 
     document
         .getElementById("battleScreen")
-        .style.display = "block";
-
+        .style.display = "flex";
 }
 
 function hideBattleScreen(){
