@@ -138,3 +138,10 @@ function showBattleCommand(){
     ).style.display = "flex";
 
 }
+//攻撃ボタン
+document
+.getElementById("attackBtn")
+.addEventListener(
+    "click",
+    attackEnemy
+);
