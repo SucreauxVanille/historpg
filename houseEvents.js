@@ -61,7 +61,7 @@ function brotherAnswer(){
 }
 function stampEvent(){
 
-    startMessage(events.prologue_bed, endEvent);
+    startMessage(events.prologue_stamp, endEvent);
 
 }
 function bedEvent(){
@@ -199,7 +199,7 @@ function goToNojiri(){
         1,
         10
     );    },
-    300);
+    1000);
 showMessage("壱与「邪馬台国に戻るときは、青いうずまきに触れてください」");
 endEvent();
 }
