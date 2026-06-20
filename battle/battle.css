@@ -66,4 +66,5 @@
 
     box-sizing:border-box;
     white-space: pre-line;
+    z-index:1000;
 }
