@@ -46,7 +46,8 @@ tileEvents: [
     y:10,
     active:false,
     solid: true,
-    direction:"up"
+    direction:"up",
+    event:"iyo"
     },
             
          {
