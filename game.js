@@ -300,7 +300,10 @@ function runEvent(eventId){
         startMessage(eventData);
     }
 }
-
+//イベント終了
+function endEvent(){
+    gameState.eventLock = false;
+}
 //オブジェクト検出
 function searchObject(){
 
