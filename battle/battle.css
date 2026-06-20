@@ -68,7 +68,7 @@
     color:white;
 
     white-space: pre-line;
-    z-index:1000;
+    z-index:900;
 }
 #battleCommand{
 
@@ -79,7 +79,7 @@
     gap:10px;
 
     padding:10px;
-
+    z-index:1000;
 }
 .battleButton{
 
