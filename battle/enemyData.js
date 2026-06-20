@@ -4,7 +4,8 @@ const enemies = {
         name: "狂暴イノシシ",
         hp: 20,
         atk: 5,
-        exp: 20
+        exp: 20,
+        image: "battle/images/boar.png"
     },
 
     deer: {
