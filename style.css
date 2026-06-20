@@ -76,7 +76,7 @@ canvas{
     color:white;
 
     text-align:left;
-    z-index: 200;
+    z-index: 999;
 }
 
 #messageText{
