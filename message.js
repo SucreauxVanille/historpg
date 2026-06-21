@@ -35,14 +35,9 @@ function hideMessage(){
     messageBox.style.display = "none";
     gameState.mode = "field";
 
-    inputLocked = true;
-
-    setTimeout(()=>{
-        inputLocked = false;
-    }, 500);
+    lockInputFor(250);
 
 }
-
 //次メッセージ
 function nextMessage(){
     messageIndex++;
