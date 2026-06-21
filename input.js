@@ -162,6 +162,31 @@ buttons.forEach(([id, direction])=>{
     });
 
 });
+//しらべる
+document
+.getElementById("searchBtn")
+.addEventListener("click", ()=>{
+
+    if(!canControl()){
+        return;
+    }
+
+    searchObject();
+
+});
+
+//メニュー
+document
+.getElementById("menuBtn")
+.addEventListener("click", ()=>{
+
+    if(!canControl()){
+        return;
+    }
+
+    showMainMenu();
+
+});
 
 //インターバル
 setInterval(()=>{
