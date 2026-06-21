@@ -197,6 +197,7 @@ if(currentEnemy.hp <= 0){
     playerStatus.exp += currentEnemy.exp;
 
     setBattlePhase("victory");
+    updateBattleUI();
 
     setBattleLog(
         currentEnemy.name + "をたおした！\n" +
