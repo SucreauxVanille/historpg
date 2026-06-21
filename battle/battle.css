@@ -58,9 +58,13 @@
     height:140px;
 
 }
+#battleBottom{
+    height:140px;
+    border-top:3px solid white;
+}
 #battleLog{
 
-    height:120px;
+    height:140px;
 
     border-top:3px solid white;
 
@@ -74,7 +78,7 @@
 }
 #battleCommand{
 
-    height:80px;
+    height:140px;
 
     display:flex;
 
