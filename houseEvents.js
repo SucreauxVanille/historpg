@@ -174,7 +174,7 @@ function heroReveal(){
 function mirrorWarpMenu(){
 
     startMessage(
-        ["野尻湖へ移動しますか？"],
+        ["壱与「野尻湖へ出発しますか？」"],
         () => {
 
             showChoice([
