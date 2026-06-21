@@ -113,18 +113,17 @@ setTimeout(() => {
     setBattlePhase("intro");
 
 }
-function endBattle(){
+function endBattle(result = "win"){
+
     battleState = "player";
     battlePhase = "none";
-    setCommandVisible(false);
+
     if(battleFinishedCallback){
 
-        const callback =
-            battleFinishedCallback;
-
+        const callback = battleFinishedCallback;
         battleFinishedCallback = null;
 
-        callback();
+        callback(result);
     }
 
     fadeOut();
@@ -139,7 +138,6 @@ function endBattle(){
         fadeIn();
 
     }, 500);
-
 }
 
 //ステータス
@@ -277,10 +275,53 @@ setBattlePhase("waiting");
     }, 600);
 }
 
-//攻撃ボタン
+//にげる
+function runAway(){
+
+    if(battleState !== "player") return;
+
+    battleState = "enemy";
+    setBattlePhase("action");
+    setCommandVisible(false);
+
+    setBattleLog("ゆうしゃはにげだした！");
+
+    setTimeout(() => {
+
+        const success = Math.random() < 0.9;
+
+        if(success){
+
+            setBattleLog("うまくにげきれた！");
+
+            setTimeout(() => {
+                endBattle("escape");
+            }, 600);
+
+        } else {
+
+            setBattleLog("しかしまわりこまれた！");
+
+            setTimeout(() => {
+                enemyTurn();
+            }, 800);
+
+        }
+
+    }, 500);
+}
+        
+//ボタン
 document
 .getElementById("attackBtn")
 .addEventListener(
     "click",
     attackEnemy
+);
+
+document
+.getElementById("runBtn")
+.addEventListener(
+    "click",
+    runAway
 );
