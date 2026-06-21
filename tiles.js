@@ -20,7 +20,8 @@ const tileTypes = {
     },
 
     water: {
-        color: "#4aa3ff",
+        id: "water",
+        image: "images/tiles/water.png",
         passable: false
     }
 
