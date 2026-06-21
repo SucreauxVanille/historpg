@@ -95,7 +95,7 @@ setTimeout(() => {
     fadeIn();
 
 }, 500);
-
+    updateBattleUI(); 
     // 次の操作を待つ
     setBattlePhase("intro");
 
