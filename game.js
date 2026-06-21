@@ -339,14 +339,6 @@ function setObjectDirection(id, direction){
     render();
 
 }
-// =====================
-//   ボタン
-// =====================
-
-document.getElementById("searchBtn")
-.addEventListener("click", searchObject);
-document.getElementById("menuBtn")
-.addEventListener("click", showMainMenu);
 
 //イベント起動
 function runEvent(eventId){
