@@ -186,6 +186,7 @@ function attackEnemy(){
     );
 
     if(currentEnemy.hp <= 0){
+        playerStatus.exp += currentEnemy.exp;
         setBattlePhase("victory");
         document.getElementById("enemyImage")
         .style.display = "none";
@@ -196,6 +197,7 @@ function attackEnemy(){
 
 setBattleLog(
     currentEnemy.name + "をたおした！"
+    currentEnemy.exp + " の経験値を獲得！"
 );
 
 setBattlePhase("victory");
@@ -206,7 +208,7 @@ setBattlePhase("victory");
     }
 
     // 敵ターンへ
-    setTimeout(enemyTurn, 600);
+    setTimeout(enemyTurn, 900);
 }
 function enemyTurn(){
 
@@ -226,7 +228,7 @@ battleState = "player";
 
 setBattlePhase("waiting");
 
-        }, 600);
+        }, 900);
 
     }, 600);
 }
