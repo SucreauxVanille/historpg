@@ -129,14 +129,20 @@ function updateBattleStatus(){
 
 //攻撃
 function attackEnemy(){
+
     if(battleState !== "player") return;
+
     battleState = "enemy";
     setBattlePhase("action");
 
     const hero = getStatus();
+
     setTimeout(() => {
+
         setBattleLog("ゆうしゃの攻撃！");
+
         setTimeout(() => {
+
             const damage =
                 Math.floor(
                     hero.atk *
@@ -155,40 +161,42 @@ function attackEnemy(){
                 damage + " のダメージ！"
             );
 
-            // =========================
+            // ダメージ表示時間
+            setTimeout(() => {
 
-            // 撃破判定
+                if(currentEnemy.hp <= 0){
 
-            // =========================
+                    playerStatus.exp += currentEnemy.exp;
 
-if(currentEnemy.hp <= 0){
-    playerStatus.exp += currentEnemy.exp;
+                    setBattlePhase("victory");
+                    updateBattleUI();
 
-    setBattlePhase("victory");
-    updateBattleUI();
+                    setBattleLog(
+                        currentEnemy.name + "をたおした！\n" +
+                        currentEnemy.exp + " の経験値を獲得！"
+                    );
 
-    setBattleLog(
-        currentEnemy.name + "をたおした！\n" +
-        currentEnemy.exp + " の経験値を獲得！"
-    );
+                    setTimeout(() => {
 
-    setTimeout(() => {
-        document.getElementById("enemyImage").style.display = "none";
-        document.getElementById("enemyName").textContent = "";
-    }, 500);
+                        document.getElementById("enemyImage")
+                            .style.display = "none";
 
-    return;
-}
+                        document.getElementById("enemyName")
+                            .textContent = "";
 
-            // =========================
+                    }, 500);
 
-            // 生存時：敵ターンへ
+                    return;
+                }
 
-            // =========================
+                setTimeout(enemyTurn, 600);
 
-            setTimeout(enemyTurn, 600);
+            }, 600);
+
         }, 500);
+
     }, 400);
+
 }
 
 //敵ターン
