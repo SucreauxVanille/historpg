@@ -5,35 +5,36 @@ let battlePhase = "none";
 let battleState = "player"; // player / enemy
 let currentEnemy = null;
 
+//UI管理
+function updateBattleUI(){
+
+    const isCommand = battlePhase === "command";
+
+    document.getElementById("battleCommand")
+        .style.display = isCommand ? "flex" : "none";
+
+    document.getElementById("battleLog")
+        .style.display = isCommand ? "none" : "block";
+}
+
 function setBattlePhase(phase){
     battlePhase = phase;
+    updateBattleUI();
 }
-document.getElementById("battleLog").addEventListener(
-    "click",
-    function(){
 
-        if(
-            battlePhase === "intro" ||
-            battlePhase === "waiting"
-        ){
-            setCommandVisible(true);
+//クリック動作
+document.getElementById("battleLog").addEventListener("click", function(){
 
-            setBattleLog("");
-
-            setBattlePhase("command");
-
-            return;
-        }
-
-        if(battlePhase === "victory"){
-
-            endBattle();
-
-            return;
-        }
-
+    if(battlePhase === "intro" || battlePhase === "waiting"){
+        setBattlePhase("command");
+        setBattleLog("");
+        return;
     }
-);
+
+    if(battlePhase === "victory"){
+        endBattle();
+    }
+});
 function showBattleScreen(){
 
     document
@@ -46,17 +47,6 @@ function hideBattleScreen(){
     document
         .getElementById("battleScreen")
         .style.display = "none";
-
-}
-
-//コマンド管理
-function setCommandVisible(flag){
-
-    document.getElementById("battleCommand")
-        .style.display = flag ? "flex" : "none";
-
-    document.getElementById("battleLog")
-        .style.display = flag ? "none" : "block";
 
 }
 
@@ -89,9 +79,6 @@ document.getElementById("enemyName").textContent =
     currentEnemy.name;
     
     updateBattleStatus();
-
-    // コマンドは最初隠す
-   setCommandVisible(false);
 
     // 出現ログだけ出す
     setBattleLog(
@@ -174,7 +161,6 @@ function attackEnemy(){
 
     battleState = "enemy";
     setBattlePhase("action");
-    setCommandVisible(false);
 
     const hero = getStatus();
 
@@ -206,31 +192,26 @@ function attackEnemy(){
             // =========================
             // 撃破判定
             // =========================
-            if(currentEnemy.hp <= 0){
+if(currentEnemy.hp <= 0){
 
-                playerStatus.exp += currentEnemy.exp;
-                setBattlePhase("victory");
+    playerStatus.exp += currentEnemy.exp;
 
-                setTimeout(() => {
+    setBattlePhase("victory");
 
-                    setBattleLog(
-                        currentEnemy.name +
-                        "をたおした！\n" +
-                        currentEnemy.exp +
-                        " の経験値を獲得！"
-                    );
+    setBattleLog(
+        currentEnemy.name + "をたおした！\n" +
+        currentEnemy.exp + " の経験値を獲得！"
+    );
 
-                    setTimeout(() => {
+    setTimeout(() => {
 
-                        document.getElementById("enemyImage").style.display = "none";
-                        document.getElementById("enemyName").textContent = "";
+        document.getElementById("enemyImage").style.display = "none";
+        document.getElementById("enemyName").textContent = "";
 
-                    }, 500);
+    }, 500);
 
-                }, 300);
-
-                return; // ★ここで完全終了
-            }
+    return;
+}
 
             // =========================
             // 生存時：敵ターンへ
@@ -241,29 +222,27 @@ function attackEnemy(){
 
     }, 400);
 }
+
+//敵ターン
 function enemyTurn(){
-setCommandVisible(false);
-    setBattleLog(
-        currentEnemy.name + " のこうげき！"
-    );
+
+    setBattlePhase("action");
+
+    setBattleLog(currentEnemy.name + " のこうげき！");
 
     setTimeout(() => {
-setCommandVisible(false);
-        setBattleLog(
-            "ゆうしゃはダメージをうけた！"
-        );
+
+        setBattleLog("ゆうしゃはダメージをうけた！");
 
         setTimeout(() => {
 
-battleState = "player";
-
-setBattlePhase("waiting");
+            battleState = "player";
+            setBattlePhase("waiting");
 
         }, 600);
 
     }, 600);
 }
-
 //にげる
 function runAway(){
 
@@ -271,7 +250,6 @@ function runAway(){
 
     battleState = "enemy";
     setBattlePhase("action");
-    setCommandVisible(false);
 
     setBattleLog("ゆうしゃはにげだした！");
 
@@ -298,8 +276,7 @@ function runAway(){
         }
 
     }, 500);
-}
-        
+}     
 //ボタン
 document
 .getElementById("attackBtn")
