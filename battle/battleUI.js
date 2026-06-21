@@ -55,6 +55,9 @@ function setCommandVisible(flag){
     document.getElementById("battleCommand")
         .style.display = flag ? "flex" : "none";
 
+    document.getElementById("battleLog")
+        .style.display = flag ? "none" : "block";
+
 }
 
 function setBattleLog(text){
@@ -172,52 +175,93 @@ function attackEnemy(){
     if(battleState !== "player") return;
 
     battleState = "enemy";
-    setBattlePhase("message");
+    setBattlePhase("action");
     setCommandVisible(false);
 
-    currentEnemy.hp -= 10;
-    flashElement(
-    document.getElementById("enemyImage")
-    );
-    setBattleLog(
-        "ゆうしゃの攻撃！\n" +
-        currentEnemy.name +
-        " に 10 のダメージ！"
-    );
+    const hero = getStatus();
 
-    if(currentEnemy.hp <= 0){
-        playerStatus.exp += currentEnemy.exp;
-        setBattlePhase("victory");
-        document.getElementById("enemyImage")
-        .style.display = "none";
+    // ① まず待つ
+    setTimeout(() => {
 
-        document.getElementById("enemyName")
-        .textContent = "";
+        // ② 攻撃宣言
+        setBattleLog("ゆうしゃの攻撃！");
+
+        // ③ さらに少し待つ
         setTimeout(() => {
 
-setBattleLog(
-    currentEnemy.name + "をたおした！\n" +
-    currentEnemy.exp + " の経験値を獲得！"
-);
+            const damage =
+                Math.floor(
+                    hero.atk *
+                    (0.9 + Math.random() * 0.2)
+                );
 
-setBattlePhase("victory");
+            currentEnemy.hp -= damage;
+
+            flashElement(
+                document.getElementById("enemyImage")
+            );
+
+            setBattleLog(
+                currentEnemy.name +
+                " に " +
+                damage +
+                " のダメージ！"
+            );
+
+if(currentEnemy.hp <= 0){
+
+    playerStatus.exp += currentEnemy.exp;
+
+    setBattlePhase("victory");
+
+    setTimeout(() => {
+
+        setBattleLog(
+            currentEnemy.name +
+            " に " +
+            damage +
+            " のダメージ！"
+        );
+
+        flashElement(
+            document.getElementById("enemyImage")
+        );
+
+        setTimeout(() => {
+
+            setBattleLog(
+                currentEnemy.name + "をたおした！\n" +
+                currentEnemy.exp + " の経験値を獲得！"
+            );
+
+            setTimeout(() => {
+
+                document.getElementById("enemyImage")
+                    .style.display = "none";
+
+                document.getElementById("enemyName")
+                    .textContent = "";
+
+            }, 500);
 
         }, 500);
 
-        return;
-    }
+    }, 300);
+
+    return;
+}
 
     // 敵ターンへ
-    setTimeout(enemyTurn, 900);
+    setTimeout(enemyTurn, 600);
 }
 function enemyTurn(){
-
+setCommandVisible(false);
     setBattleLog(
         currentEnemy.name + " のこうげき！"
     );
 
     setTimeout(() => {
-
+setCommandVisible(false);
         setBattleLog(
             "ゆうしゃはダメージをうけた！"
         );
@@ -228,9 +272,9 @@ battleState = "player";
 
 setBattlePhase("waiting");
 
-        }, 900);
+        }, 600);
 
-    }, 900);
+    }, 600);
 }
 
 //攻撃ボタン
