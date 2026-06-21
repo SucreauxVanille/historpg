@@ -196,7 +196,7 @@ function attackEnemy(){
         setTimeout(() => {
 
 setBattleLog(
-    currentEnemy.name + "をたおした！"
+    currentEnemy.name + "をたおした！",
     currentEnemy.exp + " の経験値を獲得！"
 );
 
@@ -230,7 +230,7 @@ setBattlePhase("waiting");
 
         }, 900);
 
-    }, 600);
+    }, 900);
 }
 
 //攻撃ボタン
