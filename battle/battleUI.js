@@ -1,306 +1,588 @@
-(() => {
-    // --------------------------------------------------------------------
-    // A. 状態管理変数 (IIFE内部のプライベート変数)
-    // --------------------------------------------------------------------
-    let battlePhase = "none";      // "none" | "intro" | "command" | "action" | "victory" | "gameover"
-    let currentEnemy = null;       // 現在戦闘中の敵のデータ
-    let battleFinishedCallback = null; // 戦闘終了後に実行するコールバック
+//フェイズ管理
 
-    // 非同期で「クリック待ち」や「コマンド選択」を制御するためのリゾルバ（Promiseの鍵）
-    let resolveMessageClick = null;
-    let resolveCommandSelect = null;
+let battlePhase = "none";
 
-    // --------------------------------------------------------------------
-    // B. 汎用ユーティリティ（非同期タイマー ＆ クリック待ち）
-    // --------------------------------------------------------------------
 
-    /**
-     * 指定ミリ秒だけ処理を一時停止する
-     * @param {number} ms 待機するミリ秒
-     * @returns {Promise}
-     */
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
+
+//プレイヤー＆敵状態
+
+let battleState = "player"; // player / enemy
+
+let currentEnemy = null;
+
+
+
+//UI管理
+
+function updateBattleUI(){
+
+
+
+    const isCommand = battlePhase === "command";
+
+
+
+    document.getElementById("battleCommand")
+
+        .style.display = isCommand ? "flex" : "none";
+
+
+
+    document.getElementById("battleLog")
+
+        .style.display = isCommand ? "none" : "block";
+
+}
+
+
+
+function setBattlePhase(phase){
+
+    battlePhase = phase;
+
+    updateBattleUI();
+
+}
+
+
+
+//クリック動作
+
+document.getElementById("battleLog").addEventListener("click", function(){
+
+
+
+    if(battlePhase === "intro" || battlePhase === "waiting"){
+
+        setBattlePhase("command");
+
+        setBattleLog("");
+
+        return;
+
     }
 
-    /**
-     * 戦闘用メッセージログを表示し、プレイヤーのクリックを待つ関数
-     * ※即時関数内に閉じ込めているため、message.js の同名関数と衝突しません。
-     * @param {string} text 表示するメッセージ
-     */
-    async function showMessage(text) {
-        setBattleLog(text);
-        
-        // プレイヤーがクリックして進めるまで、ここで処理を「一時停止」する
-        await new Promise(resolve => {
-            resolveMessageClick = resolve;
-        });
+
+
+    if(battlePhase === "victory"){
+
+        endBattle();
+
     }
 
-    /**
-     * プレイヤーが「たたかう」や「にげる」を押すまで処理を「一時停止」して待つ関数
-     * @returns {Promise<string>} 選択されたアクション ("attack" | "escape")
-     */
-    function waitForCommand() {
-        return new Promise(resolve => {
-            resolveCommandSelect = resolve;
-        });
-    }
+});
 
-    // --------------------------------------------------------------------
-    // C. UI表示・操作
-    // --------------------------------------------------------------------
+function showBattleScreen(){
 
-    /**
-     * 現在のフェーズに応じて戦闘UI（ボタン、ログ枠）の表示を切り替える
-     * @param {string} phase 
-     */
-    function setBattlePhase(phase) {
-        battlePhase = phase;
-        const isCommand = (battlePhase === "command");
 
-        // コマンドボタン群の表示切り替え (flex ⇔ none)
-        const commandEl = document.getElementById("battleCommand");
-        if (commandEl) {
-            commandEl.style.display = isCommand ? "flex" : "none";
-        }
 
-        // メッセージログ領域の表示切り替え (block ⇔ none)
-        const logEl = document.getElementById("battleLog");
-        if (logEl) {
-            logEl.style.display = isCommand ? "none" : "block";
-        }
-    }
+    document
 
-    /**
-     * メッセージログにテキストを反映する
-     * @param {string} text 
-     */
-    function setBattleLog(text) {
-        const logEl = document.getElementById("battleLog");
-        if (logEl) {
-            logEl.textContent = text;
-        }
-    }
+        .getElementById("battleScreen")
 
-    /**
-     * 戦闘画面を表示する
-     */
-    function showBattleScreen() {
-        const screen = document.getElementById("battleScreen");
-        if (screen) screen.style.display = "flex";
-    }
+        .style.display = "flex";
 
-    /**
-     * 戦闘画面を非表示にする
-     */
-    function hideBattleScreen() {
-        const screen = document.getElementById("battleScreen");
-        if (screen) screen.style.display = "none";
-    }
+}
 
-    /**
-     * ステータスウィンドウの更新（Lv, HP, MP）
-     */
-    function updateBattleStatus() {
-        const hero = getStatus(); 
-        const statusEl = document.getElementById("battleStatus");
-        
-        if (statusEl && hero) {
-            statusEl.innerHTML = 
-                `ゆうしゃ： Lv${hero.level}<br>` +
-                `体力： ${hero.hp}/${hero.hp}<br>` +
-                `気力： ${hero.mp}/${hero.mp}`;
-        }
-    }
 
-    // --------------------------------------------------------------------
-    // D. クリックイベント（メッセージ送り）
-    // --------------------------------------------------------------------
 
-    const battleLogEl = document.getElementById("battleLog");
-    if (battleLogEl) {
-        battleLogEl.addEventListener("click", () => {
-            if (resolveMessageClick) {
-                const resolve = resolveMessageClick;
-                resolveMessageClick = null; // リセット
-                resolve();
-            }
-        });
-    }
+function hideBattleScreen(){
 
-    // --------------------------------------------------------------------
-    // E. コマンドボタンのイベント
-    // --------------------------------------------------------------------
 
-    const attackBtnEl = document.getElementById("attackBtn");
-    if (attackBtnEl) {
-        attackBtnEl.addEventListener("click", () => {
-            if (battlePhase === "command" && resolveCommandSelect) {
-                const resolve = resolveCommandSelect;
-                resolveCommandSelect = null;
-                resolve("attack");
-            }
-        });
-    }
 
-    const runBtnEl = document.getElementById("runBtn");
-    if (runBtnEl) {
-        runBtnEl.addEventListener("click", () => {
-            if (battlePhase === "command" && resolveCommandSelect) {
-                const resolve = resolveCommandSelect;
-                resolveCommandSelect = null;
-                resolve("escape");
-            }
-        });
-    }
+    document
 
-    // --------------------------------------------------------------------
-    // F. バトル開始 ＆ メイン進行ループ
-    // --------------------------------------------------------------------
+        .getElementById("battleScreen")
 
-    /**
-     * 戦闘を開始する（外部マップから呼び出される）
-     */
-    function startBattle(enemyId, onFinish = null) {
-        battleFinishedCallback = onFinish;
-        battlePhase = "none";
+        .style.display = "none";
 
-        currentEnemy = { ...enemies[enemyId] };
 
-        const enemyImg = document.getElementById("enemyImage");
-        if (enemyImg) {
-            enemyImg.src = currentEnemy.image;
-            enemyImg.style.display = "block";
-        }
-        const enemyNameEl = document.getElementById("enemyName");
-        if (enemyNameEl) {
-            enemyNameEl.textContent = currentEnemy.name;
-        }
 
-        updateBattleStatus();
+}
 
-        const controls = document.getElementById("controls");
-        if (controls) controls.style.display = "none";
 
-        fadeOut();
-        setTimeout(() => {
-            showBattleScreen();
-            fadeIn();
-            runBattleSequence();
-        }, 500);
-    }
 
-    /**
-     * 完全に一本道で進行する、戦闘の実行シーケンス
-     */
-    async function runBattleSequence() {
-        setBattlePhase("intro");
-        await showMessage(`${currentEnemy.name} が あらわれた！`);
+function setBattleLog(text){
 
-        while (true) {
-            const hero = getStatus();
 
-            setBattlePhase("command");
-            const action = await waitForCommand();
-            setBattlePhase("action");
 
-            if (action === "attack") {
-                await showMessage("ゆうしゃの攻撃！");
-                await sleep(200);
+    document.getElementById(
 
-                const damage = Math.floor(hero.atk * (0.9 + Math.random() * 0.2));
-                currentEnemy.hp -= damage;
+        "battleLog"
 
-                flashElement(document.getElementById("enemyImage"));
-                await showMessage(`${currentEnemy.name} に ${damage} のダメージ！`);
+    ).textContent = text;
 
-                if (currentEnemy.hp <= 0) {
-                    await executeVictory();
-                    return;
-                }
 
-            } else if (action === "escape") {
-                await showMessage("ゆうしゃは にげだした！");
-                await sleep(300);
 
-                const success = Math.random() < 0.9;
-                if (success) {
-                    await showMessage("うまく にげきれた！");
-                    endBattle("escape");
-                    return;
-                } else {
-                    await showMessage("しかし まわりこまれてしまった！");
-                }
-            }
+}
 
-            await showMessage(`${currentEnemy.name} のこうげき！`);
-            await sleep(300);
-            await showMessage("ゆうしゃは ダメージをうけた！");
-        }
-    }
 
-    /**
-     * 勝利時の処理
-     */
-    async function executeVictory() {
-        setBattlePhase("victory");
-        
-        playerStatus.exp += currentEnemy.exp;
 
-        await showMessage(`${currentEnemy.name} をたおした！`);
-        await showMessage(`${currentEnemy.exp} の経験値を獲得！`);
+//バトル開始
 
-        const enemyImg = document.getElementById("enemyImage");
-        if (enemyImg) enemyImg.style.display = "none";
-        const enemyNameEl = document.getElementById("enemyName");
-        if (enemyNameEl) enemyNameEl.textContent = "";
+let battleFinishedCallback = null;
 
-        endBattle("win");
-    }
 
-    /**
-     * 戦闘を終了し、マップ画面に戻す
-     */
-    function endBattle(result = "win") {
-        battlePhase = "none";
 
-        if (battleFinishedCallback) {
-            const callback = battleFinishedCallback;
-            battleFinishedCallback = null;
-            callback(result);
-        }
+function startBattle(enemyId, onFinish = null){
 
-        fadeOut();
-        setTimeout(() => {
-            hideBattleScreen();
-            
-            const controls = document.getElementById("controls");
-            if (controls) controls.style.display = "flex";
+    battleFinishedCallback = onFinish;
 
-            fadeIn();
-        }, 500);
-    }
+    battleState = "player";
 
-    // --------------------------------------------------------------------
-    // G. 外部連携用のAPI公開（グローバル・インターフェース）
-    // --------------------------------------------------------------------
+    battlePhase = "none";
+
+    currentEnemy = {
+
+        ...enemies[enemyId]
+
+    };
+
+
+
+document.getElementById("enemyImage").src =
+
+    currentEnemy.image;
+
+
+
+document.getElementById("enemyImage")
+
+    .style.display = "block";
+
+
+
+document.getElementById("enemyName").textContent =
+
+    currentEnemy.name;
+
     
-    // マップシステム等から呼び出すため、スタート関数をwindowに登録
-    window.startBattle = startBattle;
 
-    // 他のスクリプト（game.js等）が、battlePhase や currentEnemy を参照・変更できるように
-    // 安全なゲッター・セッターを window オブジェクトに定義して互換性を維持します
-    Object.defineProperty(window, 'battlePhase', {
-        get: () => battlePhase,
-        set: (val) => { setBattlePhase(val); },
-        configurable: true
-    });
+    updateBattleStatus();
 
-    Object.defineProperty(window, 'currentEnemy', {
-        get: () => currentEnemy,
-        set: (val) => { currentEnemy = val; },
-        configurable: true
-    });
 
-})();
+
+    // 出現ログだけ出す
+
+    setBattleLog(
+
+        currentEnemy.name + " が あらわれた！"
+
+    );
+
+
+
+fadeOut();
+
+document.getElementById("controls")
+
+    .style.display = "none";
+
+setTimeout(() => {
+
+
+
+    showBattleScreen();
+
+
+
+    fadeIn();
+
+
+
+}, 500);
+
+    updateBattleUI(); 
+
+    // 次の操作を待つ
+
+    setBattlePhase("intro");
+
+
+
+}
+
+function endBattle(result = "win"){
+
+
+
+    battleState = "player";
+
+    battlePhase = "none";
+
+
+
+    if(battleFinishedCallback){
+
+
+
+        const callback = battleFinishedCallback;
+
+        battleFinishedCallback = null;
+
+
+
+        callback(result);
+
+    }
+
+
+
+    fadeOut();
+
+
+
+    setTimeout(() => {
+
+
+
+        hideBattleScreen();
+
+
+
+        document.getElementById("controls")
+
+            .style.display = "flex";
+
+
+
+        fadeIn();
+
+
+
+    }, 500);
+
+}
+
+
+
+//ステータス
+
+function updateBattleStatus(){
+
+
+
+    const hero =
+
+        getStatus();
+
+
+
+    document.getElementById(
+
+        "battleStatus"
+
+    ).innerHTML =
+
+
+
+        "ゆうしゃ： Lv" +
+
+        hero.level +
+
+        "<br>" +
+
+
+
+        "体力： " +
+
+        hero.hp +
+
+        "/" +
+
+        hero.hp +
+
+        "<br>" +
+
+
+
+        "気力： " +
+
+        hero.mp +
+
+        "/" +
+
+        hero.mp;
+
+
+
+}
+
+
+
+//攻撃
+
+function attackEnemy(){
+
+
+
+    if(battleState !== "player") return;
+
+
+
+    battleState = "enemy";
+
+    setBattlePhase("action");
+
+
+
+    const hero = getStatus();
+
+
+
+    setTimeout(() => {
+
+
+
+        setBattleLog("ゆうしゃの攻撃！");
+
+
+
+        setTimeout(() => {
+
+
+
+            const damage =
+
+                Math.floor(
+
+                    hero.atk *
+
+                    (0.9 + Math.random() * 0.2)
+
+                );
+
+
+
+            currentEnemy.hp -= damage;
+
+
+
+            flashElement(
+
+                document.getElementById("enemyImage")
+
+            );
+
+
+
+            setBattleLog(
+
+                currentEnemy.name +
+
+                " に " +
+
+                damage +
+
+                " のダメージ！"
+
+            );
+
+
+
+            // =========================
+
+            // 撃破判定
+
+            // =========================
+
+if(currentEnemy.hp <= 0){
+
+
+
+    playerStatus.exp += currentEnemy.exp;
+
+
+
+    setBattlePhase("victory");
+
+    updateBattleUI();
+
+
+
+    setBattleLog(
+
+        currentEnemy.name + "をたおした！\n" +
+
+        currentEnemy.exp + " の経験値を獲得！"
+
+    );
+
+
+
+    setTimeout(() => {
+
+
+
+        document.getElementById("enemyImage").style.display = "none";
+
+        document.getElementById("enemyName").textContent = "";
+
+
+
+    }, 500);
+
+
+
+    return;
+
+}
+
+
+
+            // =========================
+
+            // 生存時：敵ターンへ
+
+            // =========================
+
+            setTimeout(enemyTurn, 600);
+
+
+
+        }, 500);
+
+
+
+    }, 400);
+
+}
+
+
+
+//敵ターン
+
+function enemyTurn(){
+
+
+
+    setBattlePhase("action");
+
+
+
+    setBattleLog(currentEnemy.name + " のこうげき！");
+
+
+
+    setTimeout(() => {
+
+
+
+        setBattleLog("ゆうしゃはダメージをうけた！");
+
+
+
+        setTimeout(() => {
+
+
+
+            battleState = "player";
+
+            setBattlePhase("waiting");
+
+
+
+        }, 600);
+
+
+
+    }, 600);
+
+}
+
+//にげる
+
+function runAway(){
+
+
+
+    if(battleState !== "player") return;
+
+
+
+    battleState = "enemy";
+
+    setBattlePhase("action");
+
+
+
+    setBattleLog("ゆうしゃはにげだした！");
+
+
+
+    setTimeout(() => {
+
+
+
+        const success = Math.random() < 0.9;
+
+
+
+        if(success){
+
+
+
+            setBattleLog("うまくにげきれた！");
+
+
+
+            setTimeout(() => {
+
+                endBattle("escape");
+
+            }, 600);
+
+
+
+        } else {
+
+
+
+            setBattleLog("しかしまわりこまれた！");
+
+
+
+            setTimeout(() => {
+
+                enemyTurn();
+
+            }, 800);
+
+
+
+        }
+
+
+
+    }, 500);
+
+}     
+
+//ボタン
+
+document
+
+.getElementById("attackBtn")
+
+.addEventListener(
+
+    "click",
+
+    attackEnemy
+
+);
+
+
+
+document
+
+.getElementById("runBtn")
+
+.addEventListener(
+
+    "click",
+
+    runAway
+
+); 
+
