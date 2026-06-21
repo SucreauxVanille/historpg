@@ -67,9 +67,15 @@ function startBattle(enemyId, onFinish = null){
         ...enemies[enemyId]
     };
 
-    document.getElementById("enemyImage").src = currentEnemy.image;
-    document.getElementById("enemyName").textContent = currentEnemy.name;
-    .style.display = "block"
+document.getElementById("enemyImage").src =
+    currentEnemy.image;
+
+document.getElementById("enemyImage")
+    .style.display = "block";
+
+document.getElementById("enemyName").textContent =
+    currentEnemy.name;
+    
     updateBattleStatus();
 
     // コマンドは最初隠す
