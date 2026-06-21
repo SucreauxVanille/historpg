@@ -368,8 +368,12 @@ function runEvent(eventId){
 }
 //イベント終了
 function endEvent(){
+
     gameState.eventLock = false;
+    lockInputFor(250);
+
 }
+
 //オブジェクト検出
 function searchObject(){
 
