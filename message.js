@@ -3,6 +3,7 @@ let canAdvanceMessage = false;
 let messages = [];
 let messageIndex = 0;
 let messageFinishedCallback = null;
+let inputLocked = false;
 
 function showMessage(text){
 
@@ -28,11 +29,21 @@ function startMessage(messageArray, onFinish = null){
     showMessage(messages[0]);
 }
 
+//ウインドウ消去
 function hideMessage(){
+
     messageBox.style.display = "none";
     gameState.mode = "field";
+
+    inputLocked = true;
+
+    setTimeout(()=>{
+        inputLocked = false;
+    }, 500);
+
 }
 
+//次メッセージ
 function nextMessage(){
     messageIndex++;
 if(messageIndex >= messages.length){
