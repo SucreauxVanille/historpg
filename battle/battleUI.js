@@ -109,8 +109,8 @@ function updateBattleStatus() {
     if (statusEl && hero) {
         statusEl.innerHTML = 
             `ゆうしゃ： Lv${hero.level}<br>` +
-            `体力： ${hero.hp}/${hero.maxHp}<br>` + // 分母は元コードの hero.hp から maxHp 等に修正すると尚良いです
-            `気力： ${hero.mp}/${hero.maxMp}`;
+            `体力： ${hero.hp}/${hero.hp}<br>` +
+            `気力： ${hero.mp}/${hero.mp}`;
     }
 }
 
@@ -224,7 +224,7 @@ async function runBattleSequence() {
             const damage = Math.floor(hero.atk * (0.9 + Math.random() * 0.2));
             currentEnemy.hp -= damage;
 
-            // 敵画像の被ダメージ点滅演出（flashElementは外部関数を想定）
+            // 敵画像の被ダメージ点滅演出
             flashElement(document.getElementById("enemyImage"));
             
             await showMessage(`${currentEnemy.name} に ${damage} のダメージ！`);
