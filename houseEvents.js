@@ -205,7 +205,7 @@ startMessage(
     ()=>{
         endEvent();
     }
-}
+);}
 function cancelWarp(){
     hideMessage();
     endEvent();
