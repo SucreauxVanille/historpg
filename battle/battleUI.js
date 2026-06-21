@@ -61,13 +61,15 @@ let battleFinishedCallback = null;
 
 function startBattle(enemyId, onFinish = null){
     battleFinishedCallback = onFinish;
+    battleState = "player";
+    battlePhase = "none";
     currentEnemy = {
         ...enemies[enemyId]
     };
 
     document.getElementById("enemyImage").src = currentEnemy.image;
     document.getElementById("enemyName").textContent = currentEnemy.name;
-
+    .style.display = "block"
     updateBattleStatus();
 
     // コマンドは最初隠す
@@ -94,7 +96,8 @@ setTimeout(() => {
 
 }
 function endBattle(){
-
+    battleState = "player";
+    battlePhase = "none";
     if(battleFinishedCallback){
 
         const callback =
