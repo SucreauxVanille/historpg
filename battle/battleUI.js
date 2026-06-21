@@ -13,15 +13,24 @@ document.getElementById("battleLog").addEventListener(
     function(){
 
         if(
-    battlePhase === "intro" ||
-    battlePhase === "waiting"
-){
-    setCommandVisible(true);
+            battlePhase === "intro" ||
+            battlePhase === "waiting"
+        ){
+            setCommandVisible(true);
 
-    setBattleLog("");
+            setBattleLog("");
 
-    setBattlePhase("command");
-}
+            setBattlePhase("command");
+
+            return;
+        }
+
+        if(battlePhase === "victory"){
+
+            endBattle();
+
+            return;
+        }
 
     }
 );
@@ -185,12 +194,11 @@ function attackEnemy(){
         .textContent = "";
         setTimeout(() => {
 
-            startMessage(
-                [
-                    currentEnemy.name + "をたおした！"
-                ],
-                endBattle
-            );
+setBattleLog(
+    currentEnemy.name + "をたおした！"
+);
+
+setBattlePhase("victory");
 
         }, 500);
 
