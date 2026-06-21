@@ -6,28 +6,6 @@ function canControl(){
     );
 }
 
-function attemptMove(direction){
-
-    switch(direction){
-
-        case "up":
-            movePlayer(0,-1,"up");
-            break;
-
-        case "down":
-            movePlayer(0,1,"down");
-            break;
-
-        case "left":
-            movePlayer(-1,0,"left");
-            break;
-
-        case "right":
-            movePlayer(1,0,"right");
-            break;
-    }
-
-}
 //キー操作
 document.addEventListener("keydown", (e)=>{
 
