@@ -196,7 +196,7 @@ function attackEnemy(){
         setTimeout(() => {
 
 setBattleLog(
-    currentEnemy.name + "をたおした！",
+    currentEnemy.name + "をたおした！\n" +
     currentEnemy.exp + " の経験値を獲得！"
 );
 
