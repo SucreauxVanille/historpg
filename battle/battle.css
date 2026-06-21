@@ -61,10 +61,15 @@
 #battleBottom{
     height:140px;
     border-top:3px solid white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 #battleLog{
+    width:100%;
+    height:100%;
 
-    height:140px;
 
     border-top:3px solid white;
 
@@ -72,13 +77,13 @@
 
     padding:12px;
 
-    overflow-y:auto;
+    overflow:hidden;
 
     white-space:pre-line;
 }
 #battleCommand{
-
-    height:140px;
+    width:100%;
+    height:100%;
 
     display:flex;
 
