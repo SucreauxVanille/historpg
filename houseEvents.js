@@ -200,8 +200,11 @@ function goToNojiri(){
         20
     );    },
     1000);
-showMessage("壱与「邪馬台国に戻るときは、青いうずまきに触れてください」");
-endEvent();
+startMessage(
+    ["壱与「邪馬台国に戻るときは、青いうずまきに触れてください」"],
+    ()=>{
+        endEvent();
+    }
 }
 function cancelWarp(){
     hideMessage();
