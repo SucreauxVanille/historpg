@@ -42,8 +42,12 @@ hero: {
         image: "images/objects/gate.png",
         animated: false
     },
-   obsidian: {
+    obsidian: {
         image: "images/objects/obsidian.png",
+        animated: false
+    },
+    naumann: {
+        image: "images/objects/naumann1.png",
         animated: false
     },
     himiko: {
