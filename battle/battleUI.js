@@ -12,16 +12,16 @@ document.getElementById("battleLog").addEventListener(
     "click",
     function(){
 
-        if(battlePhase === "intro"){
+        if(
+    battlePhase === "intro" ||
+    battlePhase === "waiting"
+){
+    setCommandVisible(true);
 
-            document.getElementById("battleCommand")
-                .style.display = "flex";
+    setBattleLog("");
 
-            setBattleLog("");
-
-            setBattlePhase("command");
-
-        }
+    setBattlePhase("command");
+}
 
     }
 );
@@ -58,6 +58,7 @@ function setBattleLog(text){
 
 //バトル開始
 let battleFinishedCallback = null;
+
 function startBattle(enemyId, onFinish = null){
     battleFinishedCallback = onFinish;
     currentEnemy = {
@@ -70,7 +71,7 @@ function startBattle(enemyId, onFinish = null){
     updateBattleStatus();
 
     // コマンドは最初隠す
-    document.getElementById("battleCommand").style.display = "none";
+   setCommandVisible(false);
 
     // 出現ログだけ出す
     setBattleLog(
@@ -130,7 +131,7 @@ function updateBattleStatus(){
     ).innerHTML =
 
         "ゆうしゃ： Lv" +
-        status.level +
+        hero.level +
         "<br>" +
 
         "体力： " +
@@ -152,7 +153,7 @@ function attackEnemy(){
     if(battleState !== "player") return;
 
     battleState = "enemy";
-
+    setBattlePhase("message");
     setCommandVisible(false);
 
     currentEnemy.hp -= 10;
@@ -166,7 +167,12 @@ function attackEnemy(){
     );
 
     if(currentEnemy.hp <= 0){
+        setBattlePhase("victory");
+        document.getElementById("enemyImage")
+        .style.display = "none";
 
+        document.getElementById("enemyName")
+        .textContent = "";
         setTimeout(() => {
 
             startMessage(
@@ -198,21 +204,15 @@ function enemyTurn(){
 
         setTimeout(() => {
 
-            battleState = "player";
-            setCommandVisible(true);
+battleState = "player";
+
+setBattlePhase("waiting");
 
         }, 600);
 
     }, 600);
 }
-//コマンド出現
-function showBattleCommand(){
 
-    document.getElementById(
-        "battleCommand"
-    ).style.display = "flex";
-
-}
 //攻撃ボタン
 document
 .getElementById("attackBtn")
