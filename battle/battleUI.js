@@ -178,13 +178,10 @@ function attackEnemy(){
 
     const hero = getStatus();
 
-    // ① まず待つ
     setTimeout(() => {
 
-        // ② 攻撃宣言
         setBattleLog("ゆうしゃの攻撃！");
 
-        // ③ さらに少し待つ
         setTimeout(() => {
 
             const damage =
@@ -206,51 +203,43 @@ function attackEnemy(){
                 " のダメージ！"
             );
 
-if(currentEnemy.hp <= 0){
+            // =========================
+            // 撃破判定
+            // =========================
+            if(currentEnemy.hp <= 0){
 
-    playerStatus.exp += currentEnemy.exp;
+                playerStatus.exp += currentEnemy.exp;
+                setBattlePhase("victory");
 
-    setBattlePhase("victory");
+                setTimeout(() => {
 
-    setTimeout(() => {
+                    setBattleLog(
+                        currentEnemy.name +
+                        "をたおした！\n" +
+                        currentEnemy.exp +
+                        " の経験値を獲得！"
+                    );
 
-        setBattleLog(
-            currentEnemy.name +
-            " に " +
-            damage +
-            " のダメージ！"
-        );
+                    setTimeout(() => {
 
-        flashElement(
-            document.getElementById("enemyImage")
-        );
+                        document.getElementById("enemyImage").style.display = "none";
+                        document.getElementById("enemyName").textContent = "";
 
-        setTimeout(() => {
+                    }, 500);
 
-            setBattleLog(
-                currentEnemy.name + "をたおした！\n" +
-                currentEnemy.exp + " の経験値を獲得！"
-            );
+                }, 300);
 
-            setTimeout(() => {
+                return; // ★ここで完全終了
+            }
 
-                document.getElementById("enemyImage")
-                    .style.display = "none";
-
-                document.getElementById("enemyName")
-                    .textContent = "";
-
-            }, 500);
+            // =========================
+            // 生存時：敵ターンへ
+            // =========================
+            setTimeout(enemyTurn, 600);
 
         }, 500);
 
-    }, 300);
-
-    return;
-}
-
-    // 敵ターンへ
-    setTimeout(enemyTurn, 600);
+    }, 400);
 }
 function enemyTurn(){
 setCommandVisible(false);
