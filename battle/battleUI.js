@@ -104,6 +104,7 @@ setTimeout(() => {
 function endBattle(){
     battleState = "player";
     battlePhase = "none";
+    setCommandVisible(false);
     if(battleFinishedCallback){
 
         const callback =
