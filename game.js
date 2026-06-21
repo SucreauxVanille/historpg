@@ -20,9 +20,7 @@ const pressedKeys = {
 const gameState = { 
     mode: "field",
     lockInput: false,
-
     eventLock: false,
-    eventChain: false,
 
     flags: {}
 };
