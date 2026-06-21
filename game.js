@@ -40,7 +40,15 @@ function lockInput(){
 function unlockInput(){
     gameState.lockInput = false;
 }
+function lockInputFor(ms){
 
+    lockInput();
+
+    setTimeout(()=>{
+        unlockInput();
+    }, ms);
+
+}
 //アセット
 const loadedAssets = {};
 
