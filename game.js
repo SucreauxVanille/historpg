@@ -200,13 +200,13 @@ function drawObjects(){
             const img =
                 loadedAssets[obj.id];
 
-            ctx.drawImage(
-                img,
-                obj.x * TILE_SIZE,
-                obj.y * TILE_SIZE,
-                TILE_SIZE,
-                TILE_SIZE
-            );
+ctx.drawImage(
+    img,
+    (obj.x - camera.x) * TILE_SIZE,
+    (obj.y - camera.y) * TILE_SIZE,
+    TILE_SIZE,
+    TILE_SIZE
+);
 
         }
     });
