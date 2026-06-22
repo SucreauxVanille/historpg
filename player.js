@@ -80,8 +80,13 @@ if(isObjectBlocked(nextX,nextY)){
 
 if(tileEvent){
     runEvent(tileEvent.event);
+    render();
+    return;
 }
-       render();
+
+render();
+
+checkEncounter();
 
 }
 
