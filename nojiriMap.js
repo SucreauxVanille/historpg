@@ -6,7 +6,13 @@ maps.nojiriLake = {
         "ナウマンゾウなどの",
         "大型動物が生息していた。"
     ],
+    encounterRate: 8,
 
+    encounterTable: [
+        "boar",
+        "deer"
+    ],
+    
     tiles: [
 
         [2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3],
