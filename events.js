@@ -67,7 +67,7 @@ const events = {
     prologue_stamp: [
         "卑弥呼「その金印は、ワシが魏の皇帝から授かったものじゃ」"
     ],
-    events.demoEnding = [
+    demoEnding: [
 
     "壱与「ありがとうございます、黒曜石の力で獣たちは鎮まりました」",
 
@@ -77,20 +77,20 @@ const events = {
 
     "卑弥呼「そういうことじゃ、もう少し力を貸してくれんかのう？」"
 
-];
-events.demoEndingYes = [
+],
+    demoEndingYes: [
     "卑弥呼「頼もしいのう！そう来なくてはな！」"
-];
+],
 
-events.demoEndingNo = [
+    demoEndingNo: [
     "卑弥呼「そう言うでない、お主も行くあてがないのじゃろう？」"
-];
+],
 
-events.demoEndingFinal = [
+    demoEndingFinal: [
     "壱与「ご一緒できて、私も嬉しいです！」",
     "卑弥呼「さて、では次の時代に向かうかのう」",
     "",
     "体験版はここで終わりです。",
     "続きをお楽しみに！"
-];
+],
 };
