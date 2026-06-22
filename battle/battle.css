@@ -23,6 +23,9 @@
     box-sizing:border-box;
 
     padding:10px;
+
+    display:flex;
+    gap:20px;
 }
 #enemyArea{
 
