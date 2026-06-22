@@ -114,18 +114,22 @@ function endBattle(result = "win"){
 
 function updateBattleStatus(){
 
-    const hero = getStatus();
+    const hero = getStatus(playerStatus);
+    const himiko = getStatus(himikoStatus);
+
     document.getElementById(
         "battleStatus"
     ).innerHTML =
 
-        "ゆうしゃ： Lv" + hero.level +
-        "<br>" +
-        "体力： " + hero.hp + "/" + hero.maxHp +
-        "<br>" +
-        "気力： " + hero.mp + "/" + hero.maxMp;
-}
+        `${hero.name} Lv${hero.level}<br>
+         HP ${hero.hp}/${hero.maxHp}<br>
+         MP ${hero.mp}/${hero.maxMp}
+         <br><br>
 
+         ${himiko.name} Lv${himiko.level}<br>
+         HP ${himiko.hp}/${himiko.maxHp}<br>
+         MP ${himiko.mp}/${himiko.maxMp}`;
+}
 
 //攻撃
 function attackEnemy(){
@@ -135,7 +139,7 @@ function attackEnemy(){
     battleState = "enemy";
     setBattlePhase("action");
 
-    const hero = getStatus();
+    const hero = getStatus(playerStatus);
 
     setTimeout(() => {
 
