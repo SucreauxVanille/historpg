@@ -5,17 +5,7 @@ function returnMirrorEvent(){
         !hasFlag("demoClear")
     ){
 
-        showMessage(
-            "壱与「黒曜石の矢じりを入手したのですね！邪馬台国へ戻りましょう！」"
-        );
-
-        changeMap(
-            maps.himikoHouse,
-            5,
-            5
-        );
-
-        endEvent();
+        startDemoEnding();
         return;
     }
 
