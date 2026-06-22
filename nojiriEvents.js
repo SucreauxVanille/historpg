@@ -10,6 +10,10 @@ function returnMirrorEvent(){
 }
 function nojiriTutorialEvent(){
 
+    if(hasFlag("nojiriTutorialFinished")){
+        return;
+    }
+
     startMessage(
         [
             "卑弥呼「む！？この時代にも狂暴化した獣がいるようじゃ！」",
@@ -17,8 +21,23 @@ function nojiriTutorialEvent(){
         ],
         () => {
 
-            startBattle("boar");
+            startBattle(
+                "boar",
+                (result) => {
+
+                    if(result === "win"){
+
+                        setFlag(
+                            "nojiriTutorialFinished"
+                        );
+
+                    }
+
+                }
+            );
+
             endEvent();
+
         }
     );
 
@@ -26,7 +45,7 @@ function nojiriTutorialEvent(){
 function naumannBossEvent(){
 
     showMessage(
-        "巨大なナウマンゾウが立ちはだかっている。"
+        "卑弥呼「なんと巨大な獣じゃ…背後にあるのは黒曜石のようじゃな」"
     );
     endEvent();
 }
