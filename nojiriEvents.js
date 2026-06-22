@@ -119,7 +119,11 @@ function obsidianEvent(){
     setFlag(
         "obsidianObtained"
     );
+    despawnObject(
+        "obsidian"
+    );
 
+    render();
     startMessage(
         [
             "卑弥呼「やはり！これは黒曜石の矢じりじゃ！」",
