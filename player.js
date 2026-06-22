@@ -115,53 +115,95 @@ function getLevel(){
     return 21 + Math.floor((exp - 2500) / 200);
 }
 
-function getMaxHP(){
+function getHeroMaxHP(){
     const lv = getLevel();
     return Math.floor(20 + lv * 1.5);
 }
 
-function getMaxMP(){
+function getHeroMaxMP(){
     const lv = getLevel();
     return Math.floor(1 + lv);
 }
 
-function getATK(){
+function getHeroATK(){
     const lv = getLevel();
     return Math.floor(10 + lv * 1.2);
 }
 
-function getDEF(){
+function getHeroDEF(){
     const lv = getLevel();
     return Math.floor(5 + lv * 0.5);
 }
 
-//ステータス取得
-function getStatus(){
-    return {
-        name: playerStatus.name,
-        level: getLevel(),
-
-        hp: playerStatus.hp,
-        mp: playerStatus.mp,
-
-        maxHp: getMaxHP(),
-        maxMp: getMaxMP(),
-
-        atk: getATK(),
-        def: getDEF()
-    };
+function getHimikoMaxHP(){
+    const lv = getLevel();
+    return Math.floor(20 + lv * 1);
 }
-function initializePlayerStatus(){
 
-    playerStatus.hp = getMaxHP();
-    playerStatus.mp = getMaxMP();
+function getMaxMP(){
+    const lv = getLevel();
+    return Math.floor(45 + lv * 3);
+}
+
+function getATK(){
+    const lv = getLevel();
+    return Math.floor(6 + lv * 0.5);
+}
+
+function getDEF(){
+    const lv = getLevel();
+    return Math.floor(2 + lv * 0.8);
+}
+
+//ステータス取得
+function getStatus(status){
+
+    const level = getLevel(status);
+
+    switch(status.id){
+
+        case "hero":
+            return {
+                name: status.name,
+                level,
+
+                hp: status.hp,
+                mp: status.mp,
+
+                maxHp: getHeroMaxHP(level),
+                maxMp: getHeroMaxMP(level),
+
+                atk: getHeroATK(level),
+                def: getHeroDEF(level)
+            };
+
+        case "himiko":
+            return {
+                name: status.name,
+                level,
+
+                hp: status.hp,
+                mp: status.mp,
+
+                maxHp: getHimikoMaxHP(level),
+                maxMp: getHimikoMaxMP(level),
+
+                atk: getHimikoATK(level),
+                def: getHimikoDEF(level)
+            };
+    }
+}
+function initializeStatus(status){
+
+    status.hp = getMaxHP(status);
+    status.mp = getMaxMP(status);
 
 }
 
 //回復
-function recoverAll(){
+function recoverAll(status){
 
-    playerStatus.hp = getMaxHP();
-    playerStatus.mp = getMaxMP();
+    status.hp = getMaxHP(status);
+    status.mp = getMaxMP(status);
 
 }
