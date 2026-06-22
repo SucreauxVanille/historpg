@@ -121,9 +121,9 @@ function updateBattleStatus(){
 
         "ゆうしゃ： Lv" + hero.level +
         "<br>" +
-        "体力： " + hero.hp + "/" + hero.hp +
+        "体力： " + hero.hp + "/" + hero.maxHp +
         "<br>" +
-        "気力： " + hero.mp + "/" + hero.mp;
+        "気力： " + hero.mp + "/" + hero.maxMp;
 }
 
 
@@ -201,19 +201,37 @@ function attackEnemy(){
 
 //敵ターン
 function enemyTurn(){
+
     setBattlePhase("action");
     setBattleLog(currentEnemy.name + " のこうげき！");
+
     setTimeout(() => {
-        setBattleLog("ゆうしゃはダメージをうけた！");
+
+        const damage = currentEnemy.atk;
+
+        playerStatus.hp -= damage;
+        if(playerStatus.hp < 0){
+        playerStatus.hp = 0;
+        }
+
+        setBattleLog(
+            "ゆうしゃは " +
+            damage +
+            " のダメージをうけた！"
+        );
+
+        updateBattleStatus();
 
         setTimeout(() => {
+
             battleState = "player";
             setBattlePhase("waiting");
 
         }, 600);
-    }, 600);
-}
 
+    }, 600);
+
+}
 //にげる
 function runAway(){
     if(battleState !== "player") return;
