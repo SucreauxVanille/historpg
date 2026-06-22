@@ -451,6 +451,8 @@ document
 .getElementById("startBtn")
 .addEventListener("click", ()=>{
 
+    initializePlayerStatus();
+
     document.getElementById("titleScreen").style.display = "none";
     document.getElementById("gameScreen").style.display = "block";
 
