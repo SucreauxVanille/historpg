@@ -9,9 +9,13 @@ const player = {
     moving: false,
 };
 const playerStatus = {
-       id: "hero",
-       name: "ゆうしゃ",
-       exp: 0
+    id: "hero",
+    name: "ゆうしゃ",
+
+    exp: 0,
+
+    hp: null,
+    mp: null
 };
 //正面タイル取得
 function getFrontTile(){
@@ -122,9 +126,20 @@ function getStatus(){
     return {
         name: playerStatus.name,
         level: getLevel(),
-        hp: getMaxHP(),
-        mp: getMaxMP(),
+
+        hp: playerStatus.hp,
+        mp: playerStatus.mp,
+
+        maxHp: getMaxHP(),
+        maxMp: getMaxMP(),
+
         atk: getATK(),
         def: getDEF()
     };
+}
+function initializePlayerStatus(){
+
+    playerStatus.hp = getMaxHP();
+    playerStatus.mp = getMaxMP();
+
 }
