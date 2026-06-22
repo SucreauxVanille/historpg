@@ -203,7 +203,7 @@ function attackEnemy(){
 function enemyTurn(){
 
     setBattlePhase("action");
-    setBattleLog(currentEnemy.name + " のこうげき！");
+    setBattleLog(currentEnemy.name + " の攻撃！");
 
     setTimeout(() => {
 
