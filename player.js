@@ -143,3 +143,11 @@ function initializePlayerStatus(){
     playerStatus.mp = getMaxMP();
 
 }
+
+//回復
+function recoverAll(){
+
+    playerStatus.hp = getMaxHP();
+    playerStatus.mp = getMaxMP();
+
+}
