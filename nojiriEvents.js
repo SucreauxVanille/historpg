@@ -129,3 +129,79 @@ function obsidianEvent(){
     );
 
 }
+
+//エンディング
+function startDemoEnding(){
+
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
+    );
+
+    setTimeout(()=>{
+
+        setObjectDirection(
+            "iyo",
+            "down"
+        );
+
+        setObjectDirection(
+            "himiko",
+            "left"
+        );
+
+        startMessage(
+            events.demoEnding,
+            showDemoEndingChoice
+        );
+
+    },600);
+
+}
+function showDemoEndingChoice(){
+
+    showChoice([
+        {
+            text:"はい",
+            action: demoEndingYes
+        },
+        {
+            text:"いいえ",
+            action: demoEndingNo
+        }
+    ]);
+
+}
+function demoEndingYes(){
+
+    startMessage(
+        events.demoEndingYes,
+        finishDemoEnding
+    );
+
+}
+function demoEndingNo(){
+
+    startMessage(
+        events.demoEndingNo,
+        finishDemoEnding
+    );
+
+}
+function finishDemoEnding(){
+
+    startMessage(
+        events.demoEndingFinal,
+        () => {
+
+            setFlag(
+                "demoClear"
+            );
+
+            endEvent();
+
+        }
+    );
+
+}
