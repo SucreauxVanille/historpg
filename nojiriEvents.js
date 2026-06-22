@@ -1,11 +1,34 @@
 function returnMirrorEvent(){
+
+    if(
+        hasFlag("obsidianObtained") &&
+        !hasFlag("demoClear")
+    ){
+
+        showMessage(
+            "壱与「黒曜石の矢じりを入手したのですね！邪馬台国へ戻りましょう！」"
+        );
+
+        changeMap(
+            maps.himikoHouse,
+            5,
+            5
+        );
+
+        endEvent();
+        return;
+    }
+
     showMessage(
         "壱与「邪馬台国にお戻ししますね！」"
     );
+
     changeMap(
         maps.himikoHouse,
-        5,5
+        5,
+        5
     );
+
     endEvent();
 }
 function nojiriTutorialEvent(){
