@@ -140,17 +140,17 @@ function getHimikoMaxHP(){
     return Math.floor(20 + lv * 1);
 }
 
-function getMaxMP(){
+function getHimikoMaxMP(){
     const lv = getLevel();
     return Math.floor(45 + lv * 3);
 }
 
-function getATK(){
+function getHimikoATK(){
     const lv = getLevel();
     return Math.floor(6 + lv * 0.5);
 }
 
-function getDEF(){
+function getHimikoDEF(){
     const lv = getLevel();
     return Math.floor(2 + lv * 0.8);
 }
@@ -195,15 +195,19 @@ function getStatus(status){
 }
 function initializeStatus(status){
 
-    status.hp = getMaxHP(status);
-    status.mp = getMaxMP(status);
+    const currentStatus = getStatus(status);
+
+    status.hp = currentStatus.maxHp;
+    status.mp = currentStatus.maxMp;
 
 }
 
 //回復
 function recoverAll(status){
 
-    status.hp = getMaxHP(status);
-    status.mp = getMaxMP(status);
+    const currentStatus = getStatus(status);
+
+    status.hp = currentStatus.maxHp;
+    status.mp = currentStatus.maxMp;
 
 }
