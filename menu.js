@@ -54,20 +54,26 @@ function showMainMenu(){
 //つよさ
 function showStatus(){
 
-    const status =
-        getStatus();
+    const hero = getStatus(playerStatus);
+    const himiko = getStatus(himikoStatus);
 
     openMenu(`
 
-        ${status.name}<br><br>
+        ${hero.name}<br>
+        Lv ${hero.level}<br>
+        体力 ${hero.hp}/${hero.maxHp}<br>
+        気力 ${hero.mp}/${hero.maxMp}<br>
+        攻撃 ${hero.atk}<br>
+        守備 ${hero.def}<br>
 
-        Lv ${status.level}<br><br>
+        <hr>
 
-        体力 ${status.hp}/${status.maxHp}<br>
-        気力 ${status.mp}/${status.maxMp}<br><br>
-
-        攻撃 ${status.atk}<br>
-        守備 ${status.def}<br><br>
+        ${himiko.name}<br>
+        Lv ${himiko.level}<br>
+        体力 ${himiko.hp}/${himiko.maxHp}<br>
+        気力 ${himiko.mp}/${himiko.maxMp}<br>
+        攻撃 ${himiko.atk}<br>
+        守備 ${himiko.def}<br><br>
 
         <div class="menuItem"
              onclick="showMainMenu()">
@@ -77,7 +83,6 @@ function showStatus(){
     `);
 
 }
-
 
 //どうぐ
 function showItems(){
