@@ -219,7 +219,7 @@ ctx.drawImage(
     });
 }
 
-// 主人公
+// 主人公描画
 function drawPlayer(){
 
 const px =
@@ -511,7 +511,8 @@ document
 .getElementById("startBtn")
 .addEventListener("click", ()=>{
 
-    initializePlayerStatus();
+initializeStatus(playerStatus);
+initializeStatus(himikoStatus);
 
     document.getElementById("titleScreen").style.display = "none";
     document.getElementById("gameScreen").style.display = "block";
