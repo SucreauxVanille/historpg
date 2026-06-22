@@ -17,6 +17,15 @@ const playerStatus = {
     hp: null,
     mp: null
 };
+const himikoStatus = {
+    id: "himiko",
+    name: "卑弥呼",
+    exp: 120,
+    hp: null,
+    mp: null
+};
+
+
 //正面タイル取得
 function getFrontTile(){
 
