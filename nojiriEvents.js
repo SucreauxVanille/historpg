@@ -11,6 +11,7 @@ function returnMirrorEvent(){
 function nojiriTutorialEvent(){
 
     if(hasFlag("nojiriTutorialFinished")){
+        endEvent();
         return;
     }
 
