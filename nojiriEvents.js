@@ -45,10 +45,51 @@ function nojiriTutorialEvent(){
 }
 function naumannBossEvent(){
 
-    showMessage(
-        "卑弥呼「なんと巨大な獣じゃ…背後にあるのは黒曜石のようじゃな」"
+    startMessage(
+        [
+            "卑弥呼「なんと巨大な獣じゃ…」",
+            "卑弥呼「背後にある黒曜石を守っておるようじゃな！」"
+        ],
+        () => {
+
+            startBattle(
+                "naumann",
+                (result)=>{
+
+                    if(result !== "win"){
+                        endEvent();
+                        return;
+                    }
+
+                    const obj =
+                        getObjectById("naumann");
+
+                    if(obj){
+                        flashElement(canvas);
+                        setTimeout(()=>{
+
+                            setFlag(
+                                "naumannDefeated"
+                            );
+                            despawnObject(
+                                "naumann"
+                            );
+                            render();
+                            startMessage(
+                                [
+                                    "卑弥呼「見事じゃ！」",
+                                    "卑弥呼「これで黒曜石を調べられるぞ！」"
+                                ],
+                                endEvent
+                            );
+                        },300);
+                    }else{
+                        endEvent();
+                    }
+                }
+            );
+        }
     );
-    endEvent();
 }
 function obsidianEvent(){
 
