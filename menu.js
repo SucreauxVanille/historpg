@@ -63,8 +63,31 @@ function showStatus(){
 
         Lv ${status.level}<br><br>
 
-        体力 ${status.hp}<br>
-        気力 ${status.mp}<br><br>
+function showStatus(){
+
+    const status =
+        getStatus();
+
+    openMenu(`
+
+        ${status.name}<br><br>
+
+        Lv ${status.level}<br><br>
+
+        体力 ${status.hp}/${status.maxHp}<br>
+        気力 ${status.mp}/${status.maxMp}<br><br>
+
+        攻撃 ${status.atk}<br>
+        守備 ${status.def}<br><br>
+
+        <div class="menuItem"
+             onclick="showMainMenu()">
+            もどる
+        </div>
+
+    `);
+
+}
 
         攻撃 ${status.atk}<br>
         守備 ${status.def}<br><br>
