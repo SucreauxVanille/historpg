@@ -100,7 +100,7 @@ checkEncounter();
 }
 
 //ステータス計算
-function getLevel(){
+function getLevel(status){
 
     const exp = status.exp;
 
