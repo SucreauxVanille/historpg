@@ -26,6 +26,7 @@ const gameState = {
 };
 let renderEnabled = true;
 let animationEnabled = true;
+let encounterSteps = 0;
 
 //状態管理
 function setGameMode(mode){
@@ -443,6 +444,48 @@ function changeMap(mapName, startX, startY){
     }, 500);
 
 }
+
+//エンカウント
+function checkEncounter(){
+
+    if(!currentMap.encounterTable){
+        return;
+    }
+
+    if(
+        currentMap === maps.nojiriLake &&
+        !hasFlag("nojiriTutorialFinished")
+    ){
+        return;
+    }
+
+    encounterSteps++;
+
+    if(encounterSteps < 5){
+        return;
+    }
+
+    if(
+        Math.random() * 100 >=
+        currentMap.encounterRate
+    ){
+        return;
+    }
+
+    encounterSteps = 0;
+
+    const enemyId =
+        currentMap.encounterTable[
+            Math.floor(
+                Math.random() *
+                currentMap.encounterTable.length
+            )
+        ];
+
+    startBattle(enemyId);
+
+}
+
 // =====================
 //   タイトル
 // =====================
