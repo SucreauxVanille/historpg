@@ -425,6 +425,23 @@ function spawnObject(id){
     }
 
 }
+
+//オブジェクト消滅
+function despawnObject(id){
+
+    const obj =
+        currentMap.objects.find(
+            o => o.id === id
+        );
+
+    if(obj){
+
+        obj.active = false;
+
+    }
+
+}
+
 //ワープ
 function changeMap(mapName, startX, startY){
 
