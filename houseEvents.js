@@ -67,15 +67,22 @@ function stampEvent(){
 function bedEvent(){
 
     startMessage(
-        events.prologue_bed,
+        ["卑弥呼「疲れたじゃろう。寝床で少し休むがよい」"],
         () => {
 
             fadeOut();
 
             setTimeout(()=>{
 
+                recoverAll();
+
                 fadeIn();
-                endEvent();
+
+                startMessage(
+                    ["卑弥呼「うむ！すっかり元気になったようじゃの」"],
+                    endEvent
+                );
+
             },1500);
 
         }
