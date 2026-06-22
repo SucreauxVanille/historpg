@@ -50,3 +50,28 @@ function naumannBossEvent(){
     );
     endEvent();
 }
+function obsidianEvent(){
+
+    if(hasFlag("obsidianObtained")){
+
+        showMessage(
+            "黒曜石があった場所だ。"
+        );
+
+        endEvent();
+        return;
+    }
+
+    setFlag(
+        "obsidianObtained"
+    );
+
+    startMessage(
+        [
+            "卑弥呼「やはり！これは黒曜石の矢じりじゃ！」",
+            "卑弥呼「これを使って壱与が祈れば、獣たちも落ち着くじゃろう」"
+        ],
+        endEvent
+    );
+
+}
