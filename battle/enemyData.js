@@ -11,15 +11,16 @@ const enemies = {
 
     deer: {
         name: "狂暴オオツノジカ",
-        hp: 35,
+        hp: 32,
         atk: 8,
-        exp: 40,
+        exp: 30,
+        image: "battle/images/deer.png",
         boss: false
     },
 
     naumann: {
         name: "狂暴ナウマンゾウ",
-        hp: 80,
+        hp: 100,
         atk: 15,
         exp: 100,
         boss: true
