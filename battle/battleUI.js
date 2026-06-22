@@ -117,18 +117,23 @@ function updateBattleStatus(){
     const hero = getStatus(playerStatus);
     const himiko = getStatus(himikoStatus);
 
-    document.getElementById(
-        "battleStatus"
-    ).innerHTML =
+document.getElementById(
+    "battleStatus"
+).innerHTML =
 
-        `${hero.name} Lv${hero.level}<br>
-         HP ${hero.hp}/${hero.maxHp}<br>
-         MP ${hero.mp}/${hero.maxMp}
-         <br><br>
+`
+<div>
+${hero.name} Lv${hero.level}<br>
+HP ${hero.hp}/${hero.maxHp}<br>
+MP ${hero.mp}/${hero.maxMp}
+</div>
 
-         ${himiko.name} Lv${himiko.level}<br>
-         HP ${himiko.hp}/${himiko.maxHp}<br>
-         MP ${himiko.mp}/${himiko.maxMp}`;
+<div>
+${himiko.name} Lv${himiko.level}<br>
+HP ${himiko.hp}/${himiko.maxHp}<br>
+MP ${himiko.mp}/${himiko.maxMp}
+</div>
+`;
 }
 
 //攻撃
