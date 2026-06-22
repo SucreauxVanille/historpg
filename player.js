@@ -102,7 +102,7 @@ checkEncounter();
 //ステータス計算
 function getLevel(){
 
-    const exp = playerStatus.exp;
+    const exp = status.exp;
 
     if(exp < 1000){
         return 1 + Math.floor(exp / 100);
@@ -115,43 +115,35 @@ function getLevel(){
     return 21 + Math.floor((exp - 2500) / 200);
 }
 
-function getHeroMaxHP(){
-    const lv = getLevel();
+function getHeroMaxHP(lv){
     return Math.floor(20 + lv * 1.5);
 }
 
-function getHeroMaxMP(){
-    const lv = getLevel();
+function getHeroMaxMP(lv){
     return Math.floor(1 + lv);
 }
 
-function getHeroATK(){
-    const lv = getLevel();
+function getHeroATK(lv){
     return Math.floor(10 + lv * 1.2);
 }
 
-function getHeroDEF(){
-    const lv = getLevel();
+function getHeroDEF(lv){
     return Math.floor(5 + lv * 0.5);
 }
 
-function getHimikoMaxHP(){
-    const lv = getLevel();
-    return Math.floor(20 + lv * 1);
+function getHimikoMaxHP(lv){
+    return Math.floor(18 + lv * 1);
 }
 
-function getHimikoMaxMP(){
-    const lv = getLevel();
-    return Math.floor(45 + lv * 3);
+function getHimikoMaxMP(lv){
+    return Math.floor(47 + lv * 3);
 }
 
-function getHimikoATK(){
-    const lv = getLevel();
+function getHimikoATK(lv){
     return Math.floor(6 + lv * 0.5);
 }
 
-function getHimikoDEF(){
-    const lv = getLevel();
+function getHimikoDEF(lv){
     return Math.floor(2 + lv * 0.8);
 }
 
