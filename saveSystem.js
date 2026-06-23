@@ -37,3 +37,8 @@ function applyProgress(progress){
     }
 
 }
+function resetWorld(){
+
+    gameState.flags = {};
+
+}
