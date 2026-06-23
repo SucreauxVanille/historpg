@@ -18,6 +18,9 @@ const eventHandlers = {
     brother: brotherEvent,
     returnMirror: returnMirrorEvent,
     nojiriTutorial: nojiriTutorialEvent,
+    nojirimob1: nojirimob1Event,
+    nojirimob2: nojirimob2Event,
+    nojirimob3: nojirimob3Event,
     naumannBoss: naumannBossEvent,
     obsidian: obsidianEvent
 };
