@@ -60,6 +60,18 @@ function nojiriTutorialEvent(){
 //モブ1
 function nojirimob1Event(){
 
+    startMessage(
+        [
+            "男「ここは野尻湖って呼ばれてるだ」",
+            "男「オラたちは獲物を求めて、あっちこっちを移動してるだ。おめえたちは違うんか？」"
+        ],
+        endEvent
+    );
+
+}
+//モブ2
+function nojirimob2Event(){
+
     if(hasFlag("obsidianObtained")){
 
         showMessage(
@@ -72,8 +84,32 @@ function nojirimob1Event(){
 
     startMessage(
         [
-            "男「ここは野尻湖って呼ばれてるだ」",
-            "男「オラたちは獲物を求めて来たんだが、獣が急に狂暴になっちまって、手に負えねえだよ」"
+            "男「ちょっと前から不気味な気配がするだよ」",
+            "男「獣が急に狂暴になっちまって、狩りもうまくいかねえだ」"
+        ],
+        endEvent
+    );
+
+}
+//モブ3
+function nojirimob3Event(){
+
+    if(hasFlag("obsidianObtained")){
+
+        showMessage(
+           "男「でっけえゾウをやっつけたべか！？」",
+           "男「その矢じりは譲るべ、大事に使っとくれ」"
+        );
+
+        endEvent();
+        return;
+    }
+
+    startMessage(
+        [
+            "男「オラは岩宿ってところから来たんだが、やたら狂暴なゾウに追いかけられてな」",
+            "男「びっくらこいて、黒曜石の矢じりを落っことしちまっただ」",
+            "男「オラはおっかなくて拾いにいけねえ。もし拾えたなら、あんたたちに譲るだよ」"
         ],
         endEvent
     );
