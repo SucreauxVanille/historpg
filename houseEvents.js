@@ -1,18 +1,16 @@
-//起きるのじゃ
+//起きるのじゃイベント
 function startOpening(){
     fadeOut();
 
     startMessage(
         events.wakeUp,
         () => {
-
             fadeIn();
-
             startMessage(events.prologueStart, endEvent);
-
         }
     );
 }
+//外出禁止
 function houseExitEvent(){
     startMessage(
     ["卑弥呼「外は危険じゃ！出てはならぬ！」"],
@@ -29,9 +27,7 @@ function prologueHimiko(){
 function brotherEvent(){
     if(hasFlag("iyoAppeared")){
 
-        startMessage(
-            events.prologue_brother_after
-        );
+        startMessage(events.prologue_brother_after, endEvent);
 
         return;
     }
