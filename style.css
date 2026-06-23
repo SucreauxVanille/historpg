@@ -52,7 +52,7 @@ canvas{
     pointer-events: none;
 
     transition: opacity 1s;
-    z-index: 100;
+    z-index: 400;
 }
 
 #messageBox{
