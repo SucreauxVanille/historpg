@@ -67,6 +67,7 @@ maps.nojiriLake = {
             y: 0,
             active: true,
             solid: true,
+            direction: "down",
             event: "naumannBoss"
         },
 
