@@ -121,6 +121,20 @@ render();
 checkEncounter();
 }
 
+//卑弥呼追従
+function followHimiko(){
+
+    if(playerTrail.length === 0){
+        return;
+    }
+
+    const pos = playerTrail.shift();
+
+    himiko.x = pos.x;
+    himiko.y = pos.y;
+    himiko.direction = pos.direction;
+}
+
 //ステータス計算
 function getLevel(status){
 
