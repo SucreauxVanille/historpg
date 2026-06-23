@@ -6,8 +6,8 @@ description: [
     "女王・卑弥呼が統治し、",
     "中国に使者を送った。"
 ],
+allowHimikoFollower: false,
         tiles: [
-            [1,1,1,1,1,1,1,1,1,1,1],
             [1,1,1,1,1,1,1,1,1,1,1],
             [1,1,0,0,0,0,0,0,0,1,1],
             [1,1,0,0,0,0,0,0,0,1,1],
@@ -22,7 +22,7 @@ description: [
 tileEvents: [
     {
         x: 5,
-        y: 10,
+        y: 9,
         event: "houseExit"
     }
 ],
@@ -43,7 +43,7 @@ tileEvents: [
     {
     id:"iyo",
     x:5,
-    y:10,
+    y:9,
     active:false,
     solid: true,
     direction:"up",
@@ -53,7 +53,7 @@ tileEvents: [
          {
         id: "brother",
         x: 4,
-        y: 9,
+        y: 8,
 
         direction: "right",
 
@@ -65,7 +65,7 @@ tileEvents: [
              {
                 id: "stamp",
                 x: 8,
-                y: 2,
+                y: 1,
                 active: true,
                 solid: true,
                 event: "stamp"
@@ -73,7 +73,7 @@ tileEvents: [
             {
                 id: "mirror",
                 x: 4,
-                y: 2,
+                y: 1,
                 active: true,
                 solid: true,
                 event: "mirror"
