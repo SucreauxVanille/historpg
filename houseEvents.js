@@ -206,7 +206,7 @@ function goToNojiri(){
     changeMap(
         maps.nojiriLake,
         2,
-        20
+        25
     );    },
     1000);
 startMessage(
