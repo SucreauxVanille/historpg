@@ -47,8 +47,23 @@ hero: {
         animated: false
     },
     naumann: {
-        image: "images/objects/naumann1.png",
-        animated: false
+        animated: true,
+      down: [
+        "images/objects/naumann1.png",
+        "images/objects/naumann2.png"
+      ], 
+      up: [
+        "images/objects/naumann1.png",
+        "images/objects/naumann2.png"
+      ], 
+      left: [
+        "images/objects/naumann1.png",
+        "images/objects/naumann2.png"
+      ], 
+      right: [
+        "images/objects/naumann1.png",
+        "images/objects/naumann2.png"
+      ]
     },
     himiko: {
 
