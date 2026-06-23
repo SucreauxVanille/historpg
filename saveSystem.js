@@ -14,3 +14,26 @@ const PROGRESS_WORDS = {
     4: "とり",
     5: "ほし"
 };
+function applyProgress(progress){
+
+    if(progress >= PROGRESS.IYO_APPEARED){
+        setFlag("iyoAppeared");
+    }
+
+    if(progress >= PROGRESS.NOJIRI_TUTORIAL){
+        setFlag("nojiriTutorialFinished");
+    }
+
+    if(progress >= PROGRESS.NAUMANN_DEFEATED){
+        setFlag("naumannDefeated");
+    }
+
+    if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
+        setFlag("obsidianObtained");
+    }
+
+    if(progress >= PROGRESS.DEMO_CLEAR){
+        setFlag("demoClear");
+    }
+
+}
