@@ -21,7 +21,7 @@ const gameState = {
     mode: "field",
     lockInput: false,
     eventLock: false,
-
+    progress: 0,
     flags: {}
 };
 let renderEnabled = true;
