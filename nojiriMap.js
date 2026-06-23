@@ -67,7 +67,7 @@ maps.nojiriLake = {
             active: true,
             solid: true,
             direction: "left",
-            event: "nojirimob1Event"
+            event: "nojirimob1"
         },
                 {
             id: "mob",
@@ -76,7 +76,7 @@ maps.nojiriLake = {
             active: true,
             solid: true,
             direction: "right",
-            event: "nojirimob2Event"
+            event: "nojirimob2"
         },
         {
             id: "naumann",
