@@ -42,3 +42,23 @@ function resetWorld(){
     gameState.flags = {};
 
 }
+function createSaveCode(){
+
+    return (
+        playerStatus.totalExp +
+        "-" +
+        gameState.progress
+    );
+
+}
+
+function parseSaveCode(code){
+
+    const parts = code.split("-");
+
+    return {
+        exp: Number(parts[0]),
+        progress: Number(parts[1])
+    };
+
+}
