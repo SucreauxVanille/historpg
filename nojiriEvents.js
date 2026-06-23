@@ -40,26 +40,19 @@ function nojiriTutorialEvent(){
                 (result) => {
 
                     if(result === "win"){
-
-                        setFlag(
-                            "nojiriTutorialFinished"
-                        );
-
+                        setFlag("nojiriTutorialFinished");
+                        gameState.progress = PROGRESS.NIJIRI_TUTORIAL;
                     }
-
                 }
             );
 
             endEvent();
-
         }
     );
-
 }
 
 //モブ1
 function nojirimob1Event(){
-
     startMessage(
         [
             "男「ここは野尻湖って呼ばれてるだ」",
@@ -67,17 +60,14 @@ function nojirimob1Event(){
         ],
         endEvent
     );
-
 }
 //モブ2
 function nojirimob2Event(){
-
     if(hasFlag("obsidianObtained")){
 
         showMessage(
             "男「まだ狂暴な獣もおるが、不気味な気配は薄くなっただ」"
         );
-
         endEvent();
         return;
     }
@@ -89,27 +79,25 @@ function nojirimob2Event(){
         ],
         endEvent
     );
-
 }
 //モブ3
 function nojirimob3Event(){
-
     if(hasFlag("obsidianObtained")){
 
-        showMessage(
+        startMessage(
+           [
            "男「でっけえゾウをやっつけたべか！？」",
-           "男「その矢じりは譲るべ、大事に使っとくれ」"
-        );
-
-        endEvent();
+           "男「その矢じりは譲るべ、大事に使ってくれ」"
+           ],
+        endEvent );
         return;
     }
 
     startMessage(
         [
-            "男「オラは岩宿ってところから来たんだが、やたら狂暴なゾウに追いかけられてな」",
+            "男「オラは岩宿ってところから来たんだが、やたら狂暴なゾウに出会ってな」",
             "男「びっくらこいて、黒曜石の矢じりを落っことしちまっただ」",
-            "男「オラはおっかなくて拾いにいけねえ。もし拾えたなら、あんたたちに譲るだよ」"
+            "男「あんなおっかない思いはしとうない。拾えたなら、あんたたちに譲るだよ」"
         ],
         endEvent
     );
@@ -134,19 +122,15 @@ function naumannBossEvent(){
                         return;
                     }
 
-                    const obj =
-                        getObjectById("naumann");
+                    const obj = getObjectById("naumann");
 
                     if(obj){
                         flashElement(canvas);
                         setTimeout(()=>{
 
-                            setFlag(
-                                "naumannDefeated"
-                            );
-                            despawnObject(
-                                "naumann"
-                            );
+                            setFlag("naumannDefeated");
+                            gameState.progress = PROGRESS.NAUMANN_DEFEATED;
+                            despawnObject("naumann");
                             render();
                             startMessage(
                                 [
@@ -176,12 +160,9 @@ function obsidianEvent(){
         return;
     }
 
-    setFlag(
-        "obsidianObtained"
-    );
-    despawnObject(
-        "obsidian"
-    );
+    setFlag("obsidianObtained");
+    gameState.progress = PROGRESS.OBSIDIAN_OBTAINED;
+    despawnObject("obsidian");
 
     render();
     startMessage(
@@ -259,9 +240,8 @@ function finishDemoEnding(){
         events.demoEndingFinal,
         () => {
 
-            setFlag(
-                "demoClear"
-            );
+            setFlag("demoClear");
+            gameState.progress = PROGRESS.DEMO_CLEAR;
 
             endEvent();
 
