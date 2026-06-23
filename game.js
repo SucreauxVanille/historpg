@@ -245,6 +245,41 @@ ctx.drawImage(
     TILE_SIZE
 );
 }
+function drawHimiko(){
+
+if(
+    !isHimikoFollowing ||
+    !currentMap.allowHimikoFollower
+){
+    return;
+}
+
+    if(!currentMap.allowHimikoFollower){
+        return;
+    }
+
+    const px =
+        (himiko.x - camera.x)
+        * TILE_SIZE;
+
+    const py =
+        (himiko.y - camera.y)
+        * TILE_SIZE;
+
+    const image =
+        loadedAssets.himiko
+            [himiko.direction]
+            [animationFrame];
+
+    ctx.drawImage(
+        image,
+        px,
+        py,
+        TILE_SIZE,
+        TILE_SIZE
+    );
+
+}
 function facePlayer(obj){
 
     if(!obj.direction){
@@ -268,6 +303,7 @@ function render(){
     drawMap();
     drawObjects();
     drawPlayer();
+    drawHimiko();
 
 }
 
