@@ -13,8 +13,9 @@ const himiko = {
     y: 5,
     direction: "down"
 };
-
+let playerTrail = [];
 let isHimikoFollowing = false;
+
 const playerStatus = {
     id: "hero",
     name: "ゆうしゃ",
@@ -88,10 +89,25 @@ if(isObjectBlocked(nextX,nextY)){
     render();
     return;
 }
-    player.x = nextX;
-    player.y = nextY;
- 
-    const tileEvent =
+// 壁・オブジェクト判定通過後
+
+playerTrail.push({
+    x: player.x,
+    y: player.y,
+    direction: player.direction
+});
+
+player.x = nextX;
+player.y = nextY;
+
+if(
+    isHimikoFollowing &&
+    currentMap.allowHimikoFollower
+){
+    followHimiko();
+}
+
+const tileEvent =
     getTileEvent(player.x, player.y);
 
 if(tileEvent){
@@ -103,7 +119,6 @@ if(tileEvent){
 render();
 
 checkEncounter();
-
 }
 
 //ステータス計算
