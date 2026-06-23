@@ -45,13 +45,12 @@ function resetWorld(){
 function createSaveCode(){
 
     return (
-        playerStatus.totalExp +
+        playerStatus.exp +
         "-" +
         gameState.progress
     );
 
 }
-
 function parseSaveCode(code){
 
     const parts = code.split("-");
