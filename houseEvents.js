@@ -97,6 +97,7 @@ function mirrorEvent(){
     }
 
     setFlag("iyoAppeared");
+    gameState.progress = PROGRESS.IYO_APPEARED;
         setTimeout(()=>{
         setObjectDirection("himiko", "up");
         }, 100);    
