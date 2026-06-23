@@ -10,6 +10,13 @@ const player = {
     direction: "down",
     moving: false,
 };
+const himiko = {
+    x: 7,
+    y: 5,
+    direction: "down"
+};
+
+let isHimikoFollowing = false;
 const playerStatus = {
     id: "hero",
     name: "ゆうしゃ",
