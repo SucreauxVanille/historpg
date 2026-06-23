@@ -69,6 +69,15 @@ maps.nojiriLake = {
             direction: "left",
             event: "nojirimob1Event"
         },
+                {
+            id: "mob",
+            x: 14,
+            y: 9,
+            active: true,
+            solid: true,
+            direction: "right",
+            event: "nojirimob2Event"
+        },
         {
             id: "naumann",
             x: 2,
