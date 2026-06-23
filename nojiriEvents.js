@@ -56,6 +56,30 @@ function nojiriTutorialEvent(){
     );
 
 }
+
+//モブ1
+function nojirimob1Event(){
+
+    if(hasFlag("obsidianObtained")){
+
+        showMessage(
+            "男「まだ狂暴な獣もおるが、不気味な気配は薄くなっただ」"
+        );
+
+        endEvent();
+        return;
+    }
+
+    startMessage(
+        [
+            "男「ここは野尻湖って呼ばれてるだ」",
+            "男「オラたちは獲物を求めて来たんだが、獣が急に狂暴になっちまって、手に負えねえだよ」"
+        ],
+        endEvent
+    );
+
+}
+
 function naumannBossEvent(){
 
     startMessage(
