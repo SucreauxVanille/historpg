@@ -74,7 +74,7 @@ function bedEvent(){
 
             setTimeout(()=>{
 
-                recoverAll();
+                recoverAll(status);
 
                 fadeIn();
 
