@@ -202,21 +202,33 @@ function mirrorWarpMenu(){
 
 }
 function goToNojiri(){
-    setTimeout(()=>{
-    changeMap(
-        maps.nojiriLake,
-        2,
-        25
-    );    },
-    1000);
-startMessage(
-    ["壱与「邪馬台国に戻るときは、青いうずまきに触れてください」"],
-himiko.x = player.x;
-himiko.y = player.y + 1;
-    ()=>{
-        endEvent();
-    }
-);}
+
+    fadeOut();
+
+    setTimeout(() => {
+
+        currentMap = maps.nojiriLake;
+
+        player.x = 2;
+        player.y = 25;
+
+        himiko.x = player.x - 1;
+        himiko.y = player.y;
+        himiko.direction = "right";
+
+        render();
+
+        fadeIn();
+
+        startMessage(
+            [
+                "壱与「邪馬台国に戻るときは、青いうずまきに触れてください」"
+            ],
+            endEvent
+        );
+
+    }, 500);
+}
 function cancelWarp(){
     hideMessage();
     endEvent();
