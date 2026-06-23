@@ -176,6 +176,7 @@ function attackEnemy(){
                 if(currentEnemy.hp <= 0){
 
                     playerStatus.exp += currentEnemy.exp;
+                    himikoStatus.exp += currentEnemy.exp;
 
                     setBattlePhase("victory");
                     updateBattleUI();
@@ -279,6 +280,7 @@ function himikoTurn(){
                 if(currentEnemy.hp <= 0){
 
                     playerStatus.exp += currentEnemy.exp;
+                    himikoStatus.exp += currentEnemy.exp;
 
                     setBattlePhase("victory");
                     updateBattleUI();
@@ -331,6 +333,7 @@ function himikoTurn(){
             if(currentEnemy.hp <= 0){
 
                 playerStatus.exp += currentEnemy.exp;
+                himikoStatus.exp += currentEnemy.exp;
 
                 setBattlePhase("victory");
                 updateBattleUI();
