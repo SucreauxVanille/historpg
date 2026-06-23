@@ -236,7 +236,7 @@ function himikoTurn(){
 
             setBattleLog(
                 lowHpMember.name +
-                " の傷が癒えた！"
+                " のキズが回復した！"
             );
 
             setTimeout(enemyTurn, 800);
