@@ -1,4 +1,4 @@
-let isHimikoFollowing = false;
+let allowHimikoFollower = false;
 
 // =====================
 //   主人公
