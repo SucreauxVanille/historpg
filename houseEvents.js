@@ -172,7 +172,7 @@ for(let i = 1; i <= 3; i++){
 
 }
 function heroReveal(){
-    let isHimikoFollowing = true;
+    
     setTimeout(()=>{
     setObjectDirection("iyo", "left");
 
