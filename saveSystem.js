@@ -8,7 +8,7 @@ const PROGRESS = {
 };
 const PROGRESS_WORDS = {
     0: "はる",
-    1: "こめ",
+    1: "すな",
     2: "かに",
     3: "そら",
     4: "とり",
