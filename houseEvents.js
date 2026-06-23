@@ -153,7 +153,7 @@ function startProphecy(){
     setTimeout(()=>{
         setObjectDirection("himiko", "up");
 
-for(let i = 1; i <= 2; i++){
+for(let i = 1; i <= 3; i++){
     setTimeout(()=>{
         moveObject("himiko", 0, -1);
     }, i * 200);
@@ -161,7 +161,7 @@ for(let i = 1; i <= 2; i++){
     setTimeout(()=>{
     setObjectDirection("iyo", "right");
     setObjectDirection("himiko", "left");
-}, 2 * 200 + 100);
+}, 3 * 200 + 100);
         
         startMessage(
             events.iyoArrival3,
