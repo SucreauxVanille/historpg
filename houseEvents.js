@@ -211,6 +211,8 @@ function goToNojiri(){
     1000);
 startMessage(
     ["壱与「邪馬台国に戻るときは、青いうずまきに触れてください」"],
+himiko.x = player.x;
+himiko.y = player.y + 1;
     ()=>{
         endEvent();
     }
