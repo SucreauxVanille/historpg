@@ -23,6 +23,7 @@ const enemies = {
         hp: 100,
         atk: 15,
         exp: 100,
+        image: "battle/images/naumann.png",
         boss: true
     }
 
