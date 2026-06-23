@@ -60,7 +60,15 @@ maps.nojiriLake = {
             solid: true,
             event: "returnMirror"
         },
-
+        {
+            id: "mob",
+            x: 14,
+            y: 20,
+            active: true,
+            solid: true,
+            direction: "left",
+            event: "nojirimob1Event"
+        },
         {
             id: "naumann",
             x: 2,
@@ -81,6 +89,7 @@ maps.nojiriLake = {
         }
 
     ],
+
 
     tileEvents: [
 
