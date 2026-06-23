@@ -140,6 +140,30 @@ hero: {
             "images/characters/brother_right2.png"
         ]
 
-    }
-    
+    },
+        mob: {
+
+        animated: true,
+
+        down: [
+            "images/characters/mob_front1.png",
+            "images/characters/mob_front2.png"
+        ],
+
+        up: [
+            "images/characters/mob_back1.png",
+            "images/characters/mob_back2.png"
+        ],
+
+        left: [
+            "images/characters/mob_left1.png",
+            "images/characters/mob_left2.png"
+        ],
+
+        right: [
+            "images/characters/mob_right1.png",
+            "images/characters/mob_right2.png"
+        ]
+
+    }   
 }
