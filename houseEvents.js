@@ -215,7 +215,8 @@ function goToNojiri(){
         himiko.x = player.x - 1;
         himiko.y = player.y;
         himiko.direction = "right";
-
+        isHimikoFollowing = true;
+        
         render();
 
         fadeIn();
