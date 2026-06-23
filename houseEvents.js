@@ -74,7 +74,8 @@ function bedEvent(){
 
             setTimeout(()=>{
 
-                recoverAll(status);
+                recoverAll(playerStatus);
+                recoverAll(himikoStatus);
 
                 fadeIn();
 
