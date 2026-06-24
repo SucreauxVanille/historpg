@@ -469,34 +469,36 @@ function isPartyAllDead(){
 }
 function gameOver(){
 
-    setBattleLog(
-        "ゆうしゃたちは全滅した！"
-    );
+    setBattleLog("ゆうしゃたちは全滅した！");
 
+    setTimeout(() => {
+
+        endBattle("gameover");
+
+        // 全回復（先にやる）
+        playerStatus.hp = getStatus(playerStatus).maxHp;
+        playerStatus.mp = getStatus(playerStatus).maxMp;
+
+        himikoStatus.hp = getStatus(himikoStatus).maxHp;
+        himikoStatus.mp = getStatus(himikoStatus).maxMp;
+
+        updateBattleStatus();
+
+        // ここで一拍置く（無）
         setTimeout(() => {
-            endBattle("gameover");
 
-            // 全回復
+            changeMap(maps.himikoHouse, 5, 5);
 
-            playerStatus.hp =
-                getStatus(playerStatus).maxHp;
-            playerStatus.mp =
-                getStatus(playerStatus).maxMp;
+            // changeMapのフェード後に表示したいなら
+            setTimeout(() => {
 
-            himikoStatus.hp =
-                getStatus(himikoStatus).maxHp;
-            himikoStatus.mp =
-                getStatus(himikoStatus).maxMp;
+                showMessage(
+                    "壱与「大丈夫でしたか？邪馬台国にお戻ししました」"
+                );
 
-            // ワープ
-    changeMap(
-        maps.himikoHouse,
-        5,
-        5
-        );
-            updateBattleStatus();
-            showMessage(
-                "壱与「大丈夫でしたか？邪馬台国にお戻ししました」"
-            );
+            }, 500); // ←フェード時間に合わせる
+
         }, 1000);
+
+    }, 2000);
 }
