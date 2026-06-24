@@ -233,6 +233,55 @@ function cancelWarp(){
 }
 function iyoEvent(){
 
-    startMessage(["壱与「冒険が長引いたら、私が記録しますね」"], endEvent);
+    startMessage(
+        [
+            "壱与「ここまでの冒険を、復活の呪文として記録しますか？」"
+        ],
+        ()=>{
+
+            showChoice([
+                {
+                    text:"はい",
+                    action: createSaveSpell
+                },
+                {
+                    text:"いいえ",
+                    action: endEvent
+                }
+            ]);
+
+        }
+    );
+
+}
+function createSaveSpell(){
+
+    startMessage(
+        [
+            "壱与「わかりました！」",
+            "壱与「では、お告げを聞きますね…」"
+        ],
+        ()=>{
+
+            flashScreen();
+
+            setTimeout(()=>{
+
+                const spell =
+                    encodeSaveCode();
+
+                startMessage(
+                    [
+                        "壱与「聞こえました！」",
+                        `壱与「復活の呪文は『${spell}』です」`,
+                        "壱与「忘れずに記録してくださいね」"
+                    ],
+                    endEvent
+                );
+
+            },500);
+
+        }
+    );
 
 }
