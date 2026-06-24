@@ -556,35 +556,42 @@ initializeStatus(himikoStatus);
     render();
     startOpening();
 });
+
+//ロード
 document
 .getElementById("continueBtn")
 .addEventListener("click", ()=>{
 
-    const spell =
-        prompt(
-            "ふっかつのじゅもんをいれてください"
-        );
+    const spell = prompt(
+        "ふっかつのじゅもんをいれてください"
+    );
 
     if(!spell){
         return;
     }
-loadGame(spell);
 
-initializeStatus(playerStatus);
-initializeStatus(himikoStatus);
+    loadGame(spell);
 
-document.getElementById(
-    "titleScreen"
-).style.display = "none";
+    initializeStatus(playerStatus);
+    initializeStatus(himikoStatus);
 
-document.getElementById(
-    "gameScreen"
-).style.display = "block";
-currentMap =
-    maps.himikoHouse;
+    gameState.mode = "field";
+    gameState.eventLock = false;
+    gameState.lockInput = false;
 
-player.x = 5;
-player.y = 5;
+    document.getElementById(
+        "titleScreen"
+    ).style.display = "none";
 
-render();
+    document.getElementById(
+        "gameScreen"
+    ).style.display = "block";
+
+    currentMap = maps.himikoHouse;
+
+    player.x = 5;
+    player.y = 5;
+
+    render();
+
 });
