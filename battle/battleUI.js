@@ -146,10 +146,15 @@ function attackEnemy(){
 
     const hero = getStatus(playerStatus);
 
+    // 勇者が倒れている場合は攻撃を飛ばす
+
+    if(hero.hp <= 0){
+        himikoTurn();
+        return;
+    }
+
     setTimeout(() => {
-
         setBattleLog("ゆうしゃの攻撃！");
-
         setTimeout(() => {
 
             const damage =
@@ -206,7 +211,6 @@ function attackEnemy(){
         }, 500);
 
     }, 400);
-
 }
 function himikoTurn(){
 
@@ -460,16 +464,3 @@ document
     "click",
     runAway
 ); 
-
-//戦闘不能チェック
-function isDead(member){
-    return member.hp <= 0;
-}
-
-function isHeroDead(){
-    return isDead(playerStatus);
-}
-
-function isHimikoDead(){
-    return isDead(himikoStatus);
-}
