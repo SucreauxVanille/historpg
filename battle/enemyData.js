@@ -2,7 +2,7 @@ const enemies = {
 
     boar: {
         name: "狂暴イノシシ",
-        hp: 20,
+        hp: 24,
         atk: 5,
         exp: 20,
         image: "battle/images/boar.png",
@@ -11,8 +11,8 @@ const enemies = {
 
     deer: {
         name: "狂暴オオツノジカ",
-        hp: 32,
-        atk: 8,
+        hp: 35,
+        atk: 10,
         exp: 30,
         image: "battle/images/deer.png",
         boss: false
@@ -20,8 +20,8 @@ const enemies = {
 
     naumann: {
         name: "狂暴ナウマンゾウ",
-        hp: 100,
-        atk: 15,
+        hp: 140,
+        atk: 18,
         exp: 100,
         image: "battle/images/naumann.png",
         boss: true
