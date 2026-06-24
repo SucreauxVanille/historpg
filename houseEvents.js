@@ -246,7 +246,7 @@ function iyoEvent(){
                 },
                 {
                     text:"いいえ",
-                    action: action:cancelSave
+                    action: cancelSave
                 }
             ]);
 
