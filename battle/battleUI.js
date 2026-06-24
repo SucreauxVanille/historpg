@@ -212,10 +212,14 @@ function attackEnemy(){
 
     }, 400);
 }
+//卑弥呼のターン
 function himikoTurn(){
 
     const himiko = getStatus(himikoStatus);
-
+    if(himikoStatus.hp <= 0){
+    enemyTurn();
+    return;
+}
     const lowHpMember =
         [playerStatus, himikoStatus].find(member =>
             member.hp > 0 &&
