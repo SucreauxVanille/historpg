@@ -149,7 +149,8 @@ function loadGame(spell){
 
     playerStatus.exp =
         saveData.exp;
-
+    himikoStatus.exp =
+        saveData.exp + 120;
     gameState.progress =
         saveData.progress;
 
