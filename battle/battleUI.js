@@ -417,16 +417,34 @@ function enemyTurn(){
 
         updateBattleStatus();
 
+setTimeout(() => {
+
+    if(target.hp <= 0){
+
+        setBattleLog(
+            target.name +
+            " は倒れた！"
+        );
+
         setTimeout(() => {
+            if(isPartyAllDead()){
 
-            battleState = "player";
-            setBattlePhase("waiting");
+                // 後でゲームオーバー
 
-        }, 600);
+            }else{
+                battleState = "player";
+                setBattlePhase("waiting");
+            }
+        }, 800);
 
-    }, 600);
+    }else{
 
+        battleState = "player";
+        setBattlePhase("waiting");
+    }
+}, 600);
 }
+               
 //にげる
 function runAway(){
     if(battleState !== "player") return;
@@ -468,3 +486,11 @@ document
     "click",
     runAway
 ); 
+
+//全滅めつめつ
+function isPartyAllDead(){
+    return (
+        playerStatus.hp <= 0 &&
+        himikoStatus.hp <= 0
+    );
+}
