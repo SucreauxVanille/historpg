@@ -593,10 +593,10 @@ document
     player.y = 3;
     player.direction = "up";
     render();
-    startMessage(
-    [
-        "壱与「おかえりなさい！またお会いできて嬉しいです！」"
-    ],
+startMessage(
+    ["壱与「おかえりなさい！またお会いできて嬉しいです！」"],
+    startLoadQuiz
+);
     endEvent
 );
 });
