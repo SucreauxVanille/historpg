@@ -590,8 +590,13 @@ document
     currentMap = maps.himikoHouse;
 
     player.x = 5;
-    player.y = 5;
-
+    player.y = 3;
+    player.direction = "up";
     render();
-
+    startMessage(
+    [
+        "壱与「おかえりなさい！またお会いできて嬉しいです！」"
+    ],
+    endEvent
+);
 });
