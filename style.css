@@ -23,6 +23,11 @@ body{
     padding:10px 30px;
     cursor:pointer;
 }
+#continueBtn{
+    font-size:20px;
+    padding:10px 30px;
+    cursor:pointer;
+}
 
 /* ゲーム画面 */
 #gameScreen{
