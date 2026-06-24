@@ -443,7 +443,7 @@ setTimeout(() => {
         setBattlePhase("waiting");
     }
 }, 600);
-}
+}, 600);
                
 //にげる
 function runAway(){
