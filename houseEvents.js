@@ -396,7 +396,7 @@ function getLoadQuiz(){
                 question:
                     "卑弥呼「ワシらが野尻湖の奥で戦った大きな獣は何じゃったかの？」",
                 correct:"ナウマンゾウ",
-                wrong:"ティラノサウルス"
+                wrong:"マンモス"
             };
 
         default:
