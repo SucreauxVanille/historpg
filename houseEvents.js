@@ -295,3 +295,91 @@ function cancelSave(){
     );
 
 }
+
+//卑弥呼クイズ
+function startLoadQuiz(){
+
+    const quiz = getLoadQuiz();
+    startMessage(
+        [quiz.question],
+        () => {
+
+            showChoice([
+                {
+                    text: quiz.correct,
+                    action: loadQuizCorrect
+                },
+                {
+                    text: quiz.wrong,
+                    action: loadQuizWrong
+                }
+            ]);
+        }
+    );
+}
+function getLoadQuiz(){
+
+    switch(gameState.progress){
+
+        case PROGRESS.IYO_APPEARED:
+            return {
+                question:
+                    "邪馬台国の女王である、ワシの名前は何じゃ？",
+                correct:"卑弥呼",
+                wrong:"花子"
+            };
+
+        case PROGRESS.NOJIRI_TUTORIAL:
+            return {
+                question:
+                    "ワシが治める国の名前は何じゃ？",
+                correct:"邪馬台国",
+                wrong:"琉球王国"
+            };
+
+        case PROGRESS.NAUMANN_DEFEATED:
+            return {
+                question:
+                    "ワシらが向かう湖の名前は覚えておるな？",
+                correct:"野尻湖",
+                wrong:"琵琶湖"
+            };
+
+        case PROGRESS.OBSIDIAN_OBTAINED:
+            return {
+                question:
+                    "野尻湖の奥で戦った大きな獣は何じゃったか？",
+                correct:"ナウマンゾウ",
+                wrong:"ティラノサウルス"
+            };
+
+        default:
+            return {
+                question:
+                    "野尻湖で会った男はどこから来たと言っておった？",
+                correct:"岩宿",
+                wrong:"吉野ケ里"
+            };
+    }
+
+}
+function loadQuizCorrect(){
+
+    startMessage(
+        [
+            "卑弥呼「うむ！寝ぼけてはおらぬようじゃな」"
+        ],
+        endEvent
+    );
+
+}
+function loadQuizWrong(){
+
+    startMessage(
+        [
+            "卑弥呼「たわけ！もう一度だけ問うぞ！」"
+        ],
+        startLoadQuiz
+    );
+
+}
