@@ -246,7 +246,7 @@ function iyoEvent(){
                 },
                 {
                     text:"いいえ",
-                    action: endEvent
+                    action: action:cancelSave
                 }
             ]);
 
@@ -282,6 +282,16 @@ function createSaveSpell(){
             },500);
 
         }
+    );
+
+}
+function cancelSave(){
+
+    startMessage(
+        [
+            "壱与「わかりました！必要な時は声をかけてくださいね」"
+        ],
+        endEvent
     );
 
 }
