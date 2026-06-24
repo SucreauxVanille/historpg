@@ -51,13 +51,21 @@ function applyProgress(progress){
         setFlag("nojiriTutorialFinished");
     }
 
-    if(progress >= PROGRESS.NAUMANN_DEFEATED){
-        setFlag("naumannDefeated");
-    }
+if(progress >= PROGRESS.NAUMANN_DEFEATED){
 
-    if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
-        setFlag("obsidianObtained");
-    }
+    setFlag("naumannDefeated");
+    despawnObject(
+        "naumann"
+    );
+}
+
+if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
+
+    setFlag("obsidianObtained");
+    despawnObject(
+        "obsidian"
+    );
+}
 
     if(progress >= PROGRESS.DEMO_CLEAR){
         setFlag("demoClear");
@@ -67,7 +75,10 @@ function applyProgress(progress){
 function resetWorld(){
 
     gameState.flags = {};
+    spawnObject("naumann");
+    spawnObject("obsidian");
 
+    despawnObject("iyo");
 }
 
 
