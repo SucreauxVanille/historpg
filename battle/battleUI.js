@@ -471,4 +471,36 @@ function gameOver(){
     setBattleLog(
         "ゆうしゃたちは全滅した！"
     );
+
+    setTimeout(() => {
+        fadeOut();
+        setTimeout(() => {
+            endBattle("gameover");
+
+            // 全回復
+
+            playerStatus.hp =
+                getStatus(playerStatus).maxHp;
+            playerStatus.mp =
+                getStatus(playerStatus).maxMp;
+
+            himikoStatus.hp =
+                getStatus(himikoStatus).maxHp;
+            himikoStatus.mp =
+                getStatus(himikoStatus).maxMp;
+
+            // ワープ
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
+    );
+
+            updateBattleStatus();
+            fadeIn();
+            showMessage(
+                "壱与「大丈夫でしたか？邪馬台国にお戻ししました」"
+            );
+        }, 500);
+    }, 1000);
 }
