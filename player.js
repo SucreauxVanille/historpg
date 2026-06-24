@@ -172,7 +172,7 @@ function getHimikoMaxHP(lv){
 }
 
 function getHimikoMaxMP(lv){
-    return Math.floor(47 + lv * 3);
+    return Math.floor(42 + lv * 3);
 }
 
 function getHimikoATK(lv){
@@ -180,7 +180,7 @@ function getHimikoATK(lv){
 }
 
 function getHimikoDEF(lv){
-    return Math.floor(2 + lv * 0.8);
+    return Math.floor(2 + lv * 0.4);
 }
 
 //ステータス取得
