@@ -1,6 +1,7 @@
 const tileTypes = {
     floor: {
-        color: "#c9a063",
+        id: "floor",
+        image: "images/tiles/floor.png",
         passable: true
     },
 
@@ -9,7 +10,8 @@ const tileTypes = {
         passable: false
     },
     grass: {
-        color: "#4caf50",
+        id: "grass",
+        image: "images/tiles/grass.png",
         passable: true
     },
 
