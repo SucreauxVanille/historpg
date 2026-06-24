@@ -299,6 +299,52 @@ function cancelSave(){
 //卑弥呼クイズ
 function startLoadQuiz(){
 
+    
+    setObjectDirection(
+        "himiko",
+        "left"
+    );
+
+    setTimeout(()=>{
+        setObjectDirection(
+            "himiko",
+            "down"
+        );
+    },200);
+
+    setTimeout(()=>{
+        setObjectDirection(
+            "himiko",
+            "right"
+        );
+    },400);
+
+    setTimeout(()=>{
+        setObjectDirection(
+            "himiko",
+            "up"
+        );
+    },600);
+
+    setTimeout(()=>{
+        setObjectDirection(
+            "himiko",
+            "left"
+        );
+
+        showProgressQuiz();
+
+    },800);
+    startMessage(
+        [
+            "卑弥呼「おぬし、よもや寝ぼけてはおるまいな？」",
+            "卑弥呼「少し試してみようかのう」",
+            ""
+        ],
+        );
+}
+function showProgressQuiz(){
+
     const quiz = getLoadQuiz();
     startMessage(
         [quiz.question],
@@ -324,7 +370,7 @@ function getLoadQuiz(){
         case PROGRESS.IYO_APPEARED:
             return {
                 question:
-                    "邪馬台国の女王である、ワシの名前は何じゃ？",
+                    "卑弥呼「邪馬台国の女王である、ワシの名前は何じゃ？」",
                 correct:"卑弥呼",
                 wrong:"花子"
             };
@@ -332,7 +378,7 @@ function getLoadQuiz(){
         case PROGRESS.NOJIRI_TUTORIAL:
             return {
                 question:
-                    "ワシが治める国の名前は何じゃ？",
+                    "卑弥呼「ワシが治める国の名前は何じゃ？」",
                 correct:"邪馬台国",
                 wrong:"琉球王国"
             };
@@ -340,7 +386,7 @@ function getLoadQuiz(){
         case PROGRESS.NAUMANN_DEFEATED:
             return {
                 question:
-                    "ワシらが向かう湖の名前は覚えておるな？",
+                    "卑弥呼「ワシらが黒曜石の回収に向かう湖の名前は覚えておるな？」",
                 correct:"野尻湖",
                 wrong:"琵琶湖"
             };
@@ -348,7 +394,7 @@ function getLoadQuiz(){
         case PROGRESS.OBSIDIAN_OBTAINED:
             return {
                 question:
-                    "野尻湖の奥で戦った大きな獣は何じゃったか？",
+                    "卑弥呼「ワシらが野尻湖の奥で戦った大きな獣は何じゃったかの？」",
                 correct:"ナウマンゾウ",
                 wrong:"ティラノサウルス"
             };
@@ -356,7 +402,7 @@ function getLoadQuiz(){
         default:
             return {
                 question:
-                    "野尻湖で会った男はどこから来たと言っておった？",
+                    "卑弥呼「少し難しめじゃぞ。野尻湖で見かけた男はどこから来たと言っておった？」",
                 correct:"岩宿",
                 wrong:"吉野ケ里"
             };
