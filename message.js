@@ -91,19 +91,13 @@ button.addEventListener(
     () => {
 
         container.innerHTML = "";
-
-        gameState.mode = "field";
         hideMessage();
 
         if(choice.action){
             choice.action();
         }
-
     }
 );
-
         container.appendChild(button);
-
     });
-
 }
