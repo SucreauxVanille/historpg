@@ -460,3 +460,16 @@ document
     "click",
     runAway
 ); 
+
+//戦闘不能チェック
+function isDead(member){
+    return member.hp <= 0;
+}
+
+function isHeroDead(){
+    return isDead(playerStatus);
+}
+
+function isHimikoDead(){
+    return isDead(himikoStatus);
+}
