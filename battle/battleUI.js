@@ -473,8 +473,6 @@ function gameOver(){
         "ゆうしゃたちは全滅した！"
     );
 
-    setTimeout(() => {
-        fadeOut();
         setTimeout(() => {
             endBattle("gameover");
 
@@ -495,13 +493,10 @@ function gameOver(){
         maps.himikoHouse,
         5,
         5
-    );
-
+        );
             updateBattleStatus();
-            fadeIn();
             showMessage(
                 "壱与「大丈夫でしたか？邪馬台国にお戻ししました」"
             );
-        }, 500);
-    }, 1000);
+        }, 1000);
 }
