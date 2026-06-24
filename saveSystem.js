@@ -34,8 +34,18 @@ const WORD_TO_NUMBER = {
 function applyProgress(progress){
 
     if(progress >= PROGRESS.IYO_APPEARED){
-        setFlag("iyoAppeared");
+
+    setFlag("iyoAppeared");
+    spawnObject("iyo");
+    const iyo =
+        getObjectById("iyo");
+
+    if(iyo){
+        iyo.x = 5;
+        iyo.y = 2;
+        iyo.direction = "down";
     }
+}
 
     if(progress >= PROGRESS.NOJIRI_TUTORIAL){
         setFlag("nojiriTutorialFinished");
@@ -59,26 +69,7 @@ function resetWorld(){
     gameState.flags = {};
 
 }
-function createSaveCode(){
 
-    return (
-        playerStatus.exp +
-        "-" +
-        gameState.progress
-    );
-
-}
-
-function parseSaveCode(code){
-
-    const parts = code.split("-");
-
-    return {
-        exp: Number(parts[0]),
-        progress: Number(parts[1])
-    };
-
-}
 
 //暗号化
 function encodeSaveCode(){
@@ -138,5 +129,23 @@ function decodeSaveCode(spell){
         exp: Number(exp),
         progress
     };
+
+}
+function loadGame(spell){
+
+    const saveData =
+        decodeSaveCode(spell);
+
+    playerStatus.exp =
+        saveData.exp;
+
+    gameState.progress =
+        saveData.progress;
+
+    resetWorld();
+
+    applyProgress(
+        gameState.progress
+    );
 
 }
