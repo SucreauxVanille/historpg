@@ -91,7 +91,7 @@ maps.nojiriLake = {
             id: "naumann",
             x: 2,
             y: 0,
-            active: !hasFlag("naumannDefeated"),
+            active: true,
             solid: true,
             direction: "down",
             event: "naumannBoss"
@@ -101,7 +101,7 @@ maps.nojiriLake = {
             id: "obsidian",
             x: 1,
             y: 0,
-            active: !hasFlag("obsidianObtained"),
+            active: true,
             solid: true,
             event: "obsidian"
         }
