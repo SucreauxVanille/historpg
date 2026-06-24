@@ -416,7 +416,8 @@ setTimeout(() => {
     }
 }, 600);
 }, 600);
-               
+}
+
 //にげる
 function runAway(){
     if(battleState !== "player") return;
