@@ -41,7 +41,7 @@ function nojiriTutorialEvent(){
 
                     if(result === "win"){
                         setFlag("nojiriTutorialFinished");
-                        gameState.progress = PROGRESS.NIJIRI_TUTORIAL;
+                        gameState.progress = PROGRESS.NOJIRI_TUTORIAL;
                     }
                 }
             );
