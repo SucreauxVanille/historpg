@@ -192,24 +192,17 @@ function attackEnemy(){
                     );
 
                     setTimeout(() => {
-
                         document.getElementById("enemyImage")
                             .style.display = "none";
 
                         document.getElementById("enemyName")
                             .textContent = "";
-
                     }, 500);
-
                     return;
                 }
-
                 setTimeout(himikoTurn, 600);
-
-            }, 600);
-
+           }, 600);
         }, 500);
-
     }, 400);
 }
 //卑弥呼のターン
@@ -232,21 +225,16 @@ function himikoTurn(){
         setBattleLog("卑弥呼は癒しの呪術を使った！");
 
         setTimeout(() => {
-
             flashScreen();
-
             lowHpMember.hp =
                 getStatus(lowHpMember).maxHp;
 
             himikoStatus.mp -= 4;
-
             updateBattleStatus();
-
             setBattleLog(
                 lowHpMember.name +
                 " のキズが回復した！"
             );
-
             setTimeout(enemyTurn, 800);
 
         }, 600);
@@ -292,23 +280,17 @@ function himikoTurn(){
 
                     setBattlePhase("victory");
                     updateBattleUI();
-
                     setBattleLog(
                         currentEnemy.name +
                         "をたおした！\n" +
                         currentEnemy.exp +
                         " の経験値を獲得！"
                     );
-
                     return;
                 }
-
                 enemyTurn();
-
             }, 800);
-
         }, 600);
-
         return;
     }
 
@@ -339,27 +321,21 @@ function himikoTurn(){
         setTimeout(() => {
 
             if(currentEnemy.hp <= 0){
-
                 playerStatus.exp += currentEnemy.exp;
                 himikoStatus.exp += currentEnemy.exp;
 
                 setBattlePhase("victory");
                 updateBattleUI();
-
                 setBattleLog(
                     currentEnemy.name +
                     "をたおした！\n" +
                     currentEnemy.exp +
                     " の経験値を獲得！"
                 );
-
                 return;
             }
-
             enemyTurn();
-
         }, 800);
-
     }, 600);
 }
 //敵ターン
@@ -418,9 +394,7 @@ function enemyTurn(){
         updateBattleStatus();
 
 setTimeout(() => {
-
     if(target.hp <= 0){
-
         setBattleLog(
             target.name +
             " は倒れた！"
@@ -428,9 +402,8 @@ setTimeout(() => {
 
         setTimeout(() => {
             if(isPartyAllDead()){
-
-                // 後でゲームオーバー
-
+       gameOver();
+       return;
             }else{
                 battleState = "player";
                 setBattlePhase("waiting");
@@ -438,7 +411,6 @@ setTimeout(() => {
         }, 800);
 
     }else{
-
         battleState = "player";
         setBattlePhase("waiting");
     }
@@ -492,5 +464,11 @@ function isPartyAllDead(){
     return (
         playerStatus.hp <= 0 &&
         himikoStatus.hp <= 0
+    );
+}
+function gameOver(){
+
+    setBattleLog(
+        "ゆうしゃたちは全滅した！"
     );
 }
