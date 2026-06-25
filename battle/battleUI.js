@@ -124,14 +124,14 @@ document.getElementById(
 `
 <div>
 ${hero.name} Lv${hero.level}<br>
-HP ${hero.hp}/${hero.maxHp}<br>
-MP ${hero.mp}/${hero.maxMp}
+体力 ${hero.hp}/${hero.maxHp}<br>
+気力 ${hero.mp}/${hero.maxMp}
 </div>
 
 <div>
 ${himiko.name} Lv${himiko.level}<br>
-HP ${himiko.hp}/${himiko.maxHp}<br>
-MP ${himiko.mp}/${himiko.maxMp}
+体力 ${himiko.hp}/${himiko.maxHp}<br>
+気力 ${himiko.mp}/${himiko.maxMp}
 </div>
 `;
 }
