@@ -380,8 +380,15 @@ setTimeout(() => {
 
 //にげる
 function runAway(){
+    
     if(battleState !== "player") return;
-
+    
+    if(currentEnemy.boss){
+    setBattleLog("だめだ！にげられない！");
+    setBattlePhase("waiting");
+    return;
+    }
+    
     battleState = "enemy";
     setBattlePhase("action");
     setBattleLog("ゆうしゃはにげだした！");
