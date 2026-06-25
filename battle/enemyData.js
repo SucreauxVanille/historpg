@@ -25,6 +25,20 @@ const enemies = {
         exp: 100,
         image: "battle/images/naumann.png",
         boss: true
-    }
+    },
+    rabbit: {
+        name: "がいこつうさぎ",
+        hp: 40,
+        atk: 20,
+        exp: 36,
+        boss: false
+    },
 
+    deer: {
+        name: "あばれ貝がら",
+        hp: 52,
+        atk: 11,
+        exp: 32,
+        boss: false
+    }
 };
