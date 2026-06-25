@@ -178,28 +178,10 @@ function attackEnemy(){
             // ダメージ表示時間
             setTimeout(() => {
 
-                if(currentEnemy.hp <= 0){
-
-                    playerStatus.exp += currentEnemy.exp;
-                    himikoStatus.exp += currentEnemy.exp;
-
-                    setBattlePhase("victory");
-                    updateBattleUI();
-
-                    setBattleLog(
-                        currentEnemy.name + "をたおした！\n" +
-                        currentEnemy.exp + " の経験値を獲得！"
-                    );
-
-                    setTimeout(() => {
-                        document.getElementById("enemyImage")
-                            .style.display = "none";
-
-                        document.getElementById("enemyName")
-                            .textContent = "";
-                    }, 500);
-                    return;
-                }
+if(currentEnemy.hp <= 0){
+    processVictory();
+    return;
+}
                 setTimeout(himikoTurn, 600);
            }, 600);
         }, 500);
@@ -272,22 +254,10 @@ function himikoTurn(){
             updateBattleStatus();
 
             setTimeout(() => {
-
-                if(currentEnemy.hp <= 0){
-
-                    playerStatus.exp += currentEnemy.exp;
-                    himikoStatus.exp += currentEnemy.exp;
-
-                    setBattlePhase("victory");
-                    updateBattleUI();
-                    setBattleLog(
-                        currentEnemy.name +
-                        "をたおした！\n" +
-                        currentEnemy.exp +
-                        " の経験値を獲得！"
-                    );
-                    return;
-                }
+if(currentEnemy.hp <= 0){
+    processVictory();
+    return;
+}
                 enemyTurn();
             }, 800);
         }, 600);
@@ -320,20 +290,10 @@ function himikoTurn(){
 
         setTimeout(() => {
 
-            if(currentEnemy.hp <= 0){
-                playerStatus.exp += currentEnemy.exp;
-                himikoStatus.exp += currentEnemy.exp;
-
-                setBattlePhase("victory");
-                updateBattleUI();
-                setBattleLog(
-                    currentEnemy.name +
-                    "をたおした！\n" +
-                    currentEnemy.exp +
-                    " の経験値を獲得！"
-                );
-                return;
-            }
+if(currentEnemy.hp <= 0){
+    processVictory();
+    return;
+}
             enemyTurn();
         }, 800);
     }, 600);
@@ -501,4 +461,46 @@ function gameOver(){
         }, 1000);
 
     }, 2000);
+}
+
+//勝利
+function processVictory(){
+
+    const heroLevelBefore =
+        getLevel(playerStatus);
+
+    const himikoLevelBefore =
+        getLevel(himikoStatus);
+
+    playerStatus.exp += currentEnemy.exp;
+    himikoStatus.exp += currentEnemy.exp;
+
+    const heroLevelAfter =
+        getLevel(playerStatus);
+
+    const himikoLevelAfter =
+        getLevel(himikoStatus);
+
+    let victoryText =
+        currentEnemy.name + "をたおした！\n" +
+        currentEnemy.exp + " の経験値を獲得！";
+
+    if(heroLevelAfter > heroLevelBefore){
+        victoryText +=
+            "\nゆうしゃは Lv" +
+            heroLevelAfter +
+            " になった！";
+    }
+
+    if(himikoLevelAfter > himikoLevelBefore){
+        victoryText +=
+            "\n卑弥呼は Lv" +
+            himikoLevelAfter +
+            " になった！";
+    }
+
+    setBattlePhase("victory");
+    updateBattleUI();
+
+    setBattleLog(victoryText);
 }
