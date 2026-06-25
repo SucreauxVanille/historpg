@@ -105,7 +105,20 @@ function nojirimob3Event(){
 }
 
 function naumannBossEvent(){
+function naumannBossEvent(){
 
+    if(hasFlag("naumannDefeated")){
+
+        startMessage(
+            [
+                "卑弥呼「なんじゃ、ずいぶん穏やかになったではないか」",
+                "卑弥呼「これが異変の影響を受けておらぬ、本来の姿なのじゃろうな」"
+            ],
+            endEvent
+        );
+
+        return;
+    }
     startMessage(
         [
             "卑弥呼「なんと巨大な獣じゃ…背後にあるのは、黒曜石のようじゃな」",
