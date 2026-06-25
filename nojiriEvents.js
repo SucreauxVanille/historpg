@@ -66,7 +66,7 @@ function nojirimob2Event(){
     if(hasFlag("obsidianObtained")){
 
         showMessage(
-            "男「まだ狂暴な獣もおるが、不気味な気配は薄くなっただ」"
+            "男「中にはまだ狂暴な獣もおるが、不気味な気配は薄くなっただ」"
         );
         endEvent();
         return;
@@ -75,7 +75,7 @@ function nojirimob2Event(){
     startMessage(
         [
             "男「ちょっと前から不気味な気配がするだよ」",
-            "男「獣が急に狂暴になっちまって、狩りもうまくいかねえだ」"
+            "男「獣が急に狂暴になっちまって、おちおちドングリも拾えねえだ」"
         ],
         endEvent
     );
@@ -97,7 +97,7 @@ function nojirimob3Event(){
         [
             "男「オラは岩宿ってところから来たんだが、やたら狂暴なゾウに出会ってな」",
             "男「びっくらこいて、黒曜石の矢じりを落っことしちまっただ」",
-            "男「あんなおっかない思いはしとうない。拾えたなら、あんたたちに譲るだよ」"
+            "男「あんなおっかない思いはもう勘弁だ。欲しければあんたたちに譲るだよ」"
         ],
         endEvent
     );
@@ -139,7 +139,7 @@ function naumannBossEvent(){
                                 ],
                                 endEvent
                             );
-                        },300);
+                        },600);
                     }else{
                         endEvent();
                     }
@@ -153,7 +153,7 @@ function obsidianEvent(){
     if(hasFlag("obsidianObtained")){
 
         showMessage(
-            "黒曜石があった場所だ。"
+            "卑弥呼「地面に矢じり形の跡が残っておるのう」"
         );
 
         endEvent();
