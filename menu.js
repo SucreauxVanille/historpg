@@ -32,10 +32,10 @@ function showMainMenu(){
             つよさ
         </div>
 
-//        <div class="menuItem"
-//             onclick="showItems()">
-//            どうぐ
-//        </div>
+        <div class="menuItem"
+             onclick="showItems()">
+            どうぐ
+        </div>
 
         <div class="menuItem"
              onclick="showLocation()">
