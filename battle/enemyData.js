@@ -34,7 +34,7 @@ const enemies = {
         boss: false
     },
 
-    deer: {
+    shell: {
         name: "あばれ貝がら",
         hp: 52,
         atk: 11,
