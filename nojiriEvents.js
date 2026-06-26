@@ -105,7 +105,6 @@ function nojirimob3Event(){
 }
 
 function naumannBossEvent(){
-function naumannBossEvent(){
 
     if(hasFlag("naumannDefeated")){
 
