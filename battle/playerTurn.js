@@ -28,7 +28,7 @@ function attackEnemy(){
             currentEnemy.hp -= damage;
 
             flashElement(
-                document.getElementById("enemyImage")
+           document.querySelector(".enemyImage")
             );
 
             setBattleLog(
