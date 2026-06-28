@@ -31,6 +31,12 @@ const tileTypes = {
         id: "cliff",
         image: "images/tiles/cliff.png",
         passable: false
+    },
+    
+    cliffL: {
+        id: "cliffL",
+        image: "images/tiles/cliffedgeA.png",
+        passable: false
     }
 
 };
@@ -40,5 +46,6 @@ const tileIds = {
     2: tileTypes.grass,
     3: tileTypes.rock,
     4: tileTypes.water,
-    5: tileTypes.cliff
+    5: tileTypes.cliff,
+    6: tileTypes.cliffedgeA
 };
