@@ -47,5 +47,5 @@ const tileIds = {
     3: tileTypes.rock,
     4: tileTypes.water,
     5: tileTypes.cliff,
-    6: tileTypes.cliffedgeA
+    6: tileTypes.cliffL
 };
