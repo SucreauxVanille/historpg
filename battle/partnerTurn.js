@@ -66,7 +66,7 @@ function himikoTurn(){
 
             setTimeout(() => {
 if(currentEnemy.hp <= 0){
-    processVictory();
+    removeCurrentEnemy();
     return;
 }
                 enemyTurn();
@@ -102,7 +102,7 @@ if(currentEnemy.hp <= 0){
         setTimeout(() => {
 
 if(currentEnemy.hp <= 0){
-    processVictory();
+    removeCurrentEnemy();
     return;
 }
             enemyTurn();
