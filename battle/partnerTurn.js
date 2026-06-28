@@ -52,7 +52,7 @@ function himikoTurn(){
             himikoStatus.mp -= 4;
 
             flashElement(
-                document.getElementById("enemyImage")
+                document.querySelector(".enemyImage")
             );
 
             setBattleLog(
@@ -89,7 +89,7 @@ if(currentEnemy.hp <= 0){
         currentEnemy.hp -= damage;
 
         flashElement(
-            document.getElementById("enemyImage")
+            document.querySelector(".enemyImage")
         );
 
         setBattleLog(
