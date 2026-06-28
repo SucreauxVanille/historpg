@@ -99,7 +99,7 @@ battleExp += currentEnemy.exp;
     //全滅
     currentEnemy = null;
 
-    battleVictory();
+    processVictory();
 
 }
 
