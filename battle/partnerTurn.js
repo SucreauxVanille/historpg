@@ -1,6 +1,6 @@
 //卑弥呼のターン
 function himikoTurn(){
-
+if(battleState !== "partner") return;
     const himiko = getStatus(himikoStatus);
     if(himikoStatus.hp <= 0){
     enemyTurn();
@@ -64,13 +64,17 @@ function himikoTurn(){
 
             updateBattleStatus();
 
-            setTimeout(() => {
-if(currentEnemy.hp <= 0){
-    removeCurrentEnemy();
-    return;
-}
-                enemyTurn();
-            }, 800);
+setTimeout(() => {
+
+    if(currentEnemy.hp <= 0){
+        removeCurrentEnemy();
+        return;
+    }
+
+    setBattleState("enemy");
+    setTimeout(enemyTurn, 600);
+
+}, 800);
         }, 600);
         return;
     }
@@ -101,11 +105,14 @@ if(currentEnemy.hp <= 0){
 
         setTimeout(() => {
 
-if(currentEnemy.hp <= 0){
-    removeCurrentEnemy();
-    return;
-}
-            enemyTurn();
+            if(currentEnemy.hp <= 0){
+                removeCurrentEnemy();
+                return;
+            }
+
+            setBattleState("enemy");
+            setTimeout(enemyTurn, 600);
+
         }, 800);
     }, 600);
 }
