@@ -12,6 +12,7 @@ let battleEnemies = [];
 let currentEnemy = null;
 
 let battleFinishedCallback = null;
+let battleExp = 0;
 
 //UI管理
 function updateBattleUI(){
