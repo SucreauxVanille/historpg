@@ -1,10 +1,3 @@
-//フェイズ管理
-let battlePhase = "none";
-
-//プレイヤー＆敵状態
-let battleState = "player"; // player / enemy
-let currentEnemy = null;
-
 //UI管理
 function updateBattleUI(){
     const isCommand = battlePhase === "command";
@@ -53,7 +46,7 @@ function setBattleLog(text){
 }
 
 //バトル開始
-let battleFinishedCallback = null;
+
 
 function startBattle(enemyId, onFinish = null){
     battleFinishedCallback = onFinish;
