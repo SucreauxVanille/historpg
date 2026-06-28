@@ -69,7 +69,7 @@ if(battleState !== "command") return;
     return;
     }
     
-    battleState = "enemy";
+    setBattleState("enemy");
     setBattlePhase("action");
     setBattleLog("ゆうしゃはにげだした！");
     setTimeout(() => {
