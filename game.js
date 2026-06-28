@@ -535,7 +535,7 @@ function checkEncounter(){
             )
         ];
 
-    startBattle(enemyId);
+    startBattle([enemyId]);
 
 }
 
