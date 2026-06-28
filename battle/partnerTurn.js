@@ -1,6 +1,9 @@
 //卑弥呼のターン
 function himikoTurn(){
-if(battleState !== "partner") return;
+
+    if(battleState !== "partner") return;
+
+    setBattlePhase("action");
     const himiko = getStatus(himikoStatus);
     if(himikoStatus.hp <= 0){
     enemyTurn();
