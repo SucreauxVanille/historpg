@@ -78,11 +78,16 @@ function updateEnemyDisplay(){
 function removeCurrentEnemy(){
 battleExp += currentEnemy.exp;
 const defeatedEnemyName = currentEnemy.name;
-    //現在の敵を削除
-    battleEnemies.shift();
+//現在の敵を削除
+battleEnemies.shift();
+
 setBattleLog(
     defeatedEnemyName + " をたおした！"
 );
+
+//撃破メッセージ表示時間
+setTimeout(() => {
+
     //まだ敵が残っている
     if(battleEnemies.length > 0){
 
@@ -90,11 +95,7 @@ setBattleLog(
 
         updateEnemyDisplay();
 
-        setBattleLog(
-            currentEnemy.name + " が 前にでた！"
-        );
-
-        setBattlePhase("waiting");
+        setBattlePhase("command");
 
         return;
     }
@@ -102,8 +103,15 @@ setBattleLog(
     //全滅
     currentEnemy = null;
 
+    document.querySelector(".enemyImage")
+        .style.display = "none";
+
+    document.querySelector(".enemyName")
+        .textContent = "";
+
     processVictory();
 
+}, 600);
 }
 
 function endBattle(result = "win"){
