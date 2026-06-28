@@ -33,11 +33,8 @@ function gameOver(){
                 showMessage(
                     "壱与「大丈夫でしたか？邪馬台国にお戻ししました」"
                 );
-
             }, 500); // ←フェード時間に合わせる
-
         }, 1000);
-
     }, 2000);
 }
 
@@ -50,8 +47,8 @@ function processVictory(){
     const himikoLevelBefore =
         getLevel(himikoStatus);
 
-    playerStatus.exp += currentEnemy.exp;
-    himikoStatus.exp += currentEnemy.exp;
+    playerStatus.exp += battleExp;
+    himikoStatus.exp += battleExp;
 
     const heroLevelAfter =
         getLevel(playerStatus);
@@ -61,7 +58,7 @@ function processVictory(){
 
     let victoryText =
         currentEnemy.name + "をたおした！\n" +
-        currentEnemy.exp + " の経験値を獲得！";
+        battleExp + " の経験値を獲得！";
 
     if(heroLevelAfter > heroLevelBefore){
         victoryText +=
