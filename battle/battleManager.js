@@ -34,6 +34,7 @@ function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
     battleState = "player";
     battlePhase = "none";
+    battleExp = 0;
 battleEnemies = enemyIds.map(id => ({
     ...enemies[id]
 }));
