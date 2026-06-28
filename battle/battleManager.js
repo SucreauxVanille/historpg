@@ -75,7 +75,7 @@ function updateEnemyDisplay(){
 
 //敵撃破
 function removeCurrentEnemy(){
-
+battleExp += currentEnemy.exp;
     //現在の敵を削除
     battleEnemies.shift();
 
