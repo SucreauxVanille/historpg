@@ -1,11 +1,13 @@
 //クリック動作
 document.getElementById("battleLog").addEventListener("click", function(){
-    if(battlePhase === "intro" || battlePhase === "waiting"){
+if(battlePhase === "intro" || battlePhase === "waiting"){
 
-        setBattlePhase("command");
+    battleState = "command";
+    setBattlePhase("none");
 
-        setBattleLog("");
-        return;
+    setBattleLog("");
+    return;
+}
     }
     if(battlePhase === "victory"){
         endBattle();
@@ -59,7 +61,7 @@ ${himiko.name} Lv${himiko.level}<br>
 //にげる
 function runAway(){
     
-    if(battleState !== "player") return;
+if(battleState !== "command") return;
     
     if(currentEnemy.boss){
     setBattleLog("だめだ！にげられない！");
