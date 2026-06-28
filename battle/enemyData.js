@@ -39,6 +39,7 @@ const enemies = {
         hp: 52,
         atk: 11,
         exp: 32,
+        image: "battle/images/shell.png",
         boss: false
     }
 };
