@@ -91,12 +91,6 @@ function runAway(){
 }     
 
 //ボタン
-document
-.getElementById("attackBtn")
-.addEventListener(
-    "click",
-    attackEnemy
-);
 
 document
 .getElementById("runBtn")
