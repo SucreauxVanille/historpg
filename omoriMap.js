@@ -70,7 +70,6 @@ maps.omoriShellMounds = {
             direction: "right",
             event: "nojirimob2"
         }
-
     ]
 
 };
