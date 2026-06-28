@@ -8,7 +8,7 @@ maps.omoriShellMounds = {
     ],
     allowHimikoFollower: true,
     encounterRate: 8,
-
+    maxEncounterCount: 2,
     encounterTable: [
         "shell",
         "rabbit"
