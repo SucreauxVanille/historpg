@@ -1,16 +1,19 @@
 //クリック動作
 document.getElementById("battleLog").addEventListener("click", function(){
-if(battlePhase === "intro" || battlePhase === "waiting"){
 
-    battleState = "command";
-    setBattlePhase("none");
+    if(battlePhase === "intro" || battlePhase === "waiting"){
 
-    setBattleLog("");
-    return;
-}
+        setBattleState("command");
+        setBattlePhase("none");
+
+        setBattleLog("");
+        return;
+    }
+
     if(battlePhase === "victory"){
         endBattle();
     }
+
 });
 
 function showBattleScreen(){
