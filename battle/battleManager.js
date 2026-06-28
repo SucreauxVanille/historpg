@@ -7,7 +7,7 @@
 let battlePhase = "none";
 
 //プレイヤー＆敵状態
-let battleState = "player"; // player / enemy
+let battleState = "none";
 let battleEnemies = [];
 let currentEnemy = null;
 
@@ -16,24 +16,33 @@ let battleExp = 0;
 
 //UI管理
 function updateBattleUI(){
-    const isCommand = battlePhase === "command";
+
+    const isCommand =
+        battleState === "command";
 
     document.getElementById("battleCommand")
-        .style.display = isCommand ? "flex" : "none";
+        .style.display =
+            isCommand ? "flex" : "none";
+
     document.getElementById("battleLog")
-        .style.display = isCommand ? "none" : "block";
+        .style.display =
+            isCommand ? "none" : "block";
 }
 
 function setBattlePhase(phase){
     battlePhase = phase;
     updateBattleUI();
 }
+function setBattleState(state){
+    battleState = state;
+    updateBattleUI();
+}
 
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
-    battleState = "player";
-    battlePhase = "none";
+setBattleState("none");
+setBattlePhase("none");
     battleExp = 0;
 battleEnemies = enemyIds.map(id => ({
     ...enemies[id]
@@ -127,7 +136,7 @@ setTimeout(() => {
         currentEnemy = battleEnemies[0];
 
         updateEnemyDisplay();
-        battleState = "player";   
+        setBattleState("player");   
         setBattlePhase("command");
 
         return;
@@ -148,8 +157,8 @@ setTimeout(() => {
 }
 
 function endBattle(result = "win"){
-    battleState = "player";
-    battlePhase = "none";
+setBattleState("none");
+setBattlePhase("none");
 
     if(battleFinishedCallback){
         const callback = battleFinishedCallback;
