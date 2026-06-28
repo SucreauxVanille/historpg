@@ -39,12 +39,7 @@ battleEnemies = enemyIds.map(id => ({
 
 currentEnemy = battleEnemies[0];
 
-document.getElementById("enemyImage").src =
-    currentEnemy.image;
-document.getElementById("enemyImage")
-    .style.display = "block";
-document.getElementById("enemyName").textContent =
-    currentEnemy.name;
+updateEnemyDisplay();
     updateBattleStatus();
 
     // 出現ログだけ出す
@@ -65,7 +60,17 @@ setTimeout(() => {
     // 次の操作を待つ
     setBattlePhase("intro");
 }
+function updateEnemyDisplay(){
 
+    const image =
+        document.querySelector(".enemyImage");
+
+    const name =
+        document.querySelector(".enemyName");
+
+    image.src = currentEnemy.image;
+    name.textContent = currentEnemy.name;
+}
 function endBattle(result = "win"){
     battleState = "player";
     battlePhase = "none";
