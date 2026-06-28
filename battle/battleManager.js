@@ -94,7 +94,7 @@ setTimeout(() => {
         currentEnemy = battleEnemies[0];
 
         updateEnemyDisplay();
-
+        battleState = "player";   
         setBattlePhase("command");
 
         return;
