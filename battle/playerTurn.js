@@ -41,7 +41,7 @@ function attackEnemy(){
             setTimeout(() => {
 
 if(currentEnemy.hp <= 0){
-    processVictory();
+    removeCurrentEnemy();
     return;
 }
                 setTimeout(himikoTurn, 600);
