@@ -28,34 +28,53 @@
     gap:20px;
 }
 #enemyArea{
-
     flex:1;
 
     display:flex;
 
     justify-content:center;
     align-items:center;
-}
 
-#enemyImage{
+    gap:24px;
+}
+.enemySlot{
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    width:80px;
+
+}
+.enemyImage{
+
     width:64px;
     height:64px;
 
-    image-rendering: pixelated;
+    image-rendering:pixelated;
+
 }
-#enemyName{
+.enemyName{
 
-    height:40px;
-
-    display:flex;
-
-    justify-content:center;
-    align-items:center;
+    margin-top:8px;
 
     font-size:14px;
 
-    border-top:0px solid;
+    text-align:center;
+
 }
+.enemySlot.selected{
+
+    transform:translateY(-6px);
+
+}
+.enemySlot.defeated{
+
+    display:none;
+
+}
+
 #battleBottom{
     height:140px;
     border-top:3px solid white;
