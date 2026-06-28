@@ -8,6 +8,7 @@ let battlePhase = "none";
 
 //プレイヤー＆敵状態
 let battleState = "player"; // player / enemy
+let battleEnemies = [];
 let currentEnemy = null;
 
 let battleFinishedCallback = null;
@@ -28,13 +29,15 @@ function setBattlePhase(phase){
 }
 
 //バトル開始
-function startBattle(enemyId, onFinish = null){
+function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
     battleState = "player";
     battlePhase = "none";
-    currentEnemy = {
-        ...enemies[enemyId]
-    }
+battleEnemies = enemyIds.map(id => ({
+    ...enemies[id]
+}));
+
+currentEnemy = battleEnemies[0];
 
 document.getElementById("enemyImage").src =
     currentEnemy.image;
