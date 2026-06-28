@@ -64,14 +64,47 @@ setTimeout(() => {
 }
 function updateEnemyDisplay(){
 
-    const image =
-        document.querySelector(".enemyImage");
+    const slots =
+        document.querySelectorAll(".enemySlot");
 
-    const name =
-        document.querySelector(".enemyName");
+    //一度すべて非表示
+    slots.forEach(slot => {
+        slot.style.display = "none";
+    });
 
-    image.src = currentEnemy.image;
-    name.textContent = currentEnemy.name;
+    //表示に使うスロット番号
+    let slotIndex = [];
+
+    switch(battleEnemies.length){
+
+        case 1:
+            slotIndex = [1];
+            break;
+
+        case 2:
+            slotIndex = [0, 2];
+            break;
+
+        default:
+            slotIndex = [0, 1, 2];
+            break;
+    }
+
+    //敵を表示
+    battleEnemies.forEach((enemy, i) => {
+
+        const slot = slots[slotIndex[i]];
+
+        slot.style.display = "flex";
+
+        slot.querySelector(".enemyImage").src =
+            enemy.image;
+
+        slot.querySelector(".enemyName").textContent =
+            enemy.name;
+
+    });
+
 }
 
 //敵撃破
