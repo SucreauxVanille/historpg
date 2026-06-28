@@ -36,7 +36,7 @@ function nojiriTutorialEvent(){
         () => {
 
             startBattle(
-                "boar",
+                ["boar"],
                 (result) => {
 
                     if(result === "win"){
@@ -126,7 +126,7 @@ function naumannBossEvent(){
         () => {
 
             startBattle(
-                "naumann",
+                ["naumann"],
                 (result)=>{
 
                     if(result !== "win"){
