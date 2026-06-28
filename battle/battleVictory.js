@@ -57,7 +57,6 @@ function processVictory(){
         getLevel(himikoStatus);
 
     let victoryText =
-        currentEnemy.name + "をたおした！\n" +
         battleExp + " の経験値を獲得！";
 
     if(heroLevelAfter > heroLevelBefore){
