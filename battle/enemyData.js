@@ -31,6 +31,7 @@ const enemies = {
         hp: 40,
         atk: 20,
         exp: 36,
+        image: "battle/images/rabbit.png",
         boss: false
     },
 
