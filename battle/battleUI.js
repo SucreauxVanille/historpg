@@ -8,7 +8,6 @@ if(battlePhase === "intro" || battlePhase === "waiting"){
     setBattleLog("");
     return;
 }
-    }
     if(battlePhase === "victory"){
         endBattle();
     }
