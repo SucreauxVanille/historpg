@@ -8,7 +8,7 @@ maps.nojiriLake = {
     ],
     allowHimikoFollower: true,
     encounterRate: 8,
-
+    maxEncounterCount: 1,
     encounterTable: [
         "boar",
         "deer"
