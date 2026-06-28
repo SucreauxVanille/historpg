@@ -35,7 +35,7 @@
     justify-content:center;
     align-items:center;
 
-    gap:24px;
+    gap:20px;
 }
 .enemySlot{
 
@@ -44,7 +44,7 @@
 
     align-items:center;
 
-    width:80px;
+    width:90px;
 
 }
 .enemyImage{
@@ -59,7 +59,7 @@
 
     margin-top:8px;
 
-    font-size:14px;
+    font-size:12px;
 
     text-align:center;
 
