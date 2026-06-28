@@ -1,6 +1,8 @@
 //敵ターン
 function enemyTurn(){
 
+    if(battleState !== "enemy") return;
+
     setBattlePhase("action");
     setBattleLog(
         currentEnemy.name + " の攻撃！"
@@ -64,15 +66,14 @@ setTimeout(() => {
             if(isPartyAllDead()){
        gameOver();
        return;
-            }else{
-                battleState = "player";
-                setBattlePhase("waiting");
             }
+setBattleState("command");
+setBattlePhase("waiting");
         }, 800);
 
     }else{
-        battleState = "player";
-        setBattlePhase("waiting");
+setBattleState("command");
+setBattlePhase("waiting");
     }
 }, 600);
 }, 600);
