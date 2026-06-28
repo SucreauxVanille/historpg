@@ -1,10 +1,10 @@
 //攻撃
 function attackEnemy(){
 
-    if(battleState !== "player") return;
+if(battleState !== "command") return;
 
-    battleState = "enemy";
-    setBattlePhase("action");
+setBattleState("player");
+setBattlePhase("action");
 
     const hero = getStatus(playerStatus);
 
@@ -44,7 +44,9 @@ if(currentEnemy.hp <= 0){
     removeCurrentEnemy();
     return;
 }
-                setTimeout(himikoTurn, 600);
+setBattleState("partner");
+
+setTimeout(himikoTurn, 600);
            }, 600);
         }, 500);
     }, 400);
