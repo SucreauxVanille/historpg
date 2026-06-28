@@ -71,7 +71,6 @@ maps.omoriShellMounds = {
             event: "nojirimob2"
         }
 
-    ],
-
+    ]
 
 };
