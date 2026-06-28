@@ -71,6 +71,36 @@ function updateEnemyDisplay(){
     image.src = currentEnemy.image;
     name.textContent = currentEnemy.name;
 }
+
+//敵撃破
+function removeCurrentEnemy(){
+
+    //現在の敵を削除
+    battleEnemies.shift();
+
+    //まだ敵が残っている
+    if(battleEnemies.length > 0){
+
+        currentEnemy = battleEnemies[0];
+
+        updateEnemyDisplay();
+
+        setBattleLog(
+            currentEnemy.name + " が あらわれた！"
+        );
+
+        setBattlePhase("waiting");
+
+        return;
+    }
+
+    //全滅
+    currentEnemy = null;
+
+    battleVictory();
+
+}
+
 function endBattle(result = "win"){
     battleState = "player";
     battlePhase = "none";
