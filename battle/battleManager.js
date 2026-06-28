@@ -77,9 +77,12 @@ function updateEnemyDisplay(){
 //敵撃破
 function removeCurrentEnemy(){
 battleExp += currentEnemy.exp;
+const defeatedEnemyName = currentEnemy.name;
     //現在の敵を削除
     battleEnemies.shift();
-
+setBattleLog(
+    defeatedEnemyName + " をたおした！"
+);
     //まだ敵が残っている
     if(battleEnemies.length > 0){
 
@@ -88,7 +91,7 @@ battleExp += currentEnemy.exp;
         updateEnemyDisplay();
 
         setBattleLog(
-            currentEnemy.name + " が あらわれた！"
+            currentEnemy.name + " が 前にでた！"
         );
 
         setBattlePhase("waiting");
