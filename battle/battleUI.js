@@ -1,18 +1,3 @@
-//UI管理
-function updateBattleUI(){
-    const isCommand = battlePhase === "command";
-
-    document.getElementById("battleCommand")
-        .style.display = isCommand ? "flex" : "none";
-    document.getElementById("battleLog")
-        .style.display = isCommand ? "none" : "block";
-}
-
-function setBattlePhase(phase){
-    battlePhase = phase;
-    updateBattleUI();
-}
-
 //クリック動作
 document.getElementById("battleLog").addEventListener("click", function(){
     if(battlePhase === "intro" || battlePhase === "waiting"){
