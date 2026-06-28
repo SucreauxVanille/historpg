@@ -527,15 +527,25 @@ function checkEncounter(){
 
     encounterSteps = 0;
 
-    const enemyId =
+const enemyCount =
+    currentMap.maxEncounterCount ?? 1;
+
+const enemyIds = [];
+
+for(let i = 0; i < enemyCount; i++){
+
+    enemyIds.push(
         currentMap.encounterTable[
             Math.floor(
                 Math.random() *
                 currentMap.encounterTable.length
             )
-        ];
+        ]
+    );
 
-    startBattle([enemyId]);
+}
+
+startBattle(enemyIds);
 
 }
 
