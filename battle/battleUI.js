@@ -30,66 +30,7 @@ function setBattleLog(text){
     ).textContent = text;
 }
 
-//バトル開始
-
-
-function startBattle(enemyId, onFinish = null){
-    battleFinishedCallback = onFinish;
-    battleState = "player";
-    battlePhase = "none";
-    currentEnemy = {
-        ...enemies[enemyId]
-    }
-
-document.getElementById("enemyImage").src =
-    currentEnemy.image;
-document.getElementById("enemyImage")
-    .style.display = "block";
-document.getElementById("enemyName").textContent =
-    currentEnemy.name;
-    updateBattleStatus();
-
-    // 出現ログだけ出す
-    setBattleLog(
-        currentEnemy.name + " が あらわれた！"
-    );
-
-fadeOut();
-document.getElementById("controls")
-    .style.display = "none";
-
-setTimeout(() => {
-    showBattleScreen();
-    fadeIn();
-
-}, 500);
-    updateBattleUI(); 
-    // 次の操作を待つ
-    setBattlePhase("intro");
-}
-
-function endBattle(result = "win"){
-    battleState = "player";
-    battlePhase = "none";
-
-    if(battleFinishedCallback){
-        const callback = battleFinishedCallback;
-        battleFinishedCallback = null;
-        callback(result);
-    }
-
-    fadeOut();
-
-    setTimeout(() => {
-        hideBattleScreen();
-        document.getElementById("controls")
-            .style.display = "flex";
-        fadeIn();
-    }, 500);
-}
-
 //ステータス
-
 function updateBattleStatus(){
 
     const hero = getStatus(playerStatus);
