@@ -82,3 +82,9 @@ function endBattle(result = "win"){
         fadeIn();
     }, 500);
 }
+document
+.getElementById("attackBtn")
+.addEventListener(
+    "click",
+    attackEnemy
+);
