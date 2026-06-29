@@ -67,6 +67,19 @@ if(gameState.mode !== "message"){
     nextMessage();
 
 });
+
+//モブ用
+function npcDialogue(flag, beforeLines, afterLines){
+
+    const lines = hasFlag(flag)
+        ? afterLines
+        : beforeLines;
+
+    startMessage(lines, endEvent);
+
+}
+
+//選択肢
 function showChoice(choices){
 document.getElementById(
     "messageBox"
