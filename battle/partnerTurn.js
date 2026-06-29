@@ -69,12 +69,12 @@ function himikoTurn(){
 
 setTimeout(() => {
 
-if(currentEnemy.hp <= 0){
-    removeCurrentEnemy();
-    return;
-}
+    if(currentEnemy.hp <= 0){
+        removeCurrentEnemy();
+    }else{
+        nextBattleState();
+    }
 
-nextBattleState();
 }, 800);
         }, 600);
         return;
@@ -104,14 +104,14 @@ nextBattleState();
             " のダメージ！"
         );
 
-        setTimeout(() => {
+setTimeout(() => {
 
-if(currentEnemy.hp <= 0){
-    removeCurrentEnemy();
-    return;
-}
+    if(currentEnemy.hp <= 0){
+        removeCurrentEnemy();
+    }else{
+        nextBattleState();
+    }
 
-nextBattleState();
-        }, 800);
+}, 800);
     }, 600);
 }
