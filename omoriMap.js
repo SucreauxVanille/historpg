@@ -71,8 +71,8 @@ maps.omoriShellMounds = {
         },
         {
             id: "mob",
-            x: 14,
-            y: 9,
+            x: 18,
+            y: 10,
             active: true,
             solid: true,
             direction: "right",
