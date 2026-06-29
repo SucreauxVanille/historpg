@@ -1,9 +1,11 @@
 //敵ターン
+//敵ターン
 function enemyTurn(){
 
     if(battleState !== "enemy") return;
 
     setBattlePhase("action");
+
     setBattleLog(
         currentEnemy.name + " の攻撃！"
     );
@@ -25,7 +27,6 @@ function enemyTurn(){
         const targetStatus =
             getStatus(target);
 
-        // ダメージ計算
         let damage =
             Math.floor(
                 currentEnemy.atk -
@@ -39,7 +40,6 @@ function enemyTurn(){
         damage +=
             1 + Math.floor(Math.random() * 2);
 
-        // ダメージ適用
         target.hp -= damage;
 
         if(target.hp < 0){
@@ -55,29 +55,36 @@ function enemyTurn(){
 
         updateBattleStatus();
 
-setTimeout(() => {
-    if(target.hp <= 0){
-
-        setBattleLog(
-            target.name +
-            " は倒れた！"
-        );
-
         setTimeout(() => {
 
-            if(isPartyAllDead()){
-                gameOver();
-                return;
+            if(target.hp <= 0){
+
+                setBattleLog(
+                    target.name +
+                    " は倒れた！"
+                );
+
             }
 
-            nextBattleState();
-        }, 800);
+            finishEnemyTurn(target);
 
-    }else{
+        }, 600);
 
-        nextBattleState();
+    }, 800);
+
+}
+
+function finishEnemyTurn(target){
+
+    if(target.hp <= 0){
+
+        if(isPartyAllDead()){
+            gameOver();
+            return;
+        }
+
     }
 
-}, 600);
-}, 800);
+    nextBattleState();
+
 }
