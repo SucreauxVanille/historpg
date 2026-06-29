@@ -69,12 +69,12 @@ function himikoTurn(){
 
 setTimeout(() => {
 
-    if(currentEnemy.hp <= 0){
-        removeCurrentEnemy();
-        return;
-    }
+if(currentEnemy.hp <= 0){
+    removeCurrentEnemy();
+    return;
+}
 
-    setBattleState("enemy");
+nextBattleState();
     setTimeout(enemyTurn, 600);
 
 }, 800);
@@ -108,12 +108,12 @@ setTimeout(() => {
 
         setTimeout(() => {
 
-            if(currentEnemy.hp <= 0){
-                removeCurrentEnemy();
-                return;
-            }
+if(currentEnemy.hp <= 0){
+    removeCurrentEnemy();
+    return;
+}
 
-            setBattleState("enemy");
+nextBattleState();
             setTimeout(enemyTurn, 600);
 
         }, 800);
