@@ -183,8 +183,8 @@ function drawObjects(){
 
         if(!obj.active) return;
         if (
-        obj.hideAfterProgress !== undefined &&
-        gameState.progress >= obj.hideAfterProgress
+        obj.hideAfter !== undefined &&
+        gameState.progress >= obj.hideAfter
         ){
         return;
         }
