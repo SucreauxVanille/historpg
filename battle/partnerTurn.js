@@ -75,8 +75,6 @@ if(currentEnemy.hp <= 0){
 }
 
 nextBattleState();
-    setTimeout(enemyTurn, 600);
-
 }, 800);
         }, 600);
         return;
@@ -114,8 +112,6 @@ if(currentEnemy.hp <= 0){
 }
 
 nextBattleState();
-            setTimeout(enemyTurn, 600);
-
         }, 800);
     }, 600);
 }
