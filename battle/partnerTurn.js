@@ -55,7 +55,7 @@ function himikoTurn(){
             himikoStatus.mp -= 4;
 
             flashElement(
-                document.querySelector(".enemyImage")
+                getCurrentEnemyImage()
             );
 
             setBattleLog(
@@ -94,7 +94,7 @@ nextBattleState();
         currentEnemy.hp -= damage;
 
         flashElement(
-            document.querySelector(".enemyImage")
+            getCurrentEnemyImage()
         );
 
         setBattleLog(
