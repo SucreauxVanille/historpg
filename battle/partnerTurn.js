@@ -31,7 +31,7 @@ function himikoTurn(){
                 lowHpMember.name +
                 " のキズが回復した！"
             );
-            setTimeout(enemyTurn, 800);
+nextBattleState();
 
         }, 600);
 
