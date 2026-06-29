@@ -141,6 +141,32 @@ hero: {
         ]
 
     },
+    
+    morse: {
+
+        animated: true,
+
+        down: [
+            "images/characters/morse_front1.png",
+            "images/characters/morse_front2.png"
+        ],
+
+        up: [
+            "images/characters/morse_front1.png",
+            "images/characters/morse_front2.png"
+        ],
+
+        left: [
+            "images/characters/morse_front1.png",
+            "images/characters/morse_front2.png"
+        ],
+
+        right: [
+            "images/characters/morse_front1.png",
+            "images/characters/morse_front2.png"
+        ]
+
+    },
         mob: {
 
         animated: true,
