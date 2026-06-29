@@ -16,27 +16,37 @@ function himikoTurn(){
         );
 
     // 回復
-    if(lowHpMember && himikoStatus.mp >= 4){
+// 回復
+if(lowHpMember && himikoStatus.mp >= 4){
 
-        setBattleLog("卑弥呼は癒しの呪術を使った！");
+    setBattleLog("卑弥呼は癒しの呪術を使った！");
+
+    setTimeout(() => {
+
+        flashScreen();
+
+        lowHpMember.hp =
+            getStatus(lowHpMember).maxHp;
+
+        himikoStatus.mp -= 4;
+
+        updateBattleStatus();
+
+        setBattleLog(
+            lowHpMember.name +
+            " のキズが回復した！"
+        );
 
         setTimeout(() => {
-            flashScreen();
-            lowHpMember.hp =
-                getStatus(lowHpMember).maxHp;
 
-            himikoStatus.mp -= 4;
-            updateBattleStatus();
-            setBattleLog(
-                lowHpMember.name +
-                " のキズが回復した！"
-            );
-        nextBattleState();
+            nextBattleState();
 
-        }, 600);
+        }, 800);
 
-        return;
-    }
+    }, 600);
+
+    return;
+}
 
     // 火の呪術
     if(himikoStatus.mp >= 4){
