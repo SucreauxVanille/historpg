@@ -57,24 +57,28 @@ function enemyTurn(){
 
 setTimeout(() => {
     if(target.hp <= 0){
+
         setBattleLog(
             target.name +
             " は倒れた！"
         );
 
         setTimeout(() => {
+
             if(isPartyAllDead()){
-       gameOver();
-       return;
+                gameOver();
+                return;
             }
-setBattleState("command");
-setBattlePhase("waiting");
+
+            nextBattleState();
+
         }, 800);
 
     }else{
-setBattleState("command");
-setBattlePhase("waiting");
+
+        nextBattleState();
+
     }
-}, 600);
+
 }, 600);
 }
