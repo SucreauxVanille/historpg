@@ -312,9 +312,9 @@ function startLoadQuiz(){
         [
             "卑弥呼「おぬし、よもや寝ぼけてはおるまいな？」",
             "卑弥呼「少し試してみようかのう」"
-        ]        
-        );
-        showProgressQuiz();
+        ],
+        showProgressQuiz
+    );
     },800);
 
 }
@@ -399,7 +399,8 @@ function loadQuizWrong(){
     startMessage(
         [
             "卑弥呼「たわけ！もう一度だけ問うぞ！」"
-        ]
+        ],
+        showProgressQuiz
     );
-showProgressQuiz();
+
 }
