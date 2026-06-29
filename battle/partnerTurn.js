@@ -6,7 +6,7 @@ function himikoTurn(){
     setBattlePhase("action");
     const himiko = getStatus(himikoStatus);
     if(himikoStatus.hp <= 0){
-    enemyTurn();
+    nextBattleState();
     return;
 }
     const lowHpMember =
@@ -31,7 +31,7 @@ function himikoTurn(){
                 lowHpMember.name +
                 " のキズが回復した！"
             );
-nextBattleState();
+        nextBattleState();
 
         }, 600);
 
