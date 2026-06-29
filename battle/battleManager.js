@@ -43,38 +43,25 @@ function nextBattleState(){
 
     switch(battleState){
 
-        case "player":
+case "player":
+    if(himikoStatus.hp > 0){
+        setBattleState("partner");
+        himikoTurn();
+    }else{
+        setBattleState("enemy");
+        enemyTurn();
+    }
+    break;
 
-            if(himikoStatus.hp > 0){
+case "partner":
+    setBattleState("enemy");
+    enemyTurn();
+    break;
 
-                setBattleState("partner");
-
-                setTimeout(himikoTurn, 600);
-
-            }else{
-
-                setBattleState("enemy");
-
-                setTimeout(enemyTurn, 600);
-
-            }
-
-            break;
-
-        case "partner":
-
-            setBattleState("enemy");
-
-            setTimeout(enemyTurn, 600);
-
-            break;
-
-        case "enemy":
-
-            setBattleState("command");
-            setBattlePhase("waiting");
-
-            break;
+case "enemy":
+    setBattleState("command");
+    setBattlePhase("waiting");
+    break;
     }
 
 }
@@ -174,17 +161,21 @@ function removeCurrentEnemy(){
 
     battleExp += currentEnemy.exp;
 
-    const defeatedEnemyName = currentEnemy.name;
+    const defeatedEnemyName =
+        currentEnemy.name;
 
+    // 現在の敵を削除
     battleEnemies.shift();
 
+    // 撃破ログ
     setBattleLog(
         defeatedEnemyName + " をたおした！"
     );
 
+    // ログ表示時間
     setTimeout(() => {
 
-        // 全滅
+        // 全滅した
         if(battleEnemies.length === 0){
 
             currentEnemy = null;
@@ -195,16 +186,19 @@ function removeCurrentEnemy(){
             return;
         }
 
-        // 次の敵
+        // 次の敵へ
         currentEnemy = battleEnemies[0];
 
         updateEnemyDisplay();
 
+        // 今の行動者に応じて次へ進める
         nextBattleState();
 
     }, 600);
 
 }
+
+//バトル終了
 function endBattle(result = "win"){
 setBattleState("none");
 setBattlePhase("none");
