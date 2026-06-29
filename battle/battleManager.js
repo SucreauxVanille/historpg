@@ -38,6 +38,34 @@ function setBattleState(state){
     updateBattleUI();
 }
 
+//バトルステート切り替え
+function nextBattleState(){
+
+    switch(battleState){
+
+        case "player":
+
+            if(himikoStatus.hp > 0){
+                setBattleState("partner");
+            }else{
+                setBattleState("enemy");
+            }
+
+            break;
+
+        case "partner":
+
+            setBattleState("enemy");
+            break;
+
+        case "enemy":
+
+            setBattleState("command");
+            setBattlePhase("waiting");
+            break;
+    }
+}
+
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
