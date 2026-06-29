@@ -22,6 +22,7 @@ const eventHandlers = {
     nojirimob2: nojirimob2Event,
     nojirimob3: nojirimob3Event,
     naumannBoss: naumannBossEvent,
-    obsidian: obsidianEvent
+    obsidian: obsidianEvent,
+    meetMorse: meetMorseEvent
 };
 
