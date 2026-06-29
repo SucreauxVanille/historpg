@@ -89,6 +89,7 @@ maps.nojiriLake = {
         },
         {
             id: "naumann",
+            hideAfter: PROGRESS.NAUMANN_DEFEATED, 
             x: 2,
             y: 0,
             active: true,
@@ -99,6 +100,7 @@ maps.nojiriLake = {
 
         {
             id: "obsidian",
+            hideAfter: PROGRESS.OBSIDIAN_OBTAINED,
             x: 1,
             y: 0,
             active: true,
