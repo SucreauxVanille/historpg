@@ -71,13 +71,11 @@ setTimeout(() => {
             }
 
             nextBattleState();
-
         }, 800);
 
     }else{
 
         nextBattleState();
-
     }
 
 }, 600);
