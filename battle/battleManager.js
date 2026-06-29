@@ -113,10 +113,13 @@ currentEnemy = battleEnemies[0];
 updateEnemyDisplay();
     updateBattleStatus();
 
-    // 出現ログだけ出す
-    setBattleLog(
-        currentEnemy.name + " が あらわれた！"
-    );
+    // 出現ログ
+const appearText =
+    battleEnemies
+        .map(enemy => enemy.name + " が あらわれた！")
+        .join("\n");
+
+setBattleLog(appearText);
 
 fadeOut();
 document.getElementById("controls")
