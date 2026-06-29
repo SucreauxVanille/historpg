@@ -46,26 +46,37 @@ function nextBattleState(){
         case "player":
 
             if(himikoStatus.hp > 0){
+
                 setBattleState("partner");
-                himikoTurn();
+
+                setTimeout(himikoTurn, 600);
+
             }else{
+
                 setBattleState("enemy");
-                enemyTurn();
+
+                setTimeout(enemyTurn, 600);
+
             }
+
             break;
 
         case "partner":
 
             setBattleState("enemy");
-            enemyTurn();
+
+            setTimeout(enemyTurn, 600);
+
             break;
 
         case "enemy":
 
             setBattleState("command");
             setBattlePhase("waiting");
+
             break;
     }
+
 }
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
