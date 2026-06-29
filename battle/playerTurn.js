@@ -11,7 +11,7 @@ setBattlePhase("action");
     // 勇者が倒れている場合は攻撃を飛ばす
 
     if(hero.hp <= 0){
-        himikoTurn();
+    nextBattleState();
         return;
     }
 
