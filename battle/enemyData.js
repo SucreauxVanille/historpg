@@ -28,8 +28,8 @@ const enemies = {
     },
     rabbit: {
         name: "がいこつうさぎ",
-        hp: 40,
-        atk: 20,
+        hp: 35,
+        atk: 18,
         exp: 36,
         image: "battle/images/rabbit.png",
         boss: false
@@ -37,7 +37,7 @@ const enemies = {
 
     shell: {
         name: "あばれ貝がら",
-        hp: 52,
+        hp: 44,
         atk: 11,
         exp: 32,
         image: "battle/images/shell.png",
