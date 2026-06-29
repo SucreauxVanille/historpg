@@ -47,15 +47,17 @@ function nextBattleState(){
 
             if(himikoStatus.hp > 0){
                 setBattleState("partner");
+                himikoTurn();
             }else{
                 setBattleState("enemy");
+                enemyTurn();
             }
-
             break;
 
         case "partner":
 
             setBattleState("enemy");
+            enemyTurn();
             break;
 
         case "enemy":
@@ -65,7 +67,6 @@ function nextBattleState(){
             break;
     }
 }
-
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
@@ -146,44 +147,40 @@ function updateEnemyDisplay(){
 
 //敵撃破
 function removeCurrentEnemy(){
-battleExp += currentEnemy.exp;
-const defeatedEnemyName = currentEnemy.name;
-//現在の敵を削除
-battleEnemies.shift();
 
-setBattleLog(
-    defeatedEnemyName + " をたおした！"
-);
+    battleExp += currentEnemy.exp;
 
-//撃破メッセージ表示時間
-setTimeout(() => {
+    const defeatedEnemyName = currentEnemy.name;
 
-    //まだ敵が残っている
-    if(battleEnemies.length > 0){
+    battleEnemies.shift();
 
+    setBattleLog(
+        defeatedEnemyName + " をたおした！"
+    );
+
+    setTimeout(() => {
+
+        // 全滅
+        if(battleEnemies.length === 0){
+
+            currentEnemy = null;
+
+            updateEnemyDisplay();
+
+            processVictory();
+            return;
+        }
+
+        // 次の敵
         currentEnemy = battleEnemies[0];
 
         updateEnemyDisplay();
-        setBattleState("player");   
-        setBattlePhase("command");
 
-        return;
-    }
+        nextBattleState();
 
-    //全滅
-    currentEnemy = null;
+    }, 600);
 
-    document.querySelector(".enemyImage")
-        .style.display = "none";
-
-    document.querySelector(".enemyName")
-        .textContent = "";
-
-    processVictory();
-
-}, 600);
 }
-
 function endBattle(result = "win"){
 setBattleState("none");
 setBattlePhase("none");
