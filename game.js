@@ -182,11 +182,14 @@ function drawObjects(){
     currentMap.objects.forEach(obj=>{
 
         if(!obj.active) return;
-
+        if (
+        obj.hideAfterProgress !== undefined &&
+        gameState.progress >= obj.hideAfterProgress
+        ){
+        return;
+        }
         const asset = assets[obj.id];
-
         if(!asset) return;
-
         if(asset.animated){
     
         const img =
@@ -201,12 +204,10 @@ function drawObjects(){
                 TILE_SIZE,
                 TILE_SIZE
             );
-
         }else{
 
             const img =
                 loadedAssets[obj.id];
-
 ctx.drawImage(
     img,
     (obj.x - camera.x) * TILE_SIZE,
@@ -214,7 +215,6 @@ ctx.drawImage(
     TILE_SIZE,
     TILE_SIZE
 );
-
         }
     });
 }
