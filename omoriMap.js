@@ -61,13 +61,13 @@ maps.omoriShellMounds = {
             event: "returnMirror"
         },
         {
-            id: "mob",
-            x: 19,
-            y: 20,
+            id: "morse",
+            x: 11,
+            y: 24,
             active: true,
             solid: true,
             direction: "left",
-            event: "nojirimob1"
+            event: "meetMorse"
         },
         {
             id: "mob",
