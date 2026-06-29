@@ -27,9 +27,9 @@ setBattlePhase("action");
 
             currentEnemy.hp -= damage;
 
-            flashElement(
-           document.querySelector(".enemyImage")
-            );
+        flashElement(
+            getCurrentEnemyImage()
+        );
 
             setBattleLog(
                 currentEnemy.name +
