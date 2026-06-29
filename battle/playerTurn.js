@@ -44,8 +44,8 @@ if(currentEnemy.hp <= 0){
     removeCurrentEnemy();
     return;
 }
-setBattleState("partner");
 
+nextBattleState();
 setTimeout(himikoTurn, 600);
            }, 600);
         }, 500);
