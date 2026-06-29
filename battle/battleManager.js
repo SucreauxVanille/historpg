@@ -78,6 +78,19 @@ function nextBattleState(){
     }
 
 }
+
+//敵情報取得
+function getCurrentEnemyImage(){
+
+    const slots =
+        document.querySelectorAll(".enemySlot");
+
+    return slots
+        .item(currentEnemySlot)
+        .querySelector(".enemyImage");
+
+}
+
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
     battleFinishedCallback = onFinish;
