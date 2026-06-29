@@ -63,46 +63,33 @@ function nojirimob1Event(){
 }
 //モブ2
 function nojirimob2Event(){
-    if(hasFlag("obsidianObtained")){
-
-        showMessage(
-            "男「中にはまだ狂暴な獣もおるが、不気味な気配は薄くなっただ」"
-        );
-        endEvent();
-        return;
-    }
-
-    startMessage(
+    npcDialogue(
+        "obsidianObtained",
         [
             "男「ちょっと前から不気味な気配がするだよ」",
             "男「獣が急に狂暴になっちまって、おちおちドングリも拾えねえだ」"
         ],
-        endEvent
+        [
+            "男「まだ狂暴な獣もおるけども、不気味な気配は弱まったべな」"
+        ]
     );
 }
 //モブ3
 function nojirimob3Event(){
-    if(hasFlag("obsidianObtained")){
-
-        startMessage(
-           [
+    npcDialogue(
+        "obsidianObtained",
+        [
            "男「でっけえゾウをやっつけたべか！？」",
            "男「その矢じりは譲るべ、大事に使ってくれ」"
-           ],
-        endEvent );
-        return;
-    }
-
-    startMessage(
+        ],
         [
             "男「オラは岩宿ってところから来たんだが、やたら狂暴なゾウに出会ってな」",
             "男「びっくらこいて、黒曜石の矢じりを落っことしちまっただ」",
             "男「あんなおっかない思いはもう勘弁だ。欲しければあんたたちに譲るだよ」"
-        ],
-        endEvent
+        ]
     );
-
 }
+
 
 function naumannBossEvent(){
 
