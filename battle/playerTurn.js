@@ -46,7 +46,6 @@ if(currentEnemy.hp <= 0){
 }
 
 nextBattleState();
-setTimeout(himikoTurn, 600);
            }, 600);
         }, 500);
     }, 400);
