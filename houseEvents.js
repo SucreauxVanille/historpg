@@ -331,10 +331,6 @@ function startLoadQuiz(){
             "himiko",
             "left"
         );
-
-        showProgressQuiz();
-
-    },800);
     startMessage(
         [
             "卑弥呼「おぬし、よもや寝ぼけてはおるまいな？」",
@@ -342,6 +338,10 @@ function startLoadQuiz(){
             " "
         ],
         );
+        showProgressQuiz();
+
+    },800);
+
 }
 function showProgressQuiz(){
 
@@ -425,7 +425,7 @@ function loadQuizWrong(){
         [
             "卑弥呼「たわけ！もう一度だけ問うぞ！」"
         ],
-        startLoadQuiz
+        showProgressQuiz();
     );
 
 }
