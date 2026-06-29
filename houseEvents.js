@@ -65,33 +65,27 @@ function bedEvent(){
     startMessage(
         ["卑弥呼「疲れたじゃろう。寝床で少し休むがよい」"],
         () => {
-
             fadeOut();
-
             setTimeout(()=>{
 
                 recoverAll(playerStatus);
                 recoverAll(himikoStatus);
 
                 fadeIn();
-
                 startMessage(
                     ["卑弥呼「うむ！すっかり元気になったようじゃの」"],
                     endEvent
                 );
 
             },1500);
-
         }
     );
-
 }
 
 //銅鏡
 function mirrorEvent(){
 
     if(hasFlag("iyoAppeared")){
-
         mirrorWarpMenu();
         return;
     }
@@ -182,7 +176,6 @@ function mirrorWarpMenu(){
     startMessage(
         ["壱与「野尻湖へ出発しますか？」"],
         () => {
-
             showChoice([
                 {
                     text:"はい",
@@ -193,15 +186,12 @@ function mirrorWarpMenu(){
                     action: cancelWarp
                 }
             ]);
-
         }
     );
-
 }
 function goToNojiri(){
 
     fadeOut();
-
     setTimeout(() => {
 
         currentMap = maps.nojiriLake;
@@ -224,15 +214,15 @@ function goToNojiri(){
             ],
             endEvent
         );
-
     }, 500);
 }
+
 function cancelWarp(){
     hideMessage();
     endEvent();
 }
-function iyoEvent(){
 
+function iyoEvent(){
     startMessage(
         [
             "壱与「ここまでの冒険を、復活の呪文として記録しますか？」"
@@ -249,11 +239,10 @@ function iyoEvent(){
                     action: cancelSave
                 }
             ]);
-
         }
     );
-
 }
+
 function createSaveSpell(){
 
     startMessage(
@@ -262,9 +251,7 @@ function createSaveSpell(){
             "壱与「では、お告げを聞きますね…」"
         ],
         ()=>{
-
             flashScreen();
-
             setTimeout(()=>{
 
                 const spell =
@@ -278,51 +265,41 @@ function createSaveSpell(){
                     ],
                     endEvent
                 );
-
             },500);
-
         }
     );
-
 }
 function cancelSave(){
-
     startMessage(
         [
             "壱与「わかりました！必要な時は声をかけてくださいね」"
         ],
         endEvent
     );
-
 }
 
 //卑弥呼クイズ
 function startLoadQuiz(){
-
     
     setObjectDirection(
-        "himiko",
-        "left"
+        "himiko","left"
     );
 
     setTimeout(()=>{
         setObjectDirection(
-            "himiko",
-            "down"
+            "himiko","down"
         );
     },200);
 
     setTimeout(()=>{
         setObjectDirection(
-            "himiko",
-            "right"
+            "himiko","right"
         );
     },400);
 
     setTimeout(()=>{
         setObjectDirection(
-            "himiko",
-            "up"
+            "himiko","up"
         );
     },600);
 
@@ -334,12 +311,11 @@ function startLoadQuiz(){
     startMessage(
         [
             "卑弥呼「おぬし、よもや寝ぼけてはおるまいな？」",
-            "卑弥呼「少し試してみようかのう」",
-            " "
+            "卑弥呼「少し試してみようかのう」"
         ],
-        );
         showProgressQuiz();
-
+        );
+        
     },800);
 
 }
@@ -427,5 +403,4 @@ function loadQuizWrong(){
         ],
         showProgressQuiz();
     );
-
 }
