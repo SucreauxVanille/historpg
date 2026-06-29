@@ -61,6 +61,7 @@ case "partner":
 case "enemy":
     setBattleState("command");
     setBattlePhase("waiting");
+    setBattleLog("");
     break;
     }
 
