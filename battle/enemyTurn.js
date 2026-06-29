@@ -1,5 +1,4 @@
 //敵ターン
-//敵ターン
 function enemyTurn(){
 
     if(battleState !== "enemy") return;
