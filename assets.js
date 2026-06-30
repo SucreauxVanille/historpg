@@ -152,8 +152,8 @@ hero: {
         ],
 
         up: [
-            "images/characters/morse_front1.png",
-            "images/characters/morse_front2.png"
+            "images/characters/morse_back1.png",
+            "images/characters/morse_back2.png"
         ],
 
         left: [
