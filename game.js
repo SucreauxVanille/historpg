@@ -186,6 +186,8 @@ function drawObjects(){
         obj.hideAfter !== undefined &&
         gameState.progress >= obj.hideAfter
         ){
+           obj.active = false;
+        }{
         return;
         }
         const asset = assets[obj.id];
