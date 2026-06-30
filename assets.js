@@ -65,6 +65,14 @@ hero: {
         "images/objects/naumann2.png"
       ]
     },
+    houseL: {
+        image: "images/objects/houseL.png",
+        animated: false
+    },
+    houseR: {
+        image: "images/objects/houseR.png",
+        animated: false
+    },
     himiko: {
 
         animated: true,
