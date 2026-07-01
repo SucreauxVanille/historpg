@@ -165,13 +165,13 @@ hero: {
         ],
 
         left: [
-            "images/characters/morse_front1.png",
-            "images/characters/morse_front2.png"
+            "images/characters/morse_left1.png",
+            "images/characters/morse_left2.png"
         ],
 
         right: [
-            "images/characters/morse_front1.png",
-            "images/characters/morse_front2.png"
+            "images/characters/morse_right1.png",
+            "images/characters/morse_right2.png"
         ]
 
     },
@@ -197,6 +197,29 @@ hero: {
         right: [
             "images/characters/mob_right1.png",
             "images/characters/mob_right2.png"
+        ],
+        mobF: {
+
+        animated: true,
+
+        down: [
+            "images/characters/mobF_front1.png",
+            "images/characters/mobF_front2.png"
+        ],
+
+        up: [
+            "images/characters/mobF_back1.png",
+            "images/characters/mobF_back2.png"
+        ],
+
+        left: [
+            "images/characters/mobF_left1.png",
+            "images/characters/mobF_left2.png"
+        ],
+
+        right: [
+            "images/characters/mobF_right1.png",
+            "images/characters/mobF_right2.png"
         ]
 
     }   
