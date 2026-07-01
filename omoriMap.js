@@ -91,6 +91,14 @@ maps.omoriShellMounds = {
             solid: true,
             event: "omoriHouse"
         }
-    ]
+    ],
 
+
+    tileEvents: [
+        {
+            x: 9,
+            y: 22,
+            event: "omoriShell"
+        }
+    ]
 };
