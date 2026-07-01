@@ -88,7 +88,7 @@ function omorimob1Event(){
     );
 }
 
-function omorimob1Event(){
+function omorimobF1Event(){
     npcDialogue(
         "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
         [
