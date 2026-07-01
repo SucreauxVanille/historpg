@@ -7,7 +7,7 @@ maps.omoriShellMounds = {
         "食べたものを捨てていたようだ。"
     ],
     allowHimikoFollower: true,
-    encounterRate: 8,
+    encounterRate: 7,
     maxEncounterCount: 2,
     encounterTable: [
         "shell",
