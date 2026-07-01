@@ -88,6 +88,20 @@ function omorimob1Event(){
     );
 }
 
+function omorimob1Event(){
+    npcDialogue(
+        "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
+        [
+            "女「ここが貝塚だ」",
+            "女「捨てたはずの貝殻が飛び出しちまって困ってるべよ」"
+        ],
+        [
+            "女「ここが貝塚だ」",
+            "女「オラ達にとっては大切な場所だべよ」"
+        ]
+    );
+}
+
 function omoriHouseEvent(){
     startMessage(
         [
