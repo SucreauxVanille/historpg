@@ -73,7 +73,7 @@ maps.omoriShellMounds = {
             active: true,
             solid: true,
             direction: "right",
-            event: "nojirimob2"
+            event: "omorimob1"
         },
         {
             id: "houseL",
