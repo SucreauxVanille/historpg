@@ -10,7 +10,7 @@ function returnMirrorEvent(){
     }
 
     showMessage(
-        "壱与「邪馬台国にお戻ししますね！」"
+        "壱与の声「邪馬台国にお戻ししますね！」"
     );
 
     changeMap(
