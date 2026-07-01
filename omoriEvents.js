@@ -128,7 +128,7 @@ function omoriHouseEvent(){
         endEvent
     );
 }
-function omoriHouseEvent2(){
+function omoriHouse2Event(){
     startMessage(
         [
             "卑弥呼「竪穴という名前の通り、この家は穴を掘って造られておるんじゃ」",
