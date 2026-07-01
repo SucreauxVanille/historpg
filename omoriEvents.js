@@ -73,8 +73,16 @@ function meetMorseEvent(){
     }
     );
 }
-
 function omorimob1Event(){
+    startMessage(
+        [
+            "男「オラたちはこのムラに住んでるだ」",
+            "男「食いもんは豊富だし、屋根のある家に帰れるしな」"
+        ],
+        endEvent
+    );
+}
+function omorimob2Event(){
     npcDialogue(
         "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
         [
@@ -102,11 +110,29 @@ function omorimobF1Event(){
     );
 }
 
+function omorimobF2Event(){
+    startMessage(
+        [
+            "女「このあたりは木の実が豊富なんだ」",
+            "女「ドングリやトチの実を集めるのがウチらの役目だ」"
+        ],
+        endEvent
+    );
+}
 function omoriHouseEvent(){
     startMessage(
         [
             "卑弥呼「これは竪穴式住居というやつじゃな」",
             "卑弥呼「民の住む家は、ワシらの時代と変わらんのう」"
+        ],
+        endEvent
+    );
+}
+function omoriHouseEvent2(){
+    startMessage(
+        [
+            "卑弥呼「竪穴という名前の通り、この家は穴を掘って造られておるんじゃ」",
+            "卑弥呼「穴に柱を立てて、そこに屋根をかぶせてるんじゃよ」"
         ],
         endEvent
     );
