@@ -74,6 +74,22 @@ maps.omoriShellMounds = {
             solid: true,
             direction: "right",
             event: "nojirimob2"
+        },
+        {
+            id: "houseL",
+            x: 18,
+            y: 14,
+            active: true,
+            solid: true,
+            event: "omoriHouse"
+        },
+        {
+            id: "houseR",
+            x: 19,
+            y: 14,
+            active: true,
+            solid: true,
+            event: "omoriHouse"
         }
     ]
 
