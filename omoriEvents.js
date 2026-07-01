@@ -55,6 +55,20 @@ function meetMorseEvent(){
     );
 }
 
+function omorimob1Event(){
+    npcDialogue(
+        "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
+        [
+            "男「オラ達は食い終わった貝殻や骨を貝塚に捨ててるだ」",
+            "男「ただのゴミでなく、食べたことを感謝する場でもあるだよ」"
+        ],
+        [
+            "男「残ってるヘンテコな貝殻は、オラ達もやっつけるだよ」",
+            "男「普通の貝殻に戻ったら、貝塚に葬ってやるだ」"
+        ]
+    );
+}
+
 function omoriHouseEvent(){
     startMessage(
         [
