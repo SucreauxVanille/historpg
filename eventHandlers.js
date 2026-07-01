@@ -26,7 +26,10 @@ const eventHandlers = {
     meetMorse: meetMorseEvent,
     omoriShell: omoriShellEvent,
     omorimob1: omorimob1Event,
+    omorimob2: omorimob2Event,
     omorimobF1: omorimobF1Event,
-    omoriHouse: omoriHouseEvent
+    omorimobF2: omorimobF2Event,
+    omoriHouse: omoriHouseEvent,
+    omoriHouse2: omoriHouse2Event
 };
 
