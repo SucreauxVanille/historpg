@@ -1,7 +1,6 @@
 const assets = {
     
 hero: {
-
     animated: true,
 
     down: [
@@ -46,6 +45,7 @@ hero: {
         image: "images/objects/obsidian.png",
         animated: false
     },
+    
     naumann: {
         animated: true,
       down: [
@@ -65,6 +65,7 @@ hero: {
         "images/objects/naumann2.png"
       ]
     },
+    
     houseL: {
         image: "images/objects/houseL.png",
         animated: false
@@ -73,8 +74,8 @@ hero: {
         image: "images/objects/houseR.png",
         animated: false
     },
+    
     himiko: {
-
         animated: true,
 
         down: [
@@ -99,7 +100,6 @@ hero: {
 
     },
     iyo: {
-
         animated: true,
 
         down: [
@@ -121,11 +121,9 @@ hero: {
             "images/characters/iyo_right1.png",
             "images/characters/iyo_right2.png"
         ]
-
     },
    
         brother: {
-
         animated: true,
 
         down: [
@@ -147,11 +145,9 @@ hero: {
             "images/characters/brother_right1.png",
             "images/characters/brother_right2.png"
         ]
-
     },
     
     morse: {
-
         animated: true,
 
         down: [
@@ -176,7 +172,6 @@ hero: {
 
     },
         mob: {
-
         animated: true,
 
         down: [
@@ -197,9 +192,9 @@ hero: {
         right: [
             "images/characters/mob_right1.png",
             "images/characters/mob_right2.png"
-        ],
+        ]
+        },
         mobF: {
-
         animated: true,
 
         down: [
@@ -221,6 +216,5 @@ hero: {
             "images/characters/mobF_right1.png",
             "images/characters/mobF_right2.png"
         ]
-
     }   
 }
