@@ -181,15 +181,15 @@ function drawObjects(){
 
     currentMap.objects.forEach(obj=>{
 
-        if(!obj.active) return;
         if (
-        obj.hideAfter !== undefined &&
-        gameState.progress >= obj.hideAfter
+            obj.hideAfter !== undefined &&
+            gameState.progress >= obj.hideAfter
         ){
-           obj.active = false;
-        }{
-        return;
+            obj.active = false;
         }
+
+        if(!obj.active) return;
+
         const asset = assets[obj.id];
         if(!asset) return;
         if(asset.animated){
