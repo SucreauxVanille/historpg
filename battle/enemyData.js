@@ -30,14 +30,14 @@ const enemies = {
         name: "がいこつうさぎ",
         hp: 35,
         atk: 18,
-        exp: 36,
+        exp: 35,
         image: "battle/images/rabbit.png",
         boss: false
     },
 
     shell: {
         name: "あばれ貝がら",
-        hp: 44,
+        hp: 42,
         atk: 11,
         exp: 32,
         image: "battle/images/shell.png",
