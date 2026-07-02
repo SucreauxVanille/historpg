@@ -1,3 +1,5 @@
+let playerAttackMultiplier = 1;
+
 function getAvailableSkills(){
 
     const heroLevel =
