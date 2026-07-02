@@ -94,7 +94,48 @@ if(battleState !== "command") return;
     }, 500);
 }     
 
+//技
+function openSkillMenu(){
+
+    const skills =
+        getAvailableSkills(playerStatus);
+
+    const menu =
+        document.getElementById("skillMenu");
+
+    menu.innerHTML = "";
+
+    if(skills.length === 0){
+
+        menu.innerHTML =
+            "<button>技を覚えていない！</button>";
+
+    }else{
+
+        skills.forEach(skill => {
+
+            const button =
+                document.createElement("button");
+
+            button.textContent =
+                skill.name;
+
+            menu.appendChild(button);
+
+        });
+
+    }
+
+    menu.style.display = "block";
+}
+
 //ボタン
+document
+.getElementById("skillBtn")
+.addEventListener(
+    "click",
+    openSkillMenu
+);
 
 document
 .getElementById("runBtn")
