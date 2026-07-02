@@ -10,6 +10,7 @@ let battlePhase = "none";
 let battleState = "none";
 let battleEnemies = [];
 let currentEnemy = null;
+let selectedSkill = null;
 
 let battleFinishedCallback = null;
 let battleExp = 0;
