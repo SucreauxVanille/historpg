@@ -105,7 +105,7 @@ function startBattle(enemyIds, onFinish = null){
    battleFinishedCallback = onFinish;
 setBattleState("none");
 setBattlePhase("none");
-playerAttackMultiplier = 1;
+battleEffects.playerAttackMultiplier = 1;
 battleExp = 0;
 battleEnemies = enemyIds.map(id => ({
     ...enemies[id]
