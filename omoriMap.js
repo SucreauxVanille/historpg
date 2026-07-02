@@ -84,7 +84,15 @@ maps.omoriShellMounds = {
             direction: "right",
             event: "omorimob2"
         },
-
+        {
+            id: "mob",
+            x: 13,
+            y: 17,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "omorimob3"
+        },
         {
             id: "mobF",
             x: 10,
