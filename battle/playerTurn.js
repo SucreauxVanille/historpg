@@ -50,6 +50,8 @@ nextBattleState();
         }, 500);
     }, 400);
 }
+
+//技
 function useSkill(skill){
 
     if(battleState !== "command") return;
@@ -60,15 +62,13 @@ function useSkill(skill){
     setTimeout(() => {
 
         setBattleLog(
-            "ゆうしゃは " +
-            skill.name +
-            " を使った！"
+            skill.castMessage
         );
 
         setTimeout(() => {
 
             setBattleLog(
-                "しかし 何も おこらなかった！"
+                skill.successMessage
             );
 
             setTimeout(() => {
