@@ -5,7 +5,9 @@ const skills = {
         id: "sandAttack",
         learnLevel: 5,
         mp: 3,
-        type: "debuff"
+        type: "debuff",
+        message:
+            "敵の攻撃が よわまった！"
     },
 
     powerCharge: {
@@ -13,7 +15,9 @@ const skills = {
         id: "powerCharge",
         learnLevel: 10,
         mp: 4,
-        type: "buff"
+        type: "buff",
+        message:
+            "次の攻撃に そなえている！"
     }
 
 };
