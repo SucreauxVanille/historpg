@@ -26,9 +26,7 @@ function applySkill(skill){
             target = currentEnemy;
             break;
     }
-if(!target) return;
-if(!(skill.stat in target)) return;
-    if(skill.duration === "nextAttack"){
+        if(skill.duration === "nextAttack"){
     battleEffects.playerAttackMultiplier = skill.value;
             console.log(
         "セット後:",
@@ -36,6 +34,9 @@ if(!(skill.stat in target)) return;
     );
     return;
 }
+if(!target) return;
+if(!(skill.stat in target)) return;
+
     switch(skill.method){
         case "multiply":
             target[skill.stat] *= skill.value;
