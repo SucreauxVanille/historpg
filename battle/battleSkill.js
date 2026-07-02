@@ -28,10 +28,7 @@ function applySkill(skill){
     }
         if(skill.duration === "nextAttack"){
     battleEffects.playerAttackMultiplier = skill.value;
-            console.log(
-        "セット後:",
-        battleEffects.playerAttackMultiplier
-    );
+           
     return;
 }
 if(!target) return;
