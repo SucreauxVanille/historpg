@@ -108,7 +108,7 @@ function openSkillMenu(){
     if(skills.length === 0){
 
         menu.innerHTML =
-            "<button>技を覚えていない！</button>";
+            "<button class="battleButton">技を覚えていない！</button>";
 
     }else{
 
@@ -116,7 +116,7 @@ skills.forEach(skill => {
 
     const button =
         document.createElement("button");
-
+button.className = "battleButton";
     button.textContent =
         skill.name;
 
@@ -140,7 +140,7 @@ const backButton =
     document.createElement("button");
 
 backButton.textContent = "もどる";
-backButton.className = "menuButton";
+backButton.className = "battleButton";
 
 backButton.addEventListener(
     "click",
