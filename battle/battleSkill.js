@@ -29,18 +29,17 @@ function applySkill(skill){
     }
 if(!target) return;
 if(!(skill.stat in target)) return;
+    if(skill.duration === "nextAttack"){
+    playerAttackMultiplier = skill.value;
+    return;
+}
     switch(skill.method){
-
         case "multiply":
-
             target[skill.stat] *= skill.value;
-
             break;
 
         case "add":
-
             target[skill.stat] += skill.value;
-
             break;
     }
 
