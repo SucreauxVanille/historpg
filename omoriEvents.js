@@ -101,6 +101,52 @@ function meetMorseEvent(){
     }
     );
 }
+
+function doguHintAEvent(){
+
+    // ③ ボス撃破後
+    if(hasFlag("doguDefeated")){
+
+        startMessage(
+            [
+                "男「まさか土人形が貝殻を暴れさせてただなんてなあ」",
+                "男「世の中、わからねえこともあるもんだべ」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ② ヒント取得後
+    if(hasFlag("doguHintA")){
+
+        startMessage(
+            [
+                "男「あの土人形、誰の物なんだべなあ」",
+                "男「ひげもじゃのおっちゃんも違うって言うし、不思議だべ」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ① 初回
+    startMessage(
+        [
+            "男「村はずれに、おかしな土人形が落ちてるだ」",
+            "男「あんたたちの物じゃねえか？」",
+            "壱与の声「妙ですね…」",
+            "壱与の声「大森貝塚で土偶が作られた記録はありません」"
+        ],
+        () => {
+
+            setFlag("doguHintA");
+            endEvent();
+        }
+    );
+
+}
+
 function omorimob1Event(){
     startMessage(
         [
