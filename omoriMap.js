@@ -159,7 +159,7 @@ maps.omoriShellMounds = {
             active: true,
             solid: true,
             event: "omoriHouse2"
-        }        
+        },        
         {
             id: "spring",
             x: 17,
@@ -167,7 +167,7 @@ maps.omoriShellMounds = {
             active: true,
             solid: true,
             event: "recoverySpring"
-        },
+        }
     ],
 
 
