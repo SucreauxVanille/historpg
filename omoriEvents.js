@@ -141,7 +141,16 @@ function omorimobF2Event(){
     startMessage(
         [
             "女「このあたりは木の実が豊富なんだ」",
-            "女「ドングリやトチの実を集めるのがウチらの役目だ」"
+            "女「ドングリやトチの実を集めるのがウチらの役目だよ」"
+        ],
+        endEvent
+    );
+}
+function omorimobF3Event(){
+    startMessage(
+        [
+            "女「海の水はしょっぱくて飲めないからね」",
+            "女「ここの湧き水が、ウチらの命の源だ」"
         ],
         endEvent
     );
