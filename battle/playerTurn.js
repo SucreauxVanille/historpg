@@ -64,7 +64,6 @@ function useSkill(skill){
     setBattlePhase("action");
 
     setTimeout(() => {
-
 setBattleLog(skill.castMessage);
 
 setTimeout(() => {
