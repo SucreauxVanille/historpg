@@ -1,5 +1,3 @@
-let playerAttackMultiplier = 1;
-
 function getAvailableSkills(){
     const heroLevel =
         getLevel(playerStatus);
@@ -32,6 +30,10 @@ if(!target) return;
 if(!(skill.stat in target)) return;
     if(skill.duration === "nextAttack"){
     battleEffects.playerAttackMultiplier = skill.value;
+            console.log(
+        "セット後:",
+        battleEffects.playerAttackMultiplier
+    );
     return;
 }
     switch(skill.method){
