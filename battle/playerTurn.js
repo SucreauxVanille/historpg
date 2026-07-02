@@ -60,21 +60,50 @@ function useSkill(skill){
     setBattleState("player");
     setBattlePhase("action");
 
-    setTimeout(() => {
-setBattleLog(skill.castMessage);
-
-setTimeout(() => {
-
-    applySkill(skill);
-    setBattleLog(skill.successMessage);
+    const hero = getStatus(playerStatus);
 
     setTimeout(() => {
 
-        nextBattleState();
+        // 詠唱・使用ログ
+        setBattleLog(skill.castMessage);
 
-    }, 600);
+        setTimeout(() => {
 
-}, 600);
+            // MP不足
+            if(hero.mp < skill.mp){
+
+                setBattleLog(
+                    "しかし 気力がたりない！"
+                );
+
+                setTimeout(() => {
+
+                    nextBattleState();
+
+                }, 600);
+
+                return;
+            }
+
+            // MP消費
+            hero.mp -= skill.mp;
+
+            updateBattleStatus();
+
+            // 技効果
+            applySkill(skill);
+
+            // 成功ログ
+            setBattleLog(skill.successMessage);
+
+            setTimeout(() => {
+
+                nextBattleState();
+
+            }, 600);
+
+        }, 600);
+
     }, 400);
 
 }
