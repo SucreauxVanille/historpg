@@ -112,17 +112,28 @@ function openSkillMenu(){
 
     }else{
 
-        skills.forEach(skill => {
+skills.forEach(skill => {
 
-            const button =
-                document.createElement("button");
+    const button =
+        document.createElement("button");
 
-            button.textContent =
-                skill.name;
+    button.textContent =
+        skill.name;
 
-            menu.appendChild(button);
+    button.addEventListener(
+        "click",
+        () => {
 
-        });
+            closeSkillMenu();
+
+            useSkill(skill);
+
+        }
+    );
+
+    menu.appendChild(button);
+
+});
 
     }
 const backButton =
