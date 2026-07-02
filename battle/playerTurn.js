@@ -68,7 +68,7 @@ function useSkill(skill){
         setTimeout(() => {
 
             setBattleLog(
-                "しかし なにも おこらなかった！"
+                "しかし 何も おこらなかった！"
             );
 
             setTimeout(() => {
