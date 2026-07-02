@@ -21,13 +21,13 @@ setBattlePhase("action");
 
             const damage =
                 Math.floor(
-    hero.atk *
-    playerAttackMultiplier *
-    (0.9 + Math.random() * 0.2)
+hero.atk *
+battleEffects.playerAttackMultiplier *
+(0.9 + Math.random() * 0.2)
                 );
 
             currentEnemy.hp -= damage;
-            playerAttackMultiplier = 1;
+            battleEffects.playerAttackMultiplier = 1;
         flashElement(
             getCurrentEnemyImage()
         );
