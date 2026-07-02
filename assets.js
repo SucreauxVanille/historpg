@@ -28,7 +28,10 @@ hero: {
         image: "images/objects/mirror.png",
         animated: false
     },
-
+    spring: {
+        image: "images/objects/spring.png",
+        animated: false
+    },
     bed: {
         image: "images/objects/bed.png",
         animated: false
