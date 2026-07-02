@@ -117,8 +117,8 @@ skills.forEach(skill => {
     const button =
         document.createElement("button");
 button.className = "battleButton";
-    button.textContent =
-        skill.name;
+button.textContent =
+    `${skill.name} (${skill.mp})`;
 
     button.addEventListener(
         "click",
