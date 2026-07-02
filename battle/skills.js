@@ -6,8 +6,10 @@ const skills = {
         learnLevel: 5,
         mp: 3,
         type: "debuff",
-        message:
-            "敵の攻撃が よわまった！"
+        castMessage:
+        "ゆうしゃは 砂けむり をつかった！",
+        successMessage:
+        "敵の攻撃が よわまった！"
     },
 
     powerCharge: {
@@ -16,8 +18,10 @@ const skills = {
         learnLevel: 10,
         mp: 4,
         type: "buff",
-        message:
-            "次の攻撃に そなえている！"
+        castMessage:
+        "ゆうしゃは 力をためた！",
+        successMessage:
+        "次の攻撃に　力をこめる！"
     }
 
 };
