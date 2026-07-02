@@ -17,6 +17,7 @@ const eventHandlers = {
     iyo: iyoEvent,
     brother: brotherEvent,
     returnMirror: returnMirrorEvent,
+    recoverySpring: recoverySpringEvent,
     nojiriTutorial: nojiriTutorialEvent,
     nojirimob1: nojirimob1Event,
     nojirimob2: nojirimob2Event,
