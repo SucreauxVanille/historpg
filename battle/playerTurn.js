@@ -50,3 +50,35 @@ nextBattleState();
         }, 500);
     }, 400);
 }
+function useSkill(skill){
+
+    if(battleState !== "command") return;
+
+    setBattleState("player");
+    setBattlePhase("action");
+
+    setTimeout(() => {
+
+        setBattleLog(
+            "ゆうしゃは " +
+            skill.name +
+            " を使った！"
+        );
+
+        setTimeout(() => {
+
+            setBattleLog(
+                "しかし なにも おこらなかった！"
+            );
+
+            setTimeout(() => {
+
+                nextBattleState();
+
+            }, 600);
+
+        }, 600);
+
+    }, 400);
+
+}
