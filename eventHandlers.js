@@ -28,8 +28,10 @@ const eventHandlers = {
     omoriShell: omoriShellEvent,
     omorimob1: omorimob1Event,
     omorimob2: omorimob2Event,
+    omorimob3: omorimob3Event,
     omorimobF1: omorimobF1Event,
     omorimobF2: omorimobF2Event,
+    omorimobF3: omorimobF3Event,
     omoriHouse: omoriHouseEvent,
     omoriHouse2: omoriHouse2Event
 };
