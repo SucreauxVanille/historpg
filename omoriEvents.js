@@ -41,7 +41,34 @@ startBattle(
         }
     );
 }
+function recoverySpringEvent(){
 
+    startMessage(
+        [
+            "卑弥呼「ふむ…ここの水からは神聖な力を感じるのう」"
+        ],
+        () => {
+
+            flashScreen();
+
+            recoverAll(playerStatus);
+            recoverAll(himikoStatus);
+
+            setTimeout(() => {
+
+                startMessage(
+                    [
+                        "卑弥呼「ほう！力がみなぎるようじゃ！」"
+                    ],
+                    endEvent
+                );
+
+            }, 400);
+
+        }
+    );
+
+}
 function meetMorseEvent(){
         if(hasFlag("metMorse")){
             startMessage(
