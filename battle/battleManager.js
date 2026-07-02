@@ -102,11 +102,11 @@ function getCurrentEnemyImage(){
 
 //バトル開始
 function startBattle(enemyIds, onFinish = null){
-    battleFinishedCallback = onFinish;
+   battleFinishedCallback = onFinish;
 setBattleState("none");
 setBattlePhase("none");
 playerAttackMultiplier = 1;
-    battleExp = 0;
+battleExp = 0;
 battleEnemies = enemyIds.map(id => ({
     ...enemies[id]
 }));
