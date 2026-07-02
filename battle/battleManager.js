@@ -13,7 +13,9 @@ let currentEnemy = null;
 let selectedSkill = null;
 let battleFinishedCallback = null;
 let battleExp = 0;
-
+const battleEffects = {
+    playerAttackMultiplier: 1
+};
 //UI管理
 function updateBattleUI(){
 
