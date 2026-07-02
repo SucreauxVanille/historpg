@@ -11,6 +11,7 @@ let battleState = "none";
 let battleEnemies = [];
 let currentEnemy = null;
 let selectedSkill = null;
+let playerAttackMultiplier = 1;
 
 let battleFinishedCallback = null;
 let battleExp = 0;
