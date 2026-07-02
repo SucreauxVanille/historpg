@@ -118,3 +118,58 @@
 
     cursor:pointer;
 }
+/* 技・道具メニュー */
+#skillMenu,
+#itemMenu{
+
+    display:none;
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:black;
+
+    box-sizing:border-box;
+
+    padding:12px;
+
+    overflow-y:auto;
+
+}
+.menuButton{
+
+    display:block;
+
+    width:100%;
+
+    margin-bottom:8px;
+
+    padding:8px;
+
+    background:black;
+    color:white;
+
+    border:2px solid white;
+
+    font-size:18px;
+
+    text-align:left;
+
+    cursor:pointer;
+
+}
+#battleLog,
+#battleCommand,
+#skillMenu,
+#itemMenu{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
