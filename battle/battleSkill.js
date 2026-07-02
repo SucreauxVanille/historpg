@@ -31,7 +31,7 @@ function applySkill(skill){
 if(!target) return;
 if(!(skill.stat in target)) return;
     if(skill.duration === "nextAttack"){
-    playerAttackMultiplier = skill.value;
+    battleEffects.playerAttackMultiplier = skill.value;
     return;
 }
     switch(skill.method){
