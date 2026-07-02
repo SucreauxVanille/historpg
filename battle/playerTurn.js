@@ -67,7 +67,6 @@ setBattleLog(skill.castMessage);
 setTimeout(() => {
 
     applySkill(skill);
-
     setBattleLog(skill.successMessage);
 
     setTimeout(() => {
