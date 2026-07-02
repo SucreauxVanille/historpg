@@ -27,15 +27,20 @@ function applySkill(skill){
             target = currentEnemy;
             break;
     }
-
+if(!target) return;
+if(!(skill.stat in target)) return;
     switch(skill.method){
 
         case "multiply":
-            // 後で実装
+
+            target[skill.stat] *= skill.value;
+
             break;
 
         case "add":
-            // 後で実装
+
+            target[skill.stat] += skill.value;
+
             break;
     }
 
