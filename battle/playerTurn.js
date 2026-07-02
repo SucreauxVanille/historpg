@@ -18,10 +18,7 @@ setBattlePhase("action");
     setTimeout(() => {
         setBattleLog("ゆうしゃの攻撃！");
         setTimeout(() => {
-console.log(
-    "攻撃前:",
-    battleEffects.playerAttackMultiplier
-);
+
             const damage =
                 Math.floor(
     hero.atk *
