@@ -557,13 +557,7 @@ function checkEncounter(){
         );
 
     }
-
     startBattle(enemyIds);
-
-}
-
-startBattle(enemyIds);
-
 }
 
 // =====================
