@@ -125,10 +125,31 @@ function openSkillMenu(){
         });
 
     }
+const backButton =
+    document.createElement("button");
+
+backButton.textContent = "もどる";
+backButton.className = "menuButton";
+
+backButton.addEventListener(
+    "click",
+    closeSkillMenu
+);
+
+menu.appendChild(backButton);
 
     menu.style.display = "block";
 }
 
+function closeSkillMenu(){
+
+    document.getElementById("skillMenu")
+        .style.display = "none";
+
+    document.getElementById("battleCommand")
+        .style.display = "flex";
+
+}
 //ボタン
 document
 .getElementById("skillBtn")
