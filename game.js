@@ -501,6 +501,7 @@ function changeMap(mapName, startX, startY){
 }
 
 //エンカウント
+//エンカウント
 function checkEncounter(){
 
     if(!currentMap.encounterTable){
@@ -527,23 +528,37 @@ function checkEncounter(){
         return;
     }
 
+    //==========================
+    // エンカウント成立
+    //==========================
+
     encounterSteps = 0;
 
-const enemyCount =
-    currentMap.maxEncounterCount ?? 1;
+    const maxEncounterCount =
+        currentMap.maxEncounterCount ?? 1;
 
-const enemyIds = [];
+    const enemyCount =
+        Math.floor(
+            Math.random() *
+            maxEncounterCount
+        ) + 1;
 
-for(let i = 0; i < enemyCount; i++){
+    const enemyIds = [];
 
-    enemyIds.push(
-        currentMap.encounterTable[
-            Math.floor(
-                Math.random() *
-                currentMap.encounterTable.length
-            )
-        ]
-    );
+    for(let i = 0; i < enemyCount; i++){
+
+        enemyIds.push(
+            currentMap.encounterTable[
+                Math.floor(
+                    Math.random() *
+                    currentMap.encounterTable.length
+                )
+            ]
+        );
+
+    }
+
+    startBattle(enemyIds);
 
 }
 
