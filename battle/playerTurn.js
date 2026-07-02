@@ -61,24 +61,21 @@ function useSkill(skill){
 
     setTimeout(() => {
 
-        setBattleLog(
-            skill.castMessage
-        );
+setBattleLog(skill.castMessage);
 
-        setTimeout(() => {
+setTimeout(() => {
 
-            setBattleLog(
-                skill.successMessage
-            );
+    applySkill(skill);
 
-            setTimeout(() => {
+    setBattleLog(skill.successMessage);
 
-                nextBattleState();
+    setTimeout(() => {
 
-            }, 600);
+        nextBattleState();
 
-        }, 600);
+    }, 600);
 
+}, 600);
     }, 400);
 
 }
