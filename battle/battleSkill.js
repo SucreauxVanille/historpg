@@ -3,8 +3,8 @@ function getAvailableSkills(){
     const heroLevel =
         getLevel(playerStatus);
 
-    return Object.entries(skills)
-        .filter(([id, skill]) =>
+    return Object.values(skills)
+        .filter(skill =>
             skill.learnLevel <= heroLevel
         );
 
