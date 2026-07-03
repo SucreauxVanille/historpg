@@ -69,19 +69,19 @@ maps.omoriShellMounds = {
         {
             id: "mob",
             x: 17,
-            y: 9,
+            y: 7,
             active: true,
             solid: true,
-            direction: "right",
+            direction: "down",
             event: "doguHintA"
         },
         {
             id: "mob",
-            x: 16,
-            y: 9,
+            x: 19,
+            y: 12,
             active: true,
             solid: true,
-            direction: "right",
+            direction: "left",
             event: "doguHintB"
         },
         {
