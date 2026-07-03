@@ -79,9 +79,7 @@ function useSkill(skill){
                 setTimeout(() => {
 
                     nextBattleState();
-
                 }, 600);
-
                 return;
             }
 
