@@ -84,8 +84,7 @@ function useSkill(skill){
             }
 
             // MP消費
-            hero.mp -= skill.mp;
-
+            playerStatus.mp -= skill.mp;
             updateBattleStatus();
 
             // 技効果
