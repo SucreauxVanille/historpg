@@ -8,7 +8,7 @@ function omoriShellEvent(){
     startMessage(
         [
             "卑弥呼「ふむ…海がすぐそばなのじゃな」",
-            "卑弥呼「確かにこれなら貝殻とも関係がありそうじゃ」",
+            "卑弥呼「確かに貝殻とも関係がありそうじゃ」",
             "？？？「カタカタ…」",
             "卑弥呼「これ、おかしな声を出すでない」",
             "？？？「カタカタカタ…！」",
@@ -146,7 +146,94 @@ function doguHintAEvent(){
     );
 
 }
+function doguHintBEvent(){
 
+    // ③ ボス撃破後
+    if(hasFlag("doguDefeated")){
+
+        startMessage(
+            [
+                "男「やっぱり土人形が動いたんだろ？」",
+                "男「オラの見間違いじゃなかったべ！」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ② ヒント取得後
+    if(hasFlag("doguHintB")){
+
+        startMessage(
+            [
+                "男「動いただけじゃなくて、光ったような気もするべ…」",
+                "男「ううっ、思い出したら怖くなってきたべ」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ① 初回
+    startMessage(
+        [
+            "男「お、オラ見ただよ！」",
+            "男「村はずれの土人形が、ひとりでに動いてたんだ！」",
+            "男「みんなは見間違いだって言うんだが、そんなわけねえ！」",
+            "卑弥呼「土偶が勝手に動くじゃと…？」"
+        ],
+        () => {
+
+            setFlag("doguHintB");
+            endEvent();
+        }
+    );
+
+}
+function doguHintCEvent(){
+
+    // ③ ボス撃破後
+    if(hasFlag("doguDefeated")){
+
+        startMessage(
+            [
+                "男「まさか土人形が貝殻を暴れさせてただなんてなあ」",
+                "男「世の中、わからねえこともあるもんだべ」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ② ヒント取得後
+    if(hasFlag("doguHintC")){
+
+        startMessage(
+            [
+                "男「あの土人形、誰の物なんだべなあ」",
+                "男「ひげもじゃのおっちゃんも違うって言うし、不思議だべ」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ① 初回
+    startMessage(
+        [
+            "男「妙なこともあるもんだな。土人形も暴れる貝殻も、同じくらいに現れたべよ」",
+            "男「変なことは続くもんだべなあ」",
+            "卑弥呼「む？土偶と異変が同時に起きたということか？」",
+            "壱与の声「これは…」"
+        ],
+        () => {
+
+            setFlag("doguHintC");
+            endEvent();
+        }
+    );
+
+}
 function omorimob1Event(){
     startMessage(
         [
