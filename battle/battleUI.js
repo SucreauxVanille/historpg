@@ -108,7 +108,7 @@ function openSkillMenu(){
     if(skills.length === 0){
 
         menu.innerHTML =
-            "<button class="battleButton">技を覚えていない！</button>";
+            "<button>技を覚えていない！</button>";
 
     }else{
 
