@@ -152,7 +152,7 @@ function getLevel(status){
 }
 
 function getHeroMaxHP(lv){
-    return Math.floor(20 + lv * 1.5);
+    return Math.floor(20 + lv * 2.2);
 }
 
 function getHeroMaxMP(lv){
@@ -160,15 +160,15 @@ function getHeroMaxMP(lv){
 }
 
 function getHeroATK(lv){
-    return Math.floor(10 + lv * 1.2);
+    return Math.floor(10 + lv * 1.5);
 }
 
 function getHeroDEF(lv){
-    return Math.floor(5 + lv * 0.5);
+    return Math.floor(5 + lv * 1);
 }
 
 function getHimikoMaxHP(lv){
-    return Math.floor(18 + lv * 1);
+    return Math.floor(18 + lv * 1.5);
 }
 
 function getHimikoMaxMP(lv){
@@ -180,7 +180,7 @@ function getHimikoATK(lv){
 }
 
 function getHimikoDEF(lv){
-    return Math.floor(2 + lv * 0.4);
+    return Math.floor(2 + lv * 0.8);
 }
 
 //ステータス取得
