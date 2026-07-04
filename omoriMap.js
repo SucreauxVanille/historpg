@@ -40,7 +40,7 @@ maps.omoriShellMounds = {
         [5,5,2,2,2,2,2,4,2,2,2,2,2,2,2,2,2,2,2,7,4],
         [2,2,2,2,2,2,2,4,5,5,2,2,2,2,2,2,2,2,2,2,4],
 
-        [2,2,2,2,2,5,5,4,4,4,5,5,5,5,5,2,2,2,7,7,4],
+        [2,2,2,2,2,5,5,4,4,4,5,5,5,5,5,2,2,2,2,7,4],
         [7,2,2,5,5,2,2,2,2,4,4,4,4,4,4,2,2,2,2,2,4],
         [2,2,2,2,2,2,2,2,2,2,2,7,4,7,2,2,2,2,2,5,4],
         [2,2,2,2,2,2,2,2,2,7,2,2,4,7,7,2,2,2,2,4,4],
@@ -94,11 +94,11 @@ maps.omoriShellMounds = {
         },
         {
             id: "mob",
-            x: 15,
-            y: 9,
+            x: 17,
+            y: 17,
             active: true,
             solid: true,
-            direction: "right",
+            direction: "down",
             event: "doguHintC"
         },
         {
@@ -121,11 +121,11 @@ maps.omoriShellMounds = {
         },
         {
             id: "mob",
-            x: 13,
-            y: 17,
+            x: 8,
+            y: 18,
             active: true,
             solid: true,
-            direction: "down",
+            direction: "right",
             event: "omorimob3"
         },
         {
@@ -161,7 +161,7 @@ maps.omoriShellMounds = {
             y: 11,
             active: true,
             solid: true,
-            event: "omoriHouse"
+            event: "omoriHouse2"
         },
         {
             id: "houseR",
@@ -169,7 +169,7 @@ maps.omoriShellMounds = {
             y: 11,
             active: true,
             solid: true,
-            event: "omoriHouse"
+            event: "omoriHouse2"
         },
         {
             id: "houseL",
@@ -177,7 +177,7 @@ maps.omoriShellMounds = {
             y: 13,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "omoriHouse"
         },
         {
             id: "houseR",
@@ -185,7 +185,7 @@ maps.omoriShellMounds = {
             y: 13,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "omoriHouse"
         },
         {
             id: "houseL",
