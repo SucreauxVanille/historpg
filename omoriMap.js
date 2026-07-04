@@ -67,6 +67,14 @@ maps.omoriShellMounds = {
             event: "meetMorse"
         },
         {
+            id: "doguonMap",
+            x: 11,
+            y: 0,
+            active: true,
+            solid: true,
+            event: "dogu"
+        },
+        {
             id: "mob",
             x: 17,
             y: 7,
