@@ -102,6 +102,10 @@ function meetMorseEvent(){
     );
 }
 
+function doguEvent(){
+        startMessage(events.doguFind, endEvent);
+}
+
 function doguHintAEvent(){
 
     // ③ ボス撃破後
