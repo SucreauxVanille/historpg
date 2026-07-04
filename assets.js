@@ -77,7 +77,10 @@ hero: {
         image: "images/objects/houseR.png",
         animated: false
     },
-    
+    doguonMap: {
+        image: "images/objects/doguonMap.png",
+        animated: false
+    },
     himiko: {
         animated: true,
 
