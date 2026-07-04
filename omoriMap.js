@@ -177,7 +177,7 @@ maps.omoriShellMounds = {
             y: 13,
             active: true,
             solid: true,
-            event: "omoriHouse"
+            event: "omoriHouse2"
         },
         {
             id: "houseR",
@@ -185,7 +185,7 @@ maps.omoriShellMounds = {
             y: 13,
             active: true,
             solid: true,
-            event: "omoriHouse"
+            event: "omoriHouse2"
         },
         {
             id: "houseL",
@@ -193,7 +193,7 @@ maps.omoriShellMounds = {
             y: 22,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "omoriHouse3"
         },
         {
             id: "houseR",
@@ -201,7 +201,7 @@ maps.omoriShellMounds = {
             y: 22,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "omoriHouse3"
         },        
         {
             id: "spring",
