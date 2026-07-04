@@ -42,5 +42,14 @@ const enemies = {
         exp: 32,
         image: "battle/images/shell.png",
         boss: false
+    },
+
+    shell: {
+        name: "あやしい土偶",
+        hp: 300,
+        atk: 20,
+        exp: 140,
+        image: "battle/images/doguBoss.png",
+        boss: true
     }
 };
