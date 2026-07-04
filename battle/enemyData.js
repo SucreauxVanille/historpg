@@ -44,7 +44,7 @@ const enemies = {
         boss: false
     },
 
-    shell: {
+    doguBoss: {
         name: "あやしい土偶",
         hp: 300,
         atk: 20,
