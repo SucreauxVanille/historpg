@@ -96,6 +96,18 @@ for(const key in tileTypes){
         tileImages[key] = img;
     }
 }
+
+//ウェイト
+function wait(ms){
+
+    return new Promise(resolve=>{
+
+        setTimeout(resolve, ms);
+
+    });
+
+}
+
 // =====================
 //   マップとカメラ
 // =====================
