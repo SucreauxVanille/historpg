@@ -60,28 +60,26 @@ function stampEvent(){
     startMessage(events.prologue_stamp, endEvent);
 
 }
-function bedEvent(){
+async function bedEvent(){
 
-    startMessage(
-        ["卑弥呼「疲れたじゃろう。寝床で少し休むがよい」"],
-        () => {
-            fadeOut();
-            setTimeout(()=>{
+    await startMessage([
+        "卑弥呼「疲れたじゃろう。寝床で少し休むがよい」"
+    ]);
 
-                recoverAll(playerStatus);
-                recoverAll(himikoStatus);
+    await fadeOut();
 
-                fadeIn();
-                startMessage(
-                    ["卑弥呼「うむ！すっかり元気になったようじゃの」"],
-                    endEvent
-                );
+    recoverAll(playerStatus);
+    recoverAll(himikoStatus);
 
-            },1500);
-        }
-    );
+    await fadeIn();
+
+    await startMessage([
+        "卑弥呼「うむ！すっかり元気になったようじゃの」"
+    ]);
+
+    endEvent();
+
 }
-
 //銅鏡
 function mirrorEvent(){
 
@@ -189,32 +187,32 @@ function mirrorWarpMenu(){
         }
     );
 }
-function goToNojiri(){
+async function goToNojiri(){
 
-    fadeOut();
-    setTimeout(() => {
+    await fadeOut();
 
-        currentMap = maps.nojiriLake;
+    currentMap = maps.nojiriLake;
 
-        player.x = 2;
-        player.y = 25;
+    player.x = 2;
+    player.y = 25;
 
-        himiko.x = player.x - 1;
-        himiko.y = player.y;
-        himiko.direction = "right";
-        isHimikoFollowing = true;
-        playerTrail = [];
-        render();
+    himiko.x = player.x - 1;
+    himiko.y = player.y;
+    himiko.direction = "right";
 
-        fadeIn();
+    isHimikoFollowing = true;
+    playerTrail = [];
 
-        startMessage(
-            [
-                "壱与「邪馬台国に戻るときは、青いうずまきに触れてください」"
-            ],
-            endEvent
-        );
-    }, 500);
+    render();
+
+    await fadeIn();
+
+    await startMessage([
+        "壱与の声「邪馬台国に戻るときは、青いうずまきに触れてください」"
+    ]);
+
+    endEvent();
+
 }
 
 function cancelWarp(){
