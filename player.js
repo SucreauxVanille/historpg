@@ -19,9 +19,7 @@ let isHimikoFollowing = false;
 const playerStatus = {
     id: "hero",
     name: "ゆうしゃ",
-
     exp: 0,
-
     hp: null,
     mp: null
 };
@@ -137,7 +135,6 @@ function followHimiko(){
 
 //ステータス計算
 function getLevel(status){
-
     const exp = status.exp;
 
     if(exp < 1000){
