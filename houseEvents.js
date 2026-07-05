@@ -287,19 +287,19 @@ function startLoadQuiz(){
         setObjectDirection(
             "himiko","down"
         );
-    },200);
+    },100);
 
     setTimeout(()=>{
         setObjectDirection(
             "himiko","right"
         );
-    },400);
+    },200);
 
     setTimeout(()=>{
         setObjectDirection(
             "himiko","up"
         );
-    },600);
+    },300);
 
     setTimeout(()=>{
         setObjectDirection(
@@ -313,7 +313,7 @@ function startLoadQuiz(){
         ],
         showProgressQuiz
     );
-    },800);
+    },400);
 
 }
 function showProgressQuiz(){
