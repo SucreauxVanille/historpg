@@ -103,9 +103,77 @@ function meetMorseEvent(){
 }
 
 function doguEvent(){
-        startMessage(events.doguFind, endEvent);
-}
 
+    // ⑤ 撃破済み
+    if(hasFlag("doguDefeated")){
+        endEvent();
+        return;
+    }
+
+    // ① 初回発見
+    if(!hasFlag("doguFound")){
+
+        startMessage(
+            events.doguFind,
+            () => {
+
+                setFlag("doguFound");
+                endEvent();
+
+            }
+        );
+        return;
+    }
+
+    // ② ヒント不足
+    if(
+        !hasFlag("doguHintA") ||
+        !hasFlag("doguHintB") ||
+        !hasFlag("doguHintC")
+    ){
+
+        startMessage(
+            [
+                "卑弥呼「ただの土偶にしか見えぬのう…」"
+            ],
+            endEvent
+        );
+        return;
+    }
+
+    // ③ ボス戦
+    startMessage(
+        events.doguBattle,
+        () => {
+
+            startBattle(
+                ["doguBoss"],
+                doguBattleResult
+            );
+
+        }
+    );
+
+}
+function doguBattleResult(result){
+
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
+
+    setFlag("doguDefeated");
+
+    gameState.progress = PROGRESS.OMORI_CLEAR;
+
+    despawnObject("doguonMap");
+
+    startMessage(
+        events.doguAfter,
+        endEvent
+    );
+
+}
 function doguHintAEvent(){
 
     // ③ ボス撃破後
