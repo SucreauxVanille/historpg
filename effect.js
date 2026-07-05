@@ -3,18 +3,29 @@ const screenEffect =
         "screenEffect"
     );
 
-function fadeOut(){
+function fadeOut(duration = 1000){
 
-    screenEffect.style.opacity = 1;
+    return new Promise(resolve=>{
+
+        screenEffect.style.opacity = 1;
+
+        setTimeout(resolve, duration);
+
+    });
 
 }
 
-function fadeIn(){
+function fadeIn(duration = 1000){
 
-    screenEffect.style.opacity = 0;
+    return new Promise(resolve=>{
+
+        screenEffect.style.opacity = 0;
+
+        setTimeout(resolve, duration);
+
+    });
 
 }
-
 function flashScreen(){
 
     screenEffect.style.transition =
@@ -65,5 +76,48 @@ function flashElement(element){
         }
 
     },100);
+
+}
+
+//ジャンプ
+function jumpElement(
+    element,
+    height = 8,
+    duration = 250
+){
+
+    return new Promise(resolve=>{
+
+        const start = performance.now();
+
+        function animate(now){
+
+            const progress =
+                (now - start) / duration;
+
+            if(progress >= 1){
+
+                element.style.transform = "";
+
+                resolve();
+
+                return;
+
+            }
+
+            const y =
+                Math.sin(progress * Math.PI)
+                * height;
+
+            element.style.transform =
+                `translateY(${-y}px)`;
+
+            requestAnimationFrame(animate);
+
+        }
+
+        requestAnimationFrame(animate);
+
+    });
 
 }
