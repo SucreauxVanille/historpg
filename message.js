@@ -2,8 +2,8 @@ let canAdvanceMessage = false;
 //メッセージウインドウ
 let messages = [];
 let messageIndex = 0;
-let messageFinishedCallback = null;
 let inputLocked = false;
+let messageResolve = null;
 
 function showMessage(text){
 
@@ -11,7 +11,6 @@ function showMessage(text){
     messageBox.style.display = "block";
 
     gameState.mode = "message";
-
     canAdvanceMessage = false;
 
     setTimeout(()=>{
@@ -19,14 +18,29 @@ function showMessage(text){
     }, 500);
 }
 
-function startMessage(messageArray, onFinish = null){
+//メッセージ開始
+function startMessage(
+    messageArray,
+    onFinish = null
+){
 
-    gameState.mode = "message";
-    messages = messageArray;
-    messageIndex = 0;
+    return new Promise(resolve=>{
+        gameState.mode = "message";
+        messages = messageArray;
+        messageIndex = 0;
 
-    messageFinishedCallback = onFinish;
-    showMessage(messages[0]);
+        messageResolve = ()=>{
+
+            if(onFinish){
+                onFinish();
+            }
+            resolve();
+        };
+
+        showMessage(messages[0]);
+
+    });
+
 }
 
 //ウインドウ消去
@@ -44,11 +58,11 @@ function nextMessage(){
 if(messageIndex >= messages.length){
 
     hideMessage();
-const callback = messageFinishedCallback;
-messageFinishedCallback = null;
+const resolve = messageResolve;
+messageResolve = null;
 
-if(callback){
-    callback();
+if(resolve){
+    resolve();
 }
     return;
 }
