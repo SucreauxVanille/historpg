@@ -121,3 +121,58 @@ function jumpElement(
     });
 
 }
+
+//回転
+function rotateObject(
+    object,
+    count = 4,
+    interval = 80
+){
+
+    return new Promise(resolve=>{
+
+        const directions = [
+            "up",
+            "right",
+            "down",
+            "left"
+        ];
+
+        const originalDirection =
+            object.direction;
+
+        let index =
+            directions.indexOf(originalDirection);
+
+        let rotated = 0;
+
+        const timer = setInterval(()=>{
+
+            index =
+                (index + 1) % directions.length;
+
+            object.direction =
+                directions[index];
+
+            render();
+
+            rotated++;
+
+            if(rotated >= count){
+
+                clearInterval(timer);
+
+                object.direction =
+                    originalDirection;
+
+                render();
+
+                resolve();
+
+            }
+
+        }, interval);
+
+    });
+
+}
