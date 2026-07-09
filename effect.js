@@ -81,45 +81,34 @@ function flashElement(element){
 
 //ジャンプ
 function jumpElement(
-    element,
+    object,
     height = 8,
     duration = 250
 ){
-
     return new Promise(resolve=>{
-
         const start = performance.now();
-
         function animate(now){
 
             const progress =
                 (now - start) / duration;
 
             if(progress >= 1){
-
-                element.style.transform = "";
-
+                object.jumpOffset = 0;
+                render();
                 resolve();
-
                 return;
-
             }
 
-            const y =
-                Math.sin(progress * Math.PI)
+            object.jumpOffset =
+                -Math.sin(progress * Math.PI)
                 * height;
-
-            element.style.transform =
-                `translateY(${-y}px)`;
-
+            render();
             requestAnimationFrame(animate);
 
         }
 
         requestAnimationFrame(animate);
-
     });
-
 }
 
 //回転
