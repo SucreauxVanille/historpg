@@ -218,7 +218,7 @@ async function doguEvent(){
     ]);
 
     // ボス戦
-    const result = await startBattleAsync([
+    const result = await startBattle([
         "shell","shell","doguBoss"
     ]);
 
