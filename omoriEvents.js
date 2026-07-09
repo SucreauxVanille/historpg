@@ -68,7 +68,7 @@ function recoverySpringEvent(){
 
 }
 async function meetMorseEvent(){
-
+    const morse = getObject("morse");
     //==========================
     //④ クリア後
     //==========================
@@ -175,7 +175,7 @@ async function meetMorseEvent(){
 
 }
 async function doguEvent(){
-
+    const dogu = getObject("doguonMap");
     // 撃破済み
     if(hasFlag("doguDefeated")){
         endEvent();
@@ -211,7 +211,7 @@ async function doguEvent(){
     await startMessage(events.doguBattle);
 
     // 土偶が動く
-    await jumpElement(doguonMap, 8);
+    await jumpElement(dogu, 8);
 
     await startMessage([
         "卑弥呼「む！？こやつ動くぞ！」"
