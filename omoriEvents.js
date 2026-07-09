@@ -49,7 +49,6 @@ function recoverySpringEvent(){
             "卑弥呼「ふむ…ここの水からは神聖な力を感じるのう」"
         ],
         () => {
-
             flashScreen();
 
             recoverAll(playerStatus);
@@ -63,43 +62,67 @@ function recoverySpringEvent(){
                     ],
                     endEvent
                 );
-
             }, 400);
-
         }
     );
 
 }
-function meetMorseEvent(){
-        if(hasFlag("metMorse")){
-            startMessage(
-        [
+async function meetMorseEvent(){
+
+    if(hasFlag("metMorse")){
+
+        await startMessage([
             "モース「ワタシは大森貝塚を発掘調査していたのデース」",
-            "モース「モースこしで調査が終わるところで、おかしな光に吸い込まれてしまいマシタ」",
+            "モース「モースこしで調査が終わるときに、おかしな光に吸い込まれてしまったのデース」",
             "モース「気が付くとここにワープして、貝殻に襲われたのデース」",
-            "卑弥呼「他の時代から転移してきた…ふむ、おぬしら二人は似た事情なのかもしれぬな」",
+            "卑弥呼「他の時代から転移してきたわけじゃな」",
+            "卑弥呼「となれば、おぬしら二人は似た事情なのかもしれぬな」"
+        ]);
+
+        await rotateObject(morse);
+
+        await startMessage([
             "モース「オー！帽子ボーイ！君も光に吸い込まれたのデスネ！」"
-        ],  
-        endEvent
-    );
+        ]);
+
+        endEvent();
         return;
     }
-    startMessage(
-        [
-            "妙な男「ヘルプミー！」",
-            "卑弥呼「今度は何じゃ！？」",
-            "妙な男「ハロー！私はモースと申ス者デース！」",
-            "モース「体に貝殻がまとわりついて動けマセーン！助けてクダサーイ！」",
-            "卑弥呼「おぬしの胴体にくっついとるの、貝殻じゃったのか…」",
-            "モース「イエス！不思議な力で、貝殻が動いているようデース！」",
-            "卑弥呼「ふむ…力の源を断てば、お主の体も自由になりそうじゃのう」",
-            "モース「オー！キュートガール、ベリーカインド！お頼み申ス！」"
-        ],  
-    () => {
-        setFlag("metMorse");
-        endEvent();
-    }
-    );
+
+    await startMessage([
+        "妙な男「ヘルプミー！」"
+    ]);
+
+    await jumpElement(morse, 8);
+
+    await jumpElement(morse, 8);
+
+    await startMessage([
+        "卑弥呼「今度は何じゃ！？」",
+        "妙な男「ハロー！私はモースと申ス者デース！」"
+    ]);
+
+    await rotateObject(morse);
+
+    await startMessage([
+        "モース「体に貝殻がまとわりついて動けマセーン！助けてクダサーイ！」"
+    ]);
+
+    await rotateObject(morse);
+
+    await startMessage([
+        "卑弥呼「おぬしの胴体、貝殻じゃったのか…」",
+        "モース「イエス！不思議な力で、貝殻が動いているようデース！」",
+        "卑弥呼「ふむ…力の源を断てば、お主の体も自由になりそうじゃのう」",
+        "モース「オー！キュートガール、ベリーカインド！お頼み申ス！」"
+    ]);
+
+    await jumpElement(morse, 8);
+
+    setFlag("metMorse");
+
+    endEvent();
+
 }
 
 function doguEvent(){
