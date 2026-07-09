@@ -97,6 +97,15 @@ for(const key in tileTypes){
     }
 }
 
+//オブジェクトID取得
+function getObject(id){
+
+    return currentMap.objects.find(
+        object => object.id === id
+    );
+
+}
+
 //ウェイト
 function wait(ms){
 
