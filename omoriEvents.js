@@ -125,57 +125,56 @@ async function meetMorseEvent(){
 
 }
 
-function doguEvent(){
+async function doguEvent(){
 
-    // ⑤ 撃破済み
+    // 撃破済み
     if(hasFlag("doguDefeated")){
         endEvent();
         return;
     }
 
-    // ① 初回発見
+    // 初回発見
     if(!hasFlag("doguFound")){
 
-        startMessage(
-            events.doguFind,
-            () => {
+        await startMessage(events.doguFind);
 
-                setFlag("doguFound");
-                endEvent();
-
-            }
-        );
+        setFlag("doguFound");
+        endEvent();
         return;
     }
 
-    // ② ヒント不足
+    // ヒント不足
     if(
         !hasFlag("doguHintA") ||
         !hasFlag("doguHintB") ||
         !hasFlag("doguHintC")
     ){
 
-        startMessage(
-            [
-                "卑弥呼「ただの土偶にしか見えぬのう…」"
-            ],
-            endEvent
-        );
+        await startMessage([
+            "卑弥呼「ただの土偶にしか見えぬのう…」"
+        ]);
+
+        endEvent();
         return;
     }
 
-    // ③ ボス戦
-    startMessage(
-        events.doguBattle,
-        () => {
+    // 決戦前会話
+    await startMessage(events.doguBattle);
 
-            startBattle(
-                ["doguBoss"],
-                doguBattleResult
-            );
+    // 土偶が動く
+    await jumpElement(doguonMap, 8);
 
-        }
-    );
+    await startMessage([
+        "卑弥呼「む！？こやつ動くぞ！」"
+    ]);
+
+    // ボス戦
+    const result = await startBattleAsync([
+        "doguBoss",
+        "shell"
+    ]);
+
+    await doguBattleResult(result);
 
 }
 function doguBattleResult(result){
