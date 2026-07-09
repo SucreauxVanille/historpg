@@ -199,7 +199,7 @@ ctx.drawImage(
 
 //オブジェクト描画
 function drawObjects(){
-const jumpOffset = obj.jumpOffset ?? 0;
+
     currentMap.objects.forEach(obj=>{
 
         if (
@@ -213,33 +213,44 @@ const jumpOffset = obj.jumpOffset ?? 0;
 
         const asset = assets[obj.id];
         if(!asset) return;
-        if(asset.animated){
-    
-        const img =
-            loadedAssets[obj.id]
-            [obj.direction]
-            [animationFrame];
 
-ctx.drawImage(
-    img,
-    (obj.x - camera.x) * TILE_SIZE,
-    (obj.y - camera.y) * TILE_SIZE + jumpOffset,
-    TILE_SIZE,
-    TILE_SIZE
-);
+        const drawX =
+            (obj.x - camera.x) * TILE_SIZE;
+
+        const drawY =
+            (obj.y - camera.y) * TILE_SIZE +
+            (obj.jumpOffset ?? 0);
+
+        if(asset.animated){
+
+            const img =
+                loadedAssets[obj.id]
+                [obj.direction]
+                [animationFrame];
+
+            ctx.drawImage(
+                img,
+                drawX,
+                drawY,
+                TILE_SIZE,
+                TILE_SIZE
+            );
+
         }else{
 
             const img =
                 loadedAssets[obj.id];
-ctx.drawImage(
-    img,
-    (obj.x - camera.x) * TILE_SIZE,
-    (obj.y - camera.y) * TILE_SIZE,
-    TILE_SIZE,
-    TILE_SIZE
-);
+
+            ctx.drawImage(
+                img,
+                drawX,
+                drawY,
+                TILE_SIZE,
+                TILE_SIZE
+            );
         }
     });
+
 }
 
 // 主人公描画
@@ -339,7 +350,6 @@ function getTileEvent(x, y){
     }
 
     return currentMap.tileEvents.find(event=>
-
         event.x === x &&
         event.y === y
 
@@ -353,7 +363,6 @@ let animationFrame = 0;
 setInterval(() => {
 
     if(!animationEnabled) return;
-
     animationFrame = animationFrame === 0 ? 1 : 0;
     render();
 
@@ -378,7 +387,6 @@ function moveObject(id, dx, dy){
     if(!obj){
         return;
     }
-
     obj.x += dx;
     obj.y += dy;
 
@@ -410,7 +418,6 @@ function setObjectDirection(id, direction){
 function runEvent(eventId){
 
     gameState.eventLock = true;
-
     const handler = eventHandlers[eventId];
 
     if(handler){
@@ -429,7 +436,6 @@ function endEvent(){
 
     gameState.eventLock = false;
     lockInputFor(250);
-
 }
 
 //オブジェクト検出
@@ -471,18 +477,13 @@ function isObjectBlocked(x,y){
 
 //スポーン
 function spawnObject(id){
-
     const obj =
         currentMap.objects.find(
             o => o.id === id
         );
-
     if(obj){
-
         obj.active = true;
-
     }
-
 }
 
 //オブジェクト消滅
@@ -496,9 +497,7 @@ function despawnObject(id){
     if(obj){
 
         obj.active = false;
-
     }
-
 }
 
 //ワープ
@@ -522,13 +521,11 @@ function changeMap(mapName, startX, startY){
 }
 
 //エンカウント
-//エンカウント
 function checkEncounter(){
 
     if(!currentMap.encounterTable){
         return;
     }
-
     if(
         currentMap === maps.nojiriLake &&
         !hasFlag("nojiriTutorialFinished")
@@ -565,7 +562,6 @@ function checkEncounter(){
         ) + 1;
 
     const enemyIds = [];
-
     for(let i = 0; i < enemyCount; i++){
 
         enemyIds.push(
@@ -576,7 +572,6 @@ function checkEncounter(){
                 )
             ]
         );
-
     }
     startBattle(enemyIds);
 }
