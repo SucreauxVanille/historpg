@@ -69,62 +69,111 @@ function recoverySpringEvent(){
 }
 async function meetMorseEvent(){
 
-    if(hasFlag("metMorse")){
+    //==========================
+    //④ クリア後
+    //==========================
+    if(hasFlag("omoriClear")){
 
         await startMessage([
-            "モース「ワタシは大森貝塚を発掘調査していたのデース」",
-            "モース「モースこしで調査が終わるときに、おかしな光に吸い込まれてしまったのデース」",
-            "モース「気が付くとここにワープして、貝殻に襲われたのデース」",
-            "卑弥呼「他の時代から転移してきたわけじゃな」",
-            "卑弥呼「となれば、おぬしら二人は似た事情なのかもしれぬな」"
-        ]);
-
-        await rotateObject(morse);
-
-        await startMessage([
-            "モース「オー！帽子ボーイ！君も光に吸い込まれたのデスネ！」"
+            "モース「このコードみたいなマークの土器！土器土器しちゃいマース！」"
         ]);
 
         endEvent();
         return;
     }
 
+    //==========================
+    //③ 救出イベント
+    //==========================
+    if(hasFlag("doguDefeated")){
+
+        await startMessage([
+            "卑弥呼「モースとやら、大丈夫じゃったか？」",
+            "モース「サンキュー！モースこしで死ぬところデシタ！」"
+        ]);
+
+        await jumpElement(morse,8);
+        await jumpElement(morse,8);
+
+        await startMessage([
+            "卑弥呼「む？まだ貝殻が付いたままじゃぞ？」",
+            "モース「イエス！せっかくなので、このまま貝塚の気持ちを体験しマース！」"
+        ]);
+
+        await rotateObject(morse,8);
+
+        await startMessage([
+            "卑弥呼「…なんと逞しい御仁じゃ」",
+            "壱与の声「貝塚の気持ちって何なんでしょう…」"
+        ]);
+
+        setFlag("omoriClear");
+
+        endEvent();
+        return;
+    }
+
+    //==========================
+    // 初回会話後
+    //==========================
+    if(hasFlag("metMorse")){
+
+        await startMessage([
+            "モース「ワタシは大森貝塚を発掘調査していたのデース」",
+            "モース「モースこしで調査が終わる時、おかしな光に吸い込まれてしまいマシタ」",
+            "モース「気が付くとここにワープして、貝殻に襲われたのデース」",
+            "卑弥呼「他の時代から転移してきたわけじゃな」",
+            "卑弥呼「となれば、おぬしら二人は似た事情なのかもしれぬのう」"
+        ]);
+
+        await rotateObject(morse);
+
+        await startMessage([
+            "モース「帽子ボーイ！君も光に吸い込まれたのデスネ！」"
+        ]);
+
+        endEvent();
+        return;
+    }
+
+    //==========================
+    // 初回遭遇
+    //==========================
     await startMessage([
         "妙な男「ヘルプミー！」"
     ]);
 
-    await jumpElement(morse, 8);
-
-    await jumpElement(morse, 8);
+    await jumpElement(morse,8);
+    await jumpElement(morse,8);
 
     await startMessage([
         "卑弥呼「今度は何じゃ！？」",
-        "妙な男「ハロー！私はモースと申ス者デース！」"
+        "妙な男「ハロー！ワタシはモースと申ス者デース！」"
     ]);
 
     await rotateObject(morse);
 
     await startMessage([
-        "モース「体に貝殻がまとわりついて動けマセーン！助けてクダサーイ！」"
+        "モース「体に貝殻がまとわりついて動けマセーン！」",
+        "モース「助けてクダサーイ！」"
     ]);
 
     await rotateObject(morse);
 
     await startMessage([
-        "卑弥呼「おぬしの胴体、貝殻じゃったのか…」",
-        "モース「イエス！不思議な力で、貝殻が動いているようデース！」",
-        "卑弥呼「ふむ…力の源を断てば、お主の体も自由になりそうじゃのう」",
+        "卑弥呼「おぬしの胴体、貝殻じゃったのか……」",
+        "モース「イエス！不思議な力で貝殻が動いているようデース！」",
+        "卑弥呼「力の源を断てば、お主も自由になれそうじゃのう」",
         "モース「オー！キュートガール、ベリーカインド！お頼み申ス！」"
     ]);
 
-    await jumpElement(morse, 8);
+    await jumpElement(morse,8);
 
     setFlag("metMorse");
 
     endEvent();
 
 }
-
 async function doguEvent(){
 
     // 撃破済み
