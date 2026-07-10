@@ -7,18 +7,12 @@ function updateHouse(){
 }
 
 //iyo
-function updateIyo(){
-
-    if(gameState.progress >= PROGRESS.IYO_APPEARED){
-
-        spawnObject("iyo");
-
-    }else{
-
+function updateIyo(state){
+    if(state === HOUSE_STATE.OPENING){
         hideObject("iyo");
-
+    }else{
+        spawnObject("iyo");
     }
-
 }
 const HOUSE_STATE = {
 
