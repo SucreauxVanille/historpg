@@ -81,8 +81,9 @@ async function bedEvent(){
 
 }
 //銅鏡
-function mirrorEvent(){
+async function mirrorEvent(){
 
+    // すでに壱与登場済み
     if(hasFlag("iyoAppeared")){
         mirrorWarpMenu();
         return;
@@ -90,84 +91,79 @@ function mirrorEvent(){
 
     setFlag("iyoAppeared");
     gameState.progress = PROGRESS.IYO_APPEARED;
-        setTimeout(()=>{
-        setObjectDirection("himiko", "up");
-        }, 100);    
-    startMessage(
-        events.mirrorIntro,
-        () => {
-            
-        spawnObject("iyo");
-        setTimeout(()=>{
-        setObjectDirection("himiko", "down");
-        }, 200);    
-for(let i = 1; i <= 7; i++){
-    setTimeout(()=>{
-        moveObject("iyo", 0, -1);
-    }, i * 200);
-}
 
-setTimeout(()=>{
+    // ===== 鏡を調べる =====
 
-    setObjectDirection("iyo", "down");
-        setObjectDirection("himiko", "left");
-        setObjectDirection("brother", "up");
-    startIyoArrival();
+    await wait(100);
 
-}, 7 * 200 + 100);
+    setObjectDirection("himiko", "up");
 
- });            
-}
-function startIyoArrival(){
+    await startMessage(events.mirrorIntro);
+
+    // ===== 壱与出現 =====
+
+    spawnObject("iyo");
+
+    await wait(200);
+
+    setObjectDirection("himiko", "down");
+
+    // ===== 壱与が歩いてくる =====
+
+    for(let i = 0; i < 7; i++){
+
+        await moveObject("iyo", 0, -1);
+
+        await wait(200);
+
+    }
 
     setObjectDirection("iyo", "down");
+    setObjectDirection("himiko", "left");
+    setObjectDirection("brother", "up");
 
-    startMessage(
-        events.iyoArrival1,
-        () => {
+    // ===== 壱与との会話① =====
 
-            setObjectDirection("iyo", "left");
-            setObjectDirection("himiko", "up");
-    startMessage(
-        events.iyoArrival2,
-        startProphecy
-    );
-        }
-    );
-}
-function startProphecy(){
+    await startMessage(events.iyoArrival1);
+
+    setObjectDirection("iyo", "left");
+    setObjectDirection("himiko", "up");
+
+    await startMessage(events.iyoArrival2);
+
+    // ===== 予言 =====
 
     flashScreen();
 
-    setTimeout(()=>{
-        setObjectDirection("himiko", "up");
+    await wait(300);
 
-for(let i = 1; i <= 3; i++){
-    setTimeout(()=>{
-        moveObject("himiko", 0, -1);
-    }, i * 200);
-}
-    setTimeout(()=>{
+    setObjectDirection("himiko", "up");
+
+    for(let i = 0; i < 3; i++){
+
+        await moveObject("himiko", 0, -1);
+
+        await wait(200);
+
+    }
+
     setObjectDirection("iyo", "right");
     setObjectDirection("himiko", "left");
-}, 3 * 200 + 100);
-        
-        startMessage(
-            events.iyoArrival3,
-            heroReveal
-        );
 
-    },300);
+    await startMessage(events.iyoArrival3);
 
-}
-function heroReveal(){
-    
-    setTimeout(()=>{
+    // ===== 主人公の使命 =====
+
+    await wait(300);
+
     setObjectDirection("iyo", "left");
 
-    startMessage(events.iyoArrival4, endEvent);
-        },
-    300);
+    await startMessage(events.iyoArrival4);
+
+    // ===== イベント終了 =====
+
+    endEvent();
+
 }
 function mirrorWarpMenu(){
 
