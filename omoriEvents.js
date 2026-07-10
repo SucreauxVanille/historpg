@@ -147,7 +147,7 @@ async function meetMorseEvent(){
     await jumpElement(morse,8);
 
     await startMessage([
-        "卑弥呼「今度は何じゃ！？」",
+        "卑弥呼「何じゃ何じゃ！？」",
         "妙な男「ハロー！ワタシはモースと申ス者デース！」"
     ]);
 
@@ -207,22 +207,20 @@ async function doguEvent(){
         return;
     }
 
-    // 決戦前会話
-    await startMessage(events.doguBattle);
+// 決戦前会話
+await startMessage(events.doguBattle);
 
-    // 土偶が動く
-    await jumpElement(dogu, 8);
+// 土偶が動く
+await jumpElement(dogu, 8);
 
-    await startMessage([
-        "卑弥呼「む！？こやつ動くぞ！」"
-    ]);
+await startMessage([
+    "卑弥呼「む！？こやつ動くぞ！」"
+]);
 
-    // ボス戦
-    const result = await startBattle([
-        "shell","shell","doguBoss"
-    ]);
-
-    await doguBattleResult(result);
+startBattle(
+    ["shell","shell","doguBoss"],
+    doguBattleResult
+);
 
 }
 function doguBattleResult(result){
