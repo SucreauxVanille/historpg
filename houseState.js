@@ -1,6 +1,8 @@
 function updateHouse(){
 
-    updateIyo();
+    const state = getHouseState();
+
+    updateIyo(state);
 
 }
 
