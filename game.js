@@ -382,17 +382,25 @@ function getObjectAt(x, y){
 //オブジェクト移動
 function moveObject(id, dx, dy){
 
-    const obj = getObjectById(id);
+    return new Promise(resolve=>{
 
-    if(!obj){
-        return;
-    }
-    obj.x += dx;
-    obj.y += dy;
+        const obj = getObject(id);
 
-    render();
+        if(!obj){
+            resolve();
+            return;
+        }
 
+        obj.x += dx;
+        obj.y += dy;
+
+        render();
+
+        resolve();
+
+    });
 }
+
 function getObjectById(id){
 
     return currentMap.objects.find(
