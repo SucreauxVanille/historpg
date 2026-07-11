@@ -67,7 +67,16 @@ async function brotherOmoriIntro(){
 function brotherOmori(){
 
     startMessage([
-        "卑弥呼の弟「邪馬台国！」"
+        "卑弥呼の弟「この部屋は姉上の結界に守られているんだ」",
+        "卑弥呼の弟「私は民の様子を見るために、時々外に出ているが…」",
+        "卑弥呼の弟「あまり出入りすると、結界が弱ってしまうそうだ」"
     ], endEvent);
+
+}
+
+//返答
+function brotherAnswer(){
+
+    startMessage(["男「そうかそうか、そうだよな…」"], endEvent);
 
 }
