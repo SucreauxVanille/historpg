@@ -25,36 +25,25 @@ function prologueHimiko(){
 }
 
 function brotherEvent(){
-    if(hasFlag("iyoAppeared")){
 
-        startMessage(events.prologue_brother_after, endEvent);
+    switch(getHouseState()){
 
-        return;
+        case HOUSE_STATE.OPENING:
+            return brotherOpening();
+
+        case HOUSE_STATE.NOJIRI_PLAYING:
+            return brotherNojiri();
+
+        case HOUSE_STATE.OMORI_READY:
+            return brotherOmoriIntro();
+
+        case HOUSE_STATE.OMORI_PLAYING:
+            return brotherOmori();
+
     }
-    startMessage(
-        events.prologue_brother,
-        () => {
-
-            showChoice([
-                {
-                    text:"はい",
-                    action: brotherAnswer
-                },
-                {
-                    text:"いいえ",
-                    action: brotherAnswer
-                }
-            ]);
-
-        }
-    );
 
 }
-function brotherAnswer(){
 
-    startMessage(["男「そうかそうか、そうだよな…」"], endEvent);
-
-}
 function stampEvent(){
 
     startMessage(events.prologue_stamp, endEvent);
