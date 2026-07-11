@@ -4,7 +4,8 @@ const PROGRESS = {
     NOJIRI_TUTORIAL: 2,
     NAUMANN_DEFEATED: 3,
     OBSIDIAN_OBTAINED: 4,
-    DEMO_CLEAR: 5
+    DEMO_CLEAR: 5,
+    OMORI_READY: 6
 };
 const SAVE_WORDS = {
     0: "はる",
