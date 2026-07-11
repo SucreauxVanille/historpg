@@ -72,11 +72,22 @@ async function bedEvent(){
 //銅鏡
 async function mirrorEvent(){
 
-    // すでに壱与登場済み
-    if(hasFlag("iyoAppeared")){
-        mirrorWarpMenu();
-        return;
+    // 第1章開始前
+    if(!hasFlag("iyoAppeared")){
+        return startMirrorOpening();
     }
+
+    // 第2章開始前
+    if(getHouseState() === HOUSE_STATE.OMORI_READY){
+        return openMirrorStageMenu();
+    }
+
+    // それ以外
+    return mirrorWarpMenu();
+
+}
+
+async function startMirrorOpening(){
 
     setFlag("iyoAppeared");
     gameState.progress = PROGRESS.IYO_APPEARED;
@@ -172,32 +183,23 @@ function mirrorWarpMenu(){
         }
     );
 }
+
 async function goToNojiri(){
-
     await fadeOut();
-
     currentMap = maps.nojiriLake;
-
     player.x = 2;
     player.y = 25;
-
     himiko.x = player.x - 1;
     himiko.y = player.y;
     himiko.direction = "right";
-
     isHimikoFollowing = true;
     playerTrail = [];
-
     render();
-
     await fadeIn();
-
     await startMessage([
         "壱与の声「邪馬台国に戻るときは、青いうずまきに触れてください」"
     ]);
-
     endEvent();
-
 }
 
 function cancelWarp(){
@@ -205,6 +207,7 @@ function cancelWarp(){
     endEvent();
 }
 
+//壱与セーブ
 function iyoEvent(){
     startMessage(
         [
@@ -227,7 +230,6 @@ function iyoEvent(){
 }
 
 function createSaveSpell(){
-
     startMessage(
         [
             "壱与「わかりました！」",
@@ -356,13 +358,21 @@ function getLoadQuiz(){
                 correct:"ナウマンゾウ",
                 wrong:"マンモス"
             };
-
-        default:
+            
+        case PROGRESS.OMORI_READY:
             return {
                 question:
                     "卑弥呼「少し難しめじゃぞ。野尻湖で見かけた男はどこから来たと言っておった？」",
                 correct:"岩宿",
                 wrong:"吉野ケ里"
+            };
+
+        default:
+            return {
+                question:
+                    "卑弥呼「ワシらが向かう、貝殻が捨てられた場所を何と言ったかのう？」",
+                correct:"貝塚",
+                wrong:"古墳"
             };
     }
 
