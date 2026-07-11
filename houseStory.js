@@ -39,10 +39,16 @@ function brotherNojiri(){
 async function brotherOmoriIntro(){
 
     // 仮実装
+    const himiko = getObject("himiko");
+    const brother = getObject("brother");
     await startMessage([
         "卑弥呼の弟「そういえば、民が気になることを言っていたんだ」",
-        "卑弥呼の弟「なんでも、いつの間にか地面に貝殻が埋まっているんだとか」",
-      //卑弥呼振り向く
+        "卑弥呼の弟「なんでも、いつの間にか地面に貝殻が埋まっているんだとか」"
+        ]);
+    setObjectDirection("himiko","down");
+    await jumpElement(himiko,8);
+    await jumpElement(himiko,8);
+    await startMessage([
         "卑弥呼「民の困り事ならワシに報告せぬか！」",
         "卑弥呼の弟「すみません、姉上は野尻湖に行かれていたので…」",
         "壱与「何にしても、不思議な話ですね」",
@@ -53,12 +59,8 @@ async function brotherOmoriIntro(){
         "壱与「貝殻なら…過去の貝塚に向かえば、解決の糸口が見つかるかもしれません！」",
         "卑弥呼「貝塚か、行ってみるかのう」"
     ]);
-
-    // TODO:
-    // progress更新
-    // 鏡アップデート
-    // updateHouse()
-
+gameState.progress = PROGRESS.OMORI_READY;
+updateHouse();
     endEvent();
 
 }
