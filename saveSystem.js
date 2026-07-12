@@ -38,13 +38,11 @@ const WORD_TO_NUMBER = {
 };
 function applyProgress(progress){
 
-    if(progress >= PROGRESS.IYO_APPEARED){
-
+if(progress >= PROGRESS.IYO_APPEARED){
     setFlag("iyoAppeared");
     spawnObject("iyo");
     const iyo =
         getObjectById("iyo");
-
     if(iyo){
         iyo.x = 5;
         iyo.y = 2;
@@ -52,12 +50,11 @@ function applyProgress(progress){
     }
 }
 
-    if(progress >= PROGRESS.NOJIRI_TUTORIAL){
+if(progress >= PROGRESS.NOJIRI_TUTORIAL){
         setFlag("nojiriTutorialFinished");
     }
 
 if(progress >= PROGRESS.NAUMANN_DEFEATED){
-
     setFlag("naumannDefeated");
     despawnObject(
         "naumann"
@@ -65,7 +62,6 @@ if(progress >= PROGRESS.NAUMANN_DEFEATED){
 }
 
 if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
-
     setFlag("obsidianObtained");
     despawnObject(
         "obsidian"
@@ -75,7 +71,16 @@ if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
 if(progress >= PROGRESS.DEMO_CLEAR){
         setFlag("demoClear");
     }
-
+    
+if(progress >= PROGRESS.OMORI_SHELL){
+        setFlag("omoriShellFinished");
+    }
+if(progress >= PROGRESS.MET_MORSE){
+        setFlag("metMorse");
+    }
+if(progress >= PROGRESS.DOGU_DEFEATED){
+        setFlag("doguDefeated");
+    }
 }
 function resetWorld(){
 
