@@ -36,5 +36,19 @@ function closeMirrorMenu(){
 
 }
 async function goToOmori(){
-
+    await fadeOut();
+    currentMap = maps.omoriShellMound;
+    player.x = 10;
+    player.y = 24;
+    himiko.x = player.x;
+    himiko.y = player.y - 1 ;
+    himiko.direction = "down";
+    isHimikoFollowing = true;
+    playerTrail = [];
+    render();
+    await fadeIn();
+    await startMessage([
+        "壱与の声「邪馬台国に戻るときは、青いうずまきに触れてください」"
+    ]);
+    endEvent();
 }
