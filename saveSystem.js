@@ -6,7 +6,10 @@ const PROGRESS = {
     OBSIDIAN_OBTAINED: 4,
     DEMO_CLEAR: 5,
     OMORI_START: 6,
-    OMORI_SHELL: 7
+    OMORI_SHELL: 7,
+    MET_MORSE: 8,
+    DOGU_DEFEATED: 9,
+    DEMO2_CLEAR: 10
 };
 const SAVE_WORDS = {
     0: "はる",
@@ -69,7 +72,7 @@ if(progress >= PROGRESS.OBSIDIAN_OBTAINED){
     );
 }
 
-    if(progress >= PROGRESS.DEMO_CLEAR){
+if(progress >= PROGRESS.DEMO_CLEAR){
         setFlag("demoClear");
     }
 
