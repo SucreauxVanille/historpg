@@ -185,6 +185,7 @@ function mirrorWarpMenu(){
 }
 
 async function goToNojiri(){
+    closeMenu();
     await fadeOut();
     currentMap = maps.nojiriLake;
     player.x = 2;
