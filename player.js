@@ -119,6 +119,66 @@ render();
 checkEncounter();
 }
 
+//強制移動
+function forceMovePlayer(dx, dy){
+
+    return new Promise(resolve=>{
+
+        const nextX = player.x + dx;
+        const nextY = player.y + dy;
+
+        // マップ外防止
+        if(
+            nextX < 0 ||
+            nextX >= currentMap.tiles[0].length ||
+            nextY < 0 ||
+            nextY >= currentMap.tiles.length
+        ){
+            resolve();
+            return;
+        }
+
+        // 壁判定
+        const tile = currentMap.tiles[nextY][nextX];
+
+        if(!tileIds[tile].passable){
+            resolve();
+            return;
+        }
+
+        // オブジェクト判定
+        if(isObjectBlocked(nextX, nextY)){
+            resolve();
+            return;
+        }
+
+        // 卑弥呼追従用
+        playerTrail.push({
+            x: player.x,
+            y: player.y,
+            direction: player.direction
+        });
+
+        // 移動
+        player.x = nextX;
+        player.y = nextY;
+
+        // 卑弥呼追従
+        if(
+            isHimikoFollowing &&
+            currentMap.allowHimikoFollower
+        ){
+            followHimiko();
+        }
+
+        render();
+
+        resolve();
+
+    });
+
+}
+
 //卑弥呼追従
 function followHimiko(){
 
