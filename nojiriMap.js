@@ -8,6 +8,8 @@ maps.nojiriLake = {
     ],
     allowHimikoFollower: true,
     encounterRate: 8,
+    clearEncounterRate: 3,
+    clearFlag: "naumannDefeated",
     maxEncounterCount: 1,
     encounterTable: [
         "boar",
