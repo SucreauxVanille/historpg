@@ -12,30 +12,41 @@ const PROGRESS = {
     OMORI_CLEAR: 10
 };
 const SAVE_WORDS = {
-    0: "はる",
-    1: "すな",
-    2: "かに",
-    3: "そら",
-    4: "とり",
-    5: "ほし",
-    6: "くも",
-    7: "さる",
-    8: "たに",
-    9: "あき"
+    0: ["はる", "つき"],
+    1: ["すな", "よる"],
+    2: ["かに", "うみ"],
+    3: ["そら", "ほし"],
+    4: ["とり", "くも"],
+    5: ["さる", "もり"],
+    6: ["たに", "かわ"],
+    7: ["いし", "きり"],
+    8: ["はな", "ゆめ"],
+    9: ["あき", "しろ"]
 };
 
 const WORD_TO_NUMBER = {
-    "はる": "0",
-    "すな": "1",
-    "かに": "2",
-    "そら": "3",
-    "とり": "4",
-    "ほし": "5",
-    "くも": "6",
-    "さる": "7",
-    "たに": "8",
-    "あき": "9"
+    "はる":"0",
+    "つき":"0",
+    "すな":"1",
+    "よる":"1",
+    "かに":"2",
+    "うみ":"2",
+    "そら":"3",
+    "ほし":"3",
+    "とり":"4",
+    "くも":"4",
+    "さる":"5",
+    "もり":"5",
+    "たに":"6",
+    "かわ":"6",
+    "いし":"7",
+    "きり":"7",
+    "はな":"8",
+    "ゆめ":"8",
+    "あき":"9",
+    "しろ":"9"
 };
+
 function applyProgress(progress){
 
 if(progress >= PROGRESS.IYO_APPEARED){
@@ -98,30 +109,39 @@ function resetWorld(){
     despawnObject("iyo");
 }
 
+//ランダム単語取得
+function getSaveWord(num){
+
+    const words = SAVE_WORDS[num];
+
+    return words[
+        Math.floor(Math.random() * words.length)
+    ];
+}
 
 //暗号化
 function encodeSaveCode(){
 
-    const expCode =
-        String(playerStatus.exp)
+const expCode =
+    String(playerStatus.exp)
         .split("")
-        .map(num => SAVE_WORDS[num])
+        .map(getSaveWord)
         .join("");
 
-    const progressCode =
-        String(gameState.progress)
+const progressCode =
+    String(gameState.progress)
         .split("")
-        .map(num => SAVE_WORDS[num])
+        .map(getSaveWord)
         .join("");
-
+    
     return (
         expCode +
         "いのり" +
         progressCode
     );
-
 }
 
+//デコード
 function decodeSaveCode(spell){
 
     const parts =
