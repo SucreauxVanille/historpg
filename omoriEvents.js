@@ -517,10 +517,77 @@ function omoriReturnEvent(){
     endEvent();
 }
 
-function startOmoriEnding(){
+//------------------
+//復帰とエンディング
+//------------------
+async function startOmoriEnding(){
+
+    await startMessage([
+        "壱与の声「無事に解決したんですね！邪馬台国で一休みしましょう」"
+    ]);
+
     changeMap(
         maps.himikoHouse,
         5,
         5
     );
+
+    await wait(600);
+const himiko = getObject("himiko");
+    setObjectDirection("iyo","down");
+    setObjectDirection("himiko","left");
+
+    await startMessage([
+        "壱与「今回も本当にお疲れさまでした！」"
+    ]);
+    
+    setObjectDirection("himiko","up");
+    await jumpObject("himiko",8);
+    await jumpObject("himiko",8);
+
+    await startMessage([
+        "卑弥呼「まったく、ひどい目に遭ったのじゃ！」",
+        "壱与「でも、モースさんが元気そうで良かったです」"
+    ]);
+    
+    setObjectDirection("brother","up");
+
+    await startMessage([
+        "卑弥呼の弟「邪馬台国の異常も解決したようです」"
+    ]);
+    
+    setObjectDirection("himiko","down");
+
+    await startMessage([
+        "卑弥呼「うむ、それは何よりじゃ！」",
+        "卑弥呼「じゃが…」"
+    ]);
+
+    setObjectDirection("iyo","right");
+
+    await startMessage([
+        "壱与「誰かが土偶を送り込んで、呪術で貝殻や骨を暴れさせていた…」"
+    ]);   
+
+    setObjectDirection("himiko","left");
+
+    await startMessage([
+        "卑弥呼「そこじゃ。これは明らかに、何者かの悪意じゃ」",
+        "壱与「他の時代でも、何かが起きているかもしれませんね」"
+    ]);  
+
+    await rotateObject(himiko);
+    await startMessage([
+        "卑弥呼「そういうわけじゃ、もう少し一緒に戦ってもらうぞ」",
+        "壱与「よろしく願いしますね！」",
+        "",
+        "体験版はここまでです。続きをお楽しみに！"
+    ]);
+
+    
+    setFlag("omoriClear");
+    gameState.progress = PROGRESS.OMORI_CLEAR;
+
+    endEvent();
+
 }
