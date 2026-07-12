@@ -8,6 +8,8 @@ maps.omoriShellMounds = {
     ],
     allowHimikoFollower: true,
     encounterRate: 7,
+    clearEncounterRate: 2,
+    clearFlag: "doguDefeated",
     maxEncounterCount: 2,
     encounterTable: [
         "shell",
