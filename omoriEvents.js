@@ -57,7 +57,7 @@ async function morseStopEvent(){
             "？？？「ノー！無視しないでクダサーイ！」",
             "卑弥呼「む…さすがに素通りというわけにはいかぬか…」"
         ],
-        //主人公、y方向に1マス後退
+           await forceMovePlayer(0, 1);
             endEvent
         );
     }
