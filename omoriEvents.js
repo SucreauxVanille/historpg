@@ -95,7 +95,8 @@ async function meetMorseEvent(){
     if(hasFlag("savedMorse")){
 
         await startMessage([
-            "モース「このコードみたいなマークの土器！土器土器しちゃいマース！」"
+            "モース「このコードみたいなマークの土器！土器土器しちゃいマース！」",
+            "モース「コードのマーク、日本語で言うと縄文デース！」"
         ]);
 
         endEvent();
