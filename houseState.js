@@ -9,7 +9,7 @@ function updateHouse(){
 //iyo
 function updateIyo(state){
     if(state === HOUSE_STATE.OPENING){
-        hideObject("iyo");
+        despawnObject("iyo");
     }else{
         spawnObject("iyo");
     }
@@ -41,7 +41,5 @@ function getHouseState(){
 
         default:
             return HOUSE_STATE.OPENING;
-
     }
-
 }
