@@ -9,7 +9,7 @@ const PROGRESS = {
     OMORI_SHELL: 7,
     MET_MORSE: 8,
     DOGU_DEFEATED: 9,
-    DEMO2_CLEAR: 10
+    OMORI_CLEAR: 10
 };
 const SAVE_WORDS = {
     0: "はる",
@@ -80,6 +80,13 @@ if(progress >= PROGRESS.MET_MORSE){
     }
 if(progress >= PROGRESS.DOGU_DEFEATED){
         setFlag("doguDefeated");
+    }
+if(progress >= PROGRESS.OMORI_CLEAR){
+        setFlag("savedMorse");
+        setFlag("omoriClear");
+    despawnObject(
+        "doguonMap"
+    );
     }
 }
 function resetWorld(){
