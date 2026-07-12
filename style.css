@@ -138,14 +138,14 @@ canvas{
     cursor:pointer;
 }
 
-.mirrorMenu{
+#menuBox..mirrorMenu{
     top:auto;
     right:auto;
 
     left:0;
     bottom:0;
 
-    width:100%;
+    width:70%;
 
     transform:none;
 }
