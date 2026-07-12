@@ -31,7 +31,7 @@ startBattle(
         startMessage(
             [
                 "卑弥呼「何で貝殻に目玉がついて動くんじゃ！」",
-                "壱与の声「イノシシやゾウならともかく、貝殻が動くのは変ですね」",
+                "壱与の声「イノシシやゾウはともかく、貝殻が動くのは妙ですね」",
                 "卑弥呼「うむ。何者かが、悪意を持って異変を起こしておるようじゃ」"
             ],
             endEvent
@@ -124,7 +124,7 @@ async function meetMorseEvent(){
         await rotateObject(morse,8);
 
         await startMessage([
-            "卑弥呼「…なんと逞しい御仁じゃ」",
+            "卑弥呼「…なんと力強いのじゃ…」",
             "壱与の声「貝塚の気持ちって何なんでしょう…」"
         ]);
 
@@ -220,7 +220,8 @@ async function doguEvent(){
     ){
 
         await startMessage([
-            "卑弥呼「ただの土偶にしか見えぬのう…」"
+            "卑弥呼「手足が無傷なのも妙じゃな」",
+            "壱与の声「土偶は、おまじないのために手足を折られますよね」"
         ]);
 
         endEvent();
@@ -294,7 +295,7 @@ function doguHintAEvent(){
     startMessage(
         [
             "男「村はずれに、おかしな土人形が落ちてるだ」",
-            "男「あんたたちの物じゃねえか？」",
+            "男「あんたたちの持ち物じゃねえのか？」",
             "壱与の声「やはり、村で作られたものではなさそうですね」",
             "卑弥呼「誰かが持ち込んだとしか思えぬが…」"
         ],
@@ -405,7 +406,7 @@ function omorimob1Event(){
 }
 function omorimob2Event(){
     npcDialogue(
-        "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
+        "doguDefeated", 
         [
             "男「オラ達は食い終わった貝殻や骨を貝塚に捨ててるだ」",
             "男「ただのゴミでなく、食べたことを感謝する場でもあるだよ」",
@@ -429,7 +430,7 @@ function omorimob3Event(){
 }
 function omorimobF1Event(){
     npcDialogue(
-        "omoriShellFinished",   //仮置き。土偶イベントに差し替え予定
+        "doguDefeated",  
         [
             "女「ここが貝塚だ」",
             "女「さっき、ひげもじゃの騒がしいおっちゃんが熱心に見学してたなあ」",
@@ -484,7 +485,7 @@ function omoriHouse3Event(){
     startMessage(
         [
             "卑弥呼「む？中で赤子が寝ておるようじゃ」",
-            "卑弥呼「騒がずそっとしておいてやらねばのう」"
+            "卑弥呼「そっとしておいてやらねばのう」"
         ],
         endEvent
     );
