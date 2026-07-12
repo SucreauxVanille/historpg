@@ -25,6 +25,7 @@ const eventHandlers = {
     naumannBoss: naumannBossEvent,
     obsidian: obsidianEvent,
     meetMorse: meetMorseEvent,
+    morseStop: morseStopEvent,
     dogu: doguEvent,
     doguHintA: doguHintAEvent,
     doguHintB: doguHintBEvent,
