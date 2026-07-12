@@ -57,6 +57,8 @@ async function morseStopEvent(){
             "？？？「ノー！無視しないでクダサーイ！」",
             "卑弥呼「む…さすがに素通りというわけにはいかぬか…」"
         ],
+        player.y++;
+        render();
             endEvent
         );
     }
