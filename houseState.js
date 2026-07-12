@@ -38,7 +38,11 @@ function getHouseState(){
 
         case PROGRESS.DEMO_CLEAR:
             return HOUSE_STATE.OMORI_READY;
-
+            
+        case PROGRESS.OMORI_START:
+        case PROGRESS.OMORI_SHELL:
+            return HOUSE_STATE.OMORI_PLAYING;
+            
         default:
             return HOUSE_STATE.OPENING;
     }
