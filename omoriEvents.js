@@ -62,8 +62,8 @@ async function morseStopEvent(){
        return;
     }
 
+//回復の泉
 function recoverySpringEvent(){
-
     startMessage(
         [
             "卑弥呼「ふむ…ここの水からは神聖な力を感じるのう」"
@@ -92,7 +92,7 @@ async function meetMorseEvent(){
     //==========================
     //④ クリア後
     //==========================
-    if(hasFlag("omoriClear")){
+    if(hasFlag("savedMorse")){
 
         await startMessage([
             "モース「このコードみたいなマークの土器！土器土器しちゃいマース！」"
@@ -126,7 +126,7 @@ async function meetMorseEvent(){
             "卑弥呼「…なんと力強いのじゃ…」",
             "壱与の声「貝塚の気持ちって何なんでしょう…」"
         ]);
-        setFlag("omoriClear");
+        setFlag("savedMorse");
         endEvent();
         return;
     }
@@ -296,15 +296,13 @@ function doguHintAEvent(){
             "卑弥呼「誰かが持ち込んだとしか思えぬが…」"
         ],
         () => {
-
             setFlag("doguHintA");
             endEvent();
         }
     );
-
 }
-function doguHintBEvent(){
 
+function doguHintBEvent(){
     // ③ ボス撃破後
     if(hasFlag("doguDefeated")){
 
@@ -345,10 +343,9 @@ function doguHintBEvent(){
             endEvent();
         }
     );
-
 }
-function doguHintCEvent(){
 
+function doguHintCEvent(){
     // ③ ボス撃破後
     if(hasFlag("doguDefeated")){
         startMessage(
@@ -389,8 +386,11 @@ function doguHintCEvent(){
             endEvent();
         }
     );
-
 }
+
+//------------------
+//ここからモブと建造物
+//------------------
 function omorimob1Event(){
     startMessage(
         [
@@ -415,6 +415,7 @@ function omorimob2Event(){
         ]
     );
 }
+
 function omorimob3Event(){
     startMessage(
         [
@@ -424,6 +425,7 @@ function omorimob3Event(){
         endEvent
     );
 }
+
 function omorimobF1Event(){
     npcDialogue(
         "doguDefeated",  
@@ -450,6 +452,7 @@ function omorimobF2Event(){
         endEvent
     );
 }
+
 function omorimobF3Event(){
     startMessage(
         [
@@ -459,6 +462,7 @@ function omorimobF3Event(){
         endEvent
     );
 }
+
 function omoriHouseEvent(){
     startMessage(
         [
@@ -468,6 +472,7 @@ function omoriHouseEvent(){
         endEvent
     );
 }
+
 function omoriHouse2Event(){
     startMessage(
         [
@@ -477,6 +482,7 @@ function omoriHouse2Event(){
         endEvent
     );
 }
+
 function omoriHouse3Event(){
     startMessage(
         [
@@ -484,5 +490,37 @@ function omoriHouse3Event(){
             "卑弥呼「そっとしておいてやらねばのう」"
         ],
         endEvent
+    );
+}
+
+//------------------
+//復帰とエンディング
+//------------------
+function omoriReturnEvent(){
+    if(
+        hasFlag("savedMorse") &&
+        !hasFlag("omoriClear")
+    ){
+        startOmoriEnding();
+        return;
+    }
+
+    showMessage(
+        "壱与の声「邪馬台国にお戻ししますね！」"
+    );
+
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
+    );
+    endEvent();
+}
+
+function startOmoriEnding(){
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
     );
 }
