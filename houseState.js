@@ -41,6 +41,9 @@ function getHouseState(){
             
         case PROGRESS.OMORI_START:
         case PROGRESS.OMORI_SHELL:
+        case PROGRESS.MET_MORSE:
+        case PROGRESS.DOGU_DEFEATED:
+        case PROGRESS.OMORI_CLEAR:
             return HOUSE_STATE.OMORI_PLAYING;
             
         default:
