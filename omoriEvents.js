@@ -42,6 +42,25 @@ startBattle(
         }
     );
 }
+
+async function morseStopEvent(){
+    const morse = getObject("morse");
+    
+    if(hasFlag("metMorse")){
+        endEvent();
+        return;
+    }
+        await jumpElement(morse,8);
+        await jumpElement(morse,8);
+        await startMessage(
+        [
+            "？？？「ノー！無視しないでクダサーイ！」",
+            "卑弥呼「む…さすがに素通りというわけにはいかぬか…」"
+        ],
+            endEvent
+        );
+    }
+
 function recoverySpringEvent(){
 
     startMessage(
