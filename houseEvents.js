@@ -72,21 +72,19 @@ async function bedEvent(){
 //銅鏡
 async function mirrorEvent(){
 
-    // 第1章開始前
     if(!hasFlag("iyoAppeared")){
         return startMirrorOpening();
     }
 
-    // 第2章開始前
-    if(getHouseState() === HOUSE_STATE.OMORI_READY){
-        return openMirrorStageMenu();
+    if(gameState.progress < PROGRESS.DEMO_CLEAR){
+        return mirrorWarpMenu();
     }
 
-    // それ以外
-    return mirrorWarpMenu();
+    return openMirrorStageMenu();
 
 }
 
+//スタートイベ
 async function startMirrorOpening(){
 
     setFlag("iyoAppeared");
