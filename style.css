@@ -142,13 +142,15 @@ canvas{
 }
 .mirrorMenu{
 
-    top:50%;
+    top:auto;
+    right:auto;
 
-    left:50%;
+    left:0;
+    bottom:0;
 
-    transform:translate(-50%,-50%);
+    width:100%;
 
-    width:260px;
+    transform:none;
 
 }
 
