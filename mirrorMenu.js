@@ -37,11 +37,11 @@ function closeMirrorMenu(){
 }
 async function goToOmori(){
     await fadeOut();
-    currentMap = maps.omoriShellMound;
+    currentMap = maps.omoriShellMounds;
     player.x = 10;
     player.y = 24;
     himiko.x = player.x;
-    himiko.y = player.y - 1 ;
+    himiko.y = player.y - 1;
     himiko.direction = "down";
     isHimikoFollowing = true;
     playerTrail = [];
