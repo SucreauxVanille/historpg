@@ -91,15 +91,16 @@ if(progress >= PROGRESS.MET_MORSE){
     }
 if(progress >= PROGRESS.DOGU_DEFEATED){
         setFlag("doguDefeated");
+        despawnObject(
+        "doguonMap"
+    );
     }
 if(progress >= PROGRESS.OMORI_CLEAR){
         setFlag("savedMorse");
         setFlag("omoriClear");
-    despawnObject(
-        "doguonMap"
-    );
     }
 }
+
 function resetWorld(){
 
     gameState.flags = {};
