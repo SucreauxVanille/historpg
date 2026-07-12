@@ -51,7 +51,6 @@ maps.nojiriLake = {
     ],
 
     objects: [
-
         {
             id: "mirrorReturn",
             x: 0,
@@ -107,18 +106,13 @@ maps.nojiriLake = {
             solid: true,
             event: "obsidian"
         }
-
     ],
 
-
     tileEvents: [
-
         {
             x: 9,
             y: 23,
             event: "nojiriTutorial"
         }
-
     ]
-
 };
