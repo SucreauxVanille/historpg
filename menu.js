@@ -1,10 +1,15 @@
 let isMenuOpen = false;
 
-function openMenu(html){
+function openMenu(html, className = ""){
 
-    const menuBox =
-        document.getElementById("menuBox");
+const menuBox =
+    document.getElementById("menuBox");
 
+menuBox.className = "";
+
+if(className){
+    menuBox.classList.add(className);
+}
     const menuContent =
         document.getElementById("menuContent");
     isMenuOpen = true;
@@ -16,9 +21,10 @@ function openMenu(html){
 
 function closeMenu(){
 
-    document.getElementById(
-        "menuBox"
-    ).style.display = "none";
+const menuBox =
+    document.getElementById("menuBox");
+    menuBox.style.display = "none";
+    menuBox.className = "";
     isMenuOpen = false;
 }
 
