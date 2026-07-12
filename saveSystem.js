@@ -5,7 +5,7 @@ const PROGRESS = {
     NAUMANN_DEFEATED: 3,
     OBSIDIAN_OBTAINED: 4,
     DEMO_CLEAR: 5,
-    OMORI_READY: 6
+    OMORI_START: 6
 };
 const SAVE_WORDS = {
     0: "はる",
