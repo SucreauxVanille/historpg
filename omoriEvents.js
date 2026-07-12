@@ -57,9 +57,10 @@ async function morseStopEvent(){
             "？？？「ノー！無視しないでクダサーイ！」",
             "卑弥呼「む…さすがに素通りというわけにはいかぬか…」"
         ],
-           await forceMovePlayer(0, 1);
-            endEvent
         );
+       await forceMovePlayer(0, 1);
+       endEvent();
+       return;
     }
 
 function recoverySpringEvent(){
