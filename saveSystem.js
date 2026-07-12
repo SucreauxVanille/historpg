@@ -109,7 +109,10 @@ function encodeSaveCode(){
         .join("");
 
     const progressCode =
-        SAVE_WORDS[gameState.progress];
+        String(gameState.progress)
+        .split("")
+        .map(num => SAVE_WORDS[num])
+        .join("");
 
     return (
         expCode +
@@ -146,12 +149,23 @@ function decodeSaveCode(spell){
 
     }
 
-    const progress =
-        Number(
-            WORD_TO_NUMBER[
-                progressSpell
-            ]
-        );
+let progress = "";
+
+for(
+    let i = 0;
+    i < progressSpell.length;
+    i += 2
+){
+
+    const word =
+        progressSpell.slice(i, i + 2);
+
+    progress +=
+        WORD_TO_NUMBER[word];
+
+}
+
+progress = Number(progress);
 
     return {
         exp: Number(exp),
