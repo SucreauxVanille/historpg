@@ -47,7 +47,10 @@ async function brotherOmoriIntro(){
     await jumpElement(himiko,8);
     await jumpElement(himiko,8);
     await startMessage([
-        "卑弥呼「民の困り事ならワシに報告せぬか！」",
+        "卑弥呼「民の困り事ならワシに報告せぬか！」"
+    ]);
+    setObjectDirection("brother","up");
+    await startMessage([
         "卑弥呼の弟「すみません、姉上は野尻湖に行かれていたので…」",
         "壱与「何にしても、不思議な話ですね」",
         "卑弥呼の弟「そうなんです。まるで、ずっと昔に貝殻が飛んで来たような…」",
@@ -57,7 +60,7 @@ async function brotherOmoriIntro(){
         "壱与「貝殻なら…過去の貝塚に向かえば、何か分かるかもしれません！」",
         "卑弥呼「貝塚か、行ってみるかのう」"
     ]);
-gameState.progress = PROGRESS.OMORI_READY;
+gameState.progress = PROGRESS.OMORI_START;
 updateHouse();
     endEvent();
 
