@@ -55,7 +55,7 @@ maps.omoriShellMounds = {
             y: 24,
             active: true,
             solid: true,
-            event: "returnMirror"
+            event: "omoriReturn"
         },
         {
             id: "morse",
