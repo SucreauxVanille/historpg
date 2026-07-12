@@ -36,7 +36,6 @@ startBattle(
             ],
             endEvent
         );
-
     }
 );
         }
@@ -76,7 +75,6 @@ function recoverySpringEvent(){
             recoverAll(himikoStatus);
 
             setTimeout(() => {
-
                 startMessage(
                     [
                         "卑弥呼「ほう！力がみなぎるようじゃ！」"
@@ -86,8 +84,9 @@ function recoverySpringEvent(){
             }, 400);
         }
     );
-
 }
+
+//モースイベント
 async function meetMorseEvent(){
     const morse = getObject("morse");
     //==========================
@@ -127,9 +126,7 @@ async function meetMorseEvent(){
             "卑弥呼「…なんと力強いのじゃ…」",
             "壱与の声「貝塚の気持ちって何なんでしょう…」"
         ]);
-
         setFlag("omoriClear");
-
         endEvent();
         return;
     }
@@ -146,9 +143,7 @@ async function meetMorseEvent(){
             "卑弥呼「他の時代から転移してきたわけじゃな」",
             "卑弥呼「となれば、おぬしら二人は似た事情なのかもしれぬのう」"
         ]);
-
         await rotateObject(morse);
-
         await startMessage([
             "モース「帽子ボーイ！君も光に吸い込まれたのデスネ！」"
         ]);
@@ -190,10 +185,12 @@ async function meetMorseEvent(){
     await jumpElement(morse,8);
 
     setFlag("metMorse");
-
+    gameState.progress = PROGRESS.MET_MORSE;
     endEvent();
 
 }
+
+//土偶
 async function doguEvent(){
     const dogu = getObject("doguonMap");
     // 撃破済み
@@ -223,7 +220,6 @@ async function doguEvent(){
             "卑弥呼「手足が無傷なのも妙じゃな」",
             "壱与の声「土偶は、おまじないのために手足を折られますよね」"
         ]);
-
         endEvent();
         return;
     }
@@ -252,9 +248,7 @@ function doguBattleResult(result){
     }
 
     setFlag("doguDefeated");
-
-    gameState.progress = PROGRESS.OMORI_CLEAR;
-
+    gameState.progress = PROGRESS.DOGU_DEFEATED;
     despawnObject("doguonMap");
 
     startMessage(
@@ -263,6 +257,8 @@ function doguBattleResult(result){
     );
 
 }
+
+//土偶ヒント
 function doguHintAEvent(){
 
     // ③ ボス撃破後
