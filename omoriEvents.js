@@ -543,8 +543,8 @@ const himiko = getObject("himiko");
     ]);
     
     setObjectDirection("himiko","up");
-    await jumpObject("himiko",8);
-    await jumpObject("himiko",8);
+    await jumpElement("himiko",8);
+    await jumpElement("himiko",8);
 
     await startMessage([
         "卑弥呼「まったく、ひどい目に遭ったのじゃ！」",
