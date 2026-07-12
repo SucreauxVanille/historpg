@@ -153,6 +153,13 @@ canvas{
     transform:none;
 
 }
+.menuTitle{
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+}
 
 #gameScreen{
     position:relative;
