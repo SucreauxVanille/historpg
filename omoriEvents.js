@@ -562,15 +562,14 @@ const himiko = getObject("himiko");
         "卑弥呼「うむ、それは何よりじゃ！」",
         "卑弥呼「じゃが…」"
     ]);
-
+    await wait(300);
+    
     setObjectDirection("iyo","right");
-
     await startMessage([
         "壱与「誰かが土偶を送り込んで、呪術で貝殻や骨を暴れさせていた…」"
     ]);   
 
     setObjectDirection("himiko","left");
-
     await startMessage([
         "卑弥呼「そこじゃ。これは明らかに、何者かの悪意じゃ」",
         "壱与「他の時代でも、何かが起きているかもしれませんね」"
