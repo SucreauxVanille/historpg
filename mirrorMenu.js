@@ -36,6 +36,7 @@ function closeMirrorMenu(){
 
 }
 async function goToOmori(){
+    closeMenu();
     await fadeOut();
     currentMap = maps.omoriShellMounds;
     player.x = 10;
