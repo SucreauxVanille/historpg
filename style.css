@@ -134,14 +134,11 @@ canvas{
 }
 
 .menuItem{
-
     padding:8px 0;
-
     cursor:pointer;
-
 }
-.mirrorMenu{
 
+.mirrorMenu{
     top:auto;
     right:auto;
 
@@ -151,14 +148,10 @@ canvas{
     width:100%;
 
     transform:none;
-
 }
+
 .menuTitle{
-
     margin-bottom:8px;
-
-    font-weight:bold;
-
 }
 
 #gameScreen{
