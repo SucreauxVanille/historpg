@@ -531,9 +531,16 @@ function changeMap(mapName, startX, startY){
 //エンカウント
 function checkEncounter(){
 
+    //==========================
+    // エンカウントしないマップ
+    //==========================
     if(!currentMap.encounterTable){
         return;
     }
+
+    //==========================
+    // チュートリアル中はエンカウントなし
+    //==========================
     if(
         currentMap === maps.nojiriLake &&
         !hasFlag("nojiriTutorialFinished")
@@ -541,15 +548,35 @@ function checkEncounter(){
         return;
     }
 
+    //==========================
+    // ボス撃破後などでエンカウント率変更
+    //==========================
+    let encounterRate =
+        currentMap.encounterRate;
+
+    if(
+        currentMap.encounterRateFlag &&
+        hasFlag(currentMap.encounterRateFlag)
+    ){
+        encounterRate =
+            currentMap.eventEncounterRate;
+    }
+
+    //==========================
+    // 連続エンカウント防止
+    //==========================
     encounterSteps++;
 
     if(encounterSteps < 5){
         return;
     }
 
+    //==========================
+    // エンカウント判定
+    //==========================
     if(
         Math.random() * 100 >=
-        currentMap.encounterRate
+        encounterRate
     ){
         return;
     }
@@ -557,12 +584,9 @@ function checkEncounter(){
     //==========================
     // エンカウント成立
     //==========================
-
     encounterSteps = 0;
-
     const maxEncounterCount =
         currentMap.maxEncounterCount ?? 1;
-
     const enemyCount =
         Math.floor(
             Math.random() *
