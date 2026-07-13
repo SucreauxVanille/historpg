@@ -82,6 +82,9 @@ function useSkill(skill){
 
             // 技効果
             applySkill(skill);
+            if(skill.stat === "hp"){
+            playHealEffect();
+            }
             updateBattleStatus();
             
             // 成功ログ
