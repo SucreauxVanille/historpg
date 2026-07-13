@@ -39,9 +39,21 @@ if(!(skill.stat in target)) return;
             target[skill.stat] *= skill.value;
             break;
 
-        case "add":
-            target[skill.stat] += skill.value;
-            break;
+case "add":
+
+    target[skill.stat] += skill.value;
+
+    if(skill.stat === "hp"){
+
+        const status = getStatus(target);
+
+        if(target.hp > status.maxHp){
+            target.hp = status.maxHp;
+        }
+
+    }
+
+    break;
     }
 
 }
