@@ -365,13 +365,37 @@ function getLoadQuiz(){
                 correct:"岩宿",
                 wrong:"吉野ケ里"
             };
-
-        default:
+            
+        case PROGRESS.OMORI_SHELL:
             return {
                 question:
                     "卑弥呼「ワシらが向かう、貝殻が捨てられた場所を何と言ったかのう？」",
                 correct:"貝塚",
                 wrong:"古墳"
+            };
+            
+        case PROGRESS.MET_MORSE:
+            return {
+                question:
+                    "卑弥呼「ワシらが出会った、貝塚を調査している人物の名前を覚えておるか？」",
+                correct:"モース",
+                wrong:"ソース"
+            };
+            
+        case PROGRESS.DOGU_DEFEATED:
+            return {
+                question:
+                    "卑弥呼「ワシらが戦った、土の人形は何じゃったかのう？」",
+                correct:"土偶",
+                wrong:"銅鐸"
+            };
+            
+        default:
+            return {
+                question:
+                    "卑弥呼「少し難しいぞ。モースが調べておった土器の特徴は何じゃ？」",
+                correct:"縄の模様",
+                wrong:"目玉模様"
             };
     }
 
