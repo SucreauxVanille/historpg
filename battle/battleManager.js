@@ -72,32 +72,9 @@ case "enemy":
 //敵情報取得
 function getCurrentEnemyImage(){
 
-    const slots =
-        document.querySelectorAll(".enemySlot");
-
-    const enemyIndex =
-        battleEnemies.indexOf(currentEnemy);
-
-    let slotNumber;
-
-    switch(battleEnemies.length){
-
-        case 1:
-            slotNumber = 1;
-            break;
-
-        case 2:
-            slotNumber =
-                enemyIndex === 0 ? 0 : 2;
-            break;
-
-        default:
-            slotNumber = enemyIndex;
-            break;
-    }
-
-    return slots[slotNumber]
+    return getCurrentEnemySlot()
         .querySelector(".enemyImage");
+
 }
 
 //バトル開始
