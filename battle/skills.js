@@ -17,7 +17,23 @@ const skills = {
         duration:"battle"
 
     },
+    
+    firstAid:{
 
+    name:"応急手当",
+    learnLevel:7,
+
+    mp:3,
+
+    castMessage:"ゆうしゃは 応急手当をした！",
+    successMessage:"ゆうしゃのキズが　回復した！",
+
+    target:"player",
+    stat:"hp",
+    method:"add",
+    value:30
+
+    },
     powerCharge:{
 
         name:"力ため",
@@ -32,7 +48,7 @@ const skills = {
         target:"player",
         stat:"atk",
         method:"multiply",
-        value:2.2,
+        value:2.4,
         duration:"nextAttack"
 
     }
