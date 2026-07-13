@@ -10,7 +10,7 @@ function enemyTurn(){
     );
 
     setTimeout(() => {
-
+    playEnemyJump();
         // 生存者からランダム選択
         const targets =
             [playerStatus, himikoStatus]
