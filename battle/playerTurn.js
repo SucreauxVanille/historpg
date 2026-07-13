@@ -5,11 +5,9 @@ if(battleState !== "command") return;
 
 setBattleState("player");
 setBattlePhase("action");
-
     const hero = getStatus(playerStatus);
 
     // 勇者が倒れている場合は攻撃を飛ばす
-
     if(hero.hp <= 0){
     nextBattleState();
         return;
@@ -56,14 +54,11 @@ nextBattleState();
 function useSkill(skill){
 
     if(battleState !== "command") return;
-
     setBattleState("player");
     setBattlePhase("action");
-
     const hero = getStatus(playerStatus);
 
     setTimeout(() => {
-
         // 詠唱・使用ログ
         setBattleLog(skill.castMessage);
 
@@ -71,13 +66,11 @@ function useSkill(skill){
 
             // MP不足
             if(hero.mp < skill.mp){
-
                 setBattleLog(
                     "しかし 気力がたりない！"
                 );
 
                 setTimeout(() => {
-
                     nextBattleState();
                 }, 600);
                 return;
@@ -89,18 +82,14 @@ function useSkill(skill){
 
             // 技効果
             applySkill(skill);
-
+            updateBattleStatus();
+            
             // 成功ログ
             setBattleLog(skill.successMessage);
-
             setTimeout(() => {
-
                 nextBattleState();
-
             }, 600);
-
+            
         }, 600);
-
     }, 400);
-
 }
