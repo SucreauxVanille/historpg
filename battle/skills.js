@@ -3,7 +3,7 @@ const skills = {
     sandAttack:{
 
         name:"砂けむり",
-        learnLevel:5,
+        learnLevel:4,
 
         mp:3,
 
