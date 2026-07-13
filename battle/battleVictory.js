@@ -38,6 +38,16 @@ function gameOver(){
     }, 2000);
 }
 
+//技習得レベル取得
+function getLearnedSkills(beforeLevel, afterLevel){
+
+    return Object.values(skills).filter(skill =>
+
+        skill.learnLevel > beforeLevel &&
+        skill.learnLevel <= afterLevel
+    );
+}
+
 //勝利
 function processVictory(){
 
@@ -65,7 +75,20 @@ function processVictory(){
             heroLevelAfter +
             " になった！";
     }
+const learnedSkills =
+    getLearnedSkills(
+        heroLevelBefore,
+        heroLevelAfter
+    );
 
+learnedSkills.forEach(skill => {
+
+    victoryText +=
+        "\nゆうしゃは " +
+        skill.name +
+        " を覚えた！";
+
+});
     if(himikoLevelAfter > himikoLevelBefore){
         victoryText +=
             "\n卑弥呼は Lv" +
