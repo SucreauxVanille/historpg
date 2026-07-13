@@ -26,7 +26,7 @@ const skills = {
     mp:3,
 
     castMessage:"ゆうしゃは 応急手当をした！",
-    successMessage:"ゆうしゃのキズが　回復した！",
+    successMessage:"ゆうしゃのキズが回復した！",
 
     target:"player",
     stat:"hp",
