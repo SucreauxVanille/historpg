@@ -179,13 +179,13 @@
     animation: enemyJump 0.25s ease;
 }
 @keyframes enemyJump{
-0%{
-transform:translateY(0);
-}
-30%{
-transform:translateY(-12px);
-}
-100%{
-transform:translateY(0);
-}
+    0%{
+        transform:translateY(0);
+    }
+    30%{
+        transform:translateY(-12px);
+    }
+    100%{
+        transform:translateY(0);
+    }
 }
