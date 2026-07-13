@@ -497,25 +497,28 @@ function omoriHouse3Event(){
 //------------------
 //復帰とエンディング
 //------------------
-function omoriReturnEvent(){
+async function omoriReturnEvent(){
+
     if(
         hasFlag("savedMorse") &&
         !hasFlag("omoriClear")
     ){
-        startOmoriEnding();
+        await startOmoriEnding();
         return;
     }
 
-    showMessage(
+    await startMessage([
         "壱与の声「邪馬台国にお戻ししますね！」"
-    );
+    ]);
 
     changeMap(
         maps.himikoHouse,
         5,
         5
     );
+
     endEvent();
+
 }
 
 //------------------
