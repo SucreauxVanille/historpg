@@ -49,3 +49,8 @@ function playEnemyJump(){
     }, 250);
 
 }
+
+//回復
+function playHealEffect(){
+    flashScreen();
+}
