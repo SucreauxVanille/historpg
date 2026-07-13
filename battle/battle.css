@@ -176,7 +176,7 @@
 
 /*敵ジャンプ*/
 .enemyJump{
-    animation: enemyJump .25s;
+    animation: enemyJump 0.25s ease;
 }
 @keyframes enemyJump{
 0%{
