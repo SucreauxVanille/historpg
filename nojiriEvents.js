@@ -1,26 +1,24 @@
-function returnMirrorEvent(){
+async function returnMirrorEvent(){
 
     if(
         hasFlag("obsidianObtained") &&
         !hasFlag("demoClear")
     ){
-
         startDemoEnding();
         return;
     }
 
-    showMessage(
+    await startMessage([
         "壱与の声「邪馬台国にお戻ししますね！」"
-    );
-
+    ]);
     changeMap(
         maps.himikoHouse,
         5,
         5
     );
-
     endEvent();
 }
+
 function nojiriTutorialEvent(){
 
     if(hasFlag("nojiriTutorialFinished")){
