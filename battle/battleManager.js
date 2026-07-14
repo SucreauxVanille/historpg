@@ -209,36 +209,29 @@ function removeCurrentEnemy(){
 
 //バトル終了
 function endBattle(result = "win"){
-setBattleState("none");
-setBattlePhase("none");
 
-// Callback版
-if(battleFinishedCallback){
+    setBattleState("none");
+    setBattlePhase("none");
 
-    const callback = battleFinishedCallback;
-    battleFinishedCallback = null;
-
-    callback(result);
-}
-
-// Promise版
-if(battleResolve){
-
-    battleResolve(result);
-    battleResolve = null;
-}
-
+    // Callback版
+    if(battleFinishedCallback){
+        const callback = battleFinishedCallback;
+        battleFinishedCallback = null;
+        callback(result);
+    }
     fadeOut();
+
     setTimeout(() => {
         hideBattleScreen();
         document.getElementById("controls")
             .style.display = "flex";
         fadeIn();
-    }, 500);
+
+        // Promise版
+        if(battleResolve){
+            const resolve = battleResolve;
+            battleResolve = null;
+            resolve(result);
+        }
+    },500);
 }
-document
-.getElementById("attackBtn")
-.addEventListener(
-    "click",
-    attackEnemy
-);
