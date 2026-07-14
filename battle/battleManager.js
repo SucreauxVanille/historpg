@@ -79,11 +79,9 @@ function getCurrentEnemyImage(){
 }
 
 //バトル開始
-//バトル開始
 function startBattle(enemyIds, onFinish = null){
 
     return new Promise(resolve => {
-
         battleResolve = resolve;
         battleFinishedCallback = onFinish;
 
@@ -170,16 +168,13 @@ function updateEnemyDisplay(){
 
         slot.querySelector(".enemyName").textContent =
             enemy.name;
-
     });
-
 }
 
 //敵撃破
 function removeCurrentEnemy(){
 
     battleExp += currentEnemy.exp;
-
     const defeatedEnemyName =
         currentEnemy.name;
 
@@ -198,9 +193,7 @@ function removeCurrentEnemy(){
         if(battleEnemies.length === 0){
 
             currentEnemy = null;
-
             updateEnemyDisplay();
-
             processVictory();
             return;
         }
@@ -226,7 +219,6 @@ if(battleFinishedCallback){
     battleFinishedCallback = null;
 
     callback(result);
-
 }
 
 // Promise版
@@ -234,11 +226,9 @@ if(battleResolve){
 
     battleResolve(result);
     battleResolve = null;
-
 }
 
     fadeOut();
-
     setTimeout(() => {
         hideBattleScreen();
         document.getElementById("controls")
