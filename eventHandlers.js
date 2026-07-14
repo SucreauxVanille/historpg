@@ -40,6 +40,7 @@ const eventHandlers = {
     omoriHouse: omoriHouseEvent,
     omoriHouse2: omoriHouse2Event,
     omoriHouse3: omoriHouse3Event,
-    omoriReturn: omoriReturnEvent
+    omoriReturn: omoriReturnEvent,
+    suemuraHouse: suemuraHouseEvent,
 };
 
