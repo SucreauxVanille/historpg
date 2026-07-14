@@ -12,6 +12,7 @@ let battleEnemies = [];
 let currentEnemy = null;
 let selectedSkill = null;
 let battleFinishedCallback = null;
+let battleResolve = null;
 let battleExp = 0;
 const battleEffects = {
     playerAttackMultiplier: 1
@@ -78,42 +79,57 @@ function getCurrentEnemyImage(){
 }
 
 //バトル開始
+//バトル開始
 function startBattle(enemyIds, onFinish = null){
-   battleFinishedCallback = onFinish;
-setBattleState("none");
-setBattlePhase("none");
-battleEffects.playerAttackMultiplier = 1;
-battleExp = 0;
-battleEnemies = enemyIds.map(id => ({
-    ...enemies[id]
-}));
 
-currentEnemy = battleEnemies[0];
+    return new Promise(resolve => {
 
-updateEnemyDisplay();
-    updateBattleStatus();
+        battleResolve = resolve;
+        battleFinishedCallback = onFinish;
 
-    // 出現ログ
-const appearText =
-    battleEnemies
-        .map(enemy => enemy.name + " が あらわれた！")
-        .join("\n");
+        setBattleState("none");
+        setBattlePhase("none");
 
-setBattleLog(appearText);
+        battleEffects.playerAttackMultiplier = 1;
+        battleExp = 0;
 
-fadeOut();
-document.getElementById("controls")
-    .style.display = "none";
+        battleEnemies = enemyIds.map(id => ({
+            ...enemies[id]
+        }));
 
-setTimeout(() => {
-    showBattleScreen();
-    fadeIn();
+        currentEnemy = battleEnemies[0];
 
-}, 500);
-    updateBattleUI(); 
-    // 次の操作を待つ
-    setBattlePhase("intro");
+        updateEnemyDisplay();
+        updateBattleStatus();
+
+        // 出現ログ
+        const appearText =
+            battleEnemies
+                .map(enemy => enemy.name + " が あらわれた！")
+                .join("\n");
+
+        setBattleLog(appearText);
+
+        fadeOut();
+
+        document.getElementById("controls")
+            .style.display = "none";
+
+        setTimeout(() => {
+
+            showBattleScreen();
+            fadeIn();
+
+        }, 500);
+
+        updateBattleUI();
+
+        // 次の操作を待つ
+        setBattlePhase("intro");
+    });
 }
+
+//敵画像更新
 function updateEnemyDisplay(){
 
     const slots =
@@ -191,14 +207,11 @@ function removeCurrentEnemy(){
 
         // 次の敵へ
         currentEnemy = battleEnemies[0];
-
         updateEnemyDisplay();
 
         // 今の行動者に応じて次へ進める
         nextBattleState();
-
     }, 600);
-
 }
 
 //バトル終了
@@ -206,11 +219,23 @@ function endBattle(result = "win"){
 setBattleState("none");
 setBattlePhase("none");
 
-    if(battleFinishedCallback){
-        const callback = battleFinishedCallback;
-        battleFinishedCallback = null;
-        callback(result);
-    }
+// Callback版
+if(battleFinishedCallback){
+
+    const callback = battleFinishedCallback;
+    battleFinishedCallback = null;
+
+    callback(result);
+
+}
+
+// Promise版
+if(battleResolve){
+
+    battleResolve(result);
+    battleResolve = null;
+
+}
 
     fadeOut();
 
