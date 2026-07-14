@@ -1,46 +1,37 @@
-function omoriShellEvent(){
+async function omoriShellEvent(){
 
     if(hasFlag("omoriShellFinished")){
         endEvent();
         return;
     }
 
-    startMessage(
-        [
-            "卑弥呼「ふむ…海がすぐそばなのじゃな」",
-            "卑弥呼「確かに貝殻とも関係がありそうじゃ」",
-            "？？？「カタカタ…」",
-            "卑弥呼「これ、おかしな声を出すでない」",
-            "？？？「カタカタカタ…！」",
-            "卑弥呼「貝殻！？貝殻が動いておるのか！？」"
-        ],
-        () => {
+    await startMessage([
+        "卑弥呼「ふむ…海がすぐそばなのじゃな」",
+        "卑弥呼「確かに貝殻とも関係がありそうじゃ」",
+        "？？？「カタカタ…」",
+        "卑弥呼「これ、おかしな声を出すでない」",
+        "？？？「カタカタカタ…！」",
+        "卑弥呼「貝殻！？貝殻が動いておるのか！？」"
+    ]);
 
-startBattle(
-    ["shell"],
-    (result)=>{
+    const result = await startBattle(["shell"]);
 
-        if(result !== "win"){
-            endEvent();
-            return;
-        }
-
-        setFlag("omoriShellFinished");
-        gameState.progress = PROGRESS.OMORI_SHELL;
-
-        startMessage(
-            [
-                "卑弥呼「何で貝殻に目玉がついて動くんじゃ！」",
-                "壱与の声「イノシシやゾウはともかく、貝殻が動くのは妙ですね」",
-                "卑弥呼「うむ。何者かが、悪意を持って異変を起こしておるようじゃ」",
-                "壱与の声「邪馬台国に出現したのも、この飛び回った貝殻の残骸ですよね」"
-            ],
-            endEvent
-        );
+    if(result !== "win"){
+        endEvent();
+        return;
     }
-);
-        }
-    );
+
+    setFlag("omoriShellFinished");
+    gameState.progress = PROGRESS.OMORI_SHELL;
+
+    await startMessage([
+        "卑弥呼「何で貝殻に目玉がついて動くんじゃ！」",
+        "壱与の声「イノシシやゾウはともかく、貝殻が動くのは妙ですね」",
+        "卑弥呼「うむ。何者かが、悪意を持って異変を起こしておるようじゃ」",
+        "壱与の声「邪馬台国に出現したのも、この飛び回った貝殻の残骸ですよね」"
+    ]);
+
+    endEvent();
 }
 
 async function morseStopEvent(){
