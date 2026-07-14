@@ -1,4 +1,4 @@
-maps.omoriShellMounds = {
+maps.suemuraMap1 = {
     name: "古墳時代　陶邑",
 
     description: [
