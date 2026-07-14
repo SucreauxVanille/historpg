@@ -356,16 +356,17 @@ function getLoadQuiz(){
                     "卑弥呼「ワシらが野尻湖の奥で戦った大きな獣は何じゃったかの？」",
                 correct:"ナウマンゾウ",
                 wrong:"マンモス"
-            };
-            
-        case PROGRESS.OMORI_READY:
+            };    
+         
+        case PROGRESS.DEMO_CLEAR:
             return {
                 question:
                     "卑弥呼「少し難しめじゃぞ。野尻湖で見かけた男はどこから来たと言っておった？」",
                 correct:"岩宿",
                 wrong:"吉野ケ里"
-            };
-        case PROGRESS.DEMO_CLEAR:
+            };    
+            
+        case PROGRESS.OMORI_START:
             return {
                 question:
                     "卑弥呼「少し難しめじゃぞ。野尻湖で見かけた男はどこから来たと言っておった？」",
@@ -397,12 +398,20 @@ function getLoadQuiz(){
                 wrong:"銅鐸"
             };
             
-        default:
+        case PROGRESS.OMORI_CLEAR:
             return {
                 question:
                     "卑弥呼「少し難しいぞ。モースが調べておった土器の特徴は何じゃ？」",
                 correct:"縄の模様",
                 wrong:"目玉模様"
+            };
+            
+        default:
+            return {
+                question:
+                    "卑弥呼「壱与が使っておる、円形の道具を何と言ったかのう？」",
+                correct:"銅鏡",
+                wrong:"土偶"
             };
     }
 
