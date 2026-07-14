@@ -456,34 +456,30 @@ function omorimobF3Event(){
     );
 }
 
-function omoriHouseEvent(){
-    startMessage(
-        [
-            "卑弥呼「これは竪穴式住居というやつじゃな」",
-            "卑弥呼「民の住む家は、ワシらの時代と変わらんのう」"
-        ],
-        endEvent
-    );
+async function omoriHouseEvent(){
+    await startMessage([
+        "卑弥呼「これは竪穴式住居というやつじゃな」",
+        "卑弥呼「民の住む家は、ワシらの時代と変わらんのう」"
+    ]);
+    endEvent();
 }
 
-function omoriHouse2Event(){
-    startMessage(
-        [
+async function omoriHouse2Event(){
+
+    await startMessage([
             "卑弥呼「竪穴という名前の通り、この家は穴を掘って造られておるんじゃ」",
             "卑弥呼「穴に柱を立てて、そこに屋根をかぶせてるんじゃよ」"
-        ],
-        endEvent
-    );
+    ]);
+    endEvent();
 }
 
-function omoriHouse3Event(){
-    startMessage(
-        [
+async function omoriHouse3Event(){
+
+    await startMessage([
             "卑弥呼「む？中で赤子が寝ておるようじゃ」",
             "卑弥呼「そっとしておいてやらねばのう」"
-        ],
-        endEvent
-    );
+    ]);
+    endEvent();
 }
 
 //------------------
