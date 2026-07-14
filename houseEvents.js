@@ -365,7 +365,14 @@ function getLoadQuiz(){
                 correct:"岩宿",
                 wrong:"吉野ケ里"
             };
-            
+        case PROGRESS.DEMO_CLEAR:
+            return {
+                question:
+                    "卑弥呼「少し難しめじゃぞ。野尻湖で見かけた男はどこから来たと言っておった？」",
+                correct:"岩宿",
+                wrong:"吉野ケ里"
+            };
+                     
         case PROGRESS.OMORI_SHELL:
             return {
                 question:
