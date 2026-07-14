@@ -89,7 +89,7 @@ maps.suemuraMap1 = {
             y: 11,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "suemuraHouse"
         },
         {
             id: "houseR",
@@ -97,7 +97,7 @@ maps.suemuraMap1 = {
             y: 11,
             active: true,
             solid: true,
-            event: "omoriHouse2"
+            event: "suemuraHouse"
         },
         {
             id: "houseL",
