@@ -7,8 +7,8 @@ maps.suemuraMap1 = {
         "窯を多く設置した集落。"
     ],
     allowHimikoFollower: true,
-    encounterRate: 7,
-    clearEncounterRate: 2,
+    encounterRate: 3,
+    clearEncounterRate: 1,
     clearFlag: "doguDefeated",
     maxEncounterCount: 3,
     encounterTable: [
