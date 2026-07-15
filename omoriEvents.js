@@ -389,7 +389,7 @@ function omorimob1Event(){
         endEvent
     );
 }
-function omorimob2Event(){
+async function omorimob2Event(){
     npcDialogue(
         "doguDefeated", 
         [
@@ -415,7 +415,7 @@ function omorimob3Event(){
     );
 }
 
-function omorimobF1Event(){
+async function omorimobF1Event(){
     npcDialogue(
         "doguDefeated",  
         [
