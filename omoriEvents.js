@@ -227,28 +227,24 @@ await startMessage([
     "卑弥呼「む！？こやつ動くぞ！」"
 ]);
 
-startBattle(
-    ["shell","shell","doguBoss"],
-    doguBattleResult
-);
+const result = await startBattle([
+    "shell",
+    "shell",
+    "doguBoss"
+]);
 
+if(result !== "win"){
+    endEvent();
+    return;
 }
-function doguBattleResult(result){
 
-    if(result !== "win"){
-        endEvent();
-        return;
-    }
+setFlag("doguDefeated");
+gameState.progress = PROGRESS.DOGU_DEFEATED;
+despawnObject("doguonMap");
 
-    setFlag("doguDefeated");
-    gameState.progress = PROGRESS.DOGU_DEFEATED;
-    despawnObject("doguonMap");
+await startMessage(events.doguAfter);
 
-    startMessage(
-        events.doguAfter,
-        endEvent
-    );
-
+endEvent();
 }
 
 //土偶ヒント
