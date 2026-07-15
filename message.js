@@ -6,7 +6,6 @@ let inputLocked = false;
 let messageResolve = null;
 
 function showMessage(text){
-
     messageText.textContent = text;
     messageBox.style.display = "block";
 
@@ -23,7 +22,6 @@ function startMessage(
     messageArray,
     onFinish = null
 ){
-
     return new Promise(resolve=>{
         gameState.mode = "message";
         messages = messageArray;
@@ -38,25 +36,20 @@ function startMessage(
         };
 
         showMessage(messages[0]);
-
     });
-
 }
 
 //ウインドウ消去
 function hideMessage(){
-
     messageBox.style.display = "none";
     gameState.mode = "field";
-
     lockInputFor(250);
-
 }
+
 //次メッセージ
 function nextMessage(){
     messageIndex++;
 if(messageIndex >= messages.length){
-
     hideMessage();
 const resolve = messageResolve;
 messageResolve = null;
@@ -73,24 +66,20 @@ messageBox.addEventListener("pointerdown", ()=>{
 if(gameState.mode !== "message"){
     return;
 }
-
     if(!canAdvanceMessage){
         return;
     }
 
     nextMessage();
-
 });
 
 //モブ用
-function npcDialogue(flag, beforeLines, afterLines){
-
+async function npcDialogue(flag, beforeLines, afterLines){
     const lines = hasFlag(flag)
         ? afterLines
         : beforeLines;
-
-    startMessage(lines, endEvent);
-
+    await startMessage(lines);
+    endEvent();
 }
 
 //選択肢
