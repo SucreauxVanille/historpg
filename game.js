@@ -46,8 +46,8 @@ function lockInputFor(ms){
     setTimeout(()=>{
         unlockInput();
     }, ms);
-
 }
+
 //アセット
 const loadedAssets = {};
 
@@ -56,7 +56,6 @@ for(const key in assets){
     const asset = assets[key];
 
     if(asset.animated){
-
         loadedAssets[key] = {
             down: [],
             up: [],
@@ -75,24 +74,19 @@ for(const key in assets){
     }
 
     else{
-
         const img = new Image();
         img.src = asset.image;
         loadedAssets[key] = img;
-
     }
 }
 const tileImages = {};
-
 for(const key in tileTypes){
 
     const tile = tileTypes[key];
 
     if(tile.image){
-
         const img = new Image();
         img.src = tile.image;
-
         tileImages[key] = img;
     }
 }
@@ -103,18 +97,13 @@ function getObject(id){
     return currentMap.objects.find(
         object => object.id === id
     );
-
 }
 
 //ウェイト
 function wait(ms){
-
     return new Promise(resolve=>{
-
         setTimeout(resolve, ms);
-
     });
-
 }
 
 // =====================
@@ -126,16 +115,13 @@ const camera = {
 };
 
 function updateCamera(){
-
     camera.x =
         player.x - Math.floor(MAP_SIZE / 2);
-
     camera.y =
         player.y - Math.floor(MAP_SIZE / 2);
 
     const maxX =
         currentMap.tiles[0].length - MAP_SIZE;
-
     const maxY =
         currentMap.tiles.length - MAP_SIZE;
 
@@ -144,16 +130,13 @@ function updateCamera(){
             0,
             Math.min(camera.x,maxX)
         );
-
     camera.y =
         Math.max(
             0,
             Math.min(camera.y,maxY)
         );
-
 }
 let currentMap = maps.himikoHouse;
-
 
 // =====================
 //   描画
@@ -164,9 +147,7 @@ function drawMap(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     for(let y=0;y<currentMap.tiles.length;y++){
-
-        for(let x=0;x<currentMap.tiles[y].length;x++){
-
+    for(let x=0;x<currentMap.tiles[y].length;x++){
             const tile = currentMap.tiles[y][x];
 
 const tileData = tileIds[tile];
@@ -184,14 +165,12 @@ ctx.drawImage(
 }else{
 
     ctx.fillStyle = tileData.color;
-
     ctx.fillRect(
     (x - camera.x) * TILE_SIZE,
     (y - camera.y) * TILE_SIZE,
         TILE_SIZE,
         TILE_SIZE
     );
-
 }
         }
     }
@@ -250,7 +229,6 @@ function drawObjects(){
             );
         }
     });
-
 }
 
 // 主人公描画
@@ -279,6 +257,8 @@ ctx.drawImage(
     TILE_SIZE
 );
 }
+
+//卑弥呼
 function drawHimiko(){
 
 if(
@@ -312,8 +292,9 @@ if(
         TILE_SIZE,
         TILE_SIZE
     );
-
 }
+
+//正面
 function facePlayer(obj){
 
     if(!obj.direction){
@@ -330,17 +311,15 @@ function facePlayer(obj){
     obj.direction =
         oppositeDirection[player.direction];
 }
+
+//render
 function render(){
-
     updateCamera();
-
     drawMap();
     drawObjects();
     drawPlayer();
     drawHimiko();
-
 }
-
 
 //地雷式イベント
 function getTileEvent(x, y){
@@ -352,38 +331,30 @@ function getTileEvent(x, y){
     return currentMap.tileEvents.find(event=>
         event.x === x &&
         event.y === y
-
     );
-
 }
 
 //アニメーション
 let animationFrame = 0;
 
 setInterval(() => {
-
     if(!animationEnabled) return;
     animationFrame = animationFrame === 0 ? 1 : 0;
     render();
-
 }, 500);
 
 //オブジェクト取得
 function getObjectAt(x, y){
     return currentMap.objects.find(obj=>
-
         obj.active &&
         obj.x === x &&
         obj.y === y
     );
 }
 
-
 //オブジェクト移動
 function moveObject(id, dx, dy){
-
     return new Promise(resolve=>{
-
         const obj = getObject(id);
 
         if(!obj){
@@ -395,36 +366,29 @@ function moveObject(id, dx, dy){
         obj.y += dy;
 
         render();
-
         resolve();
-
     });
 }
 
 function getObjectById(id){
-
     return currentMap.objects.find(
         obj => obj.id === id
     );
-
 }
+
 function setObjectDirection(id, direction){
 
     const obj = getObjectById(id);
-
     if(!obj){
         return;
     }
 
     obj.direction = direction;
-
     render();
-
 }
 
 //イベント起動
 function runEvent(eventId){
-
     gameState.eventLock = true;
     const handler = eventHandlers[eventId];
 
@@ -439,9 +403,9 @@ function runEvent(eventId){
         startMessage(eventData);
     }
 }
+
 //イベント終了
 function endEvent(){
-
     gameState.eventLock = false;
     lockInputFor(250);
 }
@@ -450,7 +414,6 @@ function endEvent(){
 function searchObject(){
 
     const frontTile = getFrontTile();
-
     const obj = getObjectAt(
         frontTile.x,
         frontTile.y
@@ -474,12 +437,10 @@ function isObjectBlocked(x,y){
     }
 
     return currentMap.objects.some(obj=>
-
         obj.active &&
         obj.solid &&
         obj.x === x &&
         obj.y === y
-
     );
 }
 
@@ -503,7 +464,6 @@ function despawnObject(id){
         );
 
     if(obj){
-
         obj.active = false;
     }
 }
@@ -512,20 +472,15 @@ function despawnObject(id){
 function changeMap(mapName, startX, startY){
 
     fadeOut();
-
     setTimeout(() => {
 
         currentMap = mapName;
-
         player.x = startX;
         player.y = startY;
 
         render();
-
         fadeIn();
-
     }, 500);
-
 }
 
 //エンカウント
