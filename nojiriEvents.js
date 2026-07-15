@@ -19,34 +19,26 @@ async function returnMirrorEvent(){
     endEvent();
 }
 
-function nojiriTutorialEvent(){
+async function nojiriTutorialEvent(){
 
     if(hasFlag("nojiriTutorialFinished")){
         endEvent();
         return;
     }
 
-    startMessage(
-        [
-            "卑弥呼「む！？この時代にも狂暴化した獣がいるようじゃ！」",
-            "卑弥呼「やむを得ぬ！戦うぞ！」"
-        ],
-        () => {
+    await startMessage([
+        "卑弥呼「む！？この時代にも狂暴化した獣がいるようじゃ！」",
+        "卑弥呼「やむを得ぬ！戦うぞ！」"
+    ]);
 
-            startBattle(
-                ["boar"],
-                (result) => {
+    const result = await startBattle(["boar"]);
 
-                    if(result === "win"){
-                        setFlag("nojiriTutorialFinished");
-                        gameState.progress = PROGRESS.NOJIRI_TUTORIAL;
-                    }
-                }
-            );
+    if(result === "win"){
+        setFlag("nojiriTutorialFinished");
+        gameState.progress = PROGRESS.NOJIRI_TUTORIAL;
+    }
 
-            endEvent();
-        }
-    );
+    endEvent();
 }
 
 //モブ1
@@ -88,60 +80,60 @@ function nojirimob3Event(){
     );
 }
 
+//ナウマンゾウ戦
+async function naumannBossEvent(){
 
-function naumannBossEvent(){
+    // 撃破済み
     if(hasFlag("naumannDefeated")){
-        startMessage(
-            [
-                "卑弥呼「なんじゃ、ずいぶん穏やかになったではないか」",
-                "卑弥呼「これが異変の影響を受けておらぬ、本来の姿なのじゃろうな」"
-            ],
-            endEvent
-        );
+
+        await startMessage([
+            "卑弥呼「なんじゃ、ずいぶん穏やかになったではないか」",
+            "卑弥呼「これが異変の影響を受けておらぬ、本来の姿なのじゃろうな」"
+        ]);
+
+        endEvent();
         return;
     }
-    startMessage(
-        [
-            "卑弥呼「なんと巨大な獣じゃ…背後にあるのは、黒曜石のようじゃな」",
-            "卑弥呼「手に入れるには、こやつを倒さねばなるまい」"
-        ],
-        () => {
 
-            startBattle(
-                ["naumann"],
-                (result)=>{
+    await startMessage([
+        "卑弥呼「なんと巨大な獣じゃ…背後にあるのは、黒曜石のようじゃな」",
+        "卑弥呼「手に入れるには、こやつを倒さねばなるまい」"
+    ]);
 
-                    if(result !== "win"){
-                        endEvent();
-                        return;
-                    }
+    const result = await startBattle(["naumann"]);
 
-                    const obj = getObjectById("naumann");
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
 
-                    if(obj){
-                        flashElement(canvas);
-                        setTimeout(()=>{
+    const obj = getObjectById("naumann");
 
-                            setFlag("naumannDefeated");
-                            gameState.progress = PROGRESS.NAUMANN_DEFEATED;
-                            despawnObject("naumann");
-                            render();
-                            startMessage(
-                                [
-                                    "卑弥呼「恐ろしい強さじゃった…これも異変の影響かのう」",
-                                    "卑弥呼「よし、黒曜石の矢じりを回収じゃ」"
-                                ],
-                                endEvent
-                            );
-                        },600);
-                    }else{
-                        endEvent();
-                    }
-                }
-            );
-        }
-    );
+    // 念のため存在確認
+    if(!obj){
+        endEvent();
+        return;
+    }
+
+    flashElement(canvas);
+
+    await wait(600);
+
+    setFlag("naumannDefeated");
+    gameState.progress = PROGRESS.NAUMANN_DEFEATED;
+
+    despawnObject("naumann");
+    render();
+
+    await startMessage([
+        "卑弥呼「恐ろしい強さじゃった…これも異変の影響かのう」",
+        "卑弥呼「よし、黒曜石の矢じりを回収じゃ」"
+    ]);
+
+    endEvent();
 }
+
+//黒曜石
 function obsidianEvent(){
 
     if(hasFlag("obsidianObtained")){
