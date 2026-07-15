@@ -1,3 +1,13 @@
+async function moveSuemura2(){
+
+    await changeMap(
+        maps.suemuraMap2,
+        18,
+        9
+    );
+    endEvent();
+}
+
 async function suemuraHouseEvent(){
     await startMessage([
         "卑弥呼「これも竪穴式住居じゃのう」",
