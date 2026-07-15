@@ -469,18 +469,16 @@ function despawnObject(id){
 }
 
 //ワープ
-function changeMap(mapName, startX, startY){
+async function changeMap(mapName, startX, startY){
 
-    fadeOut();
-    setTimeout(() => {
+    await fadeOut(500);
 
-        currentMap = mapName;
-        player.x = startX;
-        player.y = startY;
+    currentMap = mapName;
+    player.x = startX;
+    player.y = startY;
 
-        render();
-        fadeIn();
-    }, 500);
+    render();
+    await fadeIn(500);
 }
 
 //エンカウント
