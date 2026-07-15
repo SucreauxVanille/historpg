@@ -52,7 +52,7 @@ function nojirimob1Event(){
     );
 }
 //モブ2
-function nojirimob2Event(){
+async function nojirimob2Event(){
     npcDialogue(
         "obsidianObtained",
         [
@@ -65,7 +65,7 @@ function nojirimob2Event(){
     );
 }
 //モブ3
-function nojirimob3Event(){
+async function nojirimob3Event(){
     npcDialogue(
         "obsidianObtained",
         [
