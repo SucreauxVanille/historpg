@@ -48,7 +48,15 @@ maps.suemuraMap2 = {
             direction: "down",
             event: "yong"
         },
-
+        {
+            id: "kiln",
+            x: 2,
+            y: 5,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "kiln"
+        },
         {
             id: "mobF",
             x: 9,
