@@ -177,6 +177,30 @@ hero: {
         ]
 
     },
+    yong: {
+        animated: true,
+
+        down: [
+            "images/characters/yong_front1.png",
+            "images/characters/yong_front2.png"
+        ],
+
+        up: [
+            "images/characters/yong_front1.png",
+            "images/characters/yong_front2.png"
+        ],
+
+        left: [
+            "images/characters/yong_front1.png",
+            "images/characters/yong_front1.png"
+        ],
+
+        right: [
+            "images/characters/yong_front1.png",
+            "images/characters/yong_front1.png"
+        ]
+
+    },
         mob: {
         animated: true,
 
