@@ -46,6 +46,7 @@ const eventHandlers = {
     moveSuemura1: moveSuemura1,
     gateMan: gateManEvent,
     suemuramob1: suemuramob1Event,
-    yong:yongEvent
+    yong:yongEvent,
+    kiln: kilnEvent
 };
 
