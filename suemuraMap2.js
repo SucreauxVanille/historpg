@@ -57,7 +57,7 @@ maps.suemuraMap2 = {
             solid: true,
             direction: "right",
             event: "omorimobF1"
-        }
+        },
 
     tileEvents: [
         {
