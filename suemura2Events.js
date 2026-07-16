@@ -5,3 +5,14 @@ async function yongEvent(){
     ]);
     endEvent();
 }
+
+async function moveSuemura1(){
+
+    await changeMap(
+        maps.suemuraMap1,
+        1,
+        9
+    );
+
+    endEvent();
+}
