@@ -60,7 +60,7 @@ maps.suemuraMap1 = {
         {
             id: "mob",
             x: 14,
-            y: 6,
+            y: 17,
             active: true,
             solid: true,
             direction: "right",
@@ -69,10 +69,10 @@ maps.suemuraMap1 = {
         {
             id: "mob",
             x: 7,
-            y: 12,
+            y: 10,
             active: true,
             solid: true,
-            direction: "right",
+            direction: "down",
             event: "omorimob2"
         },
 
