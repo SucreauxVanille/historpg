@@ -2,22 +2,18 @@ const assets = {
     
 hero: {
     animated: true,
-
     down: [
         "images/characters/hero_front1.png",
         "images/characters/hero_front2.png"
     ],
-
     up: [
         "images/characters/hero_back1.png",
         "images/characters/hero_back2.png"
     ],
-
     left: [
         "images/characters/hero_left1.png",
         "images/characters/hero_left2.png"
     ],
-
     right: [
         "images/characters/hero_right1.png",
         "images/characters/hero_right2.png"
@@ -40,10 +36,12 @@ hero: {
         image: "images/objects/stamp.png",
         animated: false
     },
+    
     mirrorReturn: {
         image: "images/objects/gate.png",
         animated: false
     },
+    
     obsidian: {
         image: "images/objects/obsidian.png",
         animated: false
@@ -81,6 +79,27 @@ hero: {
         image: "images/objects/doguonMap.png",
         animated: false
     },
+    
+    kiln: {
+        animated: true,
+      down: [
+        "images/objects/kiln1.png",
+        "images/objects/kiln2.png"
+      ], 
+      up: [
+        "images/objects/kiln1.png",
+        "images/objects/kiln.png"
+      ], 
+      left: [
+        "images/objects/kiln1.png",
+        "images/objects/kiln2.png"
+      ], 
+      right: [
+        "images/objects/kiln1.png",
+        "images/objects/kiln2.png"
+      ]
+    },
+    
     himiko: {
         animated: true,
 
@@ -105,6 +124,7 @@ hero: {
         ]
 
     },
+    
     iyo: {
         animated: true,
 
@@ -201,7 +221,8 @@ hero: {
         ]
 
     },
-        mob: {
+        
+    mob: {
         animated: true,
 
         down: [
@@ -224,7 +245,7 @@ hero: {
             "images/characters/mob_right2.png"
         ]
         },
-        mobF: {
+    mobF: {
         animated: true,
 
         down: [
