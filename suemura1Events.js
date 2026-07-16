@@ -8,6 +8,14 @@ async function moveSuemura2(){
     endEvent();
 }
 
+async function gateManEvent(){
+    await startMessage([
+        "男「この先に行くんか？」",
+        "男「怪しい渡来人が住んどるだけやで」"
+    ]);
+    endEvent();
+}
+
 async function suemuramob1Event(){
     await startMessage([
         "男「ここは陶邑（すえむら）や」",
