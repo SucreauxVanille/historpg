@@ -129,7 +129,7 @@ hero: {
         ]
     },
    
-        brother: {
+    brother: {
         animated: true,
 
         down: [
@@ -177,17 +177,17 @@ hero: {
         ]
 
     },
+    
     yong: {
         animated: true,
-
         down: [
             "images/characters/yong_front1.png",
             "images/characters/yong_front2.png"
         ],
 
         up: [
-            "images/characters/yong_front1.png",
-            "images/characters/yong_front2.png"
+            "images/characters/yong_back1.png",
+            "images/characters/yong_back2.png"
         ],
 
         left: [
