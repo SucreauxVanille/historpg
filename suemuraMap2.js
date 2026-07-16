@@ -52,7 +52,7 @@ maps.suemuraMap2 = {
         {
             id: "mobF",
             x: 10,
-            y: 13,
+            y: 10,
             active: true,
             solid: true,
             direction: "right",
