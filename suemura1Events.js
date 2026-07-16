@@ -8,6 +8,14 @@ async function moveSuemura2(){
     endEvent();
 }
 
+async function suemuraMob1Event(){
+    await startMessage([
+        "男「ここは陶邑（すえむら）や」",
+        "男「焼き物を作っとるさかい、そう呼ばれとるんや」"
+    ]);
+    endEvent();
+}
+
 async function suemuraHouseEvent(){
     await startMessage([
         "卑弥呼「これも竪穴式住居じゃのう」",
