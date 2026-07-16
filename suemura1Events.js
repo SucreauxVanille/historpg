@@ -8,7 +8,7 @@ async function moveSuemura2(){
     endEvent();
 }
 
-async function suemuraMob1Event(){
+async function suemuramob1Event(){
     await startMessage([
         "男「ここは陶邑（すえむら）や」",
         "男「焼き物を作っとるさかい、そう呼ばれとるんや」"
