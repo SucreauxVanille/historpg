@@ -44,6 +44,7 @@ const eventHandlers = {
     suemuraHouse: suemuraHouseEvent,
     moveSuemura2: moveSuemura2,
     moveSuemura1: moveSuemura1,
+    gateMan: gateManEvent,
     suemuramob1: suemuramob1Event,
     yong:yongEvent
 };
