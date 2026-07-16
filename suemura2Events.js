@@ -6,6 +6,14 @@ async function yongEvent(){
     endEvent();
 }
 
+async function kilnEvent(){
+    await startMessage([
+        "ヨン「これは登り窯というアル！」",
+        "ヨン「崖の上の煙突につながってるアル」"
+    ]);
+    endEvent();
+}
+
 async function moveSuemura1(){
 
     await changeMap(
