@@ -40,13 +40,13 @@ maps.suemuraMap2 = {
     
     objects: [
         {
-            id: "mob",
+            id: "yong",
             x: 18,
             y: 7,
             active: true,
             solid: true,
             direction: "down",
-            event: "omorimob1"
+            event: "yong"
         },
 
         {
@@ -58,34 +58,6 @@ maps.suemuraMap2 = {
             direction: "right",
             event: "omorimobF1"
         },
-
-        {
-            id: "houseL",
-            x: 8,
-            y: 11,
-            active: true,
-            solid: true,
-            event: "suemuraHouse"
-        },
-        {
-            id: "houseR",
-            x: 9,
-            y: 11,
-            active: true,
-            solid: true,
-            event: "suemuraHouse"
-        },
-      
-        {
-            id: "spring",
-            x: 15,
-            y: 10,
-            active: true,
-            solid: true,
-            event: "recoverySpring"
-        }
-    ],
-
 
     tileEvents: [
         {
