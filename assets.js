@@ -206,8 +206,8 @@ hero: {
         ],
 
         up: [
-            "images/characters/potter_front1.png",
-            "images/characters/potter_front2.png"
+            "images/characters/potter_back1.png",
+            "images/characters/potter_back2.png"
         ],
 
         left: [
@@ -234,13 +234,13 @@ hero: {
         ],
 
         left: [
-            "images/characters/yong_front1.png",
-            "images/characters/yong_front2.png"
+            "images/characters/yong_left1.png",
+            "images/characters/yong_left1.png"
         ],
 
         right: [
-            "images/characters/yong_front1.png",
-            "images/characters/yong_front2.png"
+            "images/characters/yong_right1.png",
+            "images/characters/yong_right1.png"
         ]
     },
         
