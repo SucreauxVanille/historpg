@@ -7,8 +7,8 @@ maps.suemuraMap1 = {
         "窯を多く設置した集落。"
     ],
     allowHimikoFollower: true,
-    encounterRate: 3,
-    clearEncounterRate: 1,
+    encounterRate: 2,
+    clearEncounterRate: 0.1,
     clearFlag: "haniwaDefeated",
     maxEncounterCount: 3,
     encounterTable: [
