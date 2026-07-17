@@ -24,6 +24,19 @@ async function suemuramob1Event(){
     endEvent();
 }
 
+async function suemuramob2Event(){
+    npcDialogue(
+        "haniwaDefeated", 
+        [
+            "男「渡来人って知っとるか？」",
+            "男「海の向こうの国から来た人たちやで」"
+        ],
+        [
+            "男「渡来人って知っとるか？」",
+            "男「海の向こうの技術を教えてくれたんやで」"
+        ]
+    );
+}
 async function suemuraHouseEvent(){
     await startMessage([
         "卑弥呼「これも竪穴式住居じゃのう」",
