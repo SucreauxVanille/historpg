@@ -46,6 +46,7 @@ const eventHandlers = {
     omoriReturn: omoriReturnEvent,
     potter: potterEvent,
     suemuraHouse: suemuraHouseEvent,
+    suemuraHouse2: suemuraHouse2Event,
     moveSuemura2: moveSuemura2,
     moveSuemura1: moveSuemura1,
     gateMan: gateManEvent,
