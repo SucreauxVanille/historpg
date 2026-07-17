@@ -52,3 +52,10 @@ async function suemuraHouseEvent(){
     ]);
     endEvent();
 }
+async function suemuraHouse2Event(){
+    await startMessage([
+        "卑弥呼「邪馬台国よりも調理の技術が進んでおるようじゃな」",
+        "卑弥呼「腹が減るのう…」"
+    ]);
+    endEvent();
+}
