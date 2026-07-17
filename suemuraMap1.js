@@ -58,6 +58,16 @@ maps.suemuraMap1 = {
         },
 
         {
+            id: "potter",
+            x: 6,
+            y: 6,
+            active: true,
+            solid: true,
+            direction: "right",
+            event: "potter"
+        },
+        
+        {
             id: "mob",
             x: 14,
             y: 17,
@@ -143,7 +153,6 @@ maps.suemuraMap1 = {
             event: "recoverySpring"
         }
     ],
-
 
     tileEvents: [
         {
