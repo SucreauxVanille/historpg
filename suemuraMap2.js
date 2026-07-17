@@ -13,7 +13,8 @@ maps.suemuraMap2 = {
     maxEncounterCount: 3,
     encounterTable: [
         "boar",
-        "rabbit"
+        "rabbit",
+        "haniwa"
     ],
     
     tiles: [
