@@ -73,7 +73,7 @@ maps.suemuraMap1 = {
             active: true,
             solid: true,
             direction: "down",
-            event: "omorimob2"
+            event: "suemuramob2"
         },
 
         {
