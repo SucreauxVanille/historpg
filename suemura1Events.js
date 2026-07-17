@@ -8,6 +8,14 @@ async function moveSuemura2(){
     endEvent();
 }
 
+async function potterEvent(){
+    await startMessage([
+        "老人「ワシはこの村の職人や」",
+        "老人「土師器（はじき）づくりでこの村を支えてきた」"
+    ]);
+    endEvent();
+}
+
 async function gateManEvent(){
     await startMessage([
         "男「この先に行くんか？」",
