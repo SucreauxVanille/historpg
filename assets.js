@@ -212,12 +212,12 @@ hero: {
 
         left: [
             "images/characters/yong_front1.png",
-            "images/characters/yong_front1.png"
+            "images/characters/yong_front2.png"
         ],
 
         right: [
             "images/characters/yong_front1.png",
-            "images/characters/yong_front1.png"
+            "images/characters/yong_front2.png"
         ]
 
     },
