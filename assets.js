@@ -88,7 +88,7 @@ hero: {
       ], 
       up: [
         "images/objects/kiln1.png",
-        "images/objects/kiln.png"
+        "images/objects/kiln2.png"
       ], 
       left: [
         "images/objects/kiln1.png",
