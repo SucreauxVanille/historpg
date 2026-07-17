@@ -51,5 +51,14 @@ const enemies = {
         exp: 140,
         image: "battle/images/doguBoss.png",
         boss: true
+    },
+
+    haniwa: {
+        name: "壊れたはにわ",
+        hp: 60,
+        atk: 25,
+        exp: 38,
+        image: "battle/images/haniwa.png",
+        boss: false
     }
 };
