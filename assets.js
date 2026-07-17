@@ -198,6 +198,29 @@ hero: {
 
     },
     
+    potter: {
+        animated: true,
+        down: [
+            "images/characters/potter_front1.png",
+            "images/characters/potter_front2.png"
+        ],
+
+        up: [
+            "images/characters/potter_front1.png",
+            "images/characters/potter_front2.png"
+        ],
+
+        left: [
+            "images/characters/potter_front1.png",
+            "images/characters/potter_front2.png"
+        ],
+
+        right: [
+             "images/characters/potter_front1.png",
+            "images/characters/potter_front2.png"
+        ]
+    },
+           
     yong: {
         animated: true,
         down: [
@@ -219,7 +242,6 @@ hero: {
             "images/characters/yong_front1.png",
             "images/characters/yong_front2.png"
         ]
-
     },
         
     mob: {
