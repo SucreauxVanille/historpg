@@ -6,7 +6,6 @@ function hasFlag(flagName){
     return gameState.flags[flagName] === true;
 }
 
-
 const eventHandlers = {
     startOpening: startOpening,
     houseExit: houseExitEvent,
@@ -16,8 +15,12 @@ const eventHandlers = {
     mirror: mirrorEvent,
     iyo: iyoEvent,
     brother: brotherEvent,
+
+    //汎用オブジェクト
     returnMirror: returnMirrorEvent,
     recoverySpring: recoverySpringEvent,
+
+    //マップ別
     nojiriTutorial: nojiriTutorialEvent,
     nojirimob1: nojirimob1Event,
     nojirimob2: nojirimob2Event,
@@ -41,6 +44,7 @@ const eventHandlers = {
     omoriHouse2: omoriHouse2Event,
     omoriHouse3: omoriHouse3Event,
     omoriReturn: omoriReturnEvent,
+    potter: potterEvent,
     suemuraHouse: suemuraHouseEvent,
     moveSuemura2: moveSuemura2,
     moveSuemura1: moveSuemura1,
@@ -50,4 +54,3 @@ const eventHandlers = {
     yong:yongEvent,
     kiln: kilnEvent
 };
-
