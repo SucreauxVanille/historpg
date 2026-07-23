@@ -21,12 +21,15 @@ const eventHandlers = {
     recoverySpring: recoverySpringEvent,
 
     //マップ別
+    //野尻湖
     nojiriTutorial: nojiriTutorialEvent,
     nojirimob1: nojirimob1Event,
     nojirimob2: nojirimob2Event,
     nojirimob3: nojirimob3Event,
     naumannBoss: naumannBossEvent,
     obsidian: obsidianEvent,
+
+    //大森貝塚
     meetMorse: meetMorseEvent,
     morseStop: morseStopEvent,
     dogu: doguEvent,
@@ -44,6 +47,8 @@ const eventHandlers = {
     omoriHouse2: omoriHouse2Event,
     omoriHouse3: omoriHouse3Event,
     omoriReturn: omoriReturnEvent,
+
+    //陶邑
     potter: potterEvent,
     suemuraHouse: suemuraHouseEvent,
     suemuraHouse2: suemuraHouse2Event,
@@ -53,6 +58,7 @@ const eventHandlers = {
     gateMan: gateManEvent,
     suemuramob1: suemuramob1Event,
     suemuramob2: suemuramob2Event,
+    suemuramobF1: suemuramobF1Event,
     yong:yongEvent,
     kiln: kilnEvent
 };
