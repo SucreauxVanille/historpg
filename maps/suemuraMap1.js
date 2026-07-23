@@ -85,22 +85,30 @@ maps.suemuraMap1 = {
         },
         {
             id: "mob",
-            x: 7,
-            y: 10,
+            x: 10,
+            y: 11,
             active: true,
             solid: true,
-            direction: "down",
+            direction: "right",
             event: "suemuramob2"
         },
-
         {
             id: "mob",
-            x: 1,
-            y: 8,
+            x: 10,
+            y: 11,
             active: true,
             solid: true,
-            direction: "down",
-            event: "gateMan"
+            direction: "right",
+            event: "suemuramob2"
+        },
+        {
+            id: "mobF",
+            x: 16,
+            y: 13,
+            active: true,
+            solid: true,
+            direction: "left",
+            event: "suemuramobF1"
         },
 
         {
