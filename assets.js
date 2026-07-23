@@ -20,6 +20,8 @@ hero: {
     ]
 
 },
+
+//不動オブジェクト
     mirror: {
         image: "images/objects/mirror.png",
         animated: false
@@ -80,6 +82,26 @@ hero: {
         animated: false
     },
     
+    bonfire: {
+        animated: true,
+      down: [
+        "images/objects/bonfire1.png",
+        "images/objects/bonfire2.png"
+      ], 
+      up: [
+        "images/objects/bonfire1.png",
+        "images/objects/bonfire2.png"
+      ], 
+      left: [
+        "images/objects/bonfire1.png",
+        "images/objects/bonfire2.png"
+      ], 
+      right: [
+        "images/objects/bonfire1.png",
+        "images/objects/bonfire2.png"
+      ]
+    },
+        
     kiln: {
         animated: true,
       down: [
@@ -99,7 +121,8 @@ hero: {
         "images/objects/kiln2.png"
       ]
     },
-    
+
+//人物
     himiko: {
         animated: true,
 
@@ -235,12 +258,12 @@ hero: {
 
         left: [
             "images/characters/yong_left1.png",
-            "images/characters/yong_left1.png"
+            "images/characters/yong_left2.png"
         ],
 
         right: [
             "images/characters/yong_right1.png",
-            "images/characters/yong_right1.png"
+            "images/characters/yong_right2.png"
         ]
     },
         
@@ -289,5 +312,28 @@ hero: {
             "images/characters/mobF_right1.png",
             "images/characters/mobF_right2.png"
         ]
-    }   
+    },
+    boy: {
+        animated: true,
+
+        down: [
+            "images/characters/boy_front1.png",
+            "images/characters/boy_front2.png"
+        ],
+
+        up: [
+            "images/characters/boy_back1.png",
+            "images/characters/boy_back2.png"
+        ],
+
+        left: [
+            "images/characters/boy_front1.png",
+            "images/characters/boy_front2.png"
+        ],
+
+        right: [
+            "images/characters/boy_front1.png",
+            "images/characters/boy_front2.png"
+        ]
+    }     
 }
