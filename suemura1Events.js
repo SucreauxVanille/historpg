@@ -20,10 +20,10 @@ async function bonfireEvent(){
     npcDialogue(
         "haniwaDefeated", 
         [
-            "老人「窯を使わず、穴で焼くのがワシらのやり方や」"
+            "老人「土師器は窯を使わず、穴を掘った中で焼くんや」"
         ],
         [
-            "土師器じいさん「土師器は土師器で作り続けるで」"
+            "土師器じいさん「土師器の技術も守り続けるで」"
         ]
     );
 }
@@ -57,6 +57,15 @@ async function suemuramob2Event(){
         ]
     );
 }
+
+async function suemuramobF1Event(){
+    await startMessage([
+        "女「田んぼに入ったらダメやで」",
+        "女「ウチらの大事なお米やさかいな」"
+    ]);
+    endEvent();
+}
+
 async function suemuraHouseEvent(){
     await startMessage([
         "卑弥呼「これも竪穴式住居じゃのう」",
@@ -64,6 +73,7 @@ async function suemuraHouseEvent(){
     ]);
     endEvent();
 }
+
 async function suemuraHouse2Event(){
     await startMessage([
         "卑弥呼「邪馬台国よりも調理の技術が進んでおるようじゃな」",
