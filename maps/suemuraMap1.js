@@ -45,7 +45,6 @@ maps.suemuraMap1 = {
     ],
 // 0:木の床(橋)　2:草　3:岩　4:水　5:崖　7:木
 // 川を渡ると渡来人が一人で住む村外れマップへ
-//オブジェクトは全て仮置き
     
     objects: [
         {
@@ -66,7 +65,15 @@ maps.suemuraMap1 = {
             direction: "down",
             event: "potter"
         },
-        
+        {
+            id: "bonfire",
+            x: 7,
+            y: 4,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "bonfire"
+        },        
         {
             id: "mob",
             x: 14,
