@@ -16,6 +16,18 @@ async function potterEvent(){
     endEvent();
 }
 
+async function bonfireEvent(){
+    npcDialogue(
+        "haniwaDefeated", 
+        [
+            "老人「窯を使わず、穴で焼くのがワシらのやり方や」"
+        ],
+        [
+            "土師器じいさん「土師器は土師器で作り続けるで」"
+        ]
+    );
+}
+
 async function gateManEvent(){
     await startMessage([
         "男「この先に行くんか？」",
