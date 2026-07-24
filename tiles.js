@@ -49,6 +49,18 @@ const tileTypes = {
         id: "riceField",
         image: "images/tiles/riceField.png",
         passable: false
+    },
+    
+    ash: {
+        id: "ash",
+        image: "images/tiles/ash.png",
+        passable: true
+    },
+    
+    wallX: {
+        id: "wallX",
+        image: "images/tiles/wallX.png",
+        passable: false
     }
 
 };
@@ -61,5 +73,7 @@ const tileIds = {
     5: tileTypes.cliff,
     6: tileTypes.shellmound,
     7: tileTypes.tree,
-    8: tileTypes.riceField
+    8: tileTypes.riceField,
+    9: tileTypes.ash,
+    10: tileTypes.wallX
 };
