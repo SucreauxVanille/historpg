@@ -121,7 +121,26 @@ hero: {
         "images/objects/kiln2.png"
       ]
     },
-
+    smoke: {
+        animated: true,
+      down: [
+        "images/objects/smoke1.png",
+        "images/objects/smoke2.png"
+      ], 
+      up: [
+        "images/objects/smoke1.png",
+        "images/objects/smoke2.png"
+      ], 
+      left: [
+        "images/objects/smoke1.png",
+        "images/objects/smoke2.png"
+      ], 
+      right: [
+        "images/objects/smoke1.png",
+        "images/objects/smoke2.png"
+      ]
+    },
+    
 //人物
     himiko: {
         animated: true,
