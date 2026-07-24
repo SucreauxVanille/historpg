@@ -57,6 +57,14 @@ maps.suemuraMap2 = {
             solid: true,
             direction: "down",
             event: "kiln"
+        },
+        {
+            id: "smoke",
+            x: 2,
+            y: 2,
+            active: true,
+            solid: true,
+            direction: "down"
         }
     ],
 
