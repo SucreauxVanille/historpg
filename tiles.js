@@ -61,6 +61,24 @@ const tileTypes = {
         id: "wallX",
         image: "images/tiles/wallX.png",
         passable: false
+    },
+    
+    wallL: {
+        id: "wallL",
+        image: "images/tiles/wallL.png",
+        passable: false
+    },
+    
+    wallR: {
+        id: "wallR",
+        image: "images/tiles/wallR.png",
+        passable: false
+    },
+    
+    soil: {
+        id: "soil",
+        image: "images/tiles/soil.png",
+        passable: true
     }
 
 };
@@ -75,5 +93,8 @@ const tileIds = {
     7: tileTypes.tree,
     8: tileTypes.riceField,
     9: tileTypes.ash,
-    10: tileTypes.wallX
+    10: tileTypes.wallX,
+    11: tileTypes.wallL,
+    12: tileTypes.wallR,
+    13: tileTypes.soil
 };
