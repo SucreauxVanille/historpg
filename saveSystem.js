@@ -9,7 +9,11 @@ const PROGRESS = {
     OMORI_SHELL: 7,
     MET_MORSE: 8,
     DOGU_DEFEATED: 9,
-    OMORI_CLEAR: 10
+    OMORI_CLEAR: 10,
+    SUEMURA_START: 11,
+    MET_YONG: 12,
+    FIREBALL_ATTACK: 13,
+    SUEMURA_CLEAR: 14
 };
 const SAVE_WORDS = {
     0: ["はる", "つき"],
