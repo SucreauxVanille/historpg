@@ -329,7 +329,7 @@ function getLoadQuiz(){
         case PROGRESS.IYO_APPEARED:
             return {
                 question:
-                    "卑弥呼「邪馬台国の女王である、ワシの名前は何じゃ？」",
+                    "卑弥呼「邪馬台国の女王である、わらわの名前は何じゃ？」",
                 correct:"卑弥呼",
                 wrong:"花子"
             };
@@ -337,7 +337,7 @@ function getLoadQuiz(){
         case PROGRESS.NOJIRI_TUTORIAL:
             return {
                 question:
-                    "卑弥呼「ワシが治める国の名前は何じゃ？」",
+                    "卑弥呼「わらわが治める国の名前は何じゃ？」",
                 correct:"邪馬台国",
                 wrong:"琉球王国"
             };
@@ -345,7 +345,7 @@ function getLoadQuiz(){
         case PROGRESS.NAUMANN_DEFEATED:
             return {
                 question:
-                    "卑弥呼「ワシらが黒曜石の回収に向かう湖の名前は覚えておるな？」",
+                    "卑弥呼「わらわたちが黒曜石の回収に向かう湖の名前は覚えておるな？」",
                 correct:"野尻湖",
                 wrong:"琵琶湖"
             };
@@ -353,7 +353,7 @@ function getLoadQuiz(){
         case PROGRESS.OBSIDIAN_OBTAINED:
             return {
                 question:
-                    "卑弥呼「ワシらが野尻湖の奥で戦った大きな獣は何じゃったかの？」",
+                    "卑弥呼「わらわたちが野尻湖の奥で戦った大きな獣は何じゃったかの？」",
                 correct:"ナウマンゾウ",
                 wrong:"マンモス"
             };    
@@ -377,7 +377,7 @@ function getLoadQuiz(){
         case PROGRESS.OMORI_SHELL:
             return {
                 question:
-                    "卑弥呼「ワシらが向かう、貝殻が捨てられた場所を何と言ったかのう？」",
+                    "卑弥呼「わらわたちが向かう、貝殻が捨てられた場所を何と言ったかのう？」",
                 correct:"貝塚",
                 wrong:"古墳"
             };
@@ -385,7 +385,7 @@ function getLoadQuiz(){
         case PROGRESS.MET_MORSE:
             return {
                 question:
-                    "卑弥呼「ワシらが出会った、貝塚を調査している人物の名前を覚えておるか？」",
+                    "卑弥呼「わらわたちが出会った、貝塚を調査している人物の名前を覚えておるか？」",
                 correct:"モース",
                 wrong:"ソース"
             };
