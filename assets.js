@@ -81,6 +81,14 @@ hero: {
         image: "images/objects/doguonMap.png",
         animated: false
     },
+    hajiki: {
+        image: "images/objects/hajiki.png",
+        animated: false
+    },   
+    sueki: {
+        image: "images/objects/sueki.png",
+        animated: false
+    },
     
     bonfire: {
         animated: true,
