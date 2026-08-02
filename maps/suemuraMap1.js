@@ -73,7 +73,15 @@ maps.suemuraMap1 = {
             solid: true,
             direction: "down",
             event: "bonfire"
-        },        
+        },    
+        {
+            id: "hajiki",
+            x: 8,
+            y: 5,
+            active: true,
+            solid: true,
+            event: "hajiki"
+        },     
         {
             id: "mob",
             x: 14,
@@ -95,11 +103,11 @@ maps.suemuraMap1 = {
         {
             id: "mob",
             x: 10,
-            y: 11,
+            y: 12,
             active: true,
             solid: true,
             direction: "right",
-            event: "suemuramob2"
+            event: "suemuramob3"
         },
         {
             id: "mobF",
@@ -110,7 +118,15 @@ maps.suemuraMap1 = {
             direction: "left",
             event: "suemuramobF1"
         },
-
+        {
+            id: "boy",
+            x: 8,
+            y: 8,
+            active: true,
+            solid: true,
+            direction: "left",
+            event: "suemuraboy1"
+        },
         {
             id: "houseL",
             x: 8,
