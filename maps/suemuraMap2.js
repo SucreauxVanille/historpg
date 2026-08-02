@@ -50,6 +50,20 @@ maps.suemuraMap2 = {
             event: "yong"
         },
         {
+            id: "sueki",
+            x: 3,
+            y: 6,
+            solid: true,
+            event: "sueki1"
+        },
+        {
+            id: "sueki",
+            x: 3,
+            y: 7,
+            solid: true,
+            event: "sueki2"
+        },
+        {
             id: "kiln",
             x: 2,
             y: 5,
