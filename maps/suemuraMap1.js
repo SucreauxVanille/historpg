@@ -10,10 +10,9 @@ maps.suemuraMap1 = {
     encounterRate: 2,
     clearEncounterRate: 0.1,
     clearFlag: "haniwaDefeated",
-    maxEncounterCount: 3,
+    maxEncounterCount: 2,
     encounterTable: [
-        "boar",
-        "rabbit"
+        "boar"
     ],
     
     tiles: [
@@ -78,7 +77,6 @@ maps.suemuraMap1 = {
             id: "hajiki",
             x: 8,
             y: 5,
-            active: true,
             solid: true,
             event: "hajiki"
         },     
