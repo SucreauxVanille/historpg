@@ -75,6 +75,22 @@ async function kilnEvent(){
     ]);
     endEvent();
 }
+async function sueki1Event(){
+    await startMessage([
+        "ヨン「これが僕たちの須恵器（すえき）アル」",
+        "ヨン「灰色をしているのが特徴アル」"
+    ]);
+    endEvent();
+}
+async function sueki2Event(){
+    await startMessage([
+        "卑弥呼「中には水が入っておるようじゃな」",
+        "ヨン「そうアル、昔からの土器は水がしみこんでしまうアル」",
+        "ヨン「でも、須恵器はしみこまずに水をためられるアル」",
+        "壱与の声「それは便利ですね！」"
+    ]);
+    endEvent();
+}
 
 async function moveSuemura1(){
 
