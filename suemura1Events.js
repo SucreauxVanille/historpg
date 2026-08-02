@@ -11,7 +11,9 @@ async function moveSuemura2(){
 async function potterEvent(){
     await startMessage([
         "老人「ワシはこの村の職人や」",
-        "老人「土師器（はじき）づくりでこの村を支えてきた」"
+        "老人「土師器（はじき）づくりでこの村を支えてきた」",
+        "老人「近ごろは外国の焼き物を広めようとする連中もおるが…」",
+        "老人「ワシはこの村の伝統を変えるつもりはあらへん」"
     ]);
     endEvent();
 }
@@ -20,18 +22,25 @@ async function bonfireEvent(){
     npcDialogue(
         "haniwaDefeated", 
         [
-            "老人「土師器は窯を使わず、穴を掘った中で焼くんや」"
+            "老人「土師器は窯を使わず、穴を掘った中で焼くんや」",
+            "老人「おかしな窯なんて必要あらへん」"
         ],
         [
             "土師器じいさん「土師器の技術も守り続けるで」"
         ]
     );
 }
+async function hajikiEvent(){
+    await startMessage([
+        "卑弥呼「ふむ、これがこの村で作られている土器じゃな」"
+    ]);
+    endEvent();
+}
 
 async function gateManEvent(){
     await startMessage([
         "男「この先に行くんか？」",
-        "男「怪しい渡来人が住んどるだけやで」"
+        "男「物好きな渡来人が一人で住んどるだけやで」"
     ]);
     endEvent();
 }
@@ -57,13 +66,38 @@ async function suemuramob2Event(){
         ]
     );
 }
-
+async function suemuramob3Event(){
+    npcDialogue(
+        "haniwaDefeated", 
+        [
+            "男「隣の村では、古墳づくりに男が駆り出されているらしい」",
+            "男「俺も呼ばれたらイヤだなあ…」"
+        ],
+        [
+            "男「隣の村では、古墳づくりに男が駆り出されているらしい」",
+            "男「でも、誰の墓なのか誰も知らないんだよな」"
+        ]
+    );
+}
 async function suemuramobF1Event(){
     await startMessage([
         "女「田んぼに入ったらダメやで」",
         "女「ウチらの大事なお米やさかいな」"
     ]);
     endEvent();
+}
+async function suemuraboy1Event(){
+    npcDialogue(
+        "haniwaDefeated", 
+        [
+            "男「ここだけの話、俺は渡来人さんの言うことにも興味あるわけよ」",
+            "男「でもさ、うちの村は土師器じいさんの職人技に支えられてるからさ～」"
+        ],
+        [
+            "男「やっぱりな！ヨンさんはすごい人だって俺は信じてたよ！」",
+            "卑弥呼「なんでおぬしが偉そうなんじゃ…」"
+        ]
+    );
 }
 
 async function suemuraHouseEvent(){
