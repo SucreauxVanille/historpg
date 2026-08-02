@@ -77,9 +77,19 @@ maps.suemuraMap1 = {
             id: "hajiki",
             x: 8,
             y: 5,
+            active: true,
             solid: true,
             event: "hajiki"
-        },     
+        },  
+        {
+            id: "mob",
+            x: 1,
+            y: 8,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "gateman"
+        },
         {
             id: "mob",
             x: 14,
@@ -100,11 +110,11 @@ maps.suemuraMap1 = {
         },
         {
             id: "mob",
-            x: 10,
-            y: 12,
+            x: 13,
+            y: 4,
             active: true,
             solid: true,
-            direction: "right",
+            direction: "down",
             event: "suemuramob3"
         },
         {
