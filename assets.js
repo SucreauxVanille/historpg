@@ -354,13 +354,13 @@ hero: {
         ],
 
         left: [
-            "images/characters/boy_front1.png",
-            "images/characters/boy_front2.png"
+            "images/characters/boy_left1.png",
+            "images/characters/boy_left2.png"
         ],
 
         right: [
-            "images/characters/boy_front1.png",
-            "images/characters/boy_front2.png"
+            "images/characters/boy_right1.png",
+            "images/characters/boy_right2.png"
         ]
     }     
 }
