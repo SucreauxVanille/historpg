@@ -88,7 +88,7 @@ maps.suemuraMap1 = {
             active: true,
             solid: true,
             direction: "down",
-            event: "gateman"
+            event: "gateMan"
         },
         {
             id: "mob",
