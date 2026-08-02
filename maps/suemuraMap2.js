@@ -7,7 +7,7 @@ maps.suemuraMap2 = {
         "窯を設置した集落。"
     ],
     allowHimikoFollower: true,
-    encounterRate: 3,
+    encounterRate: 4,
     clearEncounterRate: 1,
     clearFlag: "haniwaDefeated",
     maxEncounterCount: 3,
@@ -53,6 +53,7 @@ maps.suemuraMap2 = {
             id: "sueki",
             x: 3,
             y: 6,
+            active: true,
             solid: true,
             event: "sueki1"
         },
@@ -60,6 +61,7 @@ maps.suemuraMap2 = {
             id: "sueki",
             x: 3,
             y: 7,
+            active: true,
             solid: true,
             event: "sueki2"
         },
