@@ -60,6 +60,7 @@ const eventHandlers = {
     suemuramob2: suemuramob2Event,
     suemuramob3: suemuramob3Event,
     suemuramobF1: suemuramobF1Event,
+    suemuramobF2: suemuramobF2Event,
     suemuraboy1: suemuraboy1Event,
     hajiki: hajikiEvent,
     yong:yongEvent,
