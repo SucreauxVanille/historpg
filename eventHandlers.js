@@ -67,5 +67,6 @@ const eventHandlers = {
     yong:yongEvent,
     kiln: kilnEvent,
     sueki1: sueki1Event,
-    sueki2: sueki2Event
+    sueki2: sueki2Event,
+    suemuraReturn: suemuraReturnEvent
 };
