@@ -92,7 +92,7 @@ maps.suemuraMap2 = {
         },
         {
             x: 8,
-            y: 17,
+            y: 12,
             event: "suemuraConversation"
         },
         {
