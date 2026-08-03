@@ -171,3 +171,10 @@ async function suemuraHouse2Event(){
     ]);
     endEvent();
 }
+async function suemuraHouse3Event(){
+    await startMessage([
+        "卑弥呼「家の中にも土器が置かれておるのう」",
+        "壱与の声「生活に役立てられているんですね」"
+    ]);
+    endEvent();
+}
