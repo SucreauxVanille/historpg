@@ -52,6 +52,7 @@ const eventHandlers = {
     potter: potterEvent,
     suemuraHouse: suemuraHouseEvent,
     suemuraHouse2: suemuraHouse2Event,
+    suemuraHouse3: suemuraHouse3Event,
     bonfire: bonfireEvent,
     moveSuemura2: moveSuemura2,
     moveSuemura1: moveSuemura1,
