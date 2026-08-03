@@ -127,6 +127,15 @@ maps.suemuraMap1 = {
             event: "suemuramobF1"
         },
         {
+            id: "mobF",
+            x: 15,
+            y: 3,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "suemuramobF2"
+        },
+        {
             id: "boy",
             x: 8,
             y: 8,
