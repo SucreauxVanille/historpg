@@ -121,13 +121,14 @@ async function suemuraConversation(){
 
 //タイルイベント②
 async function suemuraAttackedTrigger(){
-    if(
-        !hasFlag("suemuraConversationFinished") ||
-        hasFlag("villageAttacked")
-    ){
-        endEvent();
-        return;
-    }
+if(
+    !hasFlag("reportedYong") ||
+    !hasFlag("suemuraConversationFinished") ||
+    hasFlag("villageAttacked")
+){
+    endEvent();
+    return;
+}
 
     await startMessage([
         "卑弥呼「壱与の言う通り、異変のようじゃ」",
