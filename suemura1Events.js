@@ -211,10 +211,10 @@ async function suemuraReturnEvent(){
     await startMessage([
         "壱与の声「邪馬台国にお戻ししますね！」"
     ]);
-    changeMap(
-        maps.himikoHouse,
-        5,
-        5
-    );
+await changeMap(
+    maps.himikoHouse,
+    5,
+    5
+);
     endEvent();
 }
