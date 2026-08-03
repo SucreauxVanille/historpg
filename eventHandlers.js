@@ -68,5 +68,7 @@ const eventHandlers = {
     kiln: kilnEvent,
     sueki1: sueki1Event,
     sueki2: sueki2Event,
+    suemuraConversation: suemuraConversation,
+    suemuraAttackedTrigger: suemuraAttackedTrigger,
     suemuraReturn: suemuraReturnEvent
 };
