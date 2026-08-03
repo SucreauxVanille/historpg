@@ -31,9 +31,33 @@ async function bonfireEvent(){
     );
 }
 async function hajikiEvent(){
+
+    if(!hasFlag("metYong")){
+        await startMessage([
+            "卑弥呼「ふむ、これがこの村で作られている土器じゃな」"
+        ]);
+        endEvent();
+        return;
+    }
+
+    if(!hasFlag("checkedHajiki")){
+
+        await startMessage([
+            "卑弥呼「これがヨンの話しておった土師器じゃな」",
+            "卑弥呼「ふむ…形も整っておるし、丈夫そうじゃ」",
+            "壱与の声「丁寧に手作りされているのが分かりますね」"
+        ]);
+
+        setFlag("checkedHajiki");
+
+        endEvent();
+        return;
+    }
+
     await startMessage([
-        "卑弥呼「ふむ、これがこの村で作られている土器じゃな」"
+        "卑弥呼「うむ、見事な土師器じゃな」"
     ]);
+
     endEvent();
 }
 
@@ -54,6 +78,14 @@ async function suemuramob1Event(){
 }
 
 async function suemuramob2Event(){
+    if(hasFlag("villageAttacked")){
+
+        await startMessage([
+            "男「くそっ！何なんだこの火の玉！」"
+        ]);
+        endEvent();
+        return;
+    }
     npcDialogue(
         "haniwaDefeated", 
         [
@@ -86,6 +118,30 @@ async function suemuramobF1Event(){
     ]);
     endEvent();
 }
+
+async function suemuramobF2Event(){
+    if(hasFlag("villageAttacked")){
+
+        await startMessage([
+            "女「キャー！助けてーや！」"
+        ]);
+        endEvent();
+        return;
+    }
+    npcDialogue(
+        "haniwaDefeated", 
+        [
+            "女「渡来人なぁ、ちょっと怖いな」",
+            "女「急に現れて、技術を教えたい言うてもなぁ…」"
+        ],
+        [
+            "女「渡来人なぁ、ええ人やんな」",
+            "女「しかもよく見ると、ちょっと男前やん？」",
+            "卑弥呼「おい」"
+        ]
+    );
+}
+
 async function suemuraboy1Event(){
     npcDialogue(
         "haniwaDefeated", 
