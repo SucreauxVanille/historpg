@@ -75,6 +75,7 @@ async function kilnEvent(){
     ]);
     endEvent();
 }
+
 async function sueki1Event(){
     await startMessage([
         "ヨン「これが僕たちの須恵器（すえき）アル」",
@@ -82,6 +83,7 @@ async function sueki1Event(){
     ]);
     endEvent();
 }
+
 async function sueki2Event(){
     await startMessage([
         "卑弥呼「中には水が入っておるようじゃな」",
@@ -119,7 +121,6 @@ async function suemuraConversation(){
 
 //タイルイベント②
 async function suemuraAttackedTrigger(){
-
     if(
         !hasFlag("suemuraConversationFinished") ||
         hasFlag("villageAttacked")
@@ -129,9 +130,8 @@ async function suemuraAttackedTrigger(){
     }
 
     await startMessage([
-
-        "卑弥呼「壱与、お主の言う通りじゃ」",
-        "壱与「え？」"
+        "卑弥呼「壱与の言う通り、異変のようじゃ」",
+        "壱与「え？」",
         "卑弥呼「村の方じゃ！明らかに焼き物づくりではない煙が上がっておる！」",
         "壱与の声「確かに、悲鳴のような声も聞こえます！」",
         "卑弥呼「村に何かあったのじゃ！急ぐぞ！」"
@@ -146,12 +146,10 @@ async function suemuraAttackedTrigger(){
 }
 
 async function moveSuemura1(){
-
     await changeMap(
         maps.suemuraMap1,
         1,
         9
     );
-
     endEvent();
 }
