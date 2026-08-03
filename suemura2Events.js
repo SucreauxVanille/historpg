@@ -92,6 +92,59 @@ async function sueki2Event(){
     endEvent();
 }
 
+//タイルイベント①
+async function suemuraConversation(){
+
+    if(
+        !hasFlag("reportedYong") ||
+        hasFlag("suemuraConversationFinished")
+    ){
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+        "卑弥呼「ううむ…ヨンの力になってやりたいが…」",
+        "壱与の声「村の人たちの考えを変えるのは、難しいですよね」",
+        "卑弥呼「何より、ヨン自身も村人と争いたくはないじゃろう」",
+        "壱与の声「…あれ？」",
+        "卑弥呼「どうした？」",
+        "壱与の声「何か声がしませんか…？」",
+    ]);
+
+    setFlag("suemuraConversationFinished");
+
+    endEvent();
+}
+
+//タイルイベント②
+async function suemuraAttackedTrigger(){
+
+    if(
+        !hasFlag("suemuraConversationFinished") ||
+        hasFlag("villageAttacked")
+    ){
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+
+        "卑弥呼「壱与、お主の言う通りじゃ」",
+        "壱与「え？」"
+        "卑弥呼「村の方じゃ！明らかに焼き物づくりではない煙が上がっておる！」",
+        "壱与の声「確かに、悲鳴のような声も聞こえます！」",
+        "卑弥呼「村に何かあったのじゃ！急ぐぞ！」"
+    ]);
+
+    setFlag("villageAttacked");
+
+    // ヨン移動
+    // 火の玉スポーン
+    
+    endEvent();
+}
+
 async function moveSuemura1(){
 
     await changeMap(
