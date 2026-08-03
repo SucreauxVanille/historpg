@@ -98,7 +98,7 @@ maps.suemuraMap2 = {
         {
             x: 10,
             y: 3,
-            event: "suemuraAttackTrigger"
+            event: "suemuraAttackedTrigger"
         }
     ]
 };
