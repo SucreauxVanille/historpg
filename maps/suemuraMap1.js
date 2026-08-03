@@ -52,7 +52,7 @@ maps.suemuraMap1 = {
             y: 18,
             active: true,
             solid: true,
-            event: "returnMirror"
+            event: "suemuraReturn"
         },
 
         {
