@@ -9,6 +9,16 @@ async function moveSuemura2(){
 }
 
 async function potterEvent(){
+   if(hasFlag("villageAttacked")){
+
+        await startMessage([
+        "土師器じいさん「ワシはええ！女子供や家を守るんや！」",
+        "土師器じいさん「こちとら毎日、火を使うてきた職人や！」",
+        "土師器じいさん「火の玉になんか負けへんで！」"
+        ]);
+        endEvent();
+        return;
+    }
     await startMessage([
         "老人「ワシはこの村の職人や」",
         "老人「土師器（はじき）づくりでこの村を支えてきた」",
@@ -70,6 +80,15 @@ async function gateManEvent(){
 }
 
 async function suemuramob1Event(){
+    if(hasFlag("villageAttacked")){
+
+        await startMessage([
+        "男「ここは陶邑（すえむら）や」",
+        "男「火の玉の化け物が現れるなんて、聞いてへんで！」"
+        ]);
+        endEvent();
+        return;
+    }
     await startMessage([
         "男「ここは陶邑（すえむら）や」",
         "男「焼き物を作っとるさかい、そう呼ばれとるんや」"
@@ -176,5 +195,25 @@ async function suemuraHouse3Event(){
         "卑弥呼「家の中にも土器が置かれておるのう」",
         "壱与の声「生活に役立てられているんですね」"
     ]);
+    endEvent();
+}
+async function suemuraReturnEvent(){
+    if(hasFlag("villageAttacked")){
+
+        await startMessage([
+            "卑弥呼「ならぬ！今ここを見捨てるわけにはゆかぬ！」"
+        ]);
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+        "壱与の声「邪馬台国にお戻ししますね！」"
+    ]);
+    changeMap(
+        maps.himikoHouse,
+        5,
+        5
+    );
     endEvent();
 }
