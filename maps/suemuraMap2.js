@@ -89,6 +89,16 @@ maps.suemuraMap2 = {
             x: 18,
             y: 9,
             event: "moveSuemura1"
+        },
+        {
+            x: 8,
+            y: 17,
+            event: "suemuraConversation"
+        },
+        {
+            x: 10,
+            y: 3,
+            event: "suemuraAttackTrigger"
         }
     ]
 };
