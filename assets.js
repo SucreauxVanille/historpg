@@ -293,6 +293,29 @@ hero: {
             "images/characters/yong_right2.png"
         ]
     },
+
+    flame: {
+        animated: true,
+        down: [
+            "images/characters/flame1.png",
+            "images/characters/flame2.png"
+        ],
+
+        up: [
+            "images/characters/flame1.png",
+            "images/characters/flame2.png"
+        ],
+
+        left: [
+            "images/characters/flame1.png",
+            "images/characters/flame2.png"
+        ],
+
+        right: [
+            "images/characters/flame1.png",
+            "images/characters/flame2.png"
+        ]
+    },
         
     mob: {
         animated: true,
