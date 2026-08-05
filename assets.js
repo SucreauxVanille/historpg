@@ -261,13 +261,13 @@ hero: {
         ],
 
         left: [
-            "images/characters/potter_front1.png",
-            "images/characters/potter_front2.png"
+            "images/characters/potter_left1.png",
+            "images/characters/potter_left2.png"
         ],
 
         right: [
-             "images/characters/potter_front1.png",
-            "images/characters/potter_front2.png"
+             "images/characters/potter_right1.png",
+            "images/characters/potter_right2.png"
         ]
     },
            
