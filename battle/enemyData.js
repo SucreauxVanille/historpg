@@ -55,10 +55,19 @@ const enemies = {
 
     haniwa: {
         name: "壊れたはにわ",
-        hp: 60,
+        hp: 65,
         atk: 25,
         exp: 38,
         image: "battle/images/haniwa.png",
         boss: false
+    },
+
+    enemyFlame: {
+        name: "うごく火の玉",
+        hp: 200,
+        atk: 32,
+        exp: 40,
+        image: "battle/images/enemyFlame.png",
+        boss: true
     }
 };
