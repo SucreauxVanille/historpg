@@ -225,6 +225,76 @@ async function fireballAEvent(){
     endEvent();
 }
 
+async function fireballBEvent(){
+
+    if(hasFlag("fireballBDefeated")){
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+        "火の玉「燃ヤセ！燃ヤセ！」",
+        "卑弥呼「させぬ！」"
+    ]);
+
+    const result = await startBattle(["fireball"]);
+
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
+
+    setFlag("fireballBDefeated");
+    endEvent();
+}
+
+async function fireballCEvent(){
+
+    if(hasFlag("fireballCDefeated")){
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+        "火の玉「燃ヤセ！燃ヤセ！」",
+        "卑弥呼「させぬ！」"
+    ]);
+
+    const result = await startBattle(["fireball"]);
+
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
+
+    setFlag("fireballCDefeated");
+    endEvent();
+}
+
+async function fireballDEvent(){
+
+    if(hasFlag("fireballDDefeated")){
+        endEvent();
+        return;
+    }
+
+    await startMessage([
+        "火の玉「燃ヤセ！燃ヤセ！」",
+        "卑弥呼「させぬ！」"
+    ]);
+
+    const result = await startBattle(["fireball"]);
+
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
+
+    setFlag("fireballDDefeated");
+    endEvent();
+}
+
+
 //帰還
 async function suemuraReturnEvent(){
     if(hasFlag("villageAttacked")){
