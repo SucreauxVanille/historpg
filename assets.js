@@ -294,7 +294,7 @@ hero: {
         ]
     },
 
-    flame: {
+    fireball: {
         animated: true,
         down: [
             "images/characters/flame1.png",
