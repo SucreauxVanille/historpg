@@ -209,7 +209,7 @@ maps.suemuraMap1 = {
             direction: "down",
             event: "fireballA",
             showWhen: () => hasFlag("villageAttacked"),
-            hideWhen: () => hasFlag("fireballDefeated")
+            hideWhen: () => hasFlag("fireballADefeated")
         }
     ],
 
