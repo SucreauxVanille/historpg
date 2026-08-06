@@ -199,11 +199,29 @@ async function suemuraHouse3Event(){
     endEvent();
 }
 
-async function fireballA(){
+async function fireballAEvent(){
+
+    if(hasFlag("fireballADefeated")){
+        endEvent();
+        return;
+    }
+
     await startMessage([
         "火の玉「燃ヤセ！燃ヤセ！」",
         "卑弥呼「させぬ！」"
     ]);
+
+    const result = await startBattle(["fireball"]);
+
+    if(result !== "win"){
+        endEvent();
+        return;
+    }
+
+    setFlag("fireballADefeated");
+
+    // ここでボス出現判定
+
     endEvent();
 }
 
