@@ -198,6 +198,16 @@ async function suemuraHouse3Event(){
     ]);
     endEvent();
 }
+
+async function fireballA(){
+    await startMessage([
+        "火の玉「燃ヤセ！燃ヤセ！」",
+        "卑弥呼「させぬ！」"
+    ]);
+    endEvent();
+}
+
+//帰還
 async function suemuraReturnEvent(){
     if(hasFlag("villageAttacked")){
 
