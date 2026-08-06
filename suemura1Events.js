@@ -211,7 +211,7 @@ async function fireballAEvent(){
         "卑弥呼「させぬ！」"
     ]);
 
-    const result = await startBattle(["fireball"]);
+    const result = await startBattle(["enemyFlame"]);
 
     if(result !== "win"){
         endEvent();
