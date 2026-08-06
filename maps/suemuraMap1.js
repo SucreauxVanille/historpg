@@ -202,7 +202,7 @@ maps.suemuraMap1 = {
         },
         {
             id: "fireball",
-            x: 14,
+            x: 15,
             y: 8,
             active: true,
             solid: true,
