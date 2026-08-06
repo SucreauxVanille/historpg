@@ -176,6 +176,26 @@ ctx.drawImage(
     }
 }
 
+//オブジェクト表示条件
+function shouldShowObject(obj){
+
+    if(
+        obj.showWhen &&
+        !obj.showWhen()
+    ){
+        return false;
+    }
+
+    if(
+        obj.hideWhen &&
+        obj.hideWhen()
+    ){
+        return false;
+    }
+
+    return obj.active;
+}
+
 //オブジェクト描画
 function drawObjects(){
 
@@ -188,7 +208,7 @@ function drawObjects(){
             obj.active = false;
         }
 
-        if(!obj.active) return;
+    if(!shouldShowObject(obj)) return;
 
         const asset = assets[obj.id];
         if(!asset) return;
@@ -346,7 +366,7 @@ setInterval(() => {
 //オブジェクト取得
 function getObjectAt(x, y){
     return currentMap.objects.find(obj=>
-        obj.active &&
+        shouldShowObject(obj) &&
         obj.x === x &&
         obj.y === y
     );
@@ -436,12 +456,12 @@ function isObjectBlocked(x,y){
         return false;
     }
 
-    return currentMap.objects.some(obj=>
-        obj.active &&
-        obj.solid &&
-        obj.x === x &&
-        obj.y === y
-    );
+return currentMap.objects.some(obj=>
+    shouldShowObject(obj) &&
+    obj.solid &&
+    obj.x === x &&
+    obj.y === y
+);
 }
 
 //スポーン
