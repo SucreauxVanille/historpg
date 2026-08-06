@@ -70,5 +70,9 @@ const eventHandlers = {
     sueki2: sueki2Event,
     suemuraConversation: suemuraConversation,
     suemuraAttackedTrigger: suemuraAttackedTrigger,
-    suemuraReturn: suemuraReturnEvent
+    suemuraReturn: suemuraReturnEvent,
+    fireballA: fireballAEvent,
+    fireballB: fireballBEvent,
+    fireballC: fireballCEvent,
+    fireballD: fireballDEvent
 };
