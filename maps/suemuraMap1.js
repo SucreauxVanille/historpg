@@ -199,6 +199,16 @@ maps.suemuraMap1 = {
             active: true,
             solid: true,
             event: "recoverySpring"
+        },
+        {
+            id: "fireball",
+            x: 14,
+            y: 8,
+            active: true,
+            solid: true,
+            event: "fireballA",
+            showWhen: () => hasFlag("villageAttacked"),
+            hideWhen: () => hasFlag("fireballDefeated")
         }
     ],
 
