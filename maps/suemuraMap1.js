@@ -206,6 +206,7 @@ maps.suemuraMap1 = {
             y: 8,
             active: true,
             solid: true,
+            direction: "down",
             event: "fireballA",
             showWhen: () => hasFlag("villageAttacked"),
             hideWhen: () => hasFlag("fireballDefeated")
