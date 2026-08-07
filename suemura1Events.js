@@ -217,11 +217,8 @@ async function fireballAEvent(){
         endEvent();
         return;
     }
-
     setFlag("fireballADefeated");
-
     // ここでボス出現判定
-
     endEvent();
 }
 
@@ -237,8 +234,7 @@ async function fireballBEvent(){
         "卑弥呼「させぬ！」"
     ]);
 
-    const result = await startBattle(["fireball"]);
-
+    const result = await startBattle(["enemyFlame"]);
     if(result !== "win"){
         endEvent();
         return;
@@ -249,47 +245,39 @@ async function fireballBEvent(){
 }
 
 async function fireballCEvent(){
-
     if(hasFlag("fireballCDefeated")){
         endEvent();
         return;
     }
-
     await startMessage([
         "火の玉「燃ヤセ！燃ヤセ！」",
         "卑弥呼「させぬ！」"
     ]);
-
-    const result = await startBattle(["fireball"]);
+    const result = await startBattle(["enemyFlame"]);
 
     if(result !== "win"){
         endEvent();
         return;
     }
-
     setFlag("fireballCDefeated");
     endEvent();
 }
 
 async function fireballDEvent(){
-
     if(hasFlag("fireballDDefeated")){
         endEvent();
         return;
     }
-
     await startMessage([
         "火の玉「燃ヤセ！燃ヤセ！」",
         "卑弥呼「させぬ！」"
     ]);
 
-    const result = await startBattle(["fireball"]);
-
+    const result = await startBattle(["enemyFlame"]);
     if(result !== "win"){
         endEvent();
         return;
     }
-
     setFlag("fireballDDefeated");
     endEvent();
 }
