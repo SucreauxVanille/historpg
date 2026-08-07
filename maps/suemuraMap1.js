@@ -210,6 +210,39 @@ maps.suemuraMap1 = {
             event: "fireballA",
             showWhen: () => hasFlag("villageAttacked"),
             hideWhen: () => hasFlag("fireballADefeated")
+        },
+        {
+            id: "fireball",
+            x: 10,
+            y: 12,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "fireballB",
+            showWhen: () => hasFlag("villageAttacked"),
+            hideWhen: () => hasFlag("fireballBDefeated")
+        },
+        {
+            id: "fireball",
+            x: 8,
+            y: 9,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "fireballC",
+            showWhen: () => hasFlag("villageAttacked"),
+            hideWhen: () => hasFlag("fireballCDefeated")
+        },
+        {
+            id: "fireball",
+            x: 2,
+            y: 9,
+            active: true,
+            solid: true,
+            direction: "down",
+            event: "fireballD",
+            showWhen: () => hasFlag("villageAttacked"),
+            hideWhen: () => hasFlag("fireballDDefeated")
         }
     ],
 
